@@ -1,5 +1,11 @@
 .App {
-    max-width: 970px;
-    width: 100%;
-    margin: 0 auto;
+  height: 100vh;
+  background-color: var(--bg-color);
+  padding: 10px;
+}
+
+.app-container {
+  max-width: 970px;
+  width: 100%;
+  margin: 0 auto;
 }
