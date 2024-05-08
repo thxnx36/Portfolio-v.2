@@ -1,1 +1,1 @@
-export const HEADER_PHOTO = "src/assets/header-photo-without-bg.png"
+export const HEADER_PHOTO = "src/assets/profile-photo.png"
