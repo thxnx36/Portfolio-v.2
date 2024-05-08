@@ -1,5 +1,6 @@
-.section {
+.box {
   width: 100%;
   background-color: #fff;
   box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
 }

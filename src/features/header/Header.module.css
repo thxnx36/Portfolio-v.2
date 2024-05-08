@@ -1,12 +1,15 @@
+.header {
+  margin-bottom: 100px;
+}
+
 .container {
   width: 100%;
   height: 100%;
-  padding: 45px;
 }
 
 .content {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-around;
 }
 
@@ -20,6 +23,10 @@
   color: var(--main-color);
 }
 
+.info {
+  padding: 45px 0 45px 45px;
+}
+
 .infoText {
   max-width: 420px;
   margin: 0 0 25px;
@@ -27,22 +34,14 @@
 }
 
 .image {
-  width: 350px;
+  width: 500px;
   position: relative;
+  bottom: -4px;
+  right: 4px;
 }
 
 .image img {
   width: 100%;
-}
-
-.blur {
-  filter: blur(1px);
-  position: absolute;
-  bottom: 0;
-  left: -3px;
-  width: 100%;
-  height: 10px;
-  background-color: #fff;
 }
 
 @media screen and (max-width: 865px) {
@@ -59,6 +58,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 0;
   }
 
   .title {

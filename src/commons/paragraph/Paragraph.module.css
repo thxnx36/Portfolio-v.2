@@ -1,0 +1,5 @@
+.paragraph {
+  max-width: 440px;
+  line-height: var(--line-height);
+  margin: 0 0 40px;
+}
