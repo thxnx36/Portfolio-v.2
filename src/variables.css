@@ -1,8 +1,11 @@
 :root {
-    --main-color: #FFB400;
-    --secondary-color: #2B2B2B;
-    --bg-color: #F0F0F6;
-    --font-color-main: #767676;
-    --font-size-md: 16px;
-    --font-weight-normal: 400;
+  --main-color: #ffb400;
+  --secondary-color: #2b2b2b;
+  --bg-color: #f0f0f6;
+  --font-color-main: #767676;
+  --font-size-sm: 16px;
+  --font-size-md: 32px;
+  --font-size-lg: 48px;
+  --font-weight-normal: 400;
+  --shadow: 0px 0px 10px 0px #00000026;
 }
