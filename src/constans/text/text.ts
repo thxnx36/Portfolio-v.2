@@ -22,4 +22,10 @@ export const text = {
     SUBTITLE:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
   },
+
+  workHistory: {
+    TITLE: "Work Histrory",
+    SUBTITLE:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
+  },
 }
