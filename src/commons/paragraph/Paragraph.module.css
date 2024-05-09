@@ -3,3 +3,9 @@
   line-height: var(--line-height);
   margin: 0 0 40px;
 }
+
+@media screen and (max-width: 768px) {
+  .paragraph {
+    font-size: var(--font-size-xs);
+  }
+}
