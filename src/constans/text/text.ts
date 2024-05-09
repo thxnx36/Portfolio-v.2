@@ -1,4 +1,8 @@
 export const text = {
+  button: {
+    HIRE: "Hire me",
+  },
+
   header: {
     NAME: "Hi! I'm Vlad Kryvytchenko",
     PATH: "Front-end",
@@ -9,6 +13,12 @@ export const text = {
 
   myServices: {
     TITLE: "My Services",
+    SUBTITLE:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
+  },
+
+  education: {
+    TITLE: "Education",
     SUBTITLE:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
   },
