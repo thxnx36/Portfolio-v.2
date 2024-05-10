@@ -6,7 +6,7 @@
 .line {
   display: flex;
   gap: 5px;
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 .dotContainer {
@@ -25,15 +25,15 @@
 }
 
 .dotContainer li:nth-child(1) {
-  background-color: red;
+  background-color: var(--red-color);
 }
 
 .dotContainer li:nth-child(2) {
-  background-color: orange;
+  background-color: var(--orange-color);
 }
 
 .dotContainer li:nth-child(3) {
-  background-color: green;
+  background-color: var(--green-color);
 }
 
 .imageContainer {
