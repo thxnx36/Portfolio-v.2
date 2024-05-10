@@ -1,8 +1,8 @@
+import { CardsContainer } from "../../commons/cards-container/CardsContainer"
 import { SectionHeader } from "../../commons/section-header/SectionHeader"
 import { Section } from "../../commons/section/Section"
-import { portfolio } from "../../data/portfolio"
+import { portfolio } from "../../db/portfolio"
 import { text } from "../../localization/text"
-import styles from "./Portfolio.module.css"
 import { PortfolioCard } from "./card/PortfolioCard"
 
 export const Portfolio = () => {
@@ -12,11 +12,11 @@ export const Portfolio = () => {
         title={text.portfolio.TITLE}
         subTitle={text.portfolio.SUBTITLE}
       />
-      <div className={styles.portfolio}>
+      <CardsContainer>
         {portfolio.map(({ title, project, src, id }) => (
           <PortfolioCard key={id} title={title} project={project} src={src} />
         ))}
-      </div>
+      </CardsContainer>
     </Section>
   )
 }
