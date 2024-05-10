@@ -1,6 +1,7 @@
 :root {
   --main-color: #ffb400;
   --secondary-color: #2b2b2b;
+  --white-color: #fff;
   --bg-color: #f0f0f6;
   --font-color-main: #767676;
   --font-size-xs: 14px;
@@ -10,6 +11,7 @@
   --font-size-lg: 48px;
   --font-weight-normal: 400;
   --font-weight-regular: 500;
+  --font-weight-bold: 600;
   --line-height: 24px;
   --border-radius: 5px;
   --shadow: 0px 0px 10px 0px #00000026;

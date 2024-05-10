@@ -1,11 +1,11 @@
-import { ServicesListType } from "../../types/services-list-type"
+import { ServicesListType } from "../types/services-list-type"
 import { LiaLaptopCodeSolid } from "react-icons/lia"
 import { MdOutlineDesignServices } from "react-icons/md"
 import { CgWebsite } from "react-icons/cg"
 import { CgPerformance } from "react-icons/cg"
 import { CgBrowser } from "react-icons/cg"
 import { RiGithubLine } from "react-icons/ri"
-import { COLOR_YELLOW } from "../colors"
+import { COLOR_YELLOW } from "../constans/colors"
 
 export const useServicesList = () => {
   return [
