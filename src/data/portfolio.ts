@@ -1,25 +1,27 @@
-export const education = [
+import { SITE_MOCK, SITE_MOCK2, SITE_MOCK3 } from "../constans/images"
+
+export const portfolio = [
   {
-    university: "Udemy",
-    position: "Student",
-    date: "Jan 2021 - Feb 2022",
-    title: "Front-end Developing",
+    id: 1,
+    src: SITE_MOCK,
+    project: "ASX Sports",
+    title: "Fantasy Sports",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar quisque sed amet, nulla nunc. Eleifend sodales posuere fusce tempus etiam et pellentesque. Molestie risus enim neque eget dui.",
   },
   {
-    university: "Institute of Engineering, National University of Zaporizhzhia",
-    position: "Student",
-    date: "Sep 2015 - May 2018",
-    title: "Energy management",
+    id: 2,
+    src: SITE_MOCK2,
+    project: "Tuttify",
+    title: "Multilingual and Multiuser Educational Platform",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar quisque sed amet, nulla nunc. Eleifend sodales posuere fusce tempus etiam et pellentesque. Molestie risus enim neque eget dui.",
   },
   {
-    university: "Metallurgical College of Zaporizhzhia",
-    position: "Student",
-    date: "Sep 2011 - May 2015",
-    title: "Installation and operation of electrical equipment",
+    id: 3,
+    src: SITE_MOCK3,
+    project: "Maven 11",
+    title: "Landing Page for a cryptocurrency fund",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar quisque sed amet, nulla nunc. Eleifend sodales posuere fusce tempus etiam et pellentesque. Molestie risus enim neque eget dui.",
   },

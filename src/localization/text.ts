@@ -28,4 +28,10 @@ export const text = {
     SUBTITLE:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
   },
+
+  portfolio: {
+    TITLE: "Portfolio",
+    SUBTITLE:
+      "Some key projects that showcase my skills and knowledge in Front-end development include",
+  },
 }

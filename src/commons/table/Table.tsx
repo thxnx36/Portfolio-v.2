@@ -8,6 +8,7 @@ type Props = {
   date: string | number
   title: string
   description: string
+  url: string
 }
 
 export const Table: FC<Props> = ({
@@ -16,11 +17,14 @@ export const Table: FC<Props> = ({
   date,
   title,
   description,
+  url,
 }) => {
   return (
     <div className={styles.tableContainer}>
       <div className={styles.place}>
-        <h4 className={styles.namePlace}>{namePlace}</h4>
+        <a href={url} target="_blank">
+          <h4 className={styles.namePlace}>{namePlace}</h4>
+        </a>
         <div className={styles.period}>
           <p className={styles.position}>{namePosition}</p>
           <span className={styles.date}>
@@ -28,7 +32,6 @@ export const Table: FC<Props> = ({
           </span>
         </div>
       </div>
-
       <div className={styles.description}>
         <h4 className={styles.title}>{title}</h4>
         <Paragraph align="left" margin="0">
