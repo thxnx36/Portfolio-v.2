@@ -11,6 +11,11 @@ export const text = {
       "In the world of frontend development, innovation is the brush and code is the canvas, creating digital masterpieces that redefine user experiences",
   },
 
+  footer: {
+    RESERVED: "2024 All Rights Reserved",
+    TELEGRAM_NAME: "Vladosik",
+  },
+
   myServices: {
     TITLE: "My Services",
     SUBTITLE:
@@ -33,5 +38,11 @@ export const text = {
     TITLE: "Portfolio",
     SUBTITLE:
       "Some key projects that showcase my skills and knowledge in Front-end development include",
+  },
+
+  recommendations: {
+    TITLE: "Testimonials",
+    SUBTITLE:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
   },
 }

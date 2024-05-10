@@ -1,12 +1,13 @@
 import "./App.css"
-import { Counter } from "./features/counter/Counter"
 import { Education } from "./features/education/Education"
+import { Footer } from "./features/footer/Footer"
 import { Header } from "./features/header/Header"
 import { MyServices } from "./features/my-services/MyServices"
 import { Portfolio } from "./features/portfolio/Portfolio"
-import { Quotes } from "./features/quotes/Quotes"
+import { Recommendations } from "./features/recommendations/Recommendations"
 import { WorkHistory } from "./features/work-history/WorkHistory"
 import "./variables.css"
+import "react-multi-carousel/lib/styles.css"
 
 const App = () => {
   return (
@@ -15,10 +16,12 @@ const App = () => {
         <Header />
         <main>
           <MyServices />
+          <Portfolio />
+          <Recommendations />
           <WorkHistory />
           <Education />
-          <Portfolio />
         </main>
+        <Footer />
       </div>
     </div>
   )

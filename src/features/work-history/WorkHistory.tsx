@@ -3,7 +3,7 @@ import { SectionHeader } from "../../commons/section-header/SectionHeader"
 import { Section } from "../../commons/section/Section"
 import { Table } from "../../commons/table/Table"
 import { text } from "../../localization/text"
-import { workHistory } from "../../data/work-history"
+import { workHistory } from "../../db/work-history"
 
 export const WorkHistory = () => {
   return (

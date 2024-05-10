@@ -2,7 +2,7 @@ import { Box } from "../../commons/box/Box"
 import { SectionHeader } from "../../commons/section-header/SectionHeader"
 import { Section } from "../../commons/section/Section"
 import { Table } from "../../commons/table/Table"
-import { education } from "../../data/education"
+import { education } from "../../db/education"
 import { text } from "../../localization/text"
 
 export const Education = () => {
