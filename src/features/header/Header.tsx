@@ -1,5 +1,5 @@
 import { Container } from "../../commons/container/Container"
-import { Button } from "../../commons/button/Button"
+import { Button } from "../../commons/buttons/Button"
 import { HEADER_PHOTO } from "../../constans/images"
 import styles from "./Header.module.css"
 import { text } from "../../localization/text"

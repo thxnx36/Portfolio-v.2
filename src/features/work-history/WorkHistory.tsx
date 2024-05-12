@@ -14,7 +14,7 @@ export const WorkHistory = () => {
       />
       {workHistory.map(
         ({ company, position, date, title, description, url, id }) => (
-          <Box key={id} margin="0 0 5px">
+          <Box key={id} style={{ margin: "0 0 5px" }}>
             <Table
               namePlace={company}
               namePosition={position}
