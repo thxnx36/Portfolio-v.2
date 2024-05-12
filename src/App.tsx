@@ -3,6 +3,7 @@ import { Education } from "./features/education/Education"
 import { Footer } from "./features/footer/Footer"
 import { Header } from "./features/header/Header"
 import { MyServices } from "./features/my-services/MyServices"
+import { Navigation } from "./features/navigation/Navigation"
 import { Portfolio } from "./features/portfolio/Portfolio"
 import { Recommendations } from "./features/recommendations/Recommendations"
 import { WorkHistory } from "./features/work-history/WorkHistory"
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="app-container">
+        <Navigation />
         <Header />
         <main>
           <MyServices />

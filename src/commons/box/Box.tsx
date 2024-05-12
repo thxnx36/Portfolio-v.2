@@ -1,14 +1,14 @@
-import { FC, ReactNode } from "react"
+import { CSSProperties, FC, ReactNode } from "react"
 import styles from "./Box.module.css"
 
 type Props = {
   children: ReactNode
-  margin?: string
+  style?: CSSProperties
 }
 
-export const Box: FC<Props> = ({ children, margin }) => {
+export const Box: FC<Props> = ({ children, style }) => {
   return (
-    <div className={styles.box} style={{ margin }}>
+    <div className={styles.box} style={style}>
       {children}
     </div>
   )

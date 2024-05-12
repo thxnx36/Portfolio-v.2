@@ -12,7 +12,7 @@ export const text = {
   },
 
   footer: {
-    RESERVED: "2024 All Rights Reserved",
+    CREATED_BY: "2024 Created by",
     TELEGRAM_NAME: "Vladosik",
   },
 

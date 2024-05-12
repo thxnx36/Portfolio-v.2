@@ -94,6 +94,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 862px) {
+  .imageContainer {
+    height: auto;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .nameProject {
     font-size: var(--font-size-md-mobile);
@@ -101,9 +107,5 @@
 
   .titleProject {
     font-size: var(--font-size-xs);
-  }
-
-  .imageContainer {
-    height: auto;
   }
 }

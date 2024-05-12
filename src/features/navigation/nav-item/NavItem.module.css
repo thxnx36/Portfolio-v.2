@@ -1,0 +1,74 @@
+.navItem {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-color-grey);
+  cursor: pointer;
+}
+
+.navItem:not(:last-child) {
+  margin-right: 20px;
+}
+
+.navItem:hover {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
+
+.navItem::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  visibility: hidden;
+  text-align: center;
+  opacity: 0;
+  z-index: 99;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.navItem:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.active {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
+
+.link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 375px) {
+  .navItem {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navItem {
+    width: 30px;
+    height: 30px;
+  }
+
+  .link svg {
+    width: 1.2em;
+    height: 1.2em;
+  }
+}

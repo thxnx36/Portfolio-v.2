@@ -11,7 +11,7 @@ export const Footer = () => {
     <footer>
       <Container>
         <div className={styles.footerContent}>
-          <Paragraph margin="5px">{text.footer.RESERVED}</Paragraph>
+          <Paragraph margin="5px">{text.footer.CREATED_BY}</Paragraph>
           <div className={styles.contact}>
             <FaTelegram color={COLOR_BLUE} />
             <a target="_blank" href={TELEGRAM_URL}>
