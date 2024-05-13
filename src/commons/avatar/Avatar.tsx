@@ -1,12 +1,20 @@
-import { FC } from "react"
+import { CSSProperties, FC } from "react"
 import styles from "./Avatar.module.css"
 
 type Props = {
   src: string
-  status?: boolean
+  withBorder?: boolean
+  style?: CSSProperties
 }
-export const Avatar: FC<Props> = ({ src, status }) => {
-  return <div className={styles.avatarContainer}>
-        <img src={src} alt="profile-avatar" />
-  </div>
+export const Avatar: FC<Props> = ({ src, withBorder, style }) => {
+  return (
+    <div
+      style={style}
+      className={
+        withBorder ? `${styles.photo} ${styles.withBorder}` : styles.photo
+      }
+    >
+      <img src={src} alt="User-photo" />
+    </div>
+  )
 }

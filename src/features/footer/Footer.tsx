@@ -3,7 +3,7 @@ import { Paragraph } from "../../commons/paragraph/Paragraph"
 import { FaTelegram } from "react-icons/fa"
 import styles from "./Footer.module.css"
 import { COLOR_BLUE } from "../../constans/colors"
-import { TELEGRAM_URL } from "../../constans/link"
+import { TELEGRAM_URL } from "../../constans/URLs"
 import { text } from "../../localization/text"
 
 export const Footer = () => {

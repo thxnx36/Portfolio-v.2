@@ -1,9 +1,9 @@
 import { FC } from "react"
-import { Box } from "../../../commons/box/Box"
-import styles from "./RecommendCard.module.css"
 import { MdStar } from "react-icons/md"
 import { Paragraph } from "../../../commons/paragraph/Paragraph"
 import { COLOR_YELLOW } from "../../../constans/colors"
+import styles from "./RecommendCard.module.css"
+import { Avatar } from "../../../commons/avatar/Avatar"
 
 type Props = {
   rating: number
@@ -39,9 +39,7 @@ export const RecommedCard: FC<Props> = ({
         {comment}
       </Paragraph>
       <div className={styles.userInfo}>
-        <div className={styles.photo}>
-          <img src={userPhoto} alt="User-photo" />
-        </div>
+        <Avatar withBorder src={userPhoto} />
         <h4 className={styles.title}>{user}</h4>
       </div>
     </div>

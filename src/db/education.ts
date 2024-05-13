@@ -1,4 +1,4 @@
-import { UDEMY_URL, UNIVERSITY_URL } from "../constans/link"
+import { UDEMY_URL, UNIVERSITY_URL } from "../constans/URLs"
 
 export const education = [
   {
