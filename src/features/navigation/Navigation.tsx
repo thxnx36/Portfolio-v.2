@@ -10,7 +10,7 @@ import { TABLET } from "../../constans/screen"
 export const Navigation = () => {
   const [activeItem, setActiveItem] = useState<number>(1)
 
-  const navigationList = useNavigationList()
+  const { navigationList } = useNavigationList()
   const { isSmallScreen } = useResizeScreen(TABLET)
 
   const onChangeItem = useCallback((id: number) => setActiveItem(id), [])
