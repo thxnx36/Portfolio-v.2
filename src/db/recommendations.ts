@@ -12,8 +12,8 @@ export const recommendations = [
   },
   {
     id: 2,
-    rating: 4,
-    user: "James Bond",
+    rating: 5,
+    user: "Vikrant Gupta",
     title: "Amazing work",
     comment:
       "Vlad clearly understand the project goals and technical requirements ",
@@ -21,7 +21,7 @@ export const recommendations = [
   },
   {
     id: 3,
-    rating: 3,
+    rating: 4,
     user: "Adrew S",
     title: "Nice",
     comment:
@@ -30,7 +30,7 @@ export const recommendations = [
   },
   {
     id: 2,
-    rating: 1,
+    rating: 5,
     user: "Declan O'Salivan",
     title: "Good job",
     comment: "Excellent developer. The team is well structured with top level",

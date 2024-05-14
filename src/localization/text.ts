@@ -8,7 +8,7 @@ export const text = {
     PATH: "Front-end",
     SPECIALTY: "Developer",
     DESCRIPTION:
-      "In the world of frontend development, innovation is the brush and code is the canvas, creating digital masterpieces that redefine user experiences",
+      "In the world of front-end development, innovation is the brush and code is the canvas, creating digital masterpieces that redefine user experiences",
   },
 
   footer: {

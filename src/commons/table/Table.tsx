@@ -1,6 +1,7 @@
 import { FC } from "react"
 import styles from "./Table.module.css"
 import { Paragraph } from "../paragraph/Paragraph"
+import { Title } from "../title/Title"
 
 type Props = {
   namePlace: string
@@ -22,8 +23,15 @@ export const Table: FC<Props> = ({
   return (
     <div className={styles.tableContainer}>
       <div className={styles.place}>
-        <a href={url} target="_blank">
-          <h4 className={styles.namePlace}>{namePlace}</h4>
+        <a className={styles.link} href={url} target="_blank">
+          <Title
+            style={{ marginBottom: "15px" }}
+            type="h4"
+            size="sm"
+            fontWeight="regular"
+          >
+            {namePlace}
+          </Title>
         </a>
         <div className={styles.period}>
           <p className={styles.position}>{namePosition}</p>
@@ -33,7 +41,9 @@ export const Table: FC<Props> = ({
         </div>
       </div>
       <div className={styles.description}>
-        <h4 className={styles.title}>{title}</h4>
+        <Title type="h4" size="sm" fontWeight="regular">
+          {title}
+        </Title>
         <Paragraph align="left" margin="0">
           {description}
         </Paragraph>

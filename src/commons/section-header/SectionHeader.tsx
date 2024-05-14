@@ -10,7 +10,7 @@ type Props = {
 export const SectionHeader: FC<Props> = ({ title, subTitle }) => {
   return (
     <>
-      <Title>{title}</Title>
+      <Title type="h2">{title}</Title>
       <Paragraph>{subTitle}</Paragraph>
     </>
   )
