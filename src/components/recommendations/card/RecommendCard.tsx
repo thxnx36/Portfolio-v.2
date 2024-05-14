@@ -1,0 +1,62 @@
+import { FC } from "react"
+import { MdStar } from "react-icons/md"
+import { Paragraph } from "../../../commons/paragraph/Paragraph"
+import { COLOR_YELLOW } from "../../../constans/colors"
+import { Avatar } from "../../../commons/avatar/Avatar"
+import { Title } from "../../../commons/title/Title"
+import styles from "./RecommendCard.module.css"
+
+type Props = {
+  rating: number
+  user: string
+  title: string
+  comment: string
+  userPhoto: string
+}
+
+export const RecommedCard: FC<Props> = ({
+  rating,
+  user,
+  title,
+  comment,
+  userPhoto,
+}) => {
+  const quantityRatingStars = Array.from(
+    { length: rating },
+    (_, index) => index + 1,
+  )
+
+  return (
+    <div className={styles.container}>
+      <ul className={styles.rating}>
+        {quantityRatingStars.map(item => (
+          <li key={item} className={styles.star}>
+            <MdStar color={COLOR_YELLOW} size={"1.5em"} />
+          </li>
+        ))}
+      </ul>
+      <Title
+        style={{ marginBottom: "15px" }}
+        type="h4"
+        size="sm"
+        fontWeight="regular"
+      >
+        {title}
+      </Title>
+      <Paragraph margin="0 0 25px" align="left">
+        {comment}
+      </Paragraph>
+      <div className={styles.userInfo}>
+        <Avatar withBorder src={userPhoto} />
+        <Title
+          style={{ marginBottom: "15px" }}
+          type="h4"
+          size="sm"
+          fontWeight="regular"
+        >
+          {user}
+        </Title>
+      </div>
+    </div>
+  )
+}

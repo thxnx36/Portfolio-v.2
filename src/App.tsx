@@ -1,33 +1,36 @@
 import "./App.css"
-import { Education } from "./features/education/Education"
-import { Footer } from "./features/footer/Footer"
-import { Header } from "./features/header/Header"
-import { MyServices } from "./features/my-services/MyServices"
-import { Navigation } from "./features/navigation/Navigation"
-import { Portfolio } from "./features/portfolio/Portfolio"
-import { Recommendations } from "./features/recommendations/Recommendations"
-import { Sidebar } from "./features/sidebar/Sidebar"
-import { WorkHistory } from "./features/work-history/WorkHistory"
+import { Education } from "./components/education/Education"
+import { Footer } from "./components/footer/Footer"
+import { Header } from "./components/header/Header"
+import { MyServices } from "./components/my-services/MyServices"
+import { Navigation } from "./components/navigation/Navigation"
+import { Portfolio } from "./components/portfolio/Portfolio"
+import { Recommendations } from "./components/recommendations/Recommendations"
+import { Sidebar } from "./components/sidebar/Sidebar"
+import { WorkHistory } from "./components/work-history/WorkHistory"
+import { ThemeProvider } from "./providers/ThemeProvider"
 import "./variables.css"
 import "react-multi-carousel/lib/styles.css"
 
 const App = () => {
   return (
-    <div className="App">
-      <div className="app-container">
-        <Sidebar />
-        <Navigation />
-        <Header />
-        <main>
-          <MyServices />
-          <Portfolio />
-          <Recommendations />
-          <WorkHistory />
-          <Education />
-        </main>
-        <Footer />
+    <ThemeProvider>
+      <div className="App">
+        <div className="app-container">
+          <Sidebar />
+          <Navigation />
+          <Header />
+          <main>
+            <MyServices />
+            <Portfolio />
+            <Recommendations />
+            <WorkHistory />
+            <Education />
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   )
 }
 

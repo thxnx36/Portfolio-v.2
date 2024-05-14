@@ -8,7 +8,7 @@
   font-weight: 500;
   color: var(--secondary-color);
   text-transform: uppercase;
-  box-shadow: var(--shadow);
+  box-shadow: var(--box-shadow);
   cursor: pointer;
   position: relative;
 }

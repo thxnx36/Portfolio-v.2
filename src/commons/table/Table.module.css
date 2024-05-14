@@ -10,15 +10,7 @@ a {
   position: relative;
 }
 
-.namePlace {
-  max-width: 300px;
-  font-weight: var(--font-weight-regular);
-  margin-bottom: 25px;
-  line-height: 22px;
-  color: var(--secondary-color);
-}
-
-.namePlace::after {
+.link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -32,7 +24,7 @@ a {
     background-color 0.3s ease;
 }
 
-.namePlace:hover::after {
+.link:hover::after {
   width: 100%;
 }
 
@@ -44,7 +36,7 @@ a {
 
 .position {
   font-weight: var(--font-weight-normal);
-  color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .date {
@@ -54,24 +46,10 @@ a {
   padding: 4px 7px;
 }
 
-.title {
-  font-weight: var(--font-weight-regular);
-  margin-bottom: 25px;
-  color: var(--secondary-color);
-}
-
 @media screen and (max-width: 768px) {
   .tableContainer {
     gap: 16px;
     flex-direction: column;
-  }
-
-  .namePlace {
-    margin-bottom: 10px;
-  }
-
-  .title {
-    margin-bottom: 20px;
   }
 
   .description p {

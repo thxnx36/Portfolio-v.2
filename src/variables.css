@@ -7,6 +7,8 @@
   --orange-color: #ffa500;
   --green-color: #008000;
   --bg-color: #f0f0f6;
+  --bg-color-body-dark: #18191a;
+  --bg-color-container: #242526;
   --bg-color-grey: #f0f0f6;
   --font-color-main: #767676;
 
@@ -29,6 +31,6 @@
   --border-radius: 5px;
 
   /* box shadow */
-  --shadow: 0 10px 10px #0505060d;
-  --shadow-secondary: 0px 0px 10px 0px #00000026;
+  --shadow-light: 0 10px 10px #0505060d;
+  --shadow-dark: 0px 0px 10px 0px #00000026;
 }

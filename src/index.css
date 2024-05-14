@@ -7,11 +7,23 @@
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-normal);
   color: var(--font-color-main);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+
+  --background-color: var(--white-color);
+  --text-color: var(--secondary-color);
+  --box-shadow: var(--shadow-light);
+}
+
+body.dark {
+  background-color: var(--bg-color-body-dark);
+  --background-color: var(--bg-color-container);
+  --text-color: var(--white-color);
+  --box-shadow: var(--shadow-dark);
 }
 
 h1,

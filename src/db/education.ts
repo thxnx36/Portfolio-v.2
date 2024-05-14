@@ -13,7 +13,7 @@ export const education = [
   },
   {
     id: 2,
-    university: "Institute of Engineering, National University of Zaporizhzhia",
+    university: "Institute of Engineering",
     position: "Student",
     date: "Sep 2015 - May 2018",
     title: "Energy management",
