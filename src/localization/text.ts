@@ -1,6 +1,8 @@
 export const text = {
   button: {
     HIRE: "Hire me",
+    SEND_MESSAGE: "send message",
+    DOWNLOAD: "Download CV",
   },
 
   header: {
@@ -50,6 +52,19 @@ export const text = {
     NAME: "Vlad Kryvytchenko",
     SKILLS: "Skills",
     LANGUAGES: "Languages",
-    DOWNLOAD: "Download CV",
+  },
+
+  form: {
+    TITLE: "Leave me Your info",
+    TEXT_ME_MESSENGERS: "Or text me on the messengers",
+  },
+
+  input: {
+    placeholder: {
+      YOUR_NAME: "Your Full Name",
+      YOUR_EMAIL: "Your Email",
+      YOUR_SUBJECT: "Subject",
+      YOUR_MESSAGE: "Your Message",
+    },
   },
 }

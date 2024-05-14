@@ -45,3 +45,10 @@ button {
   border: none;
   cursor: pointer;
 }
+
+input,
+textarea {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  font-family: "Inter", sans-serif;
+}

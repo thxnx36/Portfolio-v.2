@@ -41,7 +41,7 @@ export const Sidebar = () => {
           <div className={styles.line} />
           <Button
             style={{ width: "100%", padding: "10px", fontSize: "12px" }}
-            text={text.sideBar.DOWNLOAD}
+            text={text.button.DOWNLOAD}
           />
         </div>
         <div className={styles.showInfoBtn}>
