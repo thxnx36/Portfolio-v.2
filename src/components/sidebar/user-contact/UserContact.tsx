@@ -3,7 +3,7 @@ import { Avatar } from "../../../commons/avatar/Avatar"
 import { Paragraph } from "../../../commons/paragraph/Paragraph"
 import { MOCK_USER } from "../../../constans/images"
 import { MySocialListType } from "../../../types/my-social-list-type"
-import { SocialList } from "../social-list/SocialList"
+import { SocialList } from "../../../commons/social-list/SocialList"
 import styles from "./UserContact.module.css"
 
 type Props = {

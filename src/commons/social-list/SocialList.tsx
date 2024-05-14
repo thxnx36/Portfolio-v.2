@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { MySocialListType } from "../../../types/my-social-list-type"
+import { MySocialListType } from "../../types/my-social-list-type"
 import styles from "./SocialList.module.css"
 
 type Props = {
