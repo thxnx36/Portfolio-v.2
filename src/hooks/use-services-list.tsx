@@ -4,8 +4,8 @@ import { MdOutlineDesignServices } from "react-icons/md"
 import { CgWebsite } from "react-icons/cg"
 import { CgPerformance } from "react-icons/cg"
 import { CgBrowser } from "react-icons/cg"
-import { RiGithubLine } from "react-icons/ri"
-import { COLOR_YELLOW } from "../constans/colors"
+import { COLOR_YELLOW } from "../constans"
+import { FaGit } from "react-icons/fa"
 import { useMemo } from "react"
 
 export const useServicesList = () => {
@@ -44,7 +44,7 @@ export const useServicesList = () => {
       {
         title: "Version Control",
         text: "Managing code versions using Git version control system for efficient collaboration and change tracking",
-        icon: <RiGithubLine size="5em" color={COLOR_YELLOW} />,
+        icon: <FaGit size="5em" color={COLOR_YELLOW} />,
         id: 6,
       },
     ],

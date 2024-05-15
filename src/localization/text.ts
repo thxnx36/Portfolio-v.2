@@ -3,6 +3,7 @@ export const text = {
     HIRE: "Hire me",
     SEND_MESSAGE: "send message",
     DOWNLOAD: "Download CV",
+    GO_BACK: "Go Back Home",
   },
 
   header: {
@@ -14,7 +15,7 @@ export const text = {
   },
 
   footer: {
-    CREATED_BY: "2024 Created by",
+    CREATED_BY: "Created by",
     TELEGRAM_NAME: "Vladosik",
   },
 
@@ -43,7 +44,7 @@ export const text = {
   },
 
   recommendations: {
-    TITLE: "Testimonials",
+    TITLE: "Recommendations",
     SUBTITLE:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
   },
@@ -65,6 +66,13 @@ export const text = {
       YOUR_EMAIL: "Your Email",
       YOUR_SUBJECT: "Subject",
       YOUR_MESSAGE: "Your Message",
+    },
+  },
+
+  pages: {
+    notFound: {
+      NOT_FOUND: "SORRY, PAGE NOT FOUND!",
+      RETURN_HOME: "Don't panic just click the big button to retun home",
     },
   },
 }

@@ -3,8 +3,13 @@ import styles from "./Section.module.css"
 
 type Props = {
   children: ReactNode
+  id?: string
 }
 
-export const Section: FC<Props> = ({ children }) => {
-  return <section className={styles.section}>{children}</section>
+export const Section: FC<Props> = ({ children, id }) => {
+  return (
+    <section id={id} className={styles.section}>
+      {children}
+    </section>
+  )
 }

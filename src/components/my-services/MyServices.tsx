@@ -1,7 +1,5 @@
-import { CardsContainer } from "../../commons/cards-container/CardsContainer"
-import { SectionHeader } from "../../commons/section-header/SectionHeader"
-import { Section } from "../../commons/section/Section"
-import { useServicesList } from "../../hooks/use-services-list"
+import { CardsContainer, Section, SectionHeader } from "../../commons"
+import { useServicesList } from "../../hooks"
 import { text } from "../../localization/text"
 import { Card } from "./card/Card"
 
@@ -9,7 +7,7 @@ export const MyServices = () => {
   const { servicesList } = useServicesList()
 
   return (
-    <Section>
+    <Section id="services">
       <SectionHeader
         title={text.myServices.TITLE}
         subTitle={text.myServices.SUBTITLE}

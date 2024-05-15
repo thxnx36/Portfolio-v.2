@@ -1,14 +1,14 @@
-import { MOCK_USER } from "../constans/images"
+import { userPhoto } from "../assets"
 
 export const recommendations = [
   {
     id: 1,
     rating: 5,
     user: "Simon Riley",
-    title: "Great Quality!",
+    title: "Great!",
     comment:
       "We highly recommend Elementica as a reliable team of solid engineers",
-    userPhoto: MOCK_USER,
+    userPhoto: userPhoto,
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const recommendations = [
     title: "Amazing work",
     comment:
       "Vlad clearly understand the project goals and technical requirements ",
-    userPhoto: MOCK_USER,
+    userPhoto: userPhoto,
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const recommendations = [
     title: "Nice",
     comment:
       "Another job well done by Elementica. I highly recommend Vlad & his team",
-    userPhoto: MOCK_USER,
+    userPhoto: userPhoto,
   },
   {
     id: 2,
@@ -34,6 +34,6 @@ export const recommendations = [
     user: "Declan O'Salivan",
     title: "Good job",
     comment: "Excellent developer. The team is well structured with top level",
-    userPhoto: MOCK_USER,
+    userPhoto: userPhoto,
   },
 ]

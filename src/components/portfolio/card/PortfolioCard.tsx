@@ -1,15 +1,19 @@
 import { FC } from "react"
 import { AiOutlineApple } from "react-icons/ai"
+import { Link } from "react-router-dom"
+import { Container } from "../../../commons"
+import { ROUTES } from "../../../routes"
+import { FiExternalLink } from "react-icons/fi"
 import styles from "./PortfolioCard.module.css"
-import { Container } from "../../../commons/container/Container"
 
 type Props = {
+  id: number
   src: string
   title: string
   project: string
 }
 
-export const PortfolioCard: FC<Props> = ({ src, title, project }) => {
+export const PortfolioCard: FC<Props> = ({ src, title, project, id }) => {
   return (
     <Container>
       <div className={styles.container}>
@@ -23,7 +27,11 @@ export const PortfolioCard: FC<Props> = ({ src, title, project }) => {
         <div className={styles.imageContainer}>
           <img src={src} alt="portfolio-picture" />
           <div className={styles.content}>
-            <h4 className={styles.nameProject}>{project}</h4>
+            <Link to={ROUTES.dynamic.projectId(id.toString())}>
+              <h4 className={styles.nameProject}>
+                {project} <FiExternalLink size="0.5em" />
+              </h4>
+            </Link>
             <p className={styles.titleProject}>{title}</p>
           </div>
         </div>

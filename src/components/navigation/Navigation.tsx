@@ -1,13 +1,12 @@
-import { Container } from "../../commons/container/Container"
-import { useNavigationList } from "../../hooks/use-navigation-list"
+import { useNavigationList } from "../../hooks"
 import { useState, useCallback, useContext } from "react"
-import { useResizeScreen } from "../../hooks/use-resize-screen"
+import { useResizeScreen } from "../../hooks"
 import { DesktopNavigation } from "./desktop-navigation/DesktopNavigation"
-import styles from "./Navigation.module.css"
 import { MobileNavigation } from "./mobile-navigation/MobileNavigation"
-import { TABLET } from "../../constans/screen"
-import { ThemeContext } from "../../providers/ThemeProvider"
-import { DARK, LIGHT } from "../../constans/theme"
+import { TABLET } from "../../constans"
+import { ThemeContext } from "../../providers"
+import { DARK, LIGHT } from "../../constans"
+import { Container } from "../../commons"
 
 export const Navigation = () => {
   const { theme, changeTheme } = useContext(ThemeContext)

@@ -44,7 +44,7 @@ export const Table: FC<Props> = ({
         <Title type="h4" size="sm" fontWeight="regular">
           {title}
         </Title>
-        <Paragraph align="left" margin="0">
+        <Paragraph style={{ textAlign: "left", margin: 0 }}>
           {description}
         </Paragraph>
       </div>

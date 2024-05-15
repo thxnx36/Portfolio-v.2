@@ -1,0 +1,32 @@
+.container {
+  padding: 20px;
+}
+
+.link {
+  color: var(--main-color);
+  font-size: 17px;
+  margin-left: 5px;
+}
+
+.stack {
+  padding: 14px;
+  background-color: var(--dark-yellow-color);
+}
+
+@media screen and (max-width: 584px) {
+  .stack {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .container {
+    padding: 10px;
+  }
+}

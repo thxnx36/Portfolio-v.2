@@ -1,7 +1,7 @@
 import { FC, ReactElement, ReactNode } from "react"
 import Carousel from "react-multi-carousel"
+import { RESPONSIVE } from "../../constans"
 import styles from "./Slider.module.css"
-import { responsive } from "../../constans/slider"
 
 type Props = {
   leftArrow?: ReactElement
@@ -29,7 +29,7 @@ export const Slider: FC<Props> = ({ children }) => {
       renderArrowsWhenDisabled={false}
       renderButtonGroupOutside={false}
       renderDotsOutside={false}
-      responsive={responsive}
+      responsive={RESPONSIVE}
       rewind={false}
       rewindWithAnimation={false}
       rtl={false}

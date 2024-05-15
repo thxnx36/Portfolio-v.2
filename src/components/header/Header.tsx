@@ -1,12 +1,9 @@
-import { Container } from "../../commons/container/Container"
-import { Button } from "../../commons/buttons/Button"
-import { HEADER_PHOTO } from "../../constans/images"
-import { text } from "../../localization/text"
-import { Title } from "../../commons/title/Title"
 import { IoIosArrowRoundForward } from "react-icons/io"
 import { useCallback, useState } from "react"
-import { Modal } from "../../commons/modal/Modal"
 import { Form } from "../form/Form"
+import { headerPhoto } from "../../assets"
+import { Button, Container, Modal, Title } from "../../commons"
+import { text } from "../../localization"
 import styles from "./Header.module.css"
 
 export const Header = () => {
@@ -37,7 +34,7 @@ export const Header = () => {
             />
           </div>
           <div className={styles.image}>
-            <img src={HEADER_PHOTO} alt="header-picture" />
+            <img src={headerPhoto} alt="header-picture" />
           </div>
         </div>
       </Container>

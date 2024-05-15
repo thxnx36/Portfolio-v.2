@@ -1,9 +1,7 @@
 import { FC } from "react"
 import { MdStar } from "react-icons/md"
-import { Paragraph } from "../../../commons/paragraph/Paragraph"
-import { COLOR_YELLOW } from "../../../constans/colors"
-import { Avatar } from "../../../commons/avatar/Avatar"
-import { Title } from "../../../commons/title/Title"
+import { COLOR_YELLOW } from "../../../constans"
+import { Avatar, Paragraph, Title } from "../../../commons"
 import styles from "./RecommendCard.module.css"
 
 type Props = {
@@ -43,7 +41,7 @@ export const RecommedCard: FC<Props> = ({
       >
         {title}
       </Title>
-      <Paragraph margin="0 0 25px" align="left">
+      <Paragraph style={{ textAlign: "left", margin: "0 0 25px" }}>
         {comment}
       </Paragraph>
       <div className={styles.userInfo}>

@@ -1,13 +1,10 @@
-import { SectionHeader } from "../../commons/section-header/SectionHeader"
-import { Section } from "../../commons/section/Section"
-import { Table } from "../../commons/table/Table"
-import { text } from "../../localization/text"
-import { workHistory } from "../../db/work-history"
-import { Container } from "../../commons/container/Container"
+import { text } from "../../localization"
+import { workHistory } from "../../db"
+import { Container, Section, SectionHeader, Table } from "../../commons"
 
 export const WorkHistory = () => {
   return (
-    <Section>
+    <Section id="work-history">
       <SectionHeader
         title={text.workHistory.TITLE}
         subTitle={text.workHistory.SUBTITLE}

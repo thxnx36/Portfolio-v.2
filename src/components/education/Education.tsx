@@ -1,13 +1,10 @@
-import { Container } from "../../commons/container/Container"
-import { SectionHeader } from "../../commons/section-header/SectionHeader"
-import { Section } from "../../commons/section/Section"
-import { Table } from "../../commons/table/Table"
-import { education } from "../../db/education"
-import { text } from "../../localization/text"
+import { Container, Section, SectionHeader, Table } from "../../commons"
+import { education } from "../../db"
+import { text } from "../../localization"
 
 export const Education = () => {
   return (
-    <Section>
+    <Section id="education">
       <SectionHeader
         title={text.education.TITLE}
         subTitle={text.education.SUBTITLE}

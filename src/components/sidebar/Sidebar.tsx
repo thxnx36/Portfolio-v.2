@@ -1,14 +1,12 @@
-import { useMySocialList } from "../../hooks/use-my-social-list"
+import { useMySocialList } from "../../hooks"
 import { UserContact } from "./user-contact/UserContact"
 import { TechSkills } from "./tech-skills/TechSkills"
-import { skills } from "../../db/skills"
-import { languages } from "../../db/languages"
-import { Button } from "../../commons/buttons/Button"
-import { text } from "../../localization/text"
-import { CollapseButton } from "../../commons/buttons/collapse-button/CallapseButton"
+import { skills } from "../../db"
+import { languages } from "../../db"
+import { text } from "../../localization"
 import { useState } from "react"
+import { Button, CollapseButton, Container } from "../../commons"
 import styles from "./Sidebar.module.css"
-import { Container } from "../../commons/container/Container"
 
 export const Sidebar = () => {
   const [showMore, setShowMore] = useState(false)
