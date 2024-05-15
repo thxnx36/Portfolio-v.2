@@ -1,15 +1,13 @@
 import { SectionHeader } from "../../commons/section-header/SectionHeader"
 import { Section } from "../../commons/section/Section"
-import { text } from "../../localization/text"
+import { text } from "../../localization"
 import { RecommedCard } from "./card/RecommendCard"
-import { recommendations } from "../../db/recommendations"
+import { recommendations } from "../../db"
 import { Slider } from "../../commons/slider/Slider"
-// import { MdArrowBackIos } from "react-icons/md"
-// import { MdArrowForwardIos } from "react-icons/md"
 
 export const Recommendations = () => {
   return (
-    <Section>
+    <Section id="recommendations">
       <SectionHeader
         title={text.recommendations.TITLE}
         subTitle={text.recommendations.SUBTITLE}

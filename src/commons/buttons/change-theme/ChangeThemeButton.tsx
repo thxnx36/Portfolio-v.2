@@ -1,7 +1,7 @@
 import { FC, ReactNode, CSSProperties, useEffect, useState } from "react"
 import { IoMoonSharp } from "react-icons/io5"
 import { FaSun } from "react-icons/fa6"
-import { DARK, LIGHT } from "../../../constans/theme"
+import { DARK, LIGHT } from "../../../constans"
 import { getStorageValue } from "../../../utils/local-storage"
 
 type Props = {

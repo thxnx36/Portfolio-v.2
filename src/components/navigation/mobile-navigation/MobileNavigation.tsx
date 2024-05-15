@@ -1,11 +1,14 @@
 import { NavigationListType } from "../../../types/navigation-list-type"
 import { FC, useState } from "react"
 import { NavItem } from "../nav-item/NavItem"
-import { ChangeThemeButton } from "../../../commons/buttons/change-theme/ChangeThemeButton"
-import { BurgerButton } from "../../../commons/buttons/burger-button/BurgerButton"
-import { UserInfoButton } from "../../../commons/buttons/user-info-button/UserInfoButton"
+import {
+  BurgerButton,
+  ChangeThemeButton,
+  Container,
+  Modal,
+  UserInfoButton,
+} from "../../../commons"
 import styles from "./MobileNavigation.module.css"
-import { Container } from "../../../commons/container/Container"
 
 type Props = {
   onChangeItem: (id: number) => void
@@ -20,22 +23,24 @@ export const MobileNavigation: FC<Props> = ({
   isActiveItem,
   navigationList,
 }) => {
-  const [showNav, setShowNav] = useState<boolean>(false)
+  const [showNavPanel, setShowNavPanel] = useState<boolean>(false)
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 
-  const onOpenMenu = () => setShowNav(prev => !prev)
+  const handleMenu = () => setShowNavPanel(prev => !prev)
+  const handleModal = () => setIsOpenModal(prev => !prev)
 
   return (
     <>
       <div className={styles.mobileNavContent}>
-        <UserInfoButton />
+        <UserInfoButton onClick={handleModal} />
         <ChangeThemeButton onClick={onChangeTheme} />
-        <BurgerButton onClick={onOpenMenu} />
+        <BurgerButton onClick={handleMenu} />
       </div>
 
       <Container
         style={{
           position: "absolute",
-          bottom: !showNav ? "150%" : "-150%",
+          bottom: !showNavPanel ? "150%" : "-150%",
           transition: "bottom 0.5s ease",
         }}
       >
@@ -52,6 +57,12 @@ export const MobileNavigation: FC<Props> = ({
           ))}
         </ul>
       </Container>
+
+      {isOpenModal && (
+        <Modal onClose={handleModal}>
+          <>User Info Panel</>
+        </Modal>
+      )}
     </>
   )
 }

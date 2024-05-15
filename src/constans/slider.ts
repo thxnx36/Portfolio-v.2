@@ -1,4 +1,4 @@
-export const responsive = {
+export const RESPONSIVE = {
   desktop: {
     breakpoint: {
       max: 3000,

@@ -1,14 +1,6 @@
-import {
-  useState,
-  useEffect,
-  createContext,
-  ReactNode,
-  Dispatch,
-  SetStateAction,
-  FC,
-} from "react"
-import { LIGHT } from "../constans/theme"
-import { useLocalStorage } from "../hooks/use-local-storage"
+import { useEffect, createContext, ReactNode, FC } from "react"
+import { LIGHT } from "../constans"
+import { useLocalStorage } from "../hooks"
 
 type ThemeContextProps = {
   theme: string
@@ -26,7 +18,6 @@ export const ThemeContext = createContext<ThemeContextProps>({
 
 export const ThemeProvider: FC<ThemeProvider> = ({ children }) => {
   const [theme, setTheme] = useLocalStorage("theme", LIGHT)
-  //   const [theme, setTheme] = useState("light")
 
   const changeTheme = (theme: string) => setTheme(theme)
 

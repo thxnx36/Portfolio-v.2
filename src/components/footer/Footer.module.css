@@ -11,10 +11,6 @@
   gap: 5px;
 }
 
-a:visited {
-  color: inherit;
-}
-
 .name {
   color: var(--text-color);
 }

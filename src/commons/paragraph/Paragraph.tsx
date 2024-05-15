@@ -1,18 +1,14 @@
-import { FC, ReactNode } from "react"
+import { CSSProperties, FC, ReactNode } from "react"
 import styles from "./Paragraph.module.css"
 
 export type Props = {
   children: ReactNode
-  margin?: string
-  align?: string
+  style?: CSSProperties
 }
 
-export const Paragraph: FC<Props> = ({ children, margin, align }) => {
+export const Paragraph: FC<Props> = ({ children, style }) => {
   return (
-    <p
-      className={styles.paragraph}
-      style={{ margin, textAlign: !align ? "center" : "left" }}
-    >
+    <p className={styles.paragraph} style={style}>
       {children}
     </p>
   )

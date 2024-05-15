@@ -1,7 +1,5 @@
 import { FC, ReactNode } from "react"
-import { Paragraph } from "../../../commons/paragraph/Paragraph"
-import { Container } from "../../../commons/container/Container"
-import { Title } from "../../../commons/title/Title"
+import { Container, Paragraph, Title } from "../../../commons"
 import styles from "./Card.module.css"
 
 type Props = {
@@ -23,7 +21,7 @@ export const Card: FC<Props> = ({ icon, title, subTitle }) => {
         >
           {title}
         </Title>
-        <Paragraph margin="0">{subTitle}</Paragraph>
+        <Paragraph style={{ margin: 0 }}>{subTitle}</Paragraph>
       </div>
     </Container>
   )

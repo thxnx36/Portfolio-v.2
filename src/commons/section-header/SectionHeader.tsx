@@ -1,6 +1,6 @@
 import { FC } from "react"
-import { Paragraph } from "../paragraph/Paragraph"
 import { Title } from "../title/Title"
+import { Paragraph } from "../paragraph"
 
 type Props = {
   title: string

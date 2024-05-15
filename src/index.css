@@ -40,6 +40,10 @@ li {
   padding: 0;
 }
 
+a {
+  color: inherit;
+}
+
 button {
   background-color: transparent;
   border: none;

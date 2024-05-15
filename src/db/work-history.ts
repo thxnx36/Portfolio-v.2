@@ -1,4 +1,4 @@
-import { COMPANY_URL } from "../constans/URLs"
+import { COMPANY_URL } from "../constans"
 
 export const workHistory = [
   {

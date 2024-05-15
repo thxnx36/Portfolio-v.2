@@ -76,7 +76,7 @@
 
 .nameProject {
   color: var(--main-color);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-bold);
 }
 

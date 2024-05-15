@@ -1,11 +1,13 @@
-import { Button } from "../../commons/buttons/Button"
-import { Input } from "../../commons/input/Input"
-import { Paragraph } from "../../commons/paragraph/Paragraph"
-import { SocialList } from "../../commons/social-list/SocialList"
-import { Textarea } from "../../commons/textarea/Textarea"
-import { Title } from "../../commons/title/Title"
-import { useMySocialList } from "../../hooks/use-my-social-list"
-import { text } from "../../localization/text"
+import {
+  Button,
+  Input,
+  Paragraph,
+  SocialList,
+  Textarea,
+  Title,
+} from "../../commons"
+import { useMySocialList } from "../../hooks"
+import { text } from "../../localization"
 
 export const Form = () => {
   const { socialList } = useMySocialList()
@@ -33,7 +35,9 @@ export const Form = () => {
           alignItems: "center",
         }}
       >
-        <Paragraph margin="15px 0 0">{text.form.TEXT_ME_MESSENGERS}</Paragraph>
+        <Paragraph style={{ margin: "15px 0 0" }}>
+          {text.form.TEXT_ME_MESSENGERS}
+        </Paragraph>
         <SocialList list={socialList} />
       </div>
     </form>

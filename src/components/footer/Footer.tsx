@@ -1,20 +1,20 @@
-import { Container } from "../../commons/container/Container"
-import { Paragraph } from "../../commons/paragraph/Paragraph"
-import { FaTelegram } from "react-icons/fa"
+import { DiGithubFull } from "react-icons/di"
+import { GIT_HUB } from "../../constans"
+import { text } from "../../localization"
+import { Container, Paragraph } from "../../commons"
 import styles from "./Footer.module.css"
-import { COLOR_BLUE } from "../../constans/colors"
-import { TELEGRAM_URL } from "../../constans/URLs"
-import { text } from "../../localization/text"
 
 export const Footer = () => {
   return (
     <footer>
       <Container>
         <div className={styles.footerContent}>
-          <Paragraph margin="5px">{text.footer.CREATED_BY}</Paragraph>
+          <Paragraph style={{ margin: "0" }}>
+            {text.footer.CREATED_BY}
+          </Paragraph>
           <div className={styles.contact}>
-            <FaTelegram color={COLOR_BLUE} />
-            <a target="_blank" href={TELEGRAM_URL}>
+            <DiGithubFull size="2em" />
+            <a target="_blank" href={GIT_HUB}>
               <p className={styles.name}>{text.footer.TELEGRAM_NAME}</p>
             </a>
           </div>
