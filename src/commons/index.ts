@@ -24,6 +24,8 @@ import { Title } from "./title"
 import { BrowserTabTitle } from "./browser-tab-title"
 import { Layout } from "./layout"
 import { Routes } from "./routes"
+import { AnimatedDiv } from "./animated-div"
+import { ScrollTopButton } from "./buttons"
 
 export {
   Avatar,
@@ -50,4 +52,6 @@ export {
   BrowserTabTitle,
   Layout,
   Routes,
+  AnimatedDiv,
+  ScrollTopButton,
 }

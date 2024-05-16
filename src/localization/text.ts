@@ -6,6 +6,14 @@ export const text = {
     GO_BACK: "Go Back",
   },
 
+  navigation: {
+    SERVICES: "Services",
+    PORTFOLIO: "Portfolio",
+    RECOMMEND: "Recommendations",
+    WORK_HISTORY: "Work History",
+    EDUCATION: "Education",
+  },
+
   header: {
     NAME: "Hi! I'm Vlad Kryvytchenko",
     PATH: "Front-end",
