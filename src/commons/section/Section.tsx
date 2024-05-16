@@ -1,4 +1,5 @@
 import { CSSProperties, FC, ReactNode } from "react"
+import { AnimatedDiv } from "../animated-div"
 import styles from "./Section.module.css"
 
 type Props = {
@@ -9,8 +10,10 @@ type Props = {
 
 export const Section: FC<Props> = ({ children, id, style }) => {
   return (
-    <section id={id} style={style} className={styles.section}>
-      {children}
-    </section>
+    <AnimatedDiv id={id} type="section">
+      <div style={style} className={styles.section}>
+        {children}
+      </div>
+    </AnimatedDiv>
   )
 }

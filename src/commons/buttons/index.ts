@@ -4,6 +4,7 @@ import { ChangeThemeButton } from "./change-theme/ChangeThemeButton"
 import { CollapseButton } from "./collapse-button/CallapseButton"
 import { UserInfoButton } from "./user-info-button/UserInfoButton"
 import { BackButton } from "./back-button/BackButton"
+import { ScrollTopButton } from "./scroll-top"
 
 export {
   Button,
@@ -12,4 +13,5 @@ export {
   CollapseButton,
   UserInfoButton,
   BackButton,
+  ScrollTopButton,
 }
