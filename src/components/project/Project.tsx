@@ -23,11 +23,7 @@ export const Project = () => {
         projectTitle={data?.project}
         imgSrc={data?.src}
       />
-      <Title
-        style={{ margin: "0 0 25px", fontSize: "24px" }}
-        size="sm"
-        type="h3"
-      >
+      <Title size="sm" type="h3">
         {data?.title}
         <a className={styles.link} target="_blank" href={data?.link}>
           Live Demo <FiExternalLink size=".8em" />

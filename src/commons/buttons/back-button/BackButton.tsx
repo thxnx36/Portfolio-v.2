@@ -8,6 +8,8 @@ type Props = {
 
 export const BackButton: FC<Props> = ({ onClick, icon }) => {
   return (
-    <button onClick={onClick}>{icon || <IoIosArrowBack size={"2em"} />}</button>
+    <button style={{ padding: 0 }} onClick={onClick}>
+      {icon || <IoIosArrowBack size={"2em"} />}
+    </button>
   )
 }

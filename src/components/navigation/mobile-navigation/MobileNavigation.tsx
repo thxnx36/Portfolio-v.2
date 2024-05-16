@@ -1,5 +1,5 @@
 import { NavigationListType } from "../../../types/navigation-list-type"
-import { FC, useState } from "react"
+import { FC, useCallback, useState } from "react"
 import { NavItem } from "../nav-item/NavItem"
 import {
   BurgerButton,
@@ -26,8 +26,12 @@ export const MobileNavigation: FC<Props> = ({
   const [showNavPanel, setShowNavPanel] = useState<boolean>(false)
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 
-  const handleMenu = () => setShowNavPanel(prev => !prev)
-  const handleModal = () => setIsOpenModal(prev => !prev)
+  const handleMenu = useCallback(() => setShowNavPanel(prev => !prev), [])
+  const hideNavPanel = useCallback((id: number) => {
+    setShowNavPanel(prev => !prev)
+    onChangeItem(id)
+  }, [])
+  const handleModal = useCallback(() => setIsOpenModal(prev => !prev), [])
 
   return (
     <>
@@ -47,7 +51,7 @@ export const MobileNavigation: FC<Props> = ({
         <ul className={styles.navItemContainer}>
           {navigationList.map(({ id, href, text, icon }) => (
             <NavItem
-              onClick={() => onChangeItem(id)}
+              onClick={() => hideNavPanel(id)}
               key={id}
               href={href}
               text={text}
@@ -60,7 +64,7 @@ export const MobileNavigation: FC<Props> = ({
 
       {isOpenModal && (
         <Modal onClose={handleModal}>
-          <>User Info Panel</>
+          <>User Info comming soon</>
         </Modal>
       )}
     </>

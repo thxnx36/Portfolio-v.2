@@ -54,6 +54,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 865px) {
+  .navItem::after {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .navItem {
     width: 35px;

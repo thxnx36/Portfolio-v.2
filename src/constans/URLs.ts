@@ -1,3 +1,5 @@
+export const CV_URL =
+  "https://drive.google.com/file/d/1lnnzG9g9LXcXrMylQKuUaGuB8BPqVk5G/view"
 export const COMPANY_URL = "https://www.elementica.io/"
 export const UDEMY_URL =
   "https://www.udemy.com/course/javascript_full/?couponCode=KEEPLEARNING"
