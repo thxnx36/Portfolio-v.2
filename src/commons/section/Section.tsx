@@ -6,11 +6,12 @@ type Props = {
   children: ReactNode
   id?: string
   style?: CSSProperties
+  animated?: boolean
 }
 
-export const Section: FC<Props> = ({ children, id, style }) => {
+export const Section: FC<Props> = ({ children, id, style, animated }) => {
   return (
-    <AnimatedDiv id={id} type="section">
+    <AnimatedDiv animated={animated} id={id} type="section">
       <div style={style} className={styles.section}>
         {children}
       </div>
