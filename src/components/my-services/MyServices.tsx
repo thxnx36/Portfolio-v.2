@@ -7,7 +7,7 @@ export const MyServices = () => {
   const { servicesList } = useServicesList()
 
   return (
-    <Section id="services">
+    <Section animated={false} id="services">
       <SectionHeader
         title={text.myServices.TITLE}
         subTitle={text.myServices.SUBTITLE}

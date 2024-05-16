@@ -51,7 +51,7 @@
     padding: 0;
   }
 
-  .title {
+  .info h1 {
     font-size: var(--font-size-md);
   }
 }
