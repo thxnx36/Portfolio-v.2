@@ -14,7 +14,9 @@
 }
 
 .speciality {
-  color: var(--main-color);
+  background-image: var(--bg-linear-reverse);
+  background-clip: text;
+  color: transparent;
 }
 
 .infoText {

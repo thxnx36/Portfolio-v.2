@@ -3,12 +3,11 @@
   height: 6px;
   border-radius: 20px;
   border: 1px solid var(--main-color);
-  background-color: var(--background-color);
   padding: 1px;
 }
 
 .progress {
   height: 2px;
-  background-color: var(--main-color);
+  background: var(--bg-linear);
   border-radius: 20px;
 }
