@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { BrowserTabTitle, Section } from "../../commons"
+import { Section } from "../../commons"
 import { Project } from "../../components/project/Project"
 import { useLocation } from "react-router-dom"
 
@@ -11,7 +11,7 @@ export const PortfolioPage = () => {
   }, [pathname])
 
   return (
-    <Section>
+    <Section style={{ margin: 0 }}>
       <Project />
     </Section>
   )

@@ -13,6 +13,7 @@ import {
   ASX_URL,
   TUTTIFY_URL,
   MAVEN_URL,
+  CV_URL,
 } from "./URLs"
 
 export {
@@ -33,4 +34,5 @@ export {
   ASX_URL,
   TUTTIFY_URL,
   MAVEN_URL,
+  CV_URL,
 }

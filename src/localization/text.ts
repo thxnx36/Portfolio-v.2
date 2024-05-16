@@ -40,7 +40,7 @@ export const text = {
   portfolio: {
     TITLE: "Portfolio",
     SUBTITLE:
-      "Some key projects that showcase my skills and knowledge in Front-end development include",
+      "Key projects in development that I participated both collaboratively with a team and independently",
   },
 
   recommendations: {

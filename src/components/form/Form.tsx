@@ -26,6 +26,7 @@ export const Form = () => {
       <Button
         style={{ width: "100%", padding: "10px", fontSize: "12px" }}
         text={text.button.SEND_MESSAGE}
+        disabled
       />
       <div
         style={{

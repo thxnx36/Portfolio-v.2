@@ -1,5 +1,5 @@
-import { useNavigationList } from "../../hooks"
-import { useState, useCallback, useContext } from "react"
+import { useNavigationList, useScrollListener } from "../../hooks"
+import { useState, useCallback, useContext, useEffect } from "react"
 import { useResizeScreen } from "../../hooks"
 import { DesktopNavigation } from "./desktop-navigation/DesktopNavigation"
 import { MobileNavigation } from "./mobile-navigation/MobileNavigation"
@@ -9,11 +9,11 @@ import { DARK, LIGHT } from "../../constans"
 import { Container } from "../../commons"
 
 export const Navigation = () => {
-  const { theme, changeTheme } = useContext(ThemeContext)
   const [activeItem, setActiveItem] = useState<number>(1)
-
+  const { theme, changeTheme } = useContext(ThemeContext)
   const { navigationList } = useNavigationList()
   const { isSmallScreen } = useResizeScreen(TABLET)
+  const { isScrollDown } = useScrollListener()
 
   const onChangeItem = useCallback((id: number) => setActiveItem(id), [])
 
@@ -26,14 +26,15 @@ export const Navigation = () => {
     () => changeTheme(theme === LIGHT ? DARK : LIGHT),
     [theme],
   )
+
   return (
     <Container
       style={{
         position: "sticky",
-        top: 0,
-        left: 0,
+        top: !isScrollDown ? "0" : "-50%",
         zIndex: 99,
         marginBottom: "10px",
+        transition: "top .7s ease",
       }}
     >
       <nav>

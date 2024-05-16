@@ -7,6 +7,7 @@ import { text } from "../../localization"
 import { useState } from "react"
 import { Button, CollapseButton, Container } from "../../commons"
 import styles from "./Sidebar.module.css"
+import { CV_URL } from "../../constans"
 
 export const Sidebar = () => {
   const [showMore, setShowMore] = useState(false)
@@ -37,10 +38,12 @@ export const Sidebar = () => {
           <div className={styles.line} />
           <TechSkills title={text.sideBar.LANGUAGES} skillsList={languages} />
           <div className={styles.line} />
-          <Button
-            style={{ width: "100%", padding: "10px", fontSize: "12px" }}
-            text={text.button.DOWNLOAD}
-          />
+          <a target="_blank" href={CV_URL}>
+            <Button
+              style={{ width: "100%", padding: "10px", fontSize: "12px" }}
+              text={text.button.DOWNLOAD}
+            />
+          </a>
         </div>
         <div className={styles.showInfoBtn}>
           <CollapseButton onClick={showMoreInfo} open={showMore} />

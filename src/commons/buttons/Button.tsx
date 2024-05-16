@@ -11,7 +11,13 @@ type Props = {
 
 export const Button: FC<Props> = ({ text, icon, style, disabled, onClick }) => {
   return (
-    <button onClick={onClick} style={style} className={styles.button}>
+    <button
+      onClick={onClick}
+      style={style}
+      className={
+        disabled ? `${styles.button} ${styles.disabled}` : styles.button
+      }
+    >
       <div className={styles.content}>
         <span className={styles.text}>{text}</span>
         <span className={styles.icon}>{icon}</span>

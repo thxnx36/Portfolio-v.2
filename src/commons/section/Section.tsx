@@ -1,14 +1,15 @@
-import { FC, ReactNode } from "react"
+import { CSSProperties, FC, ReactNode } from "react"
 import styles from "./Section.module.css"
 
 type Props = {
   children: ReactNode
   id?: string
+  style?: CSSProperties
 }
 
-export const Section: FC<Props> = ({ children, id }) => {
+export const Section: FC<Props> = ({ children, id, style }) => {
   return (
-    <section id={id} className={styles.section}>
+    <section id={id} style={style} className={styles.section}>
       {children}
     </section>
   )

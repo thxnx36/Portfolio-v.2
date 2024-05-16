@@ -4,6 +4,7 @@ import { useMySocialList } from "./use-my-social-list"
 import { useNavigationList } from "./use-navigation-list"
 import { useResizeScreen } from "./use-resize-screen"
 import { useServicesList } from "./use-services-list"
+import { useScrollListener } from "./use-scroll-listener"
 
 export {
   useGetProjectById,
@@ -12,4 +13,5 @@ export {
   useNavigationList,
   useResizeScreen,
   useServicesList,
+  useScrollListener,
 }
