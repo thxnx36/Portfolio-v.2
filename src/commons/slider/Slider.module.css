@@ -5,8 +5,7 @@
 }
 
 .container button:hover {
-  background-color: var(--main-color);
-  opacity: 0.5;
+  background: var(--bg-linear);
 }
 
 .container button::before {

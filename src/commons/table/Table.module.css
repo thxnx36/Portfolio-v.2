@@ -17,7 +17,8 @@ a {
   bottom: -3px;
   width: 11px;
   height: 2px;
-  background-color: var(--main-color);
+  background: var(--bg-linear);
+
   opacity: 0.5;
   transition:
     width 0.3s ease,
@@ -40,7 +41,7 @@ a {
 }
 
 .date {
-  background-color: var(--main-color);
+  background: var(--bg-linear);
   color: var(--white-color);
   font-size: 10px;
   padding: 4px 7px;

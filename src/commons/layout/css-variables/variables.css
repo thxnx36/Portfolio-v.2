@@ -12,6 +12,8 @@
   --bg-color-container: #242526;
   --bg-color-grey: #f0f0f6;
   --font-color-main: #767676;
+  --bg-linear: linear-gradient(330deg, #ffb400 20%, #ff6d6d 100%);
+  --bg-linear-reverse: linear-gradient(330deg, #ff6d6d 20%, #ffb400 100%);
 
   /* font size */
   --font-size-xs: 14px;

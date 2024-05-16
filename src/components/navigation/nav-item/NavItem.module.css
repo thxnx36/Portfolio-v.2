@@ -12,7 +12,7 @@
 }
 
 .navItem:hover {
-  background-color: var(--main-color);
+  background: var(--bg-linear);
   color: var(--secondary-color);
 }
 
@@ -42,7 +42,7 @@
 }
 
 .active {
-  background-color: var(--main-color);
+  background: var(--bg-linear);
   color: var(--secondary-color);
 }
 
