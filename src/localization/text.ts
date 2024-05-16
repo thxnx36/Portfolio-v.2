@@ -3,7 +3,7 @@ export const text = {
     HIRE: "Hire me",
     SEND_MESSAGE: "send message",
     DOWNLOAD: "Download CV",
-    GO_BACK: "Go Back Home",
+    GO_BACK: "Go Back",
   },
 
   header: {

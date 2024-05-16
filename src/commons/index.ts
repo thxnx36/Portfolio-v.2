@@ -22,6 +22,9 @@ import { Table } from "./table"
 import { Textarea } from "./textarea"
 import { Title } from "./title"
 import { BrowserTabTitle } from "./browser-tab-title"
+import { Layout } from "./layout"
+import { Routes } from "./routes"
+
 export {
   Avatar,
   Button,
@@ -45,4 +48,6 @@ export {
   Textarea,
   Title,
   BrowserTabTitle,
+  Layout,
+  Routes,
 }
