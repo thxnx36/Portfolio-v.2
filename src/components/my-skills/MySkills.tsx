@@ -1,31 +1,30 @@
-import { useMySocialList } from "../../hooks"
+import { useMySocialList, useResizeScreen } from "../../hooks"
 import { UserContact } from "./user-contact/UserContact"
 import { TechSkills } from "./tech-skills/TechSkills"
 import { skills } from "../../db"
 import { languages } from "../../db"
 import { text } from "../../localization"
-import { useState } from "react"
+import { CSSProperties, useState } from "react"
 import { Button, CollapseButton, Container } from "../../shared"
-import styles from "./Sidebar.module.css"
 import { CV_URL } from "../../constans"
+import styles from "./MySkills.module.css"
 
-export const Sidebar = () => {
+export const MySkills = () => {
   const [showMore, setShowMore] = useState(false)
   const { socialList } = useMySocialList()
+  const { isResizeScreen } = useResizeScreen(1502)
 
   const showMoreInfo = () => setShowMore(prev => !prev)
 
   return (
     <Container
-      style={{
-        position: "fixed",
-        left: "10px",
-        top: "10px",
-        maxWidth: "250px",
+      sx={{
+        ...additionalContainerStyles,
+        position: isResizeScreen ? "static" : "fixed",
       }}
     >
-      <div className={styles.sidebarContainer}>
-        <UserContact socialList={socialList} userName={text.sideBar.NAME} />
+      <div className={styles.mySkillsContainer}>
+        <UserContact socialList={socialList} userName={text.mySkills.NAME} />
         <div
           className={
             showMore
@@ -34,13 +33,13 @@ export const Sidebar = () => {
           }
         >
           <div className={styles.line} />
-          <TechSkills title={text.sideBar.SKILLS} skillsList={skills} />
+          <TechSkills title={text.mySkills.SKILLS} skillsList={skills} />
           <div className={styles.line} />
-          <TechSkills title={text.sideBar.LANGUAGES} skillsList={languages} />
+          <TechSkills title={text.mySkills.LANGUAGES} skillsList={languages} />
           <div className={styles.line} />
           <a target="_blank" href={CV_URL}>
             <Button
-              style={{ width: "100%", padding: "10px", fontSize: "12px" }}
+              sx={additionalButtonStyles}
               text={text.button.DOWNLOAD}
             />
           </a>
@@ -51,4 +50,16 @@ export const Sidebar = () => {
       </div>
     </Container>
   )
+}
+
+const additionalContainerStyles: CSSProperties = {
+  left: "10px",
+  top: "10px",
+  maxWidth: "250px",
+}
+
+const additionalButtonStyles: CSSProperties = {
+  width: "100%",
+  padding: "10px",
+  fontSize: "12px",
 }

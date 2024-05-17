@@ -3,12 +3,12 @@ import styles from "./Paragraph.module.css"
 
 export type Props = {
   children: ReactNode
-  style?: CSSProperties
+  sx?: CSSProperties
 }
 
-export const Paragraph: FC<Props> = ({ children, style }) => {
+export const Paragraph: FC<Props> = ({ children, sx }) => {
   return (
-    <p className={styles.paragraph} style={style}>
+    <p className={styles.paragraph} style={sx}>
       {children}
     </p>
   )

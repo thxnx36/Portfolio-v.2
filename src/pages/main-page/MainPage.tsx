@@ -5,13 +5,11 @@ import { MyServices } from "../../components/my-services/MyServices"
 import { Navigation } from "../../components/navigation/Navigation"
 import { Portfolio } from "../../components/portfolio/Portfolio"
 import { Recommendations } from "../../components/recommendations/Recommendations"
-import { Sidebar } from "../../components/sidebar/Sidebar"
 import { WorkHistory } from "../../components/work-history/WorkHistory"
 
 export const MainPage = () => {
   return (
     <>
-      <Sidebar />
       <Navigation />
       <Header />
       <main>

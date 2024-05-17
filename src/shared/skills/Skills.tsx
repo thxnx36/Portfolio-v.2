@@ -12,8 +12,8 @@ export const Skills: FC<Props> = ({ progress, nameSkill }) => {
   return (
     <div className={styles.skillsContainer}>
       <div className={styles.info}>
-        <Paragraph style={{ margin: 0 }}>{nameSkill}</Paragraph>
-        <Paragraph style={{ margin: 0 }}>{`${progress}%`}</Paragraph>
+        <Paragraph sx={{ margin: 0 }}>{nameSkill}</Paragraph>
+        <Paragraph sx={{ margin: 0 }}>{`${progress}%`}</Paragraph>
       </div>
       <ProgressLine progress={progress} />
     </div>

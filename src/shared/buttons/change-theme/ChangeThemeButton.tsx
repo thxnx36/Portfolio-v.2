@@ -7,10 +7,10 @@ import { getStorageValue } from "../../../utils/local-storage"
 type Props = {
   onClick: () => void
   icon?: ReactNode
-  style?: CSSProperties
+  sx?: CSSProperties
 }
 
-export const ChangeThemeButton: FC<Props> = ({ onClick, icon, style }) => {
+export const ChangeThemeButton: FC<Props> = ({ onClick, icon, sx }) => {
   const [theme, setTheme] = useState<string | null>(LIGHT)
   const currentTheme = getStorageValue("theme")
 
@@ -25,7 +25,7 @@ export const ChangeThemeButton: FC<Props> = ({ onClick, icon, style }) => {
   }
 
   return (
-    <button onClick={onChangeIcon} style={style}>
+    <button onClick={onChangeIcon} style={sx}>
       {icon || theme === LIGHT ? (
         <IoMoonSharp size="1.3em" />
       ) : (

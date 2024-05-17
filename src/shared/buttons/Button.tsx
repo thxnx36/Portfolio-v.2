@@ -6,15 +6,22 @@ type Props = {
   text: string
   icon?: ReactNode
   type?: string
-  style?: CSSProperties
+  sx?: CSSProperties
   disabled?: boolean
 }
 
-export const Button: FC<Props> = ({ text, icon, style, disabled, type, onClick }) => {
+export const Button: FC<Props> = ({
+  text,
+  icon,
+  sx,
+  disabled,
+  type,
+  onClick,
+}) => {
   return (
     <button
       onClick={onClick}
-      style={style}
+      style={sx}
       className={
         disabled ? `${styles.button} ${styles.disabled}` : styles.button
       }

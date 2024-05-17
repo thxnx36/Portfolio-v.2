@@ -5,13 +5,16 @@
   padding: 10px;
 }
 
+.userInfoButton {
+  display: none;
+}
+
 .navDesktopContent button > svg {
   color: var(--text-color);
 }
 
-.navItemContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 1502px) {
+  .userInfoButton {
+    display: block;
+  }
 }

@@ -4,12 +4,12 @@ import styles from "./Avatar.module.css"
 type Props = {
   src: string
   withBorder?: boolean
-  style?: CSSProperties
+  sx?: CSSProperties
 }
-export const Avatar: FC<Props> = ({ src, withBorder, style }) => {
+export const Avatar: FC<Props> = ({ src, withBorder, sx }) => {
   return (
     <div
-      style={style}
+      style={sx}
       className={
         withBorder ? `${styles.photo} ${styles.withBorder}` : styles.photo
       }

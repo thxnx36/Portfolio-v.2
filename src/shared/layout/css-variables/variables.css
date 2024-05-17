@@ -14,6 +14,7 @@
   --font-color-main: #767676;
   --bg-linear: linear-gradient(330deg, #ffb400 20%, #ff6d6d 100%);
   --bg-linear-reverse: linear-gradient(330deg, #ff6d6d 20%, #ffb400 100%);
+  --bg-overlay-color: rgba(0, 0, 0, 0.5);
 
   /* font size */
   --font-size-xs: 14px;
@@ -33,6 +34,9 @@
 
   /* border radius */
   --border-radius: 5px;
+
+  /* blur */
+  --blur-overlay: blur(5px);
 
   /* box shadow */
   --shadow-light: 0 10px 10px #0505060d;

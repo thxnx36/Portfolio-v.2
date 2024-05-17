@@ -14,14 +14,14 @@ export const Card: FC<Props> = ({ icon, title, subTitle }) => {
       <div className={styles.card}>
         <div className={styles.icon}>{icon}</div>
         <Title
-          style={{ marginBottom: "15px" }}
+          sx={{ marginBottom: "15px" }}
           type="h4"
           size="sm"
           fontWeight="regular"
         >
           {title}
         </Title>
-        <Paragraph style={{ margin: 0 }}>{subTitle}</Paragraph>
+        <Paragraph sx={{ margin: 0 }}>{subTitle}</Paragraph>
       </div>
     </Container>
   )

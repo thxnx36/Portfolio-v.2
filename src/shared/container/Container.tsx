@@ -3,12 +3,12 @@ import styles from "./Container.module.css"
 
 type Props = {
   children: ReactNode
-  style?: CSSProperties
+  sx?: CSSProperties
 }
 
-export const Container: FC<Props> = ({ children, style }) => {
+export const Container: FC<Props> = ({ children, sx }) => {
   return (
-    <div style={style} className={styles.container}>
+    <div style={sx} className={styles.container}>
       {children}
     </div>
   )

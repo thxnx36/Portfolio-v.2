@@ -1,6 +1,7 @@
-import { ReactNode, useEffect, useRef } from "react"
+import { FC, ReactNode } from "react"
 import { createPortal } from "react-dom"
 import { IoClose } from "react-icons/io5"
+import { useOverLay } from "../../hooks"
 import styles from "./Modal.module.css"
 
 type Props = {
@@ -8,32 +9,12 @@ type Props = {
   onClose: () => void
 }
 
-export const Modal: React.FC<Props> = ({ children, onClose }) => {
-  const modalContentRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    document.body.style.overflow = "hidden"
-    modalContentRef.current?.focus()
-
-    return () => {
-      document.body.style.overflow = "unset"
-    }
-  }, [])
-
-  const onCloseModal = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose()
-    }
-  }
+export const Modal: FC<Props> = ({ children, onClose }) => {
+  const { onCloseContent, contentRef } = useOverLay({ f: onClose })
 
   return createPortal(
-    <div className={styles.overlay} onClick={onCloseModal}>
-      <div
-        ref={modalContentRef}
-        className={styles.content}
-        // onClick={e => e.stopPropagation()}
-        // tabIndex={-1}
-      >
+    <div className={styles.overlay} onClick={onCloseContent}>
+      <div ref={contentRef} className={styles.content}>
         <button className={styles.closeButton} onClick={onClose}>
           <IoClose size={"2em"} />
         </button>

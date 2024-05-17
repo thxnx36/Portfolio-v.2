@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { CSSProperties, FC } from "react"
 import {
   Button,
   Input,
@@ -56,7 +56,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
             placeholder={text.input.placeholder.YOUR_MESSAGE}
           />
           <Button
-            style={{ width: "100%", padding: "10px", fontSize: "12px" }}
+            sx={additionalButtonStyles}
             text={isLoading ? text.button.LOADING : text.button.SEND_MESSAGE}
             type="submit"
             disabled={isDisabledButton}
@@ -64,7 +64,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
         </form>
       )}
       <div className={styles.contacts}>
-        <Paragraph style={{ margin: "15px 0 0" }}>
+        <Paragraph sx={{ margin: "15px 0 0" }}>
           {!isSendFormError
             ? text.form.TEXT_ME_MESSENGERS
             : text.form.CONTACT_ME_IF_ERROR}
@@ -73,4 +73,10 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
       </div>
     </>
   )
+}
+
+const additionalButtonStyles: CSSProperties = {
+  width: "100%",
+  padding: "10px",
+  fontSize: "12px",
 }

@@ -7,6 +7,8 @@ import { useServicesList } from "./use-services-list"
 import { useScrollListener } from "./use-scroll-listener"
 import { useAnimatedDiv } from "./use-animated-div"
 import { useSendEmail } from "./use-send-email"
+import { useOverLay } from "./use-overlay"
+import { useContentLoaded } from "./use-content-loaded"
 
 export {
   useGetProjectById,
@@ -18,4 +20,6 @@ export {
   useScrollListener,
   useAnimatedDiv,
   useSendEmail,
+  useOverLay,
+  useContentLoaded,
 }
