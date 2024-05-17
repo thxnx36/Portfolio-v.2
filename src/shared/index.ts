@@ -27,6 +27,7 @@ import { Routes } from "./routes"
 import { AnimatedDiv } from "./animated-div"
 import { ScrollTopButton } from "./buttons"
 import { Toast } from "./toast"
+import { SideBar } from "./side-bar"
 
 export {
   Avatar,
@@ -56,4 +57,5 @@ export {
   AnimatedDiv,
   ScrollTopButton,
   Toast,
+  SideBar,
 }

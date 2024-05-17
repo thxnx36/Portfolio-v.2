@@ -5,14 +5,14 @@ import styles from "./Section.module.css"
 type Props = {
   children: ReactNode
   id?: string
-  style?: CSSProperties
+  sx?: CSSProperties
   animated?: boolean
 }
 
-export const Section: FC<Props> = ({ children, id, style, animated }) => {
+export const Section: FC<Props> = ({ children, id, sx, animated }) => {
   return (
     <AnimatedDiv animated={animated} id={id} type="section">
-      <div style={style} className={styles.section}>
+      <div style={sx} className={styles.section}>
         {children}
       </div>
     </AnimatedDiv>

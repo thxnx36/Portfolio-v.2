@@ -1,21 +1,24 @@
-import { useNavigationList, useScrollListener } from "../../hooks"
-import { useState, useCallback, useContext, useEffect } from "react"
+import { useScrollListener } from "../../hooks"
+import { useState, useCallback, useContext, CSSProperties } from "react"
 import { useResizeScreen } from "../../hooks"
 import { DesktopNavigation } from "./desktop-navigation/DesktopNavigation"
 import { MobileNavigation } from "./mobile-navigation/MobileNavigation"
 import { TABLET } from "../../constans"
 import { ThemeContext } from "../../providers"
 import { DARK, LIGHT } from "../../constans"
-import { Container } from "../../shared"
+import { Container, SideBar } from "../../shared"
+import { MySkills } from "../my-skills/MySkills"
 
 export const Navigation = () => {
   const [activeItem, setActiveItem] = useState<number>(1)
+  const [isOpenSideBar, setIsOpenSideBar] = useState<boolean>(false)
+
   const { theme, changeTheme } = useContext(ThemeContext)
-  const { navigationList } = useNavigationList()
-  const { isSmallScreen } = useResizeScreen(TABLET)
+  const { isResizeScreen } = useResizeScreen(TABLET)
   const { isScrollDown } = useScrollListener()
 
   const onChangeItem = useCallback((id: number) => setActiveItem(id), [])
+  const handleSideBar = useCallback(() => setIsOpenSideBar(prev => !prev), [])
 
   const isActiveItem = useCallback(
     (id: number) => id === activeItem,
@@ -28,32 +31,41 @@ export const Navigation = () => {
   )
 
   return (
-    <Container
-      style={{
-        position: "sticky",
-        top: !isScrollDown ? "0" : "-50%",
-        zIndex: 99,
-        marginBottom: "10px",
-        transition: "top .7s ease",
-      }}
-    >
-      <nav>
-        {!isSmallScreen ? (
-          <DesktopNavigation
-            navigationList={navigationList}
-            onChangeItem={onChangeItem}
-            isActiveItem={isActiveItem}
-            onChangeTheme={onChangeTheme}
-          />
-        ) : (
-          <MobileNavigation
-            navigationList={navigationList}
-            onChangeItem={onChangeItem}
-            isActiveItem={isActiveItem}
-            onChangeTheme={onChangeTheme}
-          />
-        )}
-      </nav>
-    </Container>
+    <>
+      <Container
+        sx={{
+          ...additionalContainerStyles,
+          top: !isScrollDown ? "0" : "-50%",
+        }}
+      >
+        <nav>
+          {!isResizeScreen ? (
+            <DesktopNavigation
+              handleSideBar={handleSideBar}
+              onChangeItem={onChangeItem}
+              isActiveItem={isActiveItem}
+              onChangeTheme={onChangeTheme}
+            />
+          ) : (
+            <MobileNavigation
+              onChangeItem={onChangeItem}
+              isActiveItem={isActiveItem}
+              onChangeTheme={onChangeTheme}
+              handleSideBar={handleSideBar}
+            />
+          )}
+        </nav>
+      </Container>
+      <SideBar isOpen={isOpenSideBar} onClose={handleSideBar}>
+        <MySkills />
+      </SideBar>
+    </>
   )
+}
+
+const additionalContainerStyles: CSSProperties = {
+  position: "sticky",
+  zIndex: 99,
+  marginBottom: "10px",
+  transition: "top .7s ease",
 }

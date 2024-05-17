@@ -34,20 +34,20 @@ export const RecommedCard: FC<Props> = ({
         ))}
       </ul>
       <Title
-        style={{ marginBottom: "15px" }}
+        sx={{ marginBottom: "15px" }}
         type="h4"
         size="sm"
         fontWeight="regular"
       >
         {title}
       </Title>
-      <Paragraph style={{ textAlign: "left", margin: "0 0 25px" }}>
+      <Paragraph sx={{ textAlign: "left", margin: "0 0 25px" }}>
         {comment}
       </Paragraph>
       <div className={styles.userInfo}>
         <Avatar withBorder src={userPhoto} />
         <Title
-          style={{ marginBottom: "15px" }}
+          sx={{ marginBottom: "15px" }}
           type="h4"
           size="sm"
           fontWeight="regular"

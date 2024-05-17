@@ -10,7 +10,7 @@ export const TechSkills: FC<Props> = ({ title, skillsList }) => {
   return (
     <>
       <Title
-        style={{ marginBottom: "15px" }}
+        sx={{ marginBottom: "15px" }}
         type="h4"
         size="sm"
         fontWeight="regular"

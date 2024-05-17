@@ -3,12 +3,12 @@ import styles from "./Box.module.css"
 
 type Props = {
   children: ReactNode
-  style?: CSSProperties
+  sx?: CSSProperties
 }
 
-export const Box: FC<Props> = ({ children, style }) => {
+export const Box: FC<Props> = ({ children, sx }) => {
   return (
-    <div className={styles.box} style={style}>
+    <div className={styles.box} style={sx}>
       {children}
     </div>
   )

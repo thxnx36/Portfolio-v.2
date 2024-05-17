@@ -9,9 +9,7 @@ export const Footer = () => {
     <footer>
       <Container>
         <div className={styles.footerContent}>
-          <Paragraph style={{ margin: "0" }}>
-            {text.footer.CREATED_BY}
-          </Paragraph>
+          <Paragraph sx={{ margin: "0" }}>{text.footer.CREATED_BY}</Paragraph>
           <div className={styles.contact}>
             <DiGithubFull size="2em" />
             <a target="_blank" href={GIT_HUB}>
