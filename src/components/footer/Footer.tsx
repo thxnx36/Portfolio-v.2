@@ -1,7 +1,7 @@
 import { DiGithubFull } from "react-icons/di"
 import { GIT_HUB } from "../../constans"
 import { text } from "../../localization"
-import { Container, Paragraph } from "../../commons"
+import { Container, Paragraph } from "../../shared"
 import styles from "./Footer.module.css"
 
 export const Footer = () => {

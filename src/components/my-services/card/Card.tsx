@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react"
-import { Container, Paragraph, Title } from "../../../commons"
+import { Container, Paragraph, Title } from "../../../shared"
 import styles from "./Card.module.css"
 
 type Props = {

@@ -5,11 +5,12 @@ type Props = {
   onClick?: () => void
   text: string
   icon?: ReactNode
+  type?: string
   style?: CSSProperties
   disabled?: boolean
 }
 
-export const Button: FC<Props> = ({ text, icon, style, disabled, onClick }) => {
+export const Button: FC<Props> = ({ text, icon, style, disabled, type, onClick }) => {
   return (
     <button
       onClick={onClick}

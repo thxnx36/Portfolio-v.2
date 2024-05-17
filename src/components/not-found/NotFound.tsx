@@ -1,4 +1,4 @@
-import { Button, Section, Title } from "../../commons"
+import { Button, Section, Title } from "../../shared"
 import { TbError404 } from "react-icons/tb"
 import { COLOR_YELLOW } from "../../constans"
 import { useNavigate } from "react-router-dom"
@@ -10,7 +10,7 @@ export const NotFound = () => {
   const navigate = useNavigate()
 
   const handleBack = useCallback(() => navigate(-1), [navigate])
-  
+
   return (
     <Section>
       <div className={styles.notFoundContainer}>

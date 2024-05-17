@@ -6,6 +6,7 @@ import { useResizeScreen } from "./use-resize-screen"
 import { useServicesList } from "./use-services-list"
 import { useScrollListener } from "./use-scroll-listener"
 import { useAnimatedDiv } from "./use-animated-div"
+import { useSendEmail } from "./use-send-email"
 
 export {
   useGetProjectById,
@@ -16,4 +17,5 @@ export {
   useServicesList,
   useScrollListener,
   useAnimatedDiv,
+  useSendEmail,
 }

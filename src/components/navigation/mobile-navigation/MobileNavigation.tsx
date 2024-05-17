@@ -7,7 +7,7 @@ import {
   Container,
   Modal,
   UserInfoButton,
-} from "../../../commons"
+} from "../../../shared"
 import styles from "./MobileNavigation.module.css"
 
 type Props = {

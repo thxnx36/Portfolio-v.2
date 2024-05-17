@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Paragraph } from "../../../commons"
+import { Paragraph } from "../../../shared"
 
 type Props = {
   stackList?: string[]

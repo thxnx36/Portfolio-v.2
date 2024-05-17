@@ -4,6 +4,7 @@ export const text = {
     SEND_MESSAGE: "send message",
     DOWNLOAD: "Download CV",
     GO_BACK: "Go Back",
+    LOADING: "Loading...",
   },
 
   navigation: {
@@ -65,7 +66,18 @@ export const text = {
 
   form: {
     TITLE: "Leave me Your info",
-    TEXT_ME_MESSENGERS: "Or text me on the messengers",
+    TEXT_ME_MESSENGERS: "Or contact me via the messengers",
+    CONTACT_ME_IF_ERROR:
+      "Ops, something went wrong! Please, contact me via the messengers",
+  },
+
+  toast: {
+    success: {
+      EMAIL_SENT: "Thanks! Your email has been sent",
+    },
+    error: {
+      WRONG: "Something went wrong!",
+    },
   },
 
   input: {

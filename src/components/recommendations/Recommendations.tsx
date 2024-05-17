@@ -1,9 +1,9 @@
-import { SectionHeader } from "../../commons/section-header/SectionHeader"
-import { Section } from "../../commons/section/Section"
+import { SectionHeader } from "../../shared/section-header/SectionHeader"
+import { Section } from "../../shared/section/Section"
 import { text } from "../../localization"
 import { RecommedCard } from "./card/RecommendCard"
 import { recommendations } from "../../db"
-import { Slider } from "../../commons/slider/Slider"
+import { Slider } from "../../shared/slider/Slider"
 
 export const Recommendations = () => {
   return (

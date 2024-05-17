@@ -5,7 +5,7 @@ import { skills } from "../../db"
 import { languages } from "../../db"
 import { text } from "../../localization"
 import { useState } from "react"
-import { Button, CollapseButton, Container } from "../../commons"
+import { Button, CollapseButton, Container } from "../../shared"
 import styles from "./Sidebar.module.css"
 import { CV_URL } from "../../constans"
 

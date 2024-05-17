@@ -2,7 +2,7 @@ import { IoIosArrowRoundForward } from "react-icons/io"
 import { useCallback, useState } from "react"
 import { Form } from "../form/Form"
 import { headerPhoto } from "../../assets"
-import { Button, Container, Modal, Title } from "../../commons"
+import { Button, Container, Modal, Title } from "../../shared"
 import { text } from "../../localization"
 import styles from "./Header.module.css"
 
@@ -41,7 +41,7 @@ export const Header = () => {
 
       {isOpenModal && (
         <Modal onClose={handleModal}>
-          <Form />
+          <Form onCloseModal={handleModal} />
         </Modal>
       )}
     </header>

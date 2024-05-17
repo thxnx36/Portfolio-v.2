@@ -34,6 +34,12 @@
   width: 100%;
 }
 
+@media screen and (max-width: 934px) {
+  .info h1 {
+    font-size: var(--font-size-lg-mobile);
+  }
+}
+
 @media screen and (max-width: 865px) {
   .content {
     padding: 20px;

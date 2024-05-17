@@ -1,4 +1,4 @@
-import { Layout, Routes } from "./commons"
+import { Layout, Routes } from "./shared"
 
 export const App = () => {
   return (

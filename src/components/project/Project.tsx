@@ -1,6 +1,6 @@
 import { useGetProjectById } from "../../hooks"
 import { useParams, useNavigate } from "react-router-dom"
-import { BrowserTabTitle, Title } from "../../commons"
+import { BrowserTabTitle, Title } from "../../shared"
 import { useCallback } from "react"
 import { Head } from "./head/Head"
 import { Content } from "./content/Content"

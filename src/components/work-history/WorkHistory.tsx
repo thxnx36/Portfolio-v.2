@@ -1,6 +1,6 @@
 import { text } from "../../localization"
 import { workHistory } from "../../db"
-import { Container, Section, SectionHeader, Table } from "../../commons"
+import { Container, Section, SectionHeader, Table } from "../../shared"
 
 export const WorkHistory = () => {
   return (

@@ -1,7 +1,7 @@
 import { FC } from "react"
 import styles from "./Head.module.css"
-import { BackButton } from "../../../commons/buttons"
-import { Title } from "../../../commons"
+import { BackButton } from "../../../shared/buttons"
+import { Title } from "../../../shared"
 
 type Props = {
   onClick: () => void

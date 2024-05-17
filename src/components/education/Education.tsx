@@ -1,4 +1,4 @@
-import { Container, Section, SectionHeader, Table } from "../../commons"
+import { Container, Section, SectionHeader, Table } from "../../shared"
 import { education } from "../../db"
 import { text } from "../../localization"
 

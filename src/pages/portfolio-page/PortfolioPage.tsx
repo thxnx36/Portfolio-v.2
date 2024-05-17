@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Section } from "../../commons"
+import { Section } from "../../shared"
 import { Project } from "../../components/project/Project"
 import { useLocation } from "react-router-dom"
 
