@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { MdStar } from "react-icons/md"
 import { COLOR_YELLOW } from "../../../constans"
-import { Avatar, Paragraph, Title } from "../../../commons"
+import { Avatar, Paragraph, Title } from "../../../shared"
 import styles from "./RecommendCard.module.css"
 
 type Props = {

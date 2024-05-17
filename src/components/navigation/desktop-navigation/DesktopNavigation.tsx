@@ -1,7 +1,7 @@
 import { NavItem } from "../nav-item/NavItem"
 import { FC } from "react"
 import { NavigationListType } from "../../../types/navigation-list-type"
-import { ChangeThemeButton } from "../../../commons"
+import { ChangeThemeButton } from "../../../shared"
 import styles from "./DesktopNavigation.module.css"
 
 type Props = {

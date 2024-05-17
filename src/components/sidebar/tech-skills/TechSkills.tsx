@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Skills, Title } from "../../../commons"
+import { Skills, Title } from "../../../shared"
 
 type Props = {
   title: string

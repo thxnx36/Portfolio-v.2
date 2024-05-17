@@ -1,4 +1,4 @@
-import { CardsContainer, Section, SectionHeader } from "../../commons"
+import { CardsContainer, Section, SectionHeader } from "../../shared"
 import { portfolio } from "../../db/portfolio"
 import { text } from "../../localization"
 import { PortfolioCard } from "./card/PortfolioCard"

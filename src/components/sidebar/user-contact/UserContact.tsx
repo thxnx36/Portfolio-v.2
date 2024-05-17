@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Avatar, Paragraph, SocialList } from "../../../commons"
+import { Avatar, Paragraph, SocialList } from "../../../shared"
 import { MySocialListType } from "../../../types/my-social-list-type"
 import { userPhoto } from "../../../assets"
 import styles from "./UserContact.module.css"

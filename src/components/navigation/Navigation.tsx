@@ -6,7 +6,7 @@ import { MobileNavigation } from "./mobile-navigation/MobileNavigation"
 import { TABLET } from "../../constans"
 import { ThemeContext } from "../../providers"
 import { DARK, LIGHT } from "../../constans"
-import { Container } from "../../commons"
+import { Container } from "../../shared"
 
 export const Navigation = () => {
   const [activeItem, setActiveItem] = useState<number>(1)
