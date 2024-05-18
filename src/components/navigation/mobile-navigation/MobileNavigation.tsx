@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useCallback, useState } from 'react'
+import { FC, useCallback, useState } from 'react'
 import {
   Avatar,
   BurgerButton,
@@ -43,23 +43,20 @@ export const MobileNavigation: FC<Props> = ({
           onClick={handleSideBar}
         />
       </div>
-      <Container
-        sx={{
-          ...additionalStyles,
-          transform: showNavPanel ? 'translateY(5%)' : 'translateY(-200%)',
-        }}
-      >
-        <NavListItem
-          sx={{ padding: '10px' }}
-          onChangeItem={hideNavPanel}
-          isActiveItem={isActiveItem}
-        />
-      </Container>
+      {showNavPanel && (
+        <Container
+          sx={{
+            position: 'absolute',
+            top: 50,
+          }}
+        >
+          <NavListItem
+            sx={{ padding: '10px' }}
+            onChangeItem={hideNavPanel}
+            isActiveItem={isActiveItem}
+          />
+        </Container>
+      )}
     </>
   )
-}
-
-const additionalStyles: CSSProperties = {
-  position: 'absolute',
-  transition: 'transform 0.5s ease',
 }

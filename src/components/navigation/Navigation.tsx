@@ -33,16 +33,7 @@ export const Navigation = () => {
   return (
     <>
       <Container
-        sx={
-          !isResizeScreen
-            ? {
-                ...additionalContainerStyles,
-                top: !isScrollDown ? '0' : '-50%',
-              }
-            : {
-                marginBottom: '10px',
-              }
-        }
+        sx={{ ...additionalContainerStyles, top: !isScrollDown ? '0' : '-50%' }}
       >
         <nav>
           {!isResizeScreen ? (

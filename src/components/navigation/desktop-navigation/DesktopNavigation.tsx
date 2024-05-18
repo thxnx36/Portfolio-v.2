@@ -1,7 +1,8 @@
 import { FC } from 'react'
-import { Avatar, ChangeThemeButton } from '../../../shared'
+import { Avatar, ChangeThemeButton, ToolTip } from '../../../shared'
 import { NavListItem } from '../nav-list-item/NavListItem'
 import { userPhoto } from '../../../assets'
+import { text } from '../../../localization'
 import styles from './DesktopNavigation.module.css'
 
 type Props = {
@@ -21,7 +22,7 @@ export const DesktopNavigation: FC<Props> = ({
     <div className={styles.navDesktopContent}>
       <ChangeThemeButton onClick={onChangeTheme} />
       <NavListItem onChangeItem={onChangeItem} isActiveItem={isActiveItem} />
-      <div className={styles.userInfoButton}>
+      <ToolTip text={text.tooltip.MY_SKILLS}>
         <Avatar
           tag='button'
           sx={{ width: 40, height: 40 }}
@@ -29,7 +30,7 @@ export const DesktopNavigation: FC<Props> = ({
           src={userPhoto}
           onClick={handleSideBar}
         />
-      </div>
+      </ToolTip>
     </div>
   )
 }

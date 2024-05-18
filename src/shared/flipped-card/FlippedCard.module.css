@@ -38,7 +38,7 @@
   background: none;
   border: none;
   color: transparent;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-xs-mobile);
   position: relative;
   text-transform: lowercase;
   transition: all 0.3s ease;

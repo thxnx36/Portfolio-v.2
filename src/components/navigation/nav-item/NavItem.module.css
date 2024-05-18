@@ -16,31 +16,6 @@
   color: var(--secondary-color);
 }
 
-.navItem::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: calc(100% + 5px);
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 12px;
-  visibility: hidden;
-  text-align: center;
-  opacity: 0;
-  z-index: 99;
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
-}
-
-.navItem:hover::after {
-  visibility: visible;
-  opacity: 1;
-}
-
 .active {
   background: var(--bg-linear);
   color: var(--secondary-color);
