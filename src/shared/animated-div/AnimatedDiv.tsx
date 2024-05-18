@@ -4,20 +4,20 @@ import styles from "./AnimatedDiv.module.css"
 
 type Props = {
   children: ReactNode
-  type?: "div" | "section"
+  tag?: "div" | "section"
   id?: string
   animated?: boolean
 }
 
 export const AnimatedDiv: FC<Props> = ({
   children,
-  type,
+  tag,
   id,
   animated = true,
 }) => {
   const { isVisible, animatedDivRef } = useAnimatedDiv()
 
-  const Tag = type || "section"
+  const Tag = tag || "section"
 
   return (
     <>

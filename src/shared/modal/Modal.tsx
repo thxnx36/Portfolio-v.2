@@ -7,10 +7,11 @@ import styles from "./Modal.module.css"
 type Props = {
   children: ReactNode
   onClose: () => void
+  isOpen: boolean
 }
 
-export const Modal: FC<Props> = ({ children, onClose }) => {
-  const { onCloseContent, contentRef } = useOverLay({ f: onClose })
+export const Modal: FC<Props> = ({ children, isOpen, onClose }) => {
+  const { onCloseContent, contentRef } = useOverLay({ f: onClose, isOpen })
 
   return createPortal(
     <div className={styles.overlay} onClick={onCloseContent}>

@@ -33,7 +33,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
     <>
       {!isSendFormError && (
         <form onSubmit={onSubmit}>
-          <Title type="h2">{text.form.TITLE}</Title>
+          <Title tag="h2">{text.form.TITLE}</Title>
           <Input
             required
             onChange={handleChange("name_from")}

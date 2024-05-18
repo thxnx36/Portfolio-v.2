@@ -1,11 +1,12 @@
 import { CSSProperties, FC, useCallback, useState } from "react"
 import {
+  Avatar,
   BurgerButton,
   ChangeThemeButton,
   Container,
-  UserInfoButton,
 } from "../../../shared"
 import { NavListItem } from "../nav-list-item/NavListItem"
+import { userPhoto } from "../../../assets"
 import styles from "./MobileNavigation.module.css"
 
 type Props = {
@@ -34,12 +35,18 @@ export const MobileNavigation: FC<Props> = ({
       <div className={styles.mobileNavContent}>
         <BurgerButton onClick={handleMenu} />
         <ChangeThemeButton onClick={onChangeTheme} />
-        <UserInfoButton onClick={handleSideBar} />
+        <Avatar
+          tag="button"
+          sx={{ width: 30, height: 30 }}
+          withBorder
+          src={userPhoto}
+          onClick={handleSideBar}
+        />
       </div>
       <Container
         sx={{
           ...additionalStyles,
-          bottom: !showNavPanel ? "150%" : "-150%",
+          transform: showNavPanel ? "translateY(5%)" : "translateY(-200%)",
         }}
       >
         <NavListItem
@@ -54,5 +61,5 @@ export const MobileNavigation: FC<Props> = ({
 
 const additionalStyles: CSSProperties = {
   position: "absolute",
-  transition: "bottom 0.5s ease",
+  transition: "transform 0.5s ease",
 }
