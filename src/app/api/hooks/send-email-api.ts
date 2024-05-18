@@ -9,7 +9,7 @@ export const sendEmailApi = createApi({
   }),
   endpoints: build => ({
     postEmail: build.mutation<void, sendEmailPayloadType>({
-      query: ({ name_from, message, email_from }) => {
+      query: ({ name_from, message, email_from, reCaptchaToken }) => {
         const data = new URLSearchParams({
           service_id: import.meta.env.VITE_SERVICE_ID,
           template_id: import.meta.env.VITE_TEMPLATE_ID,
@@ -17,6 +17,7 @@ export const sendEmailApi = createApi({
           name_from,
           email_from,
           message,
+          'g-recaptcha-response': reCaptchaToken as string,
         }).toString()
 
         return {
