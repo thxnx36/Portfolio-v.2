@@ -28,6 +28,7 @@ import { AnimatedDiv } from './animated-div'
 import { ScrollTopButton } from './buttons'
 import { Toast } from './toast'
 import { SideBar } from './side-bar'
+import { FlippedCard } from './flipped-card'
 
 export {
   Avatar,
@@ -58,4 +59,5 @@ export {
   ScrollTopButton,
   Toast,
   SideBar,
+  FlippedCard,
 }

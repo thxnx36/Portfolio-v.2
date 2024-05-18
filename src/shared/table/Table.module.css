@@ -11,7 +11,7 @@ a {
 }
 
 .link::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -3px;
