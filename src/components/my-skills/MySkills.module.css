@@ -1,5 +1,5 @@
 .mySkillsContainer {
-  padding: 25px 25px 0;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,35 +12,8 @@
   margin: 15px 0;
 }
 
-.showInfoBtn {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.infoContent {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease;
-}
-
-.showMoreActive {
-  height: 500px;
-}
-
 @media screen and (max-width: 1502px) {
   .mySkillsContainer {
     padding: 20px;
-  }
-
-  .showInfoBtn {
-    display: none;
-  }
-
-  .infoContent {
-    height: auto;
-    overflow: visible;
   }
 }

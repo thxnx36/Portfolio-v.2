@@ -3,6 +3,7 @@ import { IoMoonSharp } from 'react-icons/io5'
 import { FaSun } from 'react-icons/fa6'
 import { DARK, LIGHT } from '../../../constans'
 import { getStorageValue } from '../../../utils/local-storage'
+import styles from './ChangeThemeButton.module.css'
 
 type Props = {
   onClick: () => void
@@ -25,12 +26,19 @@ export const ChangeThemeButton: FC<Props> = ({ onClick, icon, sx }) => {
   }
 
   return (
-    <button onClick={onChangeIcon} style={sx}>
-      {icon || theme === LIGHT ? (
-        <IoMoonSharp size='1.3em' />
-      ) : (
-        <FaSun size='1.3em' />
-      )}
-    </button>
+    <div>
+      <input
+        id='checkbox'
+        checked={theme === LIGHT}
+        type='checkbox'
+        className={styles.checkbox}
+        onChange={onChangeIcon}
+      />
+      <label htmlFor='checkbox' className={styles.checkboxLabel}>
+        <IoMoonSharp />
+        <FaSun />
+        <span className={styles.ball}></span>
+      </label>
+    </div>
   )
 }

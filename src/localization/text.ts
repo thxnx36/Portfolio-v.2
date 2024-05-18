@@ -5,6 +5,12 @@ export const text = {
     DOWNLOAD: 'Download CV',
     GO_BACK: 'Go Back',
     LOADING: 'Loading...',
+    SHOW_MORE_CARD: 'show more',
+    CLOSE_CARD: 'close',
+  },
+
+  tooltip: {
+    MY_SKILLS: 'My skills',
   },
 
   navigation: {

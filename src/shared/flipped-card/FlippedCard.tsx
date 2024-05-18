@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react'
 import { Title } from '../title'
 import { Paragraph } from '../paragraph'
+import { text as t } from '../../localization'
 import styles from './FlippedCard.module.css'
 
 type Props = {
@@ -34,14 +35,14 @@ export const FlippedCard: FC<Props> = ({
             {title}
           </Title>
           <button onClick={onFlip} className={styles.moreButton}>
-            <span>show more</span>
+            <span>{t.button.SHOW_MORE_CARD}</span>
           </button>
         </div>
 
         <div className={styles.cardBack}>
           <Paragraph sx={{ marginBottom: '10px' }}>{text}</Paragraph>
           <button onClick={onFlip} className={styles.moreButton}>
-            <span>close</span>
+            <span>{t.button.CLOSE_CARD}</span>
           </button>
         </div>
       </div>

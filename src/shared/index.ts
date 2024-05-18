@@ -29,6 +29,7 @@ import { ScrollTopButton } from './buttons'
 import { Toast } from './toast'
 import { SideBar } from './side-bar'
 import { FlippedCard } from './flipped-card'
+import { ToolTip } from './tool-tip'
 
 export {
   Avatar,
@@ -60,4 +61,5 @@ export {
   Toast,
   SideBar,
   FlippedCard,
+  ToolTip,
 }
