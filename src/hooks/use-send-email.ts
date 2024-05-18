@@ -18,9 +18,10 @@ const INITIAL_STATE = {
 type Props = {
   f: () => void
   infoMessage: string
+  reCaptchaToken: string | null
 }
 
-export const useSendEmail = ({ infoMessage, f }: Props) => {
+export const useSendEmail = ({ infoMessage, reCaptchaToken, f }: Props) => {
   const [sendEmail, { isLoading, isSuccess, isError }] = usePostEmailMutation()
   const [form, setForm] = useState<FormType>(INITIAL_STATE)
   const [isSendFormError, setIsSendError] = useState<boolean>(false)
@@ -39,7 +40,7 @@ export const useSendEmail = ({ infoMessage, f }: Props) => {
 
   const onSubmit = async (e: SyntheticEvent) => {
     e.preventDefault()
-    await sendEmail(form)
+    await sendEmail({ ...form, reCaptchaToken })
   }
 
   useEffect(() => {
@@ -53,7 +54,11 @@ export const useSendEmail = ({ infoMessage, f }: Props) => {
   }, [isError, isSuccess, f, setIsSendError])
 
   const isDisabledButton =
-    !form.name_from || !form.email_from || !form.message || isLoading
+    !form.name_from ||
+    !form.email_from ||
+    !form.message ||
+    isLoading ||
+    !reCaptchaToken
 
   return {
     form,

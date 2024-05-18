@@ -1,8 +1,9 @@
-import { CSSProperties, FC } from 'react'
+import { CSSProperties, FC, useState } from 'react'
 import {
   Button,
   Input,
   Paragraph,
+  ReCaptcha,
   SocialList,
   Textarea,
   Title,
@@ -16,6 +17,8 @@ type Props = {
 }
 
 export const Form: FC<Props> = ({ onCloseModal }) => {
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+
   const { socialList } = useMySocialList()
   const {
     form,
@@ -27,7 +30,10 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
   } = useSendEmail({
     f: onCloseModal,
     infoMessage: text.toast.success.EMAIL_SENT,
+    reCaptchaToken: captchaToken,
   })
+
+  const handleCaptchaChange = (token: string | null) => setCaptchaToken(token)
 
   return (
     <>
@@ -55,6 +61,9 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
             cols={50}
             placeholder={text.input.placeholder.YOUR_MESSAGE}
           />
+          <div className={styles.reCaptcha}>
+            <ReCaptcha onChange={handleCaptchaChange} />
+          </div>
           <Button
             sx={additionalButtonStyles}
             text={isLoading ? text.button.LOADING : text.button.SEND_MESSAGE}

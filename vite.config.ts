@@ -1,25 +1,31 @@
-import { defineConfig } from "vitest/config"
-import react from "@vitejs/plugin-react"
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  envDir: "./src",
+  envDir: './src',
   define: {
-    "process.env.VITE_SERVICE_ID": JSON.stringify(process.env.VITE_SERVICE_ID),
-    "process.env.VITE_TEMPLATE_ID": JSON.stringify(
+    'process.env.VITE_SERVICE_ID': JSON.stringify(process.env.VITE_SERVICE_ID),
+    'process.env.VITE_TEMPLATE_ID': JSON.stringify(
       process.env.VITE_TEMPLATE_ID,
     ),
-    "process.env.VITE_USER_ID": JSON.stringify(process.env.VITE_USER_ID),
-    "process.env.VITE_API_URL": JSON.stringify(process.env.VITE_API_URL),
+    'process.env.VITE_USER_ID': JSON.stringify(process.env.VITE_USER_ID),
+    'process.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL),
+    'process.env.VITE_CAPTCHA_SEKRET_KEY': JSON.stringify(
+      process.env.VITE_CAPTCHA_SEKRET_KEY,
+    ),
+    'process.env.VITE_CAPTCHA_SITE_KEY': JSON.stringify(
+      process.env.VITE_CAPTCHA_SITE_KEY,
+    ),
   },
   server: {
     open: true,
   },
   test: {
     globals: true,
-    environment: "jsdom",
-    setupFiles: "src/setupTests",
+    environment: 'jsdom',
+    setupFiles: 'src/setupTests',
     mockReset: true,
   },
 })

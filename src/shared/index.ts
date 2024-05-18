@@ -30,6 +30,7 @@ import { Toast } from './toast'
 import { SideBar } from './side-bar'
 import { FlippedCard } from './flipped-card'
 import { ToolTip } from './tool-tip'
+import { ReCaptcha } from './re-captcha'
 
 export {
   Avatar,
@@ -62,4 +63,5 @@ export {
   SideBar,
   FlippedCard,
   ToolTip,
+  ReCaptcha,
 }
