@@ -18,10 +18,13 @@ export const MySkills = () => {
 
   return (
     <Container
-      sx={{
-        ...additionalContainerStyles,
-        position: isResizeScreen ? "static" : "fixed",
-      }}
+      sx={
+        !isResizeScreen
+          ? {
+              ...additionalContainerStyles,
+            }
+          : { position: "unset" }
+      }
     >
       <div className={styles.mySkillsContainer}>
         <UserContact socialList={socialList} userName={text.mySkills.NAME} />
@@ -38,10 +41,7 @@ export const MySkills = () => {
           <TechSkills title={text.mySkills.LANGUAGES} skillsList={languages} />
           <div className={styles.line} />
           <a target="_blank" href={CV_URL}>
-            <Button
-              sx={additionalButtonStyles}
-              text={text.button.DOWNLOAD}
-            />
+            <Button sx={additionalButtonStyles} text={text.button.DOWNLOAD} />
           </a>
         </div>
         <div className={styles.showInfoBtn}>
@@ -53,6 +53,7 @@ export const MySkills = () => {
 }
 
 const additionalContainerStyles: CSSProperties = {
+  position: "fixed",
   left: "10px",
   top: "10px",
   maxWidth: "250px",

@@ -1,6 +1,7 @@
 import { FC } from "react"
-import { ChangeThemeButton, UserInfoButton } from "../../../shared"
+import { Avatar, ChangeThemeButton } from "../../../shared"
 import { NavListItem } from "../nav-list-item/NavListItem"
+import { userPhoto } from "../../../assets"
 import styles from "./DesktopNavigation.module.css"
 
 type Props = {
@@ -21,7 +22,13 @@ export const DesktopNavigation: FC<Props> = ({
       <ChangeThemeButton onClick={onChangeTheme} />
       <NavListItem onChangeItem={onChangeItem} isActiveItem={isActiveItem} />
       <div className={styles.userInfoButton}>
-        <UserInfoButton onClick={handleSideBar} />
+        <Avatar
+          tag="button"
+          sx={{ width: 40, height: 40 }}
+          withBorder
+          src={userPhoto}
+          onClick={handleSideBar}
+        />
       </div>
     </div>
   )

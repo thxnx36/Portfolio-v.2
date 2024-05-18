@@ -13,9 +13,11 @@
   width: 280px;
   position: fixed;
   top: 0;
-  right: -280px;
+  right: -100%;
   transition: right 0.3s ease;
   z-index: 1000;
+  height: 100%;
+  overflow: auto;
 }
 
 .sidebar.open {
@@ -23,5 +25,5 @@
 }
 
 .content {
-  padding: 20px;
+  padding: 10px;
 }

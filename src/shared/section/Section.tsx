@@ -11,7 +11,7 @@ type Props = {
 
 export const Section: FC<Props> = ({ children, id, sx, animated }) => {
   return (
-    <AnimatedDiv animated={animated} id={id} type="section">
+    <AnimatedDiv animated={animated} id={id} tag="section">
       <div style={sx} className={styles.section}>
         {children}
       </div>

@@ -35,7 +35,7 @@ export const RecommedCard: FC<Props> = ({
       </ul>
       <Title
         sx={{ marginBottom: "15px" }}
-        type="h4"
+        tag="h4"
         size="sm"
         fontWeight="regular"
       >
@@ -48,7 +48,7 @@ export const RecommedCard: FC<Props> = ({
         <Avatar withBorder src={userPhoto} />
         <Title
           sx={{ marginBottom: "15px" }}
-          type="h4"
+          tag="h4"
           size="sm"
           fontWeight="regular"
         >

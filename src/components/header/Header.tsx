@@ -40,7 +40,7 @@ export const Header = () => {
       </Container>
 
       {isOpenModal && (
-        <Modal onClose={handleModal}>
+        <Modal isOpen={isOpenModal} onClose={handleModal}>
           <Form onCloseModal={handleModal} />
         </Modal>
       )}

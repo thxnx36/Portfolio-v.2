@@ -26,7 +26,7 @@ export const Table: FC<Props> = ({
         <a className={styles.link} href={url} target="_blank">
           <Title
             sx={{ marginBottom: "15px" }}
-            type="h4"
+            tag="h4"
             size="sm"
             fontWeight="regular"
           >
@@ -41,7 +41,7 @@ export const Table: FC<Props> = ({
         </div>
       </div>
       <div className={styles.description}>
-        <Title type="h4" size="sm" fontWeight="regular">
+        <Title tag="h4" size="sm" fontWeight="regular">
           {title}
         </Title>
         <Paragraph sx={{ textAlign: "left", margin: 0 }}>

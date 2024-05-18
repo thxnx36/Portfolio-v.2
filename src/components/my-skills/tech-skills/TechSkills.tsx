@@ -11,7 +11,7 @@ export const TechSkills: FC<Props> = ({ title, skillsList }) => {
     <>
       <Title
         sx={{ marginBottom: "15px" }}
-        type="h4"
+        tag="h4"
         size="sm"
         fontWeight="regular"
       >

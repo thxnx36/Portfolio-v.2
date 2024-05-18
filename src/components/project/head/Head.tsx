@@ -14,7 +14,7 @@ export const Head: FC<Props> = ({ onClick, projectTitle, imgSrc }) => {
     <>
       <div className={styles.title}>
         <BackButton onClick={onClick} />
-        <Title sx={{ margin: 0 }} type="h2">
+        <Title sx={{ margin: 0 }} tag="h2">
           {projectTitle}
         </Title>
       </div>

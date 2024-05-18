@@ -15,7 +15,7 @@ export const Card: FC<Props> = ({ icon, title, subTitle }) => {
         <div className={styles.icon}>{icon}</div>
         <Title
           sx={{ marginBottom: "15px" }}
-          type="h4"
+          tag="h4"
           size="sm"
           fontWeight="regular"
         >

@@ -32,6 +32,18 @@
   color: var(--text-color);
 }
 
+/* @media screen and (max-width: 840px) {
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    overflow: auto;
+  }
+} */
+
 @media screen and (max-width: 319px) {
   .content {
     padding: 12px;

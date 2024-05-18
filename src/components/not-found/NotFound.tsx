@@ -15,8 +15,8 @@ export const NotFound = () => {
     <Section>
       <div className={styles.notFoundContainer}>
         <TbError404 color={COLOR_YELLOW} size={"5em"} />
-        <Title type="h1">{text.pages.notFound.NOT_FOUND}</Title>
-        <Title size="sm" type="h4">
+        <Title tag="h1">{text.pages.notFound.NOT_FOUND}</Title>
+        <Title size="sm" tag="h4">
           {text.pages.notFound.RETURN_HOME}
         </Title>
         <Button onClick={handleBack} text={text.button.GO_BACK} />
