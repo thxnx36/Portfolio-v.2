@@ -1,12 +1,12 @@
-import { useGetProjectById } from "../../hooks"
-import { useParams, useNavigate } from "react-router-dom"
-import { BrowserTabTitle, Title } from "../../shared"
-import { useCallback } from "react"
-import { Head } from "./head/Head"
-import { Content } from "./content/Content"
-import { StackList } from "./stack-list/StackList"
-import { FiExternalLink } from "react-icons/fi"
-import styles from "./Project.module.css"
+import { useGetProjectById } from '../../hooks'
+import { useParams, useNavigate } from 'react-router-dom'
+import { BrowserTabTitle, Title } from '../../shared'
+import { useCallback } from 'react'
+import { Head } from './head/Head'
+import { Content } from './content/Content'
+import { StackList } from './stack-list/StackList'
+import { FiExternalLink } from 'react-icons/fi'
+import styles from './Project.module.css'
 
 export const Project = () => {
   const { id } = useParams()
@@ -23,10 +23,10 @@ export const Project = () => {
         projectTitle={data?.project}
         imgSrc={data?.src}
       />
-      <Title size="sm" tag="h3">
+      <Title size='sm' tag='h3'>
         {data?.title}
-        <a className={styles.link} target="_blank" href={data?.link}>
-          Live Demo <FiExternalLink size=".8em" />
+        <a className={styles.link} target='_blank' href={data?.link}>
+          Live Demo <FiExternalLink size='.8em' />
         </a>
       </Title>
       <Content aboutProject={data?.about} />

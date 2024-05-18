@@ -4,15 +4,15 @@ import {
   ChangeEvent,
   SyntheticEvent,
   useEffect,
-} from "react"
-import { FormType } from "../types/form-type"
-import { usePostEmailMutation } from "../app/api"
-import { toast } from "react-toastify"
+} from 'react'
+import { FormType } from '../types/form-type'
+import { usePostEmailMutation } from '../app/api'
+import { toast } from 'react-toastify'
 
 const INITIAL_STATE = {
-  name_from: "",
-  email_from: "",
-  message: "",
+  name_from: '',
+  email_from: '',
+  message: '',
 }
 
 type Props = {

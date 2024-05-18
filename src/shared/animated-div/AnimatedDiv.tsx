@@ -1,10 +1,10 @@
-import { FC, ReactNode } from "react"
-import { useAnimatedDiv } from "../../hooks"
-import styles from "./AnimatedDiv.module.css"
+import { FC, ReactNode } from 'react'
+import { useAnimatedDiv } from '../../hooks'
+import styles from './AnimatedDiv.module.css'
 
 type Props = {
   children: ReactNode
-  tag?: "div" | "section"
+  tag?: 'div' | 'section'
   id?: string
   animated?: boolean
 }
@@ -17,7 +17,7 @@ export const AnimatedDiv: FC<Props> = ({
 }) => {
   const { isVisible, animatedDivRef } = useAnimatedDiv()
 
-  const Tag = tag || "section"
+  const Tag = tag || 'section'
 
   return (
     <>
@@ -26,8 +26,8 @@ export const AnimatedDiv: FC<Props> = ({
         ref={animatedDivRef}
         className={
           animated
-            ? `${styles.animatedDiv} ${isVisible ? styles.show : ""}`
-            : ""
+            ? `${styles.animatedDiv} ${isVisible ? styles.show : ''}`
+            : ''
         }
       >
         {children}

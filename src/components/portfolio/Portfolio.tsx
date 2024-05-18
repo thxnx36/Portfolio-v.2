@@ -1,11 +1,11 @@
-import { CardsContainer, Section, SectionHeader } from "../../shared"
-import { portfolio } from "../../db/portfolio"
-import { text } from "../../localization"
-import { PortfolioCard } from "./card/PortfolioCard"
+import { CardsContainer, Section, SectionHeader } from '../../shared'
+import { portfolio } from '../../db/portfolio'
+import { text } from '../../localization'
+import { PortfolioCard } from './card/PortfolioCard'
 
 export const Portfolio = () => {
   return (
-    <Section id="portfolio">
+    <Section id='portfolio'>
       <SectionHeader
         title={text.portfolio.TITLE}
         subTitle={text.portfolio.SUBTITLE}

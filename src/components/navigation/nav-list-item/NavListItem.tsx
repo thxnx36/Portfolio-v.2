@@ -1,7 +1,7 @@
-import { CSSProperties, FC } from "react"
-import { useNavigationList } from "../../../hooks"
-import { NavItem } from "../nav-item/NavItem"
-import styles from "./NavListItem.module.css"
+import { CSSProperties, FC } from 'react'
+import { useNavigationList } from '../../../hooks'
+import { NavItem } from '../nav-item/NavItem'
+import styles from './NavListItem.module.css'
 
 type Props = {
   onChangeItem: (id: number) => void

@@ -1,6 +1,6 @@
-import { FC } from "react"
-import { Title } from "../title/Title"
-import { Paragraph } from "../paragraph"
+import { FC } from 'react'
+import { Title } from '../title/Title'
+import { Paragraph } from '../paragraph'
 
 type Props = {
   title: string
@@ -10,7 +10,7 @@ type Props = {
 export const SectionHeader: FC<Props> = ({ title, subTitle }) => {
   return (
     <>
-      <Title tag="h2">{title}</Title>
+      <Title tag='h2'>{title}</Title>
       <Paragraph>{subTitle}</Paragraph>
     </>
   )

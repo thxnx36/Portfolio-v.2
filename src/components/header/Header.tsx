@@ -1,10 +1,10 @@
-import { IoIosArrowRoundForward } from "react-icons/io"
-import { useCallback, useState } from "react"
-import { Form } from "../form/Form"
-import { headerPhoto } from "../../assets"
-import { Button, Container, Modal, Title } from "../../shared"
-import { text } from "../../localization"
-import styles from "./Header.module.css"
+import { IoIosArrowRoundForward } from 'react-icons/io'
+import { useCallback, useState } from 'react'
+import { Form } from '../form/Form'
+import { headerPhoto } from '../../assets'
+import { Button, Container, Modal, Title } from '../../shared'
+import { text } from '../../localization'
+import styles from './Header.module.css'
 
 export const Header = () => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
@@ -19,9 +19,9 @@ export const Header = () => {
       <Container>
         <div className={styles.content}>
           <div className={styles.info}>
-            <Title size="lg">
-              {text.header.NAME} <br />{" "}
-              <span className={styles.speciality}>{text.header.PATH}</span>{" "}
+            <Title size='lg'>
+              {text.header.NAME} <br />{' '}
+              <span className={styles.speciality}>{text.header.PATH}</span>{' '}
               {text.header.SPECIALTY}
             </Title>
             <blockquote className={styles.infoText}>
@@ -30,11 +30,11 @@ export const Header = () => {
             <Button
               onClick={handleModal}
               text={text.button.HIRE}
-              icon={<IoIosArrowRoundForward size={"1.3em"} />}
+              icon={<IoIosArrowRoundForward size={'1.3em'} />}
             />
           </div>
           <div className={styles.image}>
-            <img src={headerPhoto} alt="header-picture" />
+            <img src={headerPhoto} alt='header-picture' />
           </div>
         </div>
       </Container>

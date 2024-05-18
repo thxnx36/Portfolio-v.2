@@ -1,10 +1,10 @@
-import { FC } from "react"
-import { AiOutlineApple } from "react-icons/ai"
-import { Link } from "react-router-dom"
-import { Container } from "../../../shared"
-import { ROUTES } from "../../../routes"
-import { FiExternalLink } from "react-icons/fi"
-import styles from "./PortfolioCard.module.css"
+import { FC } from 'react'
+import { AiOutlineApple } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
+import { Container } from '../../../shared'
+import { ROUTES } from '../../../routes'
+import { FiExternalLink } from 'react-icons/fi'
+import styles from './PortfolioCard.module.css'
 
 type Props = {
   id: number
@@ -25,11 +25,11 @@ export const PortfolioCard: FC<Props> = ({ src, title, project, id }) => {
           </ul>
         </div>
         <div className={styles.imageContainer}>
-          <img src={src} alt="portfolio-picture" />
+          <img src={src} alt='portfolio-picture' />
           <div className={styles.content}>
             <Link to={ROUTES.dynamic.projectId(id.toString())}>
               <h4 className={styles.nameProject}>
-                {project} <FiExternalLink size="0.5em" />
+                {project} <FiExternalLink size='0.5em' />
               </h4>
             </Link>
             <p className={styles.titleProject}>{title}</p>

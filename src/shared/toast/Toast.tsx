@@ -1,9 +1,9 @@
-import { useContext } from "react"
-import { ToastContainer } from "react-toastify"
-import { ThemeContext } from "../../providers"
+import { useContext } from 'react'
+import { ToastContainer } from 'react-toastify'
+import { ThemeContext } from '../../providers'
 
 export const Toast = () => {
   const { theme } = useContext(ThemeContext)
 
-  return <ToastContainer position="top-right" autoClose={3000} theme={theme} />
+  return <ToastContainer position='top-right' autoClose={3000} theme={theme} />
 }

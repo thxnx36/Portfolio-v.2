@@ -1,13 +1,13 @@
-import { useMySocialList, useResizeScreen } from "../../hooks"
-import { UserContact } from "./user-contact/UserContact"
-import { TechSkills } from "./tech-skills/TechSkills"
-import { skills } from "../../db"
-import { languages } from "../../db"
-import { text } from "../../localization"
-import { CSSProperties, useState } from "react"
-import { Button, CollapseButton, Container } from "../../shared"
-import { CV_URL } from "../../constans"
-import styles from "./MySkills.module.css"
+import { useMySocialList, useResizeScreen } from '../../hooks'
+import { UserContact } from './user-contact/UserContact'
+import { TechSkills } from './tech-skills/TechSkills'
+import { skills } from '../../db'
+import { languages } from '../../db'
+import { text } from '../../localization'
+import { CSSProperties, useState } from 'react'
+import { Button, CollapseButton, Container } from '../../shared'
+import { CV_URL } from '../../constans'
+import styles from './MySkills.module.css'
 
 export const MySkills = () => {
   const [showMore, setShowMore] = useState(false)
@@ -23,7 +23,7 @@ export const MySkills = () => {
           ? {
               ...additionalContainerStyles,
             }
-          : { position: "unset" }
+          : { position: 'unset' }
       }
     >
       <div className={styles.mySkillsContainer}>
@@ -40,7 +40,7 @@ export const MySkills = () => {
           <div className={styles.line} />
           <TechSkills title={text.mySkills.LANGUAGES} skillsList={languages} />
           <div className={styles.line} />
-          <a target="_blank" href={CV_URL}>
+          <a target='_blank' href={CV_URL}>
             <Button sx={additionalButtonStyles} text={text.button.DOWNLOAD} />
           </a>
         </div>
@@ -53,14 +53,14 @@ export const MySkills = () => {
 }
 
 const additionalContainerStyles: CSSProperties = {
-  position: "fixed",
-  left: "10px",
-  top: "10px",
-  maxWidth: "250px",
+  position: 'fixed',
+  left: '10px',
+  top: '10px',
+  maxWidth: '250px',
 }
 
 const additionalButtonStyles: CSSProperties = {
-  width: "100%",
-  padding: "10px",
-  fontSize: "12px",
+  width: '100%',
+  padding: '10px',
+  fontSize: '12px',
 }

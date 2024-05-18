@@ -1,6 +1,6 @@
-import { Routes as ReactDOMRoutes, Route } from "react-router-dom"
-import { ROUTES } from "../../routes"
-import { MainPage, NotFoundPage, PortfolioPage } from "../../pages"
+import { Routes as ReactDOMRoutes, Route } from 'react-router-dom'
+import { ROUTES } from '../../routes'
+import { MainPage, NotFoundPage, PortfolioPage } from '../../pages'
 
 export const Routes = () => {
   return (

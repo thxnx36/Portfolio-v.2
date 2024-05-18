@@ -1,5 +1,5 @@
-import { CSSProperties, FC, ReactNode } from "react"
-import styles from "./Paragraph.module.css"
+import { CSSProperties, FC, ReactNode } from 'react'
+import styles from './Paragraph.module.css'
 
 export type Props = {
   children: ReactNode

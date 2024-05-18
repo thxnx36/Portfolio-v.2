@@ -1,7 +1,7 @@
-import { FC, ReactElement, ReactNode } from "react"
-import Carousel from "react-multi-carousel"
-import { RESPONSIVE } from "../../constans"
-import styles from "./Slider.module.css"
+import { FC, ReactElement, ReactNode } from 'react'
+import Carousel from 'react-multi-carousel'
+import { RESPONSIVE } from '../../constans'
+import styles from './Slider.module.css'
 
 type Props = {
   leftArrow?: ReactElement
@@ -16,9 +16,9 @@ export const Slider: FC<Props> = ({ children }) => {
       arrows
       autoPlaySpeed={3000}
       centerMode={false}
-      className=""
+      className=''
       containerClass={styles.container}
-      dotListClass=""
+      dotListClass=''
       draggable
       focusOnSelect={false}
       infinite
@@ -35,7 +35,7 @@ export const Slider: FC<Props> = ({ children }) => {
       rtl={false}
       shouldResetAutoplay
       showDots={false}
-      sliderClass=""
+      sliderClass=''
       slidesToSlide={1}
       swipeable
     >

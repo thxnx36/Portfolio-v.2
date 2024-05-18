@@ -1,6 +1,6 @@
-import { FC, ReactNode } from "react"
-import { Container, Paragraph, Title } from "../../../shared"
-import styles from "./Card.module.css"
+import { FC, ReactNode } from 'react'
+import { Container, Paragraph, Title } from '../../../shared'
+import styles from './Card.module.css'
 
 type Props = {
   icon: ReactNode
@@ -14,10 +14,10 @@ export const Card: FC<Props> = ({ icon, title, subTitle }) => {
       <div className={styles.card}>
         <div className={styles.icon}>{icon}</div>
         <Title
-          sx={{ marginBottom: "15px" }}
-          tag="h4"
-          size="sm"
-          fontWeight="regular"
+          sx={{ marginBottom: '15px' }}
+          tag='h4'
+          size='sm'
+          fontWeight='regular'
         >
           {title}
         </Title>

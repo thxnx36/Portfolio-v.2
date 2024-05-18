@@ -1,12 +1,12 @@
 export const languages = [
   {
     id: 1,
-    skill: "Ukrainian",
+    skill: 'Ukrainian',
     progress: 100,
   },
   {
     id: 2,
-    skill: "English",
+    skill: 'English',
     progress: 60,
   },
 ]

@@ -1,3 +1,3 @@
-import { NAVIGATE } from "./nav"
+import { NAVIGATE } from './nav'
 
 export { NAVIGATE }

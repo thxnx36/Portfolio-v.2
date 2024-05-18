@@ -1,5 +1,5 @@
-import { FC, ReactNode } from "react"
-import styles from "./CardsContainer.module.css"
+import { FC, ReactNode } from 'react'
+import styles from './CardsContainer.module.css'
 
 type Props = {
   children: ReactNode

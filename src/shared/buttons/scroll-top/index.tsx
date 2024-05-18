@@ -1,3 +1,3 @@
-import { ScrollTopButton } from "./ScrollTopButton"
+import { ScrollTopButton } from './ScrollTopButton'
 
 export { ScrollTopButton }

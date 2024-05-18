@@ -1,7 +1,7 @@
-import { FC } from "react"
-import { Paragraph } from "../paragraph/Paragraph"
-import { ProgressLine } from "../progress-line/ProgressLine"
-import styles from "./Skils.module.css"
+import { FC } from 'react'
+import { Paragraph } from '../paragraph/Paragraph'
+import { ProgressLine } from '../progress-line/ProgressLine'
+import styles from './Skils.module.css'
 
 type Props = {
   nameSkill: string

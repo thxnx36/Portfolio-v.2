@@ -1,5 +1,5 @@
-import { FC, ReactNode } from "react"
-import { IoIosArrowBack } from "react-icons/io"
+import { FC, ReactNode } from 'react'
+import { IoIosArrowBack } from 'react-icons/io'
 
 type Props = {
   onClick: () => void
@@ -9,7 +9,7 @@ type Props = {
 export const BackButton: FC<Props> = ({ onClick, icon }) => {
   return (
     <button style={{ padding: 0 }} onClick={onClick}>
-      {icon || <IoIosArrowBack size={"2em"} />}
+      {icon || <IoIosArrowBack size={'2em'} />}
     </button>
   )
 }

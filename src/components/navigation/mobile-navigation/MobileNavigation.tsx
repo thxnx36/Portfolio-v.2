@@ -1,13 +1,13 @@
-import { CSSProperties, FC, useCallback, useState } from "react"
+import { CSSProperties, FC, useCallback, useState } from 'react'
 import {
   Avatar,
   BurgerButton,
   ChangeThemeButton,
   Container,
-} from "../../../shared"
-import { NavListItem } from "../nav-list-item/NavListItem"
-import { userPhoto } from "../../../assets"
-import styles from "./MobileNavigation.module.css"
+} from '../../../shared'
+import { NavListItem } from '../nav-list-item/NavListItem'
+import { userPhoto } from '../../../assets'
+import styles from './MobileNavigation.module.css'
 
 type Props = {
   onChangeItem: (id: number) => void
@@ -36,7 +36,7 @@ export const MobileNavigation: FC<Props> = ({
         <BurgerButton onClick={handleMenu} />
         <ChangeThemeButton onClick={onChangeTheme} />
         <Avatar
-          tag="button"
+          tag='button'
           sx={{ width: 30, height: 30 }}
           withBorder
           src={userPhoto}
@@ -46,11 +46,11 @@ export const MobileNavigation: FC<Props> = ({
       <Container
         sx={{
           ...additionalStyles,
-          transform: showNavPanel ? "translateY(5%)" : "translateY(-200%)",
+          transform: showNavPanel ? 'translateY(5%)' : 'translateY(-200%)',
         }}
       >
         <NavListItem
-          sx={{ padding: "10px" }}
+          sx={{ padding: '10px' }}
           onChangeItem={hideNavPanel}
           isActiveItem={isActiveItem}
         />
@@ -60,6 +60,6 @@ export const MobileNavigation: FC<Props> = ({
 }
 
 const additionalStyles: CSSProperties = {
-  position: "absolute",
-  transition: "transform 0.5s ease",
+  position: 'absolute',
+  transition: 'transform 0.5s ease',
 }

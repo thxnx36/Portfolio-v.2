@@ -1,5 +1,5 @@
-import { FC } from "react"
-import { PiUserListFill } from "react-icons/pi"
+import { FC } from 'react'
+import { PiUserListFill } from 'react-icons/pi'
 
 type Props = {
   onClick: () => void
@@ -8,7 +8,7 @@ type Props = {
 export const UserInfoButton: FC<Props> = ({ onClick }) => {
   return (
     <button onClick={onClick}>
-      <PiUserListFill size="2em" />
+      <PiUserListFill size='2em' />
     </button>
   )
 }

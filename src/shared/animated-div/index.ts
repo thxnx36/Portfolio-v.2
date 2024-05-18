@@ -1,3 +1,3 @@
-import { AnimatedDiv } from "./AnimatedDiv"
+import { AnimatedDiv } from './AnimatedDiv'
 
 export { AnimatedDiv }

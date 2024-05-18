@@ -1,5 +1,5 @@
-import { CSSProperties, FC, ReactNode } from "react"
-import styles from "./Button.module.css"
+import { CSSProperties, FC, ReactNode } from 'react'
+import styles from './Button.module.css'
 
 type Props = {
   onClick?: () => void
