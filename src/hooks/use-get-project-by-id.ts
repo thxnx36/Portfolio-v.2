@@ -1,5 +1,5 @@
-import { useMemo } from "react"
-import { portfolio } from "../db"
+import { useMemo } from 'react'
+import { portfolio } from '../db'
 
 export const useGetProjectById = (id: number) => {
   const project = useMemo(

@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react"
+import { CSSProperties, FC } from 'react'
 import {
   Button,
   Input,
@@ -6,10 +6,10 @@ import {
   SocialList,
   Textarea,
   Title,
-} from "../../shared"
-import { useMySocialList, useSendEmail } from "../../hooks"
-import { text } from "../../localization"
-import styles from "./Form.module.css"
+} from '../../shared'
+import { useMySocialList, useSendEmail } from '../../hooks'
+import { text } from '../../localization'
+import styles from './Form.module.css'
 
 type Props = {
   onCloseModal: () => void
@@ -33,22 +33,22 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
     <>
       {!isSendFormError && (
         <form onSubmit={onSubmit}>
-          <Title tag="h2">{text.form.TITLE}</Title>
+          <Title tag='h2'>{text.form.TITLE}</Title>
           <Input
             required
-            onChange={handleChange("name_from")}
+            onChange={handleChange('name_from')}
             value={form.name_from}
             placeholder={text.input.placeholder.YOUR_NAME}
           />
           <Input
-            type="email"
+            type='email'
             required
-            onChange={handleChange("email_from")}
+            onChange={handleChange('email_from')}
             value={form.email_from}
             placeholder={text.input.placeholder.YOUR_EMAIL}
           />
           <Textarea
-            onChange={handleChange("message")}
+            onChange={handleChange('message')}
             value={form.message}
             required
             rows={7}
@@ -58,13 +58,13 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
           <Button
             sx={additionalButtonStyles}
             text={isLoading ? text.button.LOADING : text.button.SEND_MESSAGE}
-            type="submit"
+            type='submit'
             disabled={isDisabledButton}
           />
         </form>
       )}
       <div className={styles.contacts}>
-        <Paragraph sx={{ margin: "15px 0 0" }}>
+        <Paragraph sx={{ margin: '15px 0 0' }}>
           {!isSendFormError
             ? text.form.TEXT_ME_MESSENGERS
             : text.form.CONTACT_ME_IF_ERROR}
@@ -76,7 +76,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
 }
 
 const additionalButtonStyles: CSSProperties = {
-  width: "100%",
-  padding: "10px",
-  fontSize: "12px",
+  width: '100%',
+  padding: '10px',
+  fontSize: '12px',
 }

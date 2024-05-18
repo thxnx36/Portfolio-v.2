@@ -1,5 +1,5 @@
-import { CSSProperties, FC, ReactNode } from "react"
-import styles from "./Container.module.css"
+import { CSSProperties, FC, ReactNode } from 'react'
+import styles from './Container.module.css'
 
 type Props = {
   children: ReactNode

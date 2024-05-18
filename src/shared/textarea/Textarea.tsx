@@ -1,5 +1,5 @@
-import { ChangeEvent, FC, TextareaHTMLAttributes } from "react"
-import styles from "./Textarea.module.css"
+import { ChangeEvent, FC, TextareaHTMLAttributes } from 'react'
+import styles from './Textarea.module.css'
 
 type Props = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   value?: string
@@ -26,7 +26,7 @@ export const Textarea: FC<Props> = ({
         value={value}
       />
       {error && (
-        <p className={styles.errorMessage}>{errorText || "Some errors"}</p>
+        <p className={styles.errorMessage}>{errorText || 'Some errors'}</p>
       )}
     </div>
   )

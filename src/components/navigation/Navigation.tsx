@@ -1,13 +1,13 @@
-import { useScrollListener } from "../../hooks"
-import { useState, useCallback, useContext, CSSProperties } from "react"
-import { useResizeScreen } from "../../hooks"
-import { DesktopNavigation } from "./desktop-navigation/DesktopNavigation"
-import { MobileNavigation } from "./mobile-navigation/MobileNavigation"
-import { TABLET } from "../../constans"
-import { ThemeContext } from "../../providers"
-import { DARK, LIGHT } from "../../constans"
-import { Container, SideBar } from "../../shared"
-import { MySkills } from "../my-skills/MySkills"
+import { useScrollListener } from '../../hooks'
+import { useState, useCallback, useContext, CSSProperties } from 'react'
+import { useResizeScreen } from '../../hooks'
+import { DesktopNavigation } from './desktop-navigation/DesktopNavigation'
+import { MobileNavigation } from './mobile-navigation/MobileNavigation'
+import { TABLET } from '../../constans'
+import { ThemeContext } from '../../providers'
+import { DARK, LIGHT } from '../../constans'
+import { Container, SideBar } from '../../shared'
+import { MySkills } from '../my-skills/MySkills'
 
 export const Navigation = () => {
   const [activeItem, setActiveItem] = useState<number>(1)
@@ -37,10 +37,10 @@ export const Navigation = () => {
           !isResizeScreen
             ? {
                 ...additionalContainerStyles,
-                top: !isScrollDown ? "0" : "-50%",
+                top: !isScrollDown ? '0' : '-50%',
               }
             : {
-                marginBottom: "10px",
+                marginBottom: '10px',
               }
         }
       >
@@ -70,8 +70,8 @@ export const Navigation = () => {
 }
 
 const additionalContainerStyles: CSSProperties = {
-  position: "sticky",
+  position: 'sticky',
   zIndex: 99,
-  marginBottom: "10px",
-  transition: "top .7s ease",
+  marginBottom: '10px',
+  transition: 'top .7s ease',
 }

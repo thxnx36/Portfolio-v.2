@@ -1,3 +1,3 @@
-import { apiBaseQuery } from "./api-base-query"
+import { apiBaseQuery } from './api-base-query'
 
 export { apiBaseQuery }

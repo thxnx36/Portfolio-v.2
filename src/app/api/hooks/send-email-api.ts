@@ -1,9 +1,9 @@
-import { createApi } from "@reduxjs/toolkit/query/react"
-import { sendEmailPayloadType } from "../../../types/send-email-payload-type"
-import { apiBaseQuery } from "../api-base-query"
+import { createApi } from '@reduxjs/toolkit/query/react'
+import { sendEmailPayloadType } from '../../../types/send-email-payload-type'
+import { apiBaseQuery } from '../api-base-query'
 
 export const sendEmailApi = createApi({
-  reducerPath: "sendEmailApi",
+  reducerPath: 'sendEmailApi',
   baseQuery: apiBaseQuery({
     baseUrl: import.meta.env.VITE_API_URL,
   }),
@@ -20,10 +20,10 @@ export const sendEmailApi = createApi({
         }).toString()
 
         return {
-          url: "/",
-          method: "post",
+          url: '/',
+          method: 'post',
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
           data,
         }

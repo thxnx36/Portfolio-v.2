@@ -1,8 +1,8 @@
-import { FC } from "react"
-import { Avatar, ChangeThemeButton } from "../../../shared"
-import { NavListItem } from "../nav-list-item/NavListItem"
-import { userPhoto } from "../../../assets"
-import styles from "./DesktopNavigation.module.css"
+import { FC } from 'react'
+import { Avatar, ChangeThemeButton } from '../../../shared'
+import { NavListItem } from '../nav-list-item/NavListItem'
+import { userPhoto } from '../../../assets'
+import styles from './DesktopNavigation.module.css'
 
 type Props = {
   onChangeItem: (id: number) => void
@@ -23,7 +23,7 @@ export const DesktopNavigation: FC<Props> = ({
       <NavListItem onChangeItem={onChangeItem} isActiveItem={isActiveItem} />
       <div className={styles.userInfoButton}>
         <Avatar
-          tag="button"
+          tag='button'
           sx={{ width: 40, height: 40 }}
           withBorder
           src={userPhoto}

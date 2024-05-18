@@ -1,5 +1,5 @@
-import { FC } from "react"
-import { Paragraph } from "../../../shared"
+import { FC } from 'react'
+import { Paragraph } from '../../../shared'
 
 type Props = {
   stackList?: string[]
@@ -7,7 +7,7 @@ type Props = {
 
 export const StackList: FC<Props> = ({ stackList }) => {
   return (
-    <Paragraph sx={{ maxWidth: "100%", textAlign: "center", margin: 0 }}>
+    <Paragraph sx={{ maxWidth: '100%', textAlign: 'center', margin: 0 }}>
       {stackList}
     </Paragraph>
   )

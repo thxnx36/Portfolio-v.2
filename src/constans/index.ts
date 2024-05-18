@@ -1,7 +1,7 @@
-import { COLOR_YELLOW, COLOR_BLUE, GREY_COLOR } from "./colors"
-import { TABLET } from "./screen"
-import { RESPONSIVE } from "./slider"
-import { DARK, LIGHT } from "./theme"
+import { COLOR_YELLOW, COLOR_BLUE, GREY_COLOR } from './colors'
+import { TABLET } from './screen'
+import { RESPONSIVE } from './slider'
+import { DARK, LIGHT } from './theme'
 import {
   COMPANY_URL,
   UDEMY_URL,
@@ -14,7 +14,7 @@ import {
   TUTTIFY_URL,
   MAVEN_URL,
   CV_URL,
-} from "./URLs"
+} from './URLs'
 
 export {
   RESPONSIVE,

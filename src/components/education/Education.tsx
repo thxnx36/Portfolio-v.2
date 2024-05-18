@@ -1,17 +1,17 @@
-import { Container, Section, SectionHeader, Table } from "../../shared"
-import { education } from "../../db"
-import { text } from "../../localization"
+import { Container, Section, SectionHeader, Table } from '../../shared'
+import { education } from '../../db'
+import { text } from '../../localization'
 
 export const Education = () => {
   return (
-    <Section id="education">
+    <Section id='education'>
       <SectionHeader
         title={text.education.TITLE}
         subTitle={text.education.SUBTITLE}
       />
       {education.map(
         ({ university, position, date, title, description, url, id }) => (
-          <Container key={id} sx={{ margin: "0 0 5px" }}>
+          <Container key={id} sx={{ margin: '0 0 5px' }}>
             <Table
               namePlace={university}
               namePosition={position}

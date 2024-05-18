@@ -1,5 +1,5 @@
-import { FC, ReactNode } from "react"
-import styles from "./NavItem.module.css"
+import { FC, ReactNode } from 'react'
+import styles from './NavItem.module.css'
 
 type Props = {
   href: string

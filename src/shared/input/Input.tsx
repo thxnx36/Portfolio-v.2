@@ -1,5 +1,5 @@
-import { ChangeEvent, FC, InputHTMLAttributes } from "react"
-import styles from "./Input.module.css"
+import { ChangeEvent, FC, InputHTMLAttributes } from 'react'
+import styles from './Input.module.css'
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   value?: string
@@ -24,7 +24,7 @@ export const Input: FC<Props> = ({
         onChange={onChange}
       />
       {error && (
-        <p className={styles.errorMessage}>{errorText || "Some errors"}</p>
+        <p className={styles.errorMessage}>{errorText || 'Some errors'}</p>
       )}
     </div>
   )

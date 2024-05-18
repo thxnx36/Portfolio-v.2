@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 export const useScrollListener = () => {
   const [showButton, setShowButton] = useState(false)
@@ -18,10 +18,10 @@ export const useScrollListener = () => {
       setLastScrollPosition(currentScrollPosition)
     }
 
-    window.addEventListener("scroll", handleScrollForNavigate)
+    window.addEventListener('scroll', handleScrollForNavigate)
 
     return () => {
-      window.removeEventListener("scroll", handleScrollForNavigate)
+      window.removeEventListener('scroll', handleScrollForNavigate)
     }
   }, [lastScrollPosition])
 
@@ -32,16 +32,16 @@ export const useScrollListener = () => {
       setShowButton(scrollPosition > thirdOfPage)
     }
 
-    window.addEventListener("scroll", handleScrollForButton)
+    window.addEventListener('scroll', handleScrollForButton)
     return () => {
-      window.removeEventListener("scroll", handleScrollForButton)
+      window.removeEventListener('scroll', handleScrollForButton)
     }
   }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     })
   }
 

@@ -1,7 +1,7 @@
-import { FC } from "react"
-import styles from "./Head.module.css"
-import { BackButton } from "../../../shared/buttons"
-import { Title } from "../../../shared"
+import { FC } from 'react'
+import styles from './Head.module.css'
+import { BackButton } from '../../../shared/buttons'
+import { Title } from '../../../shared'
 
 type Props = {
   onClick: () => void
@@ -14,7 +14,7 @@ export const Head: FC<Props> = ({ onClick, projectTitle, imgSrc }) => {
     <>
       <div className={styles.title}>
         <BackButton onClick={onClick} />
-        <Title sx={{ margin: 0 }} tag="h2">
+        <Title sx={{ margin: 0 }} tag='h2'>
           {projectTitle}
         </Title>
       </div>

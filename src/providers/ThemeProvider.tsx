@@ -1,6 +1,6 @@
-import { useEffect, createContext, ReactNode, FC } from "react"
-import { DARK } from "../constans"
-import { useLocalStorage } from "../hooks"
+import { useEffect, createContext, ReactNode, FC } from 'react'
+import { DARK } from '../constans'
+import { useLocalStorage } from '../hooks'
 
 type ThemeContextProps = {
   theme: string
@@ -12,20 +12,20 @@ type ThemeProvider = {
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({
-  theme: "",
+  theme: '',
   changeTheme: () => {},
 })
 
 export const ThemeProvider: FC<ThemeProvider> = ({ children }) => {
-  const [theme, setTheme] = useLocalStorage("theme", DARK)
+  const [theme, setTheme] = useLocalStorage('theme', DARK)
 
   const changeTheme = (theme: string) => setTheme(theme)
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.body.classList.add("dark")
+    if (theme === 'dark') {
+      document.body.classList.add('dark')
     } else {
-      document.body.classList.remove("dark")
+      document.body.classList.remove('dark')
     }
   }, [theme])
 

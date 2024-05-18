@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from 'react'
 
 export const useAnimatedDiv = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
@@ -14,8 +14,8 @@ export const useAnimatedDiv = () => {
       }
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return { isVisible, animatedDivRef }

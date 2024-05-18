@@ -1,15 +1,15 @@
-import { COMPANY_URL } from "../constans"
+import { COMPANY_URL } from '../constans'
 
 export const workHistory = [
   {
     id: 1,
-    company: "Elementica",
-    position: "Front-end Developer",
-    date: "Jan 2022 - Jan 2024",
-    title: "Creating web-applications",
+    company: 'Elementica',
+    position: 'Front-end Developer',
+    date: 'Jan 2022 - Jan 2024',
+    title: 'Creating web-applications',
     url: COMPANY_URL,
     description:
-      "In my role at Elementica I collaborate with the team to develop and enhance the product, make technical decisions, and contribute to achieving common goals",
+      'In my role at Elementica I collaborate with the team to develop and enhance the product, make technical decisions, and contribute to achieving common goals',
   },
   /* {
     id: 2,

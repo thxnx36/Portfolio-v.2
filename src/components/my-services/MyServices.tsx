@@ -1,13 +1,13 @@
-import { CardsContainer, Section, SectionHeader } from "../../shared"
-import { useServicesList } from "../../hooks"
-import { text } from "../../localization/text"
-import { Card } from "./card/Card"
+import { CardsContainer, Section, SectionHeader } from '../../shared'
+import { useServicesList } from '../../hooks'
+import { text } from '../../localization/text'
+import { Card } from './card/Card'
 
 export const MyServices = () => {
   const { servicesList } = useServicesList()
 
   return (
-    <Section animated={false} id="services">
+    <Section animated={false} id='services'>
       <SectionHeader
         title={text.myServices.TITLE}
         subTitle={text.myServices.SUBTITLE}

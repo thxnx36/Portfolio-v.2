@@ -1,7 +1,7 @@
-import { useEffect } from "react"
-import { Section } from "../../shared"
-import { Project } from "../../components/project/Project"
-import { useLocation } from "react-router-dom"
+import { useEffect } from 'react'
+import { Section } from '../../shared'
+import { Project } from '../../components/project/Project'
+import { useLocation } from 'react-router-dom'
 
 export const PortfolioPage = () => {
   const { pathname } = useLocation()

@@ -1,6 +1,6 @@
-import { CSSProperties, FC, ReactNode } from "react"
-import { AnimatedDiv } from "../animated-div"
-import styles from "./Section.module.css"
+import { CSSProperties, FC, ReactNode } from 'react'
+import { AnimatedDiv } from '../animated-div'
+import styles from './Section.module.css'
 
 type Props = {
   children: ReactNode
@@ -11,7 +11,7 @@ type Props = {
 
 export const Section: FC<Props> = ({ children, id, sx, animated }) => {
   return (
-    <AnimatedDiv animated={animated} id={id} tag="section">
+    <AnimatedDiv animated={animated} id={id} tag='section'>
       <div style={sx} className={styles.section}>
         {children}
       </div>

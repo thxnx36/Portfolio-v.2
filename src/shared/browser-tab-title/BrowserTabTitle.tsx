@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react"
+import { FC, useEffect } from 'react'
 
 type Props = {
   title: string
@@ -6,7 +6,7 @@ type Props = {
 
 export const BrowserTabTitle: FC<Props> = ({ title }) => {
   useEffect(() => {
-    document.title = title || "Tab Title"
+    document.title = title || 'Tab Title'
   }, [title])
 
   return null

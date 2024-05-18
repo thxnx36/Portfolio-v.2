@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit"
-import { sendEmailApi } from "../api"
+import { configureStore } from '@reduxjs/toolkit'
+import { sendEmailApi } from '../api'
 
 const store = configureStore({
   reducer: {

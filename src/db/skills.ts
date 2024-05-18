@@ -1,32 +1,32 @@
 export const skills = [
   {
     id: 1,
-    skill: "React",
+    skill: 'React',
     progress: 90,
   },
   {
     id: 2,
-    skill: "Next",
+    skill: 'Next',
     progress: 90,
   },
   {
     id: 3,
-    skill: "JavaScript",
+    skill: 'JavaScript',
     progress: 80,
   },
   {
     id: 4,
-    skill: "HTML",
+    skill: 'HTML',
     progress: 85,
   },
   {
     id: 5,
-    skill: "CSS",
+    skill: 'CSS',
     progress: 80,
   },
   {
     id: 6,
-    skill: "TypeScript",
+    skill: 'TypeScript',
     progress: 90,
   },
 ]

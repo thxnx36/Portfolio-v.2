@@ -1,5 +1,5 @@
-import { FC } from "react"
-import styles from "./ProgressLine.module.css"
+import { FC } from 'react'
+import styles from './ProgressLine.module.css'
 
 type Props = {
   progress: number

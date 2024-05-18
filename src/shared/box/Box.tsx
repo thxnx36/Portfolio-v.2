@@ -1,5 +1,5 @@
-import { CSSProperties, FC, ReactNode } from "react"
-import styles from "./Box.module.css"
+import { CSSProperties, FC, ReactNode } from 'react'
+import styles from './Box.module.css'
 
 type Props = {
   children: ReactNode

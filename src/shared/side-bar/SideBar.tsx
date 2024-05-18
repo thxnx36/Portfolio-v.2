@@ -1,6 +1,6 @@
-import { FC, ReactNode } from "react"
-import { useOverLay } from "../../hooks"
-import styles from "./SideBar.module.css"
+import { FC, ReactNode } from 'react'
+import { useOverLay } from '../../hooks'
+import styles from './SideBar.module.css'
 
 type Props = {
   isOpen: boolean
@@ -16,7 +16,7 @@ export const SideBar: FC<Props> = ({ isOpen, onClose, children }) => {
       {isOpen && (
         <div className={styles.overlay} onClick={onCloseContent}></div>
       )}
-      <div className={`${styles.sidebar} ${isOpen ? `${styles.open}` : ""}`}>
+      <div className={`${styles.sidebar} ${isOpen ? `${styles.open}` : ''}`}>
         <div ref={contentRef} className={styles.content}>
           {children}
         </div>
