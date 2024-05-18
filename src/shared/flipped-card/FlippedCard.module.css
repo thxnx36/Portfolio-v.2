@@ -1,0 +1,52 @@
+.cardContainer {
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  height: 200px;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.cardContainer.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+}
+
+.moreButton {
+  background: none;
+  border: none;
+  color: transparent;
+  font-size: var(--font-size-xs);
+  position: relative;
+  text-transform: lowercase;
+  transition: all 0.3s ease;
+}
+
+.moreButton span {
+  background: var(--bg-linear-reverse);
+  background-clip: text;
+  display: inline-block;
+  position: relative;
+}
