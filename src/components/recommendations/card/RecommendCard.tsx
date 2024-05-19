@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { MdStar } from 'react-icons/md'
 import { COLOR_YELLOW } from '../../../constans'
-import { Avatar, Paragraph, Title } from '../../../shared'
+import { Paragraph, Title } from '../../../shared'
 import styles from './RecommendCard.module.css'
 
 type Props = {
@@ -45,7 +45,6 @@ export const RecommedCard: FC<Props> = ({
         {comment}
       </Paragraph>
       <div className={styles.userInfo}>
-        <Avatar withBorder src={userPhoto} />
         <Title
           sx={{ marginBottom: '15px' }}
           tag='h4'

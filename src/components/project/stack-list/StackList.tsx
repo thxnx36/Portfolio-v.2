@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { CSSProperties, FC } from 'react'
 import { Paragraph } from '../../../shared'
 
 type Props = {
@@ -6,9 +6,12 @@ type Props = {
 }
 
 export const StackList: FC<Props> = ({ stackList }) => {
-  return (
-    <Paragraph sx={{ maxWidth: '100%', textAlign: 'center', margin: 0 }}>
-      {stackList}
-    </Paragraph>
-  )
+  return <Paragraph sx={additionalStyles}>{stackList}</Paragraph>
+}
+
+const additionalStyles: CSSProperties = {
+  maxWidth: '100%',
+  textAlign: 'center',
+  margin: 0,
+  fontStyle: 'italic',
 }

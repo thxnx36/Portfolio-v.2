@@ -26,7 +26,7 @@ export const text = {
     PATH: 'Front-end',
     SPECIALTY: 'Developer',
     DESCRIPTION:
-      'In the world of front-end development, innovation is the brush and code is the canvas, creating digital masterpieces that redefine user experiences',
+      'Combining modern technology and creativity, I build websites and apps that will help you achieve your goals',
   },
 
   footer: {
@@ -35,33 +35,31 @@ export const text = {
   },
 
   myServices: {
-    TITLE: 'My Services',
+    TITLE: 'My services',
     SUBTITLE:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+      'I specialize in creating modern and intuitive interfaces for webapplications. My services include:',
   },
 
   education: {
     TITLE: 'Education',
-    SUBTITLE:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+    SUBTITLE: 'My education journey and the qualifications I have got',
   },
 
   workHistory: {
-    TITLE: 'Work Histrory',
-    SUBTITLE:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+    TITLE: 'Work histrory',
+    SUBTITLE: 'My professional journey and work experience',
   },
 
   portfolio: {
     TITLE: 'Portfolio',
     SUBTITLE:
-      'Key projects in development that I participated both collaboratively with a team and independently',
+      'Key projects in development that I participated both collaboratively with my team and independently',
   },
 
   recommendations: {
     TITLE: 'Recommendations',
     SUBTITLE:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+      'Testimonials and recommendations from customers I have worked with',
   },
 
   mySkills: {
