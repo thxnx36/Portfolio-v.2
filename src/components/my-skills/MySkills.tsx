@@ -21,9 +21,13 @@ export const MySkills = () => {
         <div className={styles.line} />
         <TechSkills title={text.mySkills.LANGUAGES} skillsList={languages} />
         <div className={styles.line} />
-        <a target='_blank' href={CV_URL}>
-          <Button sx={additionalButtonStyles} text={text.button.DOWNLOAD} />
-        </a>
+        <Button
+          tag='a'
+          target='_blank'
+          href={CV_URL}
+          sx={additionalButtonStyles}
+          text={text.button.DOWNLOAD}
+        />
       </div>
     </Container>
   )
