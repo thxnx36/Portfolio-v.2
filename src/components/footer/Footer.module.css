@@ -5,6 +5,10 @@
   padding: 10px;
 }
 
+.version {
+  font-size: var(--font-size-xs-mobile);
+}
+
 @media screen and (max-width: 768px) {
   .footerContent {
     padding: 5px;
