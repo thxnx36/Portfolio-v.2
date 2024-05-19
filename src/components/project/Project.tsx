@@ -29,7 +29,7 @@ export const Project = () => {
           Live Demo <FiExternalLink size='.8em' />
         </a>
       </Title>
-      <Content aboutProject={data?.about} />
+      <Content aboutProject={data?.about} project={data} />
       <div className={styles.stack}>
         {data?.about?.map((item, i) => (
           <StackList key={i} stackList={item?.stack} />

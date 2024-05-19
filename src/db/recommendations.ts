@@ -4,10 +4,9 @@ export const recommendations = [
   {
     id: 1,
     rating: 5,
-    user: 'Simon Riley',
-    title: 'Great!',
-    comment:
-      'We highly recommend Elementica as a reliable team of solid engineers',
+    user: "Declan O'Salivan",
+    title: 'Good job',
+    comment: 'Excellent developer. The team is well structured with top level',
     userPhoto: userPhoto,
   },
   {
@@ -16,7 +15,7 @@ export const recommendations = [
     user: 'Vikrant Gupta',
     title: 'Amazing work',
     comment:
-      'Vlad clearly understand the project goals and technical requirements ',
+      'We highly recommend Elementica as a reliable team of solid engineers',
     userPhoto: userPhoto,
   },
   {
@@ -31,9 +30,10 @@ export const recommendations = [
   {
     id: 2,
     rating: 5,
-    user: "Declan O'Salivan",
-    title: 'Good job',
-    comment: 'Excellent developer. The team is well structured with top level',
+    user: 'Simon Riley',
+    title: 'Great dev',
+    comment:
+      'Vlad clearly understand the project goals and technical requirements',
     userPhoto: userPhoto,
   },
 ]

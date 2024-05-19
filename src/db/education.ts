@@ -9,7 +9,7 @@ export const education = [
     title: 'Front-end Developing',
     url: UDEMY_URL,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar quisque sed amet, nulla nunc. Eleifend sodales posuere fusce tempus etiam et pellentesque. Molestie risus enim neque eget dui.',
+      'In-depth learning front-end technologies including JavaScript, React and Redux',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const education = [
     title: 'Energy management',
     url: UNIVERSITY_URL,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar quisque sed amet, nulla nunc. Eleifend sodales posuere fusce tempus etiam et pellentesque. Molestie risus enim neque eget dui.',
+      'Learning of energy supply plans and strategies, energy optimization and cost minimization',
   },
   /* {
     id: 3,

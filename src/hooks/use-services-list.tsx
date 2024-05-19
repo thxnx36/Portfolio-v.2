@@ -1,50 +1,50 @@
 import { ServicesListType } from '../types/services-list-type'
-import { LiaLaptopCodeSolid } from 'react-icons/lia'
-import { MdOutlineDesignServices } from 'react-icons/md'
-import { CgWebsite } from 'react-icons/cg'
-import { CgPerformance } from 'react-icons/cg'
-import { CgBrowser } from 'react-icons/cg'
+import { FaReact } from 'react-icons/fa'
+import { SiPagespeedinsights } from 'react-icons/si'
+import { PiBrowsersThin } from 'react-icons/pi'
 import { COLOR_YELLOW } from '../constans'
-import { FaGit } from 'react-icons/fa'
+import { CiDatabase } from 'react-icons/ci'
+import { CiMobile3 } from 'react-icons/ci'
+import { HiOutlineCodeBracket } from 'react-icons/hi2'
 import { useMemo } from 'react'
 
 export const useServicesList = () => {
   const servicesList: ServicesListType[] = useMemo(
     () => [
       {
-        title: 'Front-end Development',
-        text: 'Creating modern and interactive user interfaces using HTML, CSS, and JavaScript',
-        icon: <LiaLaptopCodeSolid size='5em' color={COLOR_YELLOW} />,
+        title: 'Front-end development',
+        text: 'Developing UI using React/Next, TypeScript, CSS',
+        icon: <FaReact size='5em' color={COLOR_YELLOW} />,
         id: 1,
       },
       {
-        title: 'Responsive Design',
+        title: 'Responsive design',
         text: 'Developing responsive websites ensuring optimal display on all devices and screen resolutions',
-        icon: <MdOutlineDesignServices size='5em' color={COLOR_YELLOW} />,
+        icon: <CiMobile3 size='5em' color={COLOR_YELLOW} />,
         id: 2,
       },
       {
-        title: 'UI/UX Design',
-        text: 'Designing aesthetically pleasing and user-friendly interfaces with a focus on user experience',
-        icon: <CgWebsite size='5em' color={COLOR_YELLOW} />,
+        title: 'API and backend integration',
+        text: 'Work with APIs and backend to implement web application functionality, including data exchange',
+        icon: <CiDatabase size='5em' color={COLOR_YELLOW} />,
         id: 3,
       },
       {
-        title: 'Performance Optimization',
-        text: 'Optimizing the performance of web applications for fast loading times and maximum responsiveness.',
-        icon: <CgPerformance size='5em' color={COLOR_YELLOW} />,
+        title: 'Performance optimization',
+        text: 'Optimizing the performance of web applications for fast loading times and maximum responsiveness',
+        icon: <SiPagespeedinsights size='4.4em' color={COLOR_YELLOW} />,
         id: 4,
       },
       {
-        title: 'Cross-Browser Compatibility',
-        text: 'Ensuring compatibility of web applications with various browsers for a wide audience reach',
-        icon: <CgBrowser size='5em' color={COLOR_YELLOW} />,
+        title: 'Cross-browser compatibility',
+        text: 'Ensuring compatibility of web applications with various browsers',
+        icon: <PiBrowsersThin size='5em' color={COLOR_YELLOW} />,
         id: 5,
       },
       {
-        title: 'Version Control',
-        text: 'Managing code versions using Git version control system for efficient collaboration and change tracking',
-        icon: <FaGit size='5em' color={COLOR_YELLOW} />,
+        title: 'Technical support',
+        text: 'Updating and supporting existing code to ensure stable operation of the application',
+        icon: <HiOutlineCodeBracket size='5em' color={COLOR_YELLOW} />,
         id: 6,
       },
     ],
