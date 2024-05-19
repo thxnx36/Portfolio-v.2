@@ -1,6 +1,7 @@
 import { FC, useContext } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { ThemeContext } from '../../providers'
+import { getEnvVars } from '../../utils'
 
 type Props = {
   onChange: (value: string | null) => void
@@ -8,16 +9,12 @@ type Props = {
 
 export const ReCaptcha: FC<Props> = ({ onChange }) => {
   const { theme } = useContext(ThemeContext)
-  const key =
-    import.meta.env.VITE_CAPTCHA_SITE_KEY ||
-    '6LeHRuEpAAAAAN85i4oh3n-q-xvObU4mK_N8t-eG'
-  console.log('sitekey_env: ', import.meta.env.VITE_CAPTCHA_SITE_KEY)
-
+  const env = getEnvVars()
   return (
     <ReCAPTCHA
       //@ts-ignore
       theme={theme}
-      sitekey={key}
+      sitekey={env.apiCaptchaSiteKey}
       onChange={onChange}
     />
   )
