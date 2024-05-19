@@ -8,8 +8,10 @@ type Props = {
 
 export const ReCaptcha: FC<Props> = ({ onChange }) => {
   const { theme } = useContext(ThemeContext)
-  const key = '6LeHRuEpAAAAAN85i4oh3n-q-xvObU4mK_N8t-eG'
-  // import.meta.env.VITE_CAPTCHA_SITE_KEY
+  const key =
+    import.meta.env.VITE_CAPTCHA_SITE_KEY ||
+    '6LeHRuEpAAAAAN85i4oh3n-q-xvObU4mK_N8t-eG'
+  console.log('sitekey_env: ', import.meta.env.VITE_CAPTCHA_SITE_KEY)
 
   return (
     <ReCAPTCHA
