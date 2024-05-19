@@ -17,6 +17,7 @@ export const workHistory = [
     position: 'Web Developer',
     date: 'Jun 2021 - Dec 2021',
     title: 'Creating websites',
+    url: '#',
     description:
       'I created websites using HTML, CSS, JavaScript for customers on freelance',
   },
