@@ -4,6 +4,7 @@ import { COLOR_YELLOW } from '../../constans'
 import { useNavigate } from 'react-router-dom'
 import { useCallback } from 'react'
 import { text } from '../../localization'
+import { ROUTES } from '../../routes'
 import styles from './NotFound.module.css'
 
 export const NotFound = () => {
@@ -18,7 +19,12 @@ export const NotFound = () => {
       <Title size='sm' tag='h4'>
         {text.pages.notFound.RETURN_HOME}
       </Title>
-      <Button onClick={handleBack} text={text.button.GO_BACK} />
+      <Button
+        tag='link'
+        to={ROUTES.main}
+        onClick={handleBack}
+        text={text.button.GO_BACK}
+      />
     </div>
   )
 }

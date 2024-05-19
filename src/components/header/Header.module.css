@@ -26,6 +26,7 @@
 }
 
 .image {
+  width: 400px;
   position: relative;
   bottom: -20px;
 }
@@ -40,7 +41,7 @@
   }
 }
 
-@media screen and (max-width: 865px) {
+@media screen and (max-width: 900px) {
   .content {
     padding: 20px;
   }

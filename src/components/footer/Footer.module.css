@@ -5,6 +5,10 @@
   padding: 10px;
 }
 
+.footerContent a {
+  height: 35px;
+}
+
 .version {
   font-size: var(--font-size-xs-mobile);
 }
