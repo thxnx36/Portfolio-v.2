@@ -1,19 +1,22 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
 import { sendEmailPayloadType } from '../../../types/send-email-payload-type'
 import { apiBaseQuery } from '../api-base-query'
+import { getEnvVars } from '../../../utils'
+
+const env = getEnvVars()
 
 export const sendEmailApi = createApi({
   reducerPath: 'sendEmailApi',
   baseQuery: apiBaseQuery({
-    baseUrl: import.meta.env.VITE_API_URL,
+    baseUrl: env.apiEmailApiUrl,
   }),
   endpoints: build => ({
     postEmail: build.mutation<void, sendEmailPayloadType>({
       query: ({ name_from, message, email_from, reCaptchaToken }) => {
         const data = new URLSearchParams({
-          service_id: import.meta.env.VITE_SERVICE_ID,
-          template_id: import.meta.env.VITE_TEMPLATE_ID,
-          user_id: import.meta.env.VITE_USER_ID,
+          service_id: env.apiServicesId,
+          template_id: env.apiTemplateId,
+          user_id: env.apiUserId,
           name_from,
           email_from,
           message,

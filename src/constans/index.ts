@@ -1,4 +1,5 @@
 import { COLOR_YELLOW, COLOR_BLUE, GREY_COLOR } from './colors'
+import { ENV_VARS } from './env'
 import { TABLET } from './screen'
 import { RESPONSIVE } from './slider'
 import { DARK, LIGHT } from './theme'
@@ -35,4 +36,5 @@ export {
   TUTTIFY_URL,
   MAVEN_URL,
   CV_URL,
+  ENV_VARS,
 }
