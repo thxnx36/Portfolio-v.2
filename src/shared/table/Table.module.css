@@ -29,6 +29,11 @@ a {
   width: 100%;
 }
 
+.disabledLink {
+  pointer-events: none;
+  cursor: default;
+}
+
 .period {
   display: flex;
   gap: 25px;

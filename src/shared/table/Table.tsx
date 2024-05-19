@@ -23,7 +23,15 @@ export const Table: FC<Props> = ({
   return (
     <div className={styles.tableContainer}>
       <div className={styles.place}>
-        <a className={styles.link} href={url} target='_blank'>
+        <a
+          className={
+            url !== '#'
+              ? `${styles.link}`
+              : `${styles.link} ${styles.disabledLink}`
+          }
+          href={url}
+          target='_blank'
+        >
           <Title
             sx={{ marginBottom: '15px' }}
             tag='h4'
