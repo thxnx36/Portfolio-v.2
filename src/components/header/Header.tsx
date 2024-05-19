@@ -25,7 +25,7 @@ export const Header = () => {
               {text.header.SPECIALTY}
             </Title>
             <blockquote className={styles.infoText}>
-              {text.header.DESCRIPTION}
+              {text.header.DESCRIPTION}💪
             </blockquote>
             <Button
               onClick={handleModal}

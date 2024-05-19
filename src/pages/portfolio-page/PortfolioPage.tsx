@@ -11,7 +11,7 @@ export const PortfolioPage = () => {
   }, [pathname])
 
   return (
-    <Section sx={{ margin: 0 }}>
+    <Section animated={false} sx={{ margin: 0 }}>
       <Project />
     </Section>
   )
