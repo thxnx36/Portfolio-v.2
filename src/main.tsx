@@ -5,7 +5,6 @@ import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from './providers'
 import { App } from './App'
-import './index.css'
 
 const container = document.getElementById('root')
 

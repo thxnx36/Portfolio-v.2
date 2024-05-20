@@ -3,7 +3,7 @@ import { Section } from '../../shared'
 import { Project } from '../../components/project/Project'
 import { useLocation } from 'react-router-dom'
 
-export const PortfolioPage = () => {
+const PortfolioPage = () => {
   const { pathname } = useLocation()
 
   useEffect(() => {
@@ -16,3 +16,5 @@ export const PortfolioPage = () => {
     </Section>
   )
 }
+
+export default PortfolioPage
