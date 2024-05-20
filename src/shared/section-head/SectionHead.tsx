@@ -7,7 +7,7 @@ type Props = {
   subTitle: string
 }
 
-export const SectionHeader: FC<Props> = ({ title, subTitle }) => {
+export const SectionHead: FC<Props> = ({ title, subTitle }) => {
   return (
     <>
       <Title tag='h2'>{title}</Title>

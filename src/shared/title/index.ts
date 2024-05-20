@@ -1,3 +1,3 @@
-import { Title } from "./Title"
+import { Title, MTitle } from "./Title"
 
-export { Title }
+export { Title, MTitle }

@@ -1,9 +1,4 @@
-import {
-  CardsContainer,
-  FlippedCard,
-  Section,
-  SectionHeader,
-} from '../../shared'
+import { CardsContainer, FlippedCard, Section, SectionHead } from '../../shared'
 import { useServicesList } from '../../hooks'
 import { text } from '../../localization/text'
 import { useCallback, useState } from 'react'
@@ -23,8 +18,8 @@ export const MyServices = () => {
   const isFlipped = (id: number) => activeCards.includes(id)
 
   return (
-    <Section animated={false} id='services'>
-      <SectionHeader
+    <Section sx={{ marginBottom: '30px' }} id='services'>
+      <SectionHead
         title={text.myServices.TITLE}
         subTitle={text.myServices.SUBTITLE}
       />

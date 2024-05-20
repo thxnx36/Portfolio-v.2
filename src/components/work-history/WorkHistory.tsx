@@ -1,11 +1,18 @@
 import { text } from '../../localization'
 import { workHistory } from '../../db'
-import { Container, Section, SectionHeader, Table } from '../../shared'
+import { Container, MSection, SectionHead, Table } from '../../shared'
+import { motionSection } from '../../constans'
 
 export const WorkHistory = () => {
   return (
-    <Section id='work-history'>
-      <SectionHeader
+    <MSection
+      id='work-history'
+      variants={motionSection.variants}
+      transition={motionSection.transition}
+      initial={motionSection.initial}
+      whileInView={motionSection.whileInView}
+    >
+      <SectionHead
         title={text.workHistory.TITLE}
         subTitle={text.workHistory.SUBTITLE}
       />
@@ -23,6 +30,6 @@ export const WorkHistory = () => {
           </Container>
         ),
       )}
-    </Section>
+    </MSection>
   )
 }

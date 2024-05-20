@@ -13,14 +13,14 @@ import { Input } from './input'
 import { Modal } from './modal'
 import { Paragraph } from './paragraph'
 import { ProgressLine } from './progress-line'
-import { Section } from './section'
-import { SectionHeader } from './section-header'
+import { Section, MSection } from './section'
+import { SectionHead } from './section-head'
 import { Skills } from './skills'
 import { Slider } from './slider'
 import { SocialList } from './social-list'
 import { Table } from './table'
 import { Textarea } from './textarea'
-import { Title } from './title'
+import { Title, MTitle } from './title'
 import { BrowserTabTitle } from './browser-tab-title'
 import { Layout } from './layout'
 import { Routes } from './routes'
@@ -40,6 +40,7 @@ export {
   CollapseButton,
   UserInfoButton,
   Box,
+  MSection,
   CardsContainer,
   Container,
   Input,
@@ -47,13 +48,14 @@ export {
   Paragraph,
   ProgressLine,
   Section,
-  SectionHeader,
+  SectionHead,
   Skills,
   Slider,
   SocialList,
   Table,
   Textarea,
   Title,
+  MTitle,
   BrowserTabTitle,
   Layout,
   Routes,
