@@ -1,4 +1,5 @@
-import { CSSProperties, FC, ReactNode } from 'react'
+import { CSSProperties, FC, ReactNode, forwardRef } from 'react'
+import { motion } from 'framer-motion'
 import styles from './Title.module.css'
 
 export type Props = {
@@ -9,13 +10,17 @@ export type Props = {
   sx?: CSSProperties
 }
 
-export const Title: FC<Props> = ({ children, tag, size, fontWeight, sx }) => {
-  const Tag = tag || 'h1'
-  const className = `${styles.title} ${size ? styles[size] : ''} ${fontWeight ? styles[fontWeight] : ''}`
+export const Title: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
+  ({ children, tag, size, fontWeight, sx }, ref) => {
+    const Tag = tag || 'h1'
+    const className = `${styles.title} ${size ? styles[size] : ''} ${fontWeight ? styles[fontWeight] : ''}`
 
-  return (
-    <Tag style={sx} className={`${styles.title} ${className}`}>
-      {children}
-    </Tag>
-  )
-}
+    return (
+      <Tag ref={ref} style={sx} className={`${styles.title} ${className}`}>
+        {children}
+      </Tag>
+    )
+  },
+)
+
+export const MTitle = motion(Title)

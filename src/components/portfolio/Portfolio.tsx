@@ -1,12 +1,19 @@
-import { CardsContainer, Section, SectionHeader } from '../../shared'
+import { CardsContainer, MSection, SectionHead } from '../../shared'
 import { portfolio } from '../../db/portfolio'
 import { text } from '../../localization'
 import { PortfolioCard } from './card/PortfolioCard'
+import { motionSection } from '../../constans'
 
 export const Portfolio = () => {
   return (
-    <Section id='portfolio'>
-      <SectionHeader
+    <MSection
+      id='portfolio'
+      variants={motionSection.variants}
+      transition={motionSection.transition}
+      initial={motionSection.initial}
+      whileInView={motionSection.whileInView}
+    >
+      <SectionHead
         title={text.portfolio.TITLE}
         subTitle={text.portfolio.SUBTITLE}
       />
@@ -21,6 +28,6 @@ export const Portfolio = () => {
           />
         ))}
       </CardsContainer>
-    </Section>
+    </MSection>
   )
 }

@@ -6,7 +6,7 @@ Welcome to my portfolio website! Here you'll find information about my skills, p
 
 - Redux Toolkit
 - TypeScript
-- CSS 
+- CSS
 - React Router
 - React Toastify
 - EmailJS
@@ -20,3 +20,4 @@ Welcome to my portfolio website! Here you'll find information about my skills, p
 - Work histrory
 - Education
 
+- [Click me](https://vladfrontendpro.vercel.app/)

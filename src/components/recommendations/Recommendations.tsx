@@ -1,14 +1,21 @@
-import { SectionHeader } from '../../shared/section-header/SectionHeader'
-import { Section } from '../../shared/section/Section'
+import { SectionHead } from '../../shared/section-head/SectionHead'
+import { MSection } from '../../shared/section/Section'
 import { text } from '../../localization'
 import { RecommedCard } from './card/RecommendCard'
 import { recommendations } from '../../db'
 import { Slider } from '../../shared/slider/Slider'
+import { motionSection } from '../../constans'
 
 export const Recommendations = () => {
   return (
-    <Section id='recommendations'>
-      <SectionHeader
+    <MSection
+      id='recommendations'
+      variants={motionSection.variants}
+      transition={motionSection.transition}
+      initial={motionSection.initial}
+      whileInView={motionSection.whileInView}
+    >
+      <SectionHead
         title={text.recommendations.TITLE}
         subTitle={text.recommendations.SUBTITLE}
       />
@@ -28,6 +35,6 @@ export const Recommendations = () => {
           )}
         </Slider>
       </div>
-    </Section>
+    </MSection>
   )
 }

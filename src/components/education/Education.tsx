@@ -1,11 +1,18 @@
-import { Container, Section, SectionHeader, Table } from '../../shared'
+import { Container, MSection, SectionHead, Table } from '../../shared'
 import { education } from '../../db'
 import { text } from '../../localization'
+import { motionSection } from '../../constans'
 
 export const Education = () => {
   return (
-    <Section id='education'>
-      <SectionHeader
+    <MSection
+      id='education'
+      variants={motionSection.variants}
+      transition={motionSection.transition}
+      initial={motionSection.initial}
+      whileInView={motionSection.whileInView}
+    >
+      <SectionHead
         title={text.education.TITLE}
         subTitle={text.education.SUBTITLE}
       />
@@ -23,6 +30,6 @@ export const Education = () => {
           </Container>
         ),
       )}
-    </Section>
+    </MSection>
   )
 }

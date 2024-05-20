@@ -6,7 +6,7 @@ export const workHistory = [
     company: 'Elementica',
     position: 'Front-end Developer',
     date: 'Jan 2022 - Jan 2024',
-    title: 'Creating webapplications',
+    title: 'Creating web applications',
     url: COMPANY_URL,
     description:
       'In my role at "Elementica" I collaborate with the team to develop and enhance the product, make technical decisions, and contribute to achieving common goals',
