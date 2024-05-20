@@ -1,9 +1,12 @@
 import { COLOR_YELLOW, COLOR_BLUE, GREY_COLOR } from './colors'
 import { ENV_VARS } from './env'
 import { motionSection } from './motion'
+import { NAVIGATE } from './nav'
+import { ROUTES } from './routes'
 import { TABLET } from './screen'
 import { RESPONSIVE } from './slider'
 import { DARK, LIGHT } from './theme'
+
 import {
   COMPANY_URL,
   UDEMY_URL,
@@ -39,4 +42,6 @@ export {
   CV_URL,
   ENV_VARS,
   motionSection,
+  ROUTES,
+  NAVIGATE,
 }

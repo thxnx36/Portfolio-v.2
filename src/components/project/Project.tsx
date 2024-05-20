@@ -18,7 +18,6 @@ export const Project = () => {
   return (
     <Section sx={{ margin: 0 }}>
       <div className={styles.container}>
-        <BrowserTabTitle title={`My Project | ${data?.project!}`} />
         <Head
           onClick={handleBack}
           projectTitle={data?.project}
@@ -37,6 +36,7 @@ export const Project = () => {
           ))}
         </div>
       </div>
+      <BrowserTabTitle title={`My Project | ${data?.project!}`} />
     </Section>
   )
 }

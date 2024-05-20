@@ -1,3 +1,3 @@
-import { ROUTES } from './routes'
+import { Routes } from "./Routes"
 
-export { ROUTES }
+export { Routes }
