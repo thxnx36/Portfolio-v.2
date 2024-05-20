@@ -13,13 +13,13 @@ export const useServicesList = () => {
     () => [
       {
         title: 'Front-end development',
-        text: 'Developing UI using React/Next, TypeScript, CSS',
+        text: 'Development UI and business logic using React/Next, TypeScript, CSS',
         icon: <FaReact size='5em' color={COLOR_YELLOW} />,
         id: 1,
       },
       {
         title: 'Responsive design',
-        text: 'Developing responsive websites ensuring optimal display on all devices and screen resolutions',
+        text: 'Responsive websites and apps ensuring optimal display on all devices and screen resolutions',
         icon: <CiMobile3 size='5em' color={COLOR_YELLOW} />,
         id: 2,
       },

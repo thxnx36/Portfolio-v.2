@@ -9,7 +9,7 @@ export const education = [
     title: 'Front-end Developing',
     url: UDEMY_URL,
     description:
-      'In-depth learning front-end technologies including JavaScript, React and Redux',
+      'In-depth learning front-end technologies including JavaScript, TypeScript, React and Redux',
   },
   {
     id: 2,

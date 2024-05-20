@@ -19,6 +19,6 @@ export const workHistory = [
     title: 'Creating websites',
     url: '#',
     description:
-      'I created websites using HTML, CSS, JavaScript for customers on freelance',
+      'I was creating websites for clients using HTML, CSS, and JavaScript',
   },
 ]

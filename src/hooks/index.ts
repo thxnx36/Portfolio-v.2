@@ -9,6 +9,7 @@ import { useAnimatedDiv } from './use-animated-div'
 import { useSendEmail } from './use-send-email'
 import { useOverLay } from './use-overlay'
 import { useContentLoaded } from './use-content-loaded'
+import { useSpinner } from './use-spinner'
 
 export {
   useGetProjectById,
@@ -22,4 +23,5 @@ export {
   useSendEmail,
   useOverLay,
   useContentLoaded,
+  useSpinner,
 }

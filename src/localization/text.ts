@@ -37,12 +37,12 @@ export const text = {
   myServices: {
     TITLE: 'My services',
     SUBTITLE:
-      'I specialize in creating modern and intuitive interfaces for webapplications. My services include:',
+      'I specialize in creating modern and intuitive interfaces for web applications. My services include:',
   },
 
   education: {
     TITLE: 'Education',
-    SUBTITLE: 'My education journey and the qualifications I have got',
+    SUBTITLE: 'My education journey and the qualifications I have obtained',
   },
 
   workHistory: {
@@ -53,7 +53,7 @@ export const text = {
   portfolio: {
     TITLE: 'Portfolio',
     SUBTITLE:
-      'Key projects in development that I participated both collaboratively with my team and independently',
+      'Key projects in development that I participated in both collaboratively with my team and independently',
   },
 
   recommendations: {
