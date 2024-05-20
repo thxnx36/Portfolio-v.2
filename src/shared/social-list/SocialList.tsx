@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { MySocialListType } from '../../types/my-social-list-type'
+import { ToolTip } from '../tool-tip'
 import styles from './SocialList.module.css'
 
 type Props = {
@@ -9,11 +10,13 @@ type Props = {
 export const SocialList: FC<Props> = ({ list }) => {
   return (
     <ul className={styles.socialContainer}>
-      {list.map(({ id, icon, link }) => (
+      {list.map(({ id, icon, link, name }) => (
         <li key={id} className={styles.socialItem}>
-          <a className={styles.link} target='_blank' href={link}>
-            {icon}
-          </a>
+          <ToolTip text={name}>
+            <a className={styles.link} target='_blank' href={link}>
+              {icon}
+            </a>
+          </ToolTip>
         </li>
       ))}
     </ul>
