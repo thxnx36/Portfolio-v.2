@@ -4,7 +4,7 @@ import { COLOR_YELLOW } from '../../constans'
 import { useNavigate } from 'react-router-dom'
 import { useCallback } from 'react'
 import { text } from '../../localization'
-import { ROUTES } from '../../routes'
+import { ROUTES } from '../../constans'
 import styles from './NotFound.module.css'
 
 export const NotFound = () => {

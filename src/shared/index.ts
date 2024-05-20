@@ -23,7 +23,6 @@ import { Textarea } from './textarea'
 import { Title, MTitle } from './title'
 import { BrowserTabTitle } from './browser-tab-title'
 import { Layout } from './layout'
-import { Routes } from './routes'
 import { AnimatedDiv } from './animated-div'
 import { ScrollTopButton } from './buttons'
 import { Toast } from './toast'
@@ -58,7 +57,6 @@ export {
   MTitle,
   BrowserTabTitle,
   Layout,
-  Routes,
   AnimatedDiv,
   ScrollTopButton,
   Toast,

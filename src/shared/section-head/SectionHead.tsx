@@ -1,17 +1,34 @@
 import { FC } from 'react'
 import { Title } from '../title/Title'
 import { Paragraph } from '../paragraph'
+import { Link } from 'react-router-dom'
 
 type Props = {
   title: string
   subTitle: string
+  isLink?: boolean
+  to?: string
+  linkText?: string
 }
 
-export const SectionHead: FC<Props> = ({ title, subTitle }) => {
+export const SectionHead: FC<Props> = ({
+  title,
+  subTitle,
+  isLink,
+  to,
+  linkText,
+}) => {
   return (
     <>
       <Title tag='h2'>{title}</Title>
-      <Paragraph>{subTitle}</Paragraph>
+      <Paragraph>
+        {subTitle}{' '}
+        {isLink && to && (
+          <Link style={{ textDecoration: 'underline' }} to={to}>
+            {linkText}
+          </Link>
+        )}
+      </Paragraph>
     </>
   )
 }

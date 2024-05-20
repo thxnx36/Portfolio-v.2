@@ -37,7 +37,8 @@ export const text = {
   myServices: {
     TITLE: 'My services',
     SUBTITLE:
-      'I specialize in creating modern and intuitive interfaces for web applications. My services include:',
+      'You can find more detailed information about me and my technical stack on the',
+    ABOUT_ME: 'About me page',
   },
 
   education: {
@@ -97,6 +98,29 @@ export const text = {
     notFound: {
       NOT_FOUND: 'SORRY, PAGE NOT FOUND!',
       RETURN_HOME: "Don't panic just click the big button to retun home",
+    },
+
+    aboutMe: {
+      TITLE: 'About me',
+      HEY_NICE_MEET: 'Hey! Nice to meet you',
+      TECHNOLOGIES_SUB_TITLE: 'The basic technologies I use in my work',
+      HOBBIES_SUB_TITLE: 'Hobbies',
+      GOT_IN_DEV_SUB_TITLE: 'How I got into development',
+      MY_CAREER: `My career in IT began with a passion for programming during
+      my school years. Initially, I tried writing simple scripts, and then
+      I switched to web development because it allows me to see the
+      results of my work instantly and interact with users through the
+      browser`,
+      HOBBIES: `Sports, traveling, learning English, active leisure, and socializing
+      with friends - these are the main aspects of my hobbies. I enjoy
+      maintaining an active lifestyle, exploring new places, improving
+      language skills, finding engaging ways to spend free time, and
+      connecting with close friends`,
+      DEVELOPMENT: `My passion for development began with small projects and experiments.
+      Over time, I realized that I wanted to delve deeper into this field
+      and made it my profession. I continued to learn, attended courses and
+      workshops to expand my knowledge and skills. Now, I am happy to share
+      my experience and help create unique and functional web applications`,
     },
   },
 }

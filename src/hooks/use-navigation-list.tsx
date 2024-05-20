@@ -5,8 +5,8 @@ import { BiSolidMessageCheck } from 'react-icons/bi'
 import { MdOutlineWork } from 'react-icons/md'
 import { IoSchoolSharp } from 'react-icons/io5'
 import { useMemo } from 'react'
-import { NAVIGATE } from '../nav'
 import { text } from '../localization'
+import { NAVIGATE } from "../constans"
 
 export const useNavigationList = () => {
   const navigationList: NavigationListType[] = useMemo(

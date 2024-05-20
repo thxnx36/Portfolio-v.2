@@ -1,7 +1,14 @@
-import { CardsContainer, FlippedCard, Section, SectionHead } from '../../shared'
+import {
+  CardsContainer,
+  FlippedCard,
+  Paragraph,
+  Section,
+  SectionHead,
+} from '../../shared'
 import { useServicesList } from '../../hooks'
 import { text } from '../../localization/text'
 import { useCallback, useState } from 'react'
+import { ROUTES } from "../../constans"
 
 export const MyServices = () => {
   const { servicesList } = useServicesList()
@@ -22,6 +29,9 @@ export const MyServices = () => {
       <SectionHead
         title={text.myServices.TITLE}
         subTitle={text.myServices.SUBTITLE}
+        isLink
+        to={ROUTES.aboutMe}
+        linkText={text.myServices.ABOUT_ME}
       />
       <CardsContainer>
         {servicesList.map(({ title, text, icon, id }) => (
