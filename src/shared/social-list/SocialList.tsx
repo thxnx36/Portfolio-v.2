@@ -9,16 +9,18 @@ type Props = {
 
 export const SocialList: FC<Props> = ({ list }) => {
   return (
-    <ul className={styles.socialContainer}>
-      {list.map(({ id, icon, link, name }) => (
-        <li key={id} className={styles.socialItem}>
-          <ToolTip text={name}>
-            <a className={styles.link} target='_blank' href={link}>
-              {icon}
-            </a>
-          </ToolTip>
-        </li>
-      ))}
-    </ul>
+    <address>
+      <ul className={styles.socialContainer}>
+        {list.map(({ id, icon, link, name }) => (
+          <li key={id} className={styles.socialItem}>
+            <ToolTip text={name}>
+              <a className={styles.link} target='_blank' href={link}>
+                {icon}
+              </a>
+            </ToolTip>
+          </li>
+        ))}
+      </ul>
+    </address>
   )
 }

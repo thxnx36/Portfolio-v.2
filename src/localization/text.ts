@@ -96,6 +96,7 @@ export const text = {
 
   pages: {
     notFound: {
+      NOT_FOUND_TAB: '404 | Not found',
       NOT_FOUND: 'SORRY, PAGE NOT FOUND!',
       RETURN_HOME: "Don't panic just click the big button to retun home",
     },

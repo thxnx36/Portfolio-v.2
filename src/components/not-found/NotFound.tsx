@@ -1,4 +1,4 @@
-import { Button, Section, Title } from '../../shared'
+import { BrowserTabTitle, Button, Section, Title } from '../../shared'
 import { TbError404 } from 'react-icons/tb'
 import { COLOR_YELLOW } from '../../constans'
 import { useNavigate } from 'react-router-dom'
@@ -27,6 +27,7 @@ export const NotFound = () => {
           text={text.button.GO_BACK}
         />
       </div>
+      <BrowserTabTitle title={text.pages.notFound.NOT_FOUND_TAB} />
     </Section>
   )
 }

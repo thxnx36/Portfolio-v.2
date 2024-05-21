@@ -1,14 +1,14 @@
 import { CSSProperties, FC, ReactNode } from 'react'
-import styles from './Box.module.css'
+import styles from './PageWrapper.module.css'
 
 type Props = {
   children: ReactNode
   sx?: CSSProperties
 }
 
-export const Box: FC<Props> = ({ children, sx }) => {
+export const PageWrapper: FC<Props> = ({ children, sx }) => {
   return (
-    <div className={styles.box} style={sx}>
+    <div className={styles.pageWrapper} style={sx}>
       {children}
     </div>
   )

@@ -21,18 +21,15 @@ export const Recommendations = () => {
       />
       <div style={{ width: '100%' }}>
         <Slider>
-          {recommendations.map(
-            ({ title, user, userPhoto, comment, rating, id }) => (
-              <RecommedCard
-                key={id}
-                title={title}
-                user={user}
-                userPhoto={userPhoto}
-                comment={comment}
-                rating={rating}
-              />
-            ),
-          )}
+          {recommendations.map(({ title, user, comment, rating, id }) => (
+            <RecommedCard
+              key={id}
+              title={title}
+              user={user}
+              comment={comment}
+              rating={rating}
+            />
+          ))}
         </Slider>
       </div>
     </MSection>

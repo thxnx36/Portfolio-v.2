@@ -37,4 +37,8 @@
   h4.title {
     font-size: var(--font-size-sm);
   }
+
+  h3.title {
+    font-size: var(--font-size-sm);
+  }
 }
