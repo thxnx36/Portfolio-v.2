@@ -27,7 +27,7 @@ export const PortfolioCard: FC<Props> = ({ src, title, project, id }) => {
         <div className={styles.imageContainer}>
           <img src={src} alt='portfolio-picture' />
           <div className={styles.content}>
-            <Link to={ROUTES.dynamic.projectId(id.toString())}>
+            <Link to={ROUTES.dynamic.projectId(id)}>
               <h4 className={styles.nameProject}>
                 {project} <FiExternalLink size='0.5em' />
               </h4>

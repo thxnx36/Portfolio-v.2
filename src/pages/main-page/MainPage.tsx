@@ -6,6 +6,9 @@ import { Navigation } from '../../components/navigation/Navigation'
 import { Portfolio } from '../../components/portfolio/Portfolio'
 import { Recommendations } from '../../components/recommendations/Recommendations'
 import { WorkHistory } from '../../components/work-history/WorkHistory'
+import { APP_URL } from '../../constans'
+import { text } from '../../localization'
+import { SEO } from '../../shared'
 
 export const MainPage = () => {
   return (
@@ -20,6 +23,14 @@ export const MainPage = () => {
         <Education />
       </main>
       <Footer />
+      <SEO
+        tabTitle={text.pages.mainPage.seo.TITLE}
+        metaDescriptionContent={text.pages.mainPage.seo.DISCOVER_MORE}
+        metaOgTitleContent={text.pages.mainPage.seo.THE_BEST}
+        metaOgDescriptionContent={text.pages.mainPage.seo.PORTFOLIO_OF}
+        metaOgURLContent={APP_URL}
+        metaOgImageContent=''
+      />
     </>
   )
 }

@@ -1,11 +1,13 @@
 import { useGetProjectById } from '../../hooks'
 import { useParams, useNavigate } from 'react-router-dom'
-import { BrowserTabTitle, PageWrapper, Section, Title } from '../../shared'
+import { PageWrapper, SEO, Section, Title } from '../../shared'
 import { useCallback } from 'react'
 import { Head } from './head/Head'
 import { Content } from './content/Content'
 import { StackList } from './stack-list/StackList'
 import { FiExternalLink } from 'react-icons/fi'
+import { text } from '../../localization'
+import { APP_URL, ROUTES } from '../../constans'
 import styles from './Project.module.css'
 
 export const Project = () => {
@@ -26,7 +28,7 @@ export const Project = () => {
         <Title size='sm' tag='h3'>
           {data?.title}
           <a className={styles.link} target='_blank' href={data?.link}>
-            Live Demo <FiExternalLink size='.8em' />
+            {text.pages.project.LIVE_DEMO} <FiExternalLink size='.8em' />
           </a>
         </Title>
         <Content aboutProject={data?.about} project={data} />
@@ -36,7 +38,14 @@ export const Project = () => {
           ))}
         </div>
       </PageWrapper>
-      <BrowserTabTitle title={`My Project | ${data?.project!}`} />
+      <SEO
+        tabTitle={`${text.pages.project.MY_PROJECT} | ${data?.project!}`}
+        metaDescriptionContent={text.pages.project.seo.PLATFORM_WHERE_USER}
+        metaOgTitleContent={data?.title!}
+        metaOgDescriptionContent={text.pages.project.seo.ABOUT_PROJECT}
+        metaOgURLContent={`${APP_URL}${ROUTES.dynamic.projectId(data?.id!)}`}
+        metaOgImageContent=''
+      />
     </Section>
   )
 }

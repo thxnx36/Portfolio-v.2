@@ -1,15 +1,10 @@
 import { useCallback } from 'react'
-import {
-  BrowserTabTitle,
-  PageWrapper,
-  Paragraph,
-  Section,
-  Title,
-} from '../../shared'
+import { PageWrapper, Paragraph, SEO, Section, Title } from '../../shared'
 import { BackButton } from '../../shared/buttons'
 import { useNavigate } from 'react-router-dom'
 import { technologies } from '../../db'
 import { text } from '../../localization'
+import { APP_URL, ROUTES } from '../../constans'
 import styles from './AboutMe.module.css'
 
 export const AboutMe = () => {
@@ -64,7 +59,14 @@ export const AboutMe = () => {
           </article>
         </article>
       </PageWrapper>
-      <BrowserTabTitle title={text.pages.aboutMe.TITLE} />
+      <SEO
+        tabTitle={text.pages.aboutMe.seo.TITLE}
+        metaDescriptionContent={text.pages.aboutMe.seo.ABOUTE_ME_MY_SKILLS}
+        metaOgTitleContent={text.pages.aboutMe.seo.SHORT_STORY}
+        metaOgDescriptionContent={text.pages.aboutMe.seo.SPECIALIZE}
+        metaOgURLContent={`${APP_URL}${ROUTES.aboutMe}`}
+        metaOgImageContent=''
+      />
     </Section>
   )
 }
