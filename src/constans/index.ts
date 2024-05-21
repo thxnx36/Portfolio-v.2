@@ -6,7 +6,7 @@ import { ROUTES } from './routes'
 import { TABLET } from './screen'
 import { RESPONSIVE } from './slider'
 import { DARK, LIGHT } from './theme'
-
+import { KEYWORDS, ROBOTS, AUTHOR, OG_TYPE_CONTENT, OG_SITE_NAME } from './seo'
 import {
   COMPANY_URL,
   UDEMY_URL,
@@ -19,6 +19,7 @@ import {
   TUTTIFY_URL,
   MAVEN_URL,
   CV_URL,
+  APP_URL,
 } from './URLs'
 
 export {
@@ -44,4 +45,10 @@ export {
   motionSection,
   ROUTES,
   NAVIGATE,
+  KEYWORDS,
+  ROBOTS,
+  AUTHOR,
+  OG_TYPE_CONTENT,
+  OG_SITE_NAME,
+  APP_URL
 }

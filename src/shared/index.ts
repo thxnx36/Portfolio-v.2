@@ -21,7 +21,6 @@ import { SocialList } from './social-list'
 import { Table } from './table'
 import { Textarea } from './textarea'
 import { Title, MTitle } from './title'
-import { BrowserTabTitle } from './browser-tab-title'
 import { Layout } from './layout'
 import { AnimatedDiv } from './animated-div'
 import { ScrollTopButton } from './buttons'
@@ -30,6 +29,7 @@ import { SideBar } from './side-bar'
 import { FlippedCard } from './flipped-card'
 import { ToolTip } from './tool-tip'
 import { ReCaptcha } from './re-captcha'
+import { SEO } from './seo'
 
 export {
   Avatar,
@@ -55,7 +55,6 @@ export {
   Textarea,
   Title,
   MTitle,
-  BrowserTabTitle,
   Layout,
   AnimatedDiv,
   ScrollTopButton,
@@ -64,4 +63,5 @@ export {
   FlippedCard,
   ToolTip,
   ReCaptcha,
+  SEO,
 }

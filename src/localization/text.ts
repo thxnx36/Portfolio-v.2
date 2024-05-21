@@ -95,6 +95,25 @@ export const text = {
   },
 
   pages: {
+    project: {
+      MY_PROJECT: 'My project',
+      LIVE_DEMO: 'Live Demo',
+      seo: {
+        PLATFORM_WHERE_USER:
+          'Platform where users could buy in-game currency and bet on their favorite team on live streams',
+        ABOUT_PROJECT: 'About the project I developed',
+      },
+    },
+
+    mainPage: {
+      seo: {
+        TITLE: 'Front-end Developer | Kryvytchenko Vlad',
+        DISCOVER_MORE: 'Discover more about my skills, projects, and work experience',
+        THE_BEST: 'The best Front-end Developer in the world',
+        PORTFOLIO_OF: 'Portfolio of a Front-end Developer'
+      },
+    },
+
     notFound: {
       NOT_FOUND_TAB: '404 | Not found',
       NOT_FOUND: 'SORRY, PAGE NOT FOUND!',
@@ -122,6 +141,14 @@ export const text = {
       and made it my profession. I continued to learn, attended courses and
       workshops to expand my knowledge and skills. Now, I am happy to share
       my experience and help create unique and functional web applications`,
+      seo: {
+        TITLE: 'About me',
+        ABOUTE_ME_MY_SKILLS:
+          'About me, my skills, hobbies, and work experience',
+        SHORT_STORY: 'My short life story',
+        SPECIALIZE:
+          'I specialize in creating web applications using React, JS, TS, HTML, CSS',
+      },
     },
   },
 }

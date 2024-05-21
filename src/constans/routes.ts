@@ -4,6 +4,6 @@ export const ROUTES = {
   aboutMe: '/about',
   project: '/project/:id',
   dynamic: {
-    projectId: (id: string) => `/project/${id}`,
+    projectId: (id: number) => `/project/${id}`,
   },
 }
