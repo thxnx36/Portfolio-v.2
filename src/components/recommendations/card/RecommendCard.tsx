@@ -9,7 +9,6 @@ type Props = {
   user: string
   title: string
   comment: string
-  userPhoto: string
 }
 
 export const RecommedCard: FC<Props> = ({
@@ -17,7 +16,6 @@ export const RecommedCard: FC<Props> = ({
   user,
   title,
   comment,
-  userPhoto,
 }) => {
   const quantityRatingStars = Array.from(
     { length: rating },
@@ -25,7 +23,7 @@ export const RecommedCard: FC<Props> = ({
   )
 
   return (
-    <div className={styles.container}>
+    <article className={styles.container}>
       <ul className={styles.rating}>
         {quantityRatingStars.map(item => (
           <li key={item} className={styles.star}>
@@ -54,6 +52,6 @@ export const RecommedCard: FC<Props> = ({
           {user}
         </Title>
       </div>
-    </div>
+    </article>
   )
 }

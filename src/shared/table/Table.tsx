@@ -48,14 +48,14 @@ export const Table: FC<Props> = ({
           </span>
         </div>
       </div>
-      <div className={styles.description}>
+      <article className={styles.description}>
         <Title tag='h4' size='sm' fontWeight='regular'>
           {title}
         </Title>
         <Paragraph sx={{ textAlign: 'left', margin: 0 }}>
           {description}
         </Paragraph>
-      </div>
+      </article>
     </div>
   )
 }

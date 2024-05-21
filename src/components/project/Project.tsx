@@ -1,6 +1,6 @@
 import { useGetProjectById } from '../../hooks'
 import { useParams, useNavigate } from 'react-router-dom'
-import { BrowserTabTitle, Section, Title } from '../../shared'
+import { BrowserTabTitle, PageWrapper, Section, Title } from '../../shared'
 import { useCallback } from 'react'
 import { Head } from './head/Head'
 import { Content } from './content/Content'
@@ -17,7 +17,7 @@ export const Project = () => {
 
   return (
     <Section sx={{ margin: 0 }}>
-      <div className={styles.container}>
+      <PageWrapper>
         <Head
           onClick={handleBack}
           projectTitle={data?.project}
@@ -35,7 +35,7 @@ export const Project = () => {
             <StackList key={i} stackList={item?.stack} />
           ))}
         </div>
-      </div>
+      </PageWrapper>
       <BrowserTabTitle title={`My Project | ${data?.project!}`} />
     </Section>
   )

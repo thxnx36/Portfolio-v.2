@@ -1,5 +1,5 @@
 import { Avatar } from './avatar'
-import { Box } from './box'
+import { PageWrapper } from './page-wrapper'
 import {
   Button,
   BurgerButton,
@@ -38,7 +38,7 @@ export {
   ChangeThemeButton,
   CollapseButton,
   UserInfoButton,
-  Box,
+  PageWrapper,
   MSection,
   CardsContainer,
   Container,
