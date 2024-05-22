@@ -65,7 +65,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
             <ReCaptcha onChange={handleCaptchaChange} />
           </div>
           <Button
-            sx={additionalButtonStyles}
+            style={additionalButtonStyles}
             text={isLoading ? text.button.LOADING : text.button.SEND_MESSAGE}
             type='submit'
             disabled={isDisabledButton}
@@ -73,7 +73,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
         </form>
       )}
       <div className={styles.contacts}>
-        <Paragraph sx={{ margin: '15px 0 0' }}>
+        <Paragraph style={{ margin: '15px 0 0' }}>
           {!isSendFormError
             ? text.form.TEXT_ME_MESSENGERS
             : text.form.CONTACT_ME_IF_ERROR}

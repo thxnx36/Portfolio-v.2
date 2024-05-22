@@ -1,3 +1,3 @@
-import { Container } from "./Container"
+import { Container, MContainer } from './Container'
 
-export { Container }
+export { Container, MContainer }

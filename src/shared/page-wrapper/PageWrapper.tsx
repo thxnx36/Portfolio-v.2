@@ -1,14 +1,13 @@
-import { CSSProperties, FC, ReactNode } from 'react'
+import { CSSProperties, FC, HTMLAttributes, ReactNode } from 'react'
 import styles from './PageWrapper.module.css'
 
-type Props = {
+type Props = HTMLAttributes<HTMLElement> & {
   children: ReactNode
-  sx?: CSSProperties
 }
 
-export const PageWrapper: FC<Props> = ({ children, sx }) => {
+export const PageWrapper: FC<Props> = ({ children, ...props }) => {
   return (
-    <div className={styles.pageWrapper} style={sx}>
+    <div className={styles.pageWrapper} {...props}>
       {children}
     </div>
   )

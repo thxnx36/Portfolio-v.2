@@ -12,7 +12,9 @@ export const Footer = () => {
           <a target='_blank' href={GIT_HUB_URL}>
             <DiGithubFull size='2.9em' />
           </a>
-          <span className={styles.version}>{`v${version}`}</span>
+          <span
+            className={styles.version}
+          >{`v${version} the app in develop`}</span>
         </div>
       </Container>
     </footer>

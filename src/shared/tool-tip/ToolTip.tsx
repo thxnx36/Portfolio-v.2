@@ -1,19 +1,19 @@
-import { CSSProperties, FC, ReactNode } from 'react'
+import { CSSProperties, FC, HTMLAttributes, ReactNode } from 'react'
 import styles from './ToolTip.module.css'
+import { PiDropSimpleBold } from "react-icons/pi"
 
-type Props = {
+type Props = HTMLAttributes<HTMLElement> & {
   text: string
   children: ReactNode
-  sx?: CSSProperties
 }
 
-export const ToolTip: FC<Props> = ({ text, children, sx }) => {
+export const ToolTip: FC<Props> = ({ text, children, ...props }) => {
   return (
-    <div style={sx} className={styles.tooltipContainer}>
+    <span className={styles.tooltipContainer} {...props}>
       {children}
       <div className={styles.tooltip}>
         <span className={styles.tooltipText}>{text}</span>
       </div>
-    </div>
+    </span>
   )
 }

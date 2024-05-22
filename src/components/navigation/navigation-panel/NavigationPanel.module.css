@@ -1,0 +1,41 @@
+.navContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.navContent button > svg {
+  color: var(--text-color);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.sideBarItem {
+  display: none;
+  position: fixed;
+}
+
+@media screen and (max-width: 865px) {
+  .navContent {
+    padding: 5px 10px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-width: 1px;
+  }
+
+  .navSwitcher {
+    display: none;
+  }
+
+  .sideBarItem {
+    display: block;
+  }
+}

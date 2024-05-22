@@ -1,43 +1,34 @@
-import { useEffect, useState } from 'react'
+import { useMotionValueEvent, useScroll, useTransform } from 'framer-motion'
+import { useState } from 'react'
 
 export const useScrollListener = () => {
-  const [showButton, setShowButton] = useState(false)
-  const [isScrollDown, setIsScrollDown] = useState<boolean>(true)
-  const [lastScrollPosition, setLastScrollPosition] = useState<number>(0)
+  const { scrollY } = useScroll()
 
-  useEffect(() => {
-    const handleScrollForNavigate = () => {
-      const currentScrollPosition = window.scrollY
+  const [showButton, setShowButton] = useState<boolean>(false)
+  const [isScrollDown, setIsScrollDown] = useState<boolean>(false)
 
-      if (currentScrollPosition > lastScrollPosition) {
-        setIsScrollDown(true)
-      } else if (currentScrollPosition < lastScrollPosition) {
-        setIsScrollDown(false)
-      }
-
-      setLastScrollPosition(currentScrollPosition)
+  // hide-show navbar
+  useMotionValueEvent(scrollY, 'change', latest => {
+    const previous = scrollY.getPrevious()
+    if (latest > previous! && latest > 100) {
+      setIsScrollDown(true)
+    } else {
+      setIsScrollDown(false)
     }
+  })
 
-    window.addEventListener('scroll', handleScrollForNavigate)
+  // show button to scroll down
+  const thirdOfPage = useTransform(
+    scrollY,
+    value => value > document.body.clientHeight / 3,
+  )
 
-    return () => {
-      window.removeEventListener('scroll', handleScrollForNavigate)
-    }
-  }, [lastScrollPosition])
+  useMotionValueEvent(scrollY, 'change', _ => {
+    const previous = thirdOfPage.getPrevious()
+    setShowButton(previous!)
+  })
 
-  useEffect(() => {
-    const handleScrollForButton = () => {
-      const scrollPosition = window.scrollY
-      const thirdOfPage = document.body.clientHeight / 3
-      setShowButton(scrollPosition > thirdOfPage)
-    }
-
-    window.addEventListener('scroll', handleScrollForButton)
-    return () => {
-      window.removeEventListener('scroll', handleScrollForButton)
-    }
-  }, [])
-
+  // on click to scroll down
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

@@ -9,13 +9,13 @@ export const TextContent: FC<Props> = ({ text }) => {
   return (
     <>
       <li>
-        <Paragraph sx={{ textAlign: 'left' }}>{text?.textOne}</Paragraph>
+        <Paragraph style={{ textAlign: 'left' }}>{text?.textOne}</Paragraph>
       </li>
       <li>
-        <Paragraph sx={{ textAlign: 'left' }}>{text?.textTwo}</Paragraph>
+        <Paragraph style={{ textAlign: 'left' }}>{text?.textTwo}</Paragraph>
       </li>
       <li>
-        <Paragraph sx={{ textAlign: 'left' }}>{text?.textThree}</Paragraph>
+        <Paragraph style={{ textAlign: 'left' }}>{text?.textThree}</Paragraph>
       </li>
     </>
   )

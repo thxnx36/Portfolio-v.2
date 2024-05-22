@@ -13,7 +13,7 @@ export const NotFound = () => {
   const handleBack = useCallback(() => navigate(-1), [navigate])
 
   return (
-    <Section sx={{ margin: 0 }}>
+    <Section style={{ margin: 0 }}>
       <div className={styles.notFoundContainer}>
         <TbError404 color={COLOR_YELLOW} size={'5em'} />
         <Title tag='h1'>{text.pages.notFound.NOT_FOUND}</Title>

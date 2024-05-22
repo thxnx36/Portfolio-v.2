@@ -17,6 +17,7 @@
 .arrow {
   width: 100%;
   animation: moveUpDown 2s ease infinite;
+  color: var(--text-color);
 }
 
 @keyframes moveUpDown {

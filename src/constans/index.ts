@@ -1,6 +1,6 @@
 import { COLOR_YELLOW, COLOR_BLUE, GREY_COLOR } from './colors'
 import { ENV_VARS } from './env'
-import { motionSection } from './motion'
+import { motionSection, motionNav } from './motion'
 import { NAVIGATE } from './nav'
 import { ROUTES } from './routes'
 import { TABLET } from './screen'
@@ -43,6 +43,7 @@ export {
   CV_URL,
   ENV_VARS,
   motionSection,
+  motionNav,
   ROUTES,
   NAVIGATE,
   KEYWORDS,
@@ -50,5 +51,5 @@ export {
   AUTHOR,
   OG_TYPE_CONTENT,
   OG_SITE_NAME,
-  APP_URL
+  APP_URL,
 }

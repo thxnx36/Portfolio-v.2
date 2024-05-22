@@ -4,3 +4,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.avatar {
+  width: 70px;
+  height: 70px;
+}

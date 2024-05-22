@@ -12,8 +12,8 @@ type Props = {
 export const UserContact: FC<Props> = ({ socialList, userName }) => {
   return (
     <div className={styles.userContact}>
-      <Avatar sx={{ width: 70, height: 70 }} withBorder src={userPhoto} />
-      <Paragraph sx={{ margin: '10px 0 0' }}>{userName}</Paragraph>
+      <Avatar className={styles.avatar} withBorder src={userPhoto} />
+      <Paragraph style={{ margin: '10px 0 0' }}>{userName}</Paragraph>
       <SocialList list={socialList} />
     </div>
   )

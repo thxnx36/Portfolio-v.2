@@ -1,15 +1,25 @@
-import { CSSProperties, FC, ReactNode } from 'react'
+import { FC, HTMLAttributes, ReactNode, forwardRef } from 'react'
+import { motion } from 'framer-motion'
 import styles from './Container.module.css'
 
-type Props = {
+type Props = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode
-  sx?: CSSProperties
 }
 
-export const Container: FC<Props> = ({ children, sx }) => {
-  return (
-    <div style={sx} className={styles.container}>
-      {children}
-    </div>
-  )
-}
+export const Container: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={
+          className ? `${styles.container} ${className}` : styles.container
+        }
+        {...props}
+      >
+        {children}
+      </div>
+    )
+  },
+)
+
+export const MContainer = motion(Container)

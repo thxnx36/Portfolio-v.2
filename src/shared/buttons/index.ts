@@ -1,15 +1,15 @@
-import { Button } from "./Button"
-import { BurgerButton } from "./burger-button/BurgerButton"
-import { ChangeThemeButton } from "./change-theme/ChangeThemeButton"
-import { CollapseButton } from "./collapse-button/CallapseButton"
-import { UserInfoButton } from "./user-info-button/UserInfoButton"
-import { BackButton } from "./back-button/BackButton"
-import { ScrollTopButton } from "./scroll-top"
+import { Button } from './Button'
+import { BurgerButton } from './burger-button/BurgerButton'
+import { Switcher } from './switcher/Switcher'
+import { CollapseButton } from './collapse-button/CallapseButton'
+import { UserInfoButton } from './user-info-button/UserInfoButton'
+import { BackButton } from './back-button/BackButton'
+import { ScrollTopButton } from './scroll-top'
 
 export {
   Button,
   BurgerButton,
-  ChangeThemeButton,
+  Switcher,
   CollapseButton,
   UserInfoButton,
   BackButton,

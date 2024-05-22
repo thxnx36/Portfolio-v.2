@@ -14,11 +14,13 @@ export const text = {
   },
 
   navigation: {
+    HOME: 'Home',
     SERVICES: 'Services',
     PORTFOLIO: 'Portfolio',
     RECOMMEND: 'Recommendations',
     WORK_HISTORY: 'Work History',
     EDUCATION: 'Education',
+    ABOUT_ME: 'About me'
   },
 
   header: {

@@ -3,12 +3,12 @@ import { PageWrapper } from './page-wrapper'
 import {
   Button,
   BurgerButton,
-  ChangeThemeButton,
+  Switcher,
   CollapseButton,
   UserInfoButton,
 } from './buttons'
 import { CardsContainer } from './cards-container'
-import { Container } from './container'
+import { Container, MContainer } from './container'
 import { Input } from './input'
 import { Modal } from './modal'
 import { Paragraph } from './paragraph'
@@ -22,7 +22,6 @@ import { Table } from './table'
 import { Textarea } from './textarea'
 import { Title, MTitle } from './title'
 import { Layout } from './layout'
-import { AnimatedDiv } from './animated-div'
 import { ScrollTopButton } from './buttons'
 import { Toast } from './toast'
 import { SideBar } from './side-bar'
@@ -35,7 +34,7 @@ export {
   Avatar,
   Button,
   BurgerButton,
-  ChangeThemeButton,
+  Switcher,
   CollapseButton,
   UserInfoButton,
   PageWrapper,
@@ -56,7 +55,6 @@ export {
   Title,
   MTitle,
   Layout,
-  AnimatedDiv,
   ScrollTopButton,
   Toast,
   SideBar,
@@ -64,4 +62,5 @@ export {
   ToolTip,
   ReCaptcha,
   SEO,
+  MContainer,
 }

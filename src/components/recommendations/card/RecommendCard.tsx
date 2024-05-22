@@ -11,12 +11,7 @@ type Props = {
   comment: string
 }
 
-export const RecommedCard: FC<Props> = ({
-  rating,
-  user,
-  title,
-  comment,
-}) => {
+export const RecommedCard: FC<Props> = ({ rating, user, title, comment }) => {
   const quantityRatingStars = Array.from(
     { length: rating },
     (_, index) => index + 1,
@@ -32,19 +27,19 @@ export const RecommedCard: FC<Props> = ({
         ))}
       </ul>
       <Title
-        sx={{ marginBottom: '15px' }}
+        style={{ marginBottom: '15px' }}
         tag='h4'
         size='sm'
         fontWeight='regular'
       >
         {title}
       </Title>
-      <Paragraph sx={{ textAlign: 'left', margin: '0 0 25px' }}>
+      <Paragraph style={{ textAlign: 'left', margin: '0 0 25px' }}>
         {comment}
       </Paragraph>
       <div className={styles.userInfo}>
         <Title
-          sx={{ marginBottom: '15px' }}
+          style={{ marginBottom: '15px' }}
           tag='h4'
           size='sm'
           fontWeight='regular'
