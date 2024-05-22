@@ -13,23 +13,21 @@ export const MySkills = () => {
   const { socialList } = useMySocialList()
 
   return (
-    <Container>
-      <div className={styles.mySkillsContainer}>
-        <UserContact socialList={socialList} userName={text.mySkills.NAME} />
-        <div className={styles.line} />
-        <TechSkills title={text.mySkills.SKILLS} skillsList={skills} />
-        <div className={styles.line} />
-        <TechSkills title={text.mySkills.LANGUAGES} skillsList={languages} />
-        <div className={styles.line} />
-        <Button
-          tag='a'
-          target='_blank'
-          href={CV_URL}
-          sx={additionalButtonStyles}
-          text={text.button.DOWNLOAD}
-        />
-      </div>
-    </Container>
+    <div className={styles.mySkillsContainer}>
+      <UserContact socialList={socialList} userName={text.mySkills.NAME} />
+      <div className={styles.line} />
+      <TechSkills title={text.mySkills.SKILLS} skillsList={skills} />
+      <div className={styles.line} />
+      <TechSkills title={text.mySkills.LANGUAGES} skillsList={languages} />
+      <div className={styles.line} />
+      <Button
+        tag='a'
+        target='_blank'
+        href={CV_URL}
+        style={additionalButtonStyles}
+        text={text.button.DOWNLOAD}
+      />
+    </div>
   )
 }
 

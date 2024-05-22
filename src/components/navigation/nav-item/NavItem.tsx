@@ -1,26 +1,58 @@
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
+import { useNavigationList } from '../../../hooks'
+import { TfiNewWindow } from 'react-icons/tfi'
+import { ProjectsList } from '../projects-list/ProjectsList'
+import { Link } from 'react-router-dom'
 import styles from './NavItem.module.css'
-import { useNavigationList } from "../../../hooks"
 
 type Props = {
-  href: string
-  icon: ReactNode
-  text: string
-  active: boolean
-  onClick: (e: React.MouseEvent<HTMLElement>) => void
+  isActiveItem: number
+  onChangeItem: (id: number) => void
+  isMobile?: boolean
 }
 
-export const NavItem: FC<Props> = ({ href, icon, text, active, onClick }) => {
-  // const { navigationList } = useNavigationList()
+export const NavItem: FC<Props> = ({
+  isActiveItem,
+  onChangeItem,
+  isMobile,
+}) => {
+  const { navigationList, projectsPages } = useNavigationList()
+
   return (
-    <li
-      className={active ? `${styles.navItem} ${styles.active}` : styles.navItem}
-      onClick={onClick}
-    >
-      <a className={styles.link} href={href}>
-        <p className={styles.text}>{text}</p>
-        {icon}
-      </a>
-    </li>
+    <>
+      {navigationList.map(({ id, href, text, icon }) => (
+        <li
+          key={id}
+          className={
+            isActiveItem === id
+              ? `${styles.navItem} ${styles.active}`
+              : styles.navItem
+          }
+          onClick={() => onChangeItem(id)}
+        >
+          {text === 'About me' ? (
+            <Link className={styles.link} to={href}>
+              {isMobile ? (
+                <>
+                  {text} <TfiNewWindow />
+                </>
+              ) : (
+                icon
+              )}
+            </Link>
+          ) : (
+            <a
+              style={{ borderBottom: isActiveItem === id ? 'none' : '' }}
+              className={styles.link}
+              href={href}
+            >
+              <p className={styles.text}>{text}</p>
+              {icon}
+            </a>
+          )}
+        </li>
+      ))}
+      {isMobile && <ProjectsList projectsPages={projectsPages} />}
+    </>
   )
 }

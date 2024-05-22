@@ -1,20 +1,17 @@
-import { CSSProperties, FC, ReactNode, forwardRef } from 'react'
+import { FC, HTMLAttributes, ReactNode, forwardRef } from 'react'
 import { motion } from 'framer-motion'
 import styles from './Section.module.css'
 
-type Props = {
+type Props = HTMLAttributes<HTMLElement> & {
   children: ReactNode
   id?: string
-  sx?: CSSProperties
 }
 
 export const Section: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
-  ({ children, id, sx }, ref) => {
+  ({ children, id, ...props }, ref) => {
     return (
-      <section ref={ref} id={id}>
-        <div style={sx} className={styles.content}>
-          {children}
-        </div>
+      <section className={styles.section} ref={ref} id={id} {...props}>
+        <div className={styles.content}>{children}</div>
       </section>
     )
   },

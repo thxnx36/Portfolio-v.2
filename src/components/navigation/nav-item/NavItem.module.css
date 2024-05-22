@@ -44,23 +44,34 @@
     height: 50px;
     border-radius: 5px;
     background-color: transparent;
+    padding: 5px;
+    border-bottom: 1px solid var(--secondary-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
   }
 
   .navItem:not(:last-child) {
-    margin: 0 0 10px;
+    margin: 0 0 15px;
   }
 
   .navItem::after {
     display: none;
   }
 
+  .navItem:hover {
+    background: inherit;
+    color: inherit;
+  }
+
   .link {
     justify-content: space-between;
-    padding: 5px;
   }
 
   .text {
     display: block;
+  }
+  .active {
+    box-shadow: var(--box-shadow);
   }
 
   .active .text {

@@ -1,6 +1,5 @@
 import { FC } from 'react'
-import { NavigationListType } from '../../../types/navigation-list-type'
-import { Container, Switcher } from '../../../shared'
+import { Switcher } from '../../../shared'
 import { IoMoonSharp } from 'react-icons/io5'
 import { FaSun } from 'react-icons/fa6'
 import { HiMiniLanguage } from 'react-icons/hi2'
@@ -12,18 +11,18 @@ type Props = {
   isActiveItem: number
   onChangeTheme: () => void
   checked: boolean
-  navigationList: NavigationListType[]
+  isMobile?: boolean
 }
 
 export const NavListItemMobile: FC<Props> = ({
   onChangeItem,
   isActiveItem,
   onChangeTheme,
-  navigationList,
   checked,
+  isMobile,
 }) => {
   return (
-    <Container style={{ padding: '5px' }}>
+    <>
       <div className={styles.toolbar}>
         <Switcher
           checked={checked}
@@ -36,18 +35,15 @@ export const NavListItemMobile: FC<Props> = ({
           <HiMiniLanguage size='2em' />
         </button>
       </div>
-      <ul className={styles.listItem}>
-        {navigationList.map(({ id, href, text, icon }) => (
+      <nav>
+        <ul className={styles.listItem}>
           <NavItem
-            onClick={() => onChangeItem(id)}
-            key={id}
-            href={href}
-            text={text}
-            icon={icon}
-            active={isActiveItem === id}
+            isMobile={isMobile}
+            onChangeItem={onChangeItem}
+            isActiveItem={isActiveItem}
           />
-        ))}
-      </ul>
-    </Container>
+        </ul>
+      </nav>
+    </>
   )
 }

@@ -6,7 +6,7 @@ type Props = {
 }
 
 export const StackList: FC<Props> = ({ stackList }) => {
-  return <Paragraph sx={additionalStyles}>{stackList}</Paragraph>
+  return <Paragraph style={additionalStyles}>{stackList}</Paragraph>
 }
 
 const additionalStyles: CSSProperties = {

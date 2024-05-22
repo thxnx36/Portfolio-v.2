@@ -1,16 +1,15 @@
 import { useState, useCallback, useContext, CSSProperties } from 'react'
-import { useNavigationList, useResizeScreen } from '../../hooks'
-import { TABLET } from '../../constans'
+import { useScrollListener } from '../../hooks'
 import { ThemeContext } from '../../providers'
-import { DARK, LIGHT } from '../../constans'
-import { Container, SideBar } from '../../shared'
+import { DARK, LIGHT, motionNav } from '../../constans'
+import { MContainer, SideBar } from '../../shared'
 import { MySkills } from '../my-skills/MySkills'
 import { NavigationPanel } from './navigation-panel/NavigationPanel'
+import { NavListItemMobile } from './nav-list-item-mobile/NavListItemMobile'
 
 export const Navigation = () => {
   const { theme, changeTheme } = useContext(ThemeContext)
-  // const { isResizeScreen } = useResizeScreen(TABLET)
-  const { navigationList } = useNavigationList()
+  const { isScrollDown } = useScrollListener()
 
   const [activeItem, setActiveItem] = useState<number>(1)
   const [isShowSideBarSkills, setIsShowSideBarSkills] = useState<boolean>(false)
@@ -29,22 +28,36 @@ export const Navigation = () => {
     [theme],
   )
 
+  const onCloseSideBarMenu = (id: number) => {
+    onClickItemMenu(id)
+    handleMenu()
+  }
+
+  const checkedSwitcher = theme === LIGHT
+
   return (
     <>
-      <Container style={additionalContainerStyles}>
+      <MContainer
+        variants={motionNav.variants}
+        transition={motionNav.transition}
+        animate={
+          isScrollDown ? motionNav.animate.hidden : motionNav.animate.visible
+        }
+        style={additionalContainerStyles}
+      >
         <nav>
           <NavigationPanel
-            navigationList={navigationList}
             handleSkills={handleSkills}
             handleMenu={handleMenu}
             onClickItemMenu={onClickItemMenu}
             isActiveItem={activeItem}
             isShowSideBarMenu={isShowSideBarMenu}
             onChangeTheme={onChangeTheme}
-            checked={theme === LIGHT}
+            checked={checkedSwitcher}
           />
         </nav>
-      </Container>
+      </MContainer>
+
       <SideBar
         side={'left'}
         isOpen={isShowSideBarSkills}
@@ -52,13 +65,23 @@ export const Navigation = () => {
       >
         <MySkills />
       </SideBar>
+
+      <SideBar side='right' isOpen={isShowSideBarMenu} onClose={handleMenu}>
+        <NavListItemMobile
+          checked={checkedSwitcher}
+          onChangeTheme={onChangeTheme}
+          onChangeItem={onCloseSideBarMenu}
+          isActiveItem={activeItem}
+          isMobile={isShowSideBarMenu}
+        />
+      </SideBar>
     </>
   )
 }
 
 const additionalContainerStyles: CSSProperties = {
-  // position: 'sticky',
-  // top: 0,
-  // zIndex: 99,
+  position: 'sticky',
+  zIndex: 99,
+  top: 0,
   marginBottom: '10px',
 }

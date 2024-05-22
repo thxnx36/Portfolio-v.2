@@ -25,7 +25,7 @@ export const MyServices = () => {
   const isFlipped = (id: number) => activeCards.includes(id)
 
   return (
-    <Section sx={{ marginBottom: '30px' }} id='services'>
+    <Section style={{ marginBottom: '30px' }} id='services'>
       <SectionHead
         title={text.myServices.TITLE}
         subTitle={text.myServices.SUBTITLE}

@@ -27,7 +27,7 @@ export const FlippedCard: FC<Props> = ({
         <div className={styles.cardFront}>
           <div className={styles.icon}>{icon}</div>
           <Title
-            sx={{ marginBottom: '15px' }}
+            style={{ marginBottom: '15px' }}
             tag='h4'
             size='sm'
             fontWeight='regular'
@@ -40,7 +40,7 @@ export const FlippedCard: FC<Props> = ({
         </div>
 
         <div className={styles.cardBack}>
-          <Paragraph sx={{ marginBottom: '10px' }}>{text}</Paragraph>
+          <Paragraph style={{ marginBottom: '10px' }}>{text}</Paragraph>
           <button onClick={onFlip} className={styles.moreButton}>
             <span>{t.button.CLOSE_CARD}</span>
           </button>

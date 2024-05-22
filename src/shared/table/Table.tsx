@@ -33,7 +33,7 @@ export const Table: FC<Props> = ({
           target='_blank'
         >
           <Title
-            sx={{ marginBottom: '15px' }}
+            style={{ marginBottom: '15px' }}
             tag='h4'
             size='sm'
             fontWeight='regular'
@@ -52,7 +52,7 @@ export const Table: FC<Props> = ({
         <Title tag='h4' size='sm' fontWeight='regular'>
           {title}
         </Title>
-        <Paragraph sx={{ textAlign: 'left', margin: 0 }}>
+        <Paragraph style={{ textAlign: 'left', margin: 0 }}>
           {description}
         </Paragraph>
       </article>

@@ -1,14 +1,13 @@
-import { CSSProperties, FC, ReactNode } from 'react'
+import { FC, HTMLAttributes, ReactNode } from 'react'
 import styles from './Paragraph.module.css'
 
-export type Props = {
+export type Props = HTMLAttributes<HTMLElement> & {
   children: ReactNode
-  sx?: CSSProperties
 }
 
-export const Paragraph: FC<Props> = ({ children, sx }) => {
+export const Paragraph: FC<Props> = ({ children, ...props }) => {
   return (
-    <p className={styles.paragraph} style={sx}>
+    <p className={styles.paragraph} {...props}>
       {children}
     </p>
   )

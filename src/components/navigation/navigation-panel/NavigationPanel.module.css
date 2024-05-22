@@ -1,4 +1,4 @@
-.navDesktopContent {
+.navContent {
   width: 100%;
   display: flex;
   align-items: center;
@@ -6,7 +6,7 @@
   padding: 10px;
 }
 
-.navDesktopContent button > svg {
+.navContent button > svg {
   color: var(--text-color);
 }
 
@@ -15,9 +15,14 @@
   height: 40px;
 }
 
+.sideBarItem {
+  display: none;
+  position: fixed;
+}
+
 @media screen and (max-width: 865px) {
-  .navDesktopContent {
-    padding: 5px;
+  .navContent {
+    padding: 5px 10px;
   }
 
   .avatar {
@@ -28,5 +33,9 @@
 
   .navSwitcher {
     display: none;
+  }
+
+  .sideBarItem {
+    display: block;
   }
 }

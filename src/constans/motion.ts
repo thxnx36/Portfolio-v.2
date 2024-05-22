@@ -23,3 +23,24 @@ export const motionSection = {
   initial: 'hidden',
   whileInView: 'visible',
 }
+
+export const motionNav = {
+  variants: {
+    hidden: {
+      y: '-100%',
+    },
+    visible: {
+      y: 0,
+    },
+  },
+
+  transition: {
+    ease: 'easeInOut',
+    duration: 0.35,
+  },
+
+  animate: {
+    hidden: 'hidden',
+    visible: 'visible',
+  },
+}

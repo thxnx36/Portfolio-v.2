@@ -18,7 +18,7 @@ export const Project = () => {
   const handleBack = useCallback(() => navigate(-1), [navigate])
 
   return (
-    <Section sx={{ margin: 0 }}>
+    <Section style={{ margin: 0 }}>
       <PageWrapper>
         <Head
           onClick={handleBack}

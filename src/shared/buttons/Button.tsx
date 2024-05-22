@@ -1,8 +1,8 @@
-import { CSSProperties, FC, ReactNode } from 'react'
+import { CSSProperties, FC, HTMLAttributes, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Button.module.css'
 
-type Props = {
+type Props = HTMLAttributes<HTMLElement> & {
   text: string
   icon?: ReactNode
   tag?: 'a' | 'link'
@@ -10,7 +10,6 @@ type Props = {
   href?: string
   target?: '_blank' | '_top'
   type?: 'submit'
-  sx?: CSSProperties
   disabled?: boolean
   onClick?: () => void
 }
@@ -18,7 +17,6 @@ type Props = {
 export const Button: FC<Props> = ({
   text,
   icon,
-  sx,
   disabled,
   tag,
   to,
@@ -26,6 +24,7 @@ export const Button: FC<Props> = ({
   target,
   href,
   onClick,
+  ...props
 }) => {
   const innerContent = () => {
     return (
@@ -38,18 +37,18 @@ export const Button: FC<Props> = ({
   return (
     <>
       {tag === 'link' && to ? (
-        <Link style={sx} className={styles.button} to={to}>
+        <Link className={styles.button} to={to} {...props}>
           {innerContent()}
         </Link>
       ) : tag === 'a' ? (
-        <a style={sx} target={target} className={styles.button} href={href}>
+        <a {...props} target={target} className={styles.button} href={href}>
           {innerContent()}
         </a>
       ) : (
         <button
           type={type}
           onClick={onClick}
-          style={sx}
+          {...props}
           className={
             disabled ? `${styles.button} ${styles.disabled}` : styles.button
           }

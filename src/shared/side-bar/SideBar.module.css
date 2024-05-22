@@ -11,12 +11,13 @@
 
 .sidebar {
   width: 280px;
+  height: 100vh;
+  overflow: auto;
   position: fixed;
   top: 0;
   transition: transform 0.3s ease;
   z-index: 1000;
-  /* height: 100%; */
-  overflow: auto;
+  background-color: var(--background-color);
 }
 
 .sidebarRight {
@@ -38,5 +39,6 @@
 }
 
 .content {
+  height: 100%;
   padding: 10px;
 }

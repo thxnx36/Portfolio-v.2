@@ -1,8 +1,9 @@
 .mySkillsContainer {
-  padding: 25px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
 }
 
 .line {
@@ -12,8 +13,9 @@
   margin: 15px 0;
 }
 
-@media screen and (max-width: 1502px) {
+@media screen and (max-width: 865px) {
   .mySkillsContainer {
-    padding: 20px;
+    justify-content: unset;
+    height: unset;
   }
 }
