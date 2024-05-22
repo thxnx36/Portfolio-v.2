@@ -29,6 +29,7 @@ export const NavItem: FC<Props> = ({
               : styles.navItem
           }
           onClick={() => onChangeItem(id)}
+          style={{ borderBottom: isActiveItem === id ? 'none' : '' }}
         >
           {text === 'About me' ? (
             <Link className={styles.link} to={href}>
@@ -41,11 +42,7 @@ export const NavItem: FC<Props> = ({
               )}
             </Link>
           ) : (
-            <a
-              style={{ borderBottom: isActiveItem === id ? 'none' : '' }}
-              className={styles.link}
-              href={href}
-            >
+            <a className={styles.link} href={href}>
               <p className={styles.text}>{text}</p>
               {icon}
             </a>
