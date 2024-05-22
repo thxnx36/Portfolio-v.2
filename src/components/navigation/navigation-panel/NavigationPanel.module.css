@@ -1,0 +1,32 @@
+.navDesktopContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.navDesktopContent button > svg {
+  color: var(--text-color);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 865px) {
+  .navDesktopContent {
+    padding: 5px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-width: 1px;
+  }
+
+  .navSwitcher {
+    display: none;
+  }
+}

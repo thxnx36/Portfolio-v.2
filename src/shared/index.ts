@@ -3,7 +3,7 @@ import { PageWrapper } from './page-wrapper'
 import {
   Button,
   BurgerButton,
-  ChangeThemeButton,
+  Switcher,
   CollapseButton,
   UserInfoButton,
 } from './buttons'
@@ -35,7 +35,7 @@ export {
   Avatar,
   Button,
   BurgerButton,
-  ChangeThemeButton,
+  Switcher,
   CollapseButton,
   UserInfoButton,
   PageWrapper,

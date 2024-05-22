@@ -1,4 +1,3 @@
-import { IoIosArrowRoundForward } from 'react-icons/io'
 import { useCallback, useState } from 'react'
 import { Form } from '../form/Form'
 import { headerPhoto } from '../../assets'
@@ -27,11 +26,7 @@ export const Header = () => {
             <blockquote className={styles.infoText}>
               {text.header.DESCRIPTION} 💪
             </blockquote>
-            <Button
-              onClick={handleModal}
-              text={text.button.HIRE}
-              icon={<IoIosArrowRoundForward size={'1.3em'} />}
-            />
+            <Button onClick={handleModal} text={text.button.HIRE} />
           </div>
           <div className={styles.image}>
             <img src={headerPhoto} alt='header-picture' />

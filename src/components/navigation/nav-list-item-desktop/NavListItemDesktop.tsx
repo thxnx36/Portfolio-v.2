@@ -1,17 +1,21 @@
 import { CSSProperties, FC } from 'react'
-import { useNavigationList } from '../../../hooks'
 import { NavItem } from '../nav-item/NavItem'
-import styles from './NavListItem.module.css'
+import { NavigationListType } from '../../../types/navigation-list-type'
+import styles from './NavListItemDesktop.module.css'
 
 type Props = {
   onChangeItem: (id: number) => void
-  isActiveItem: (id: number) => boolean
+  isActiveItem: number
+  navigationList: NavigationListType[]
   sx?: CSSProperties
 }
 
-export const NavListItem: FC<Props> = ({ onChangeItem, isActiveItem, sx }) => {
-  const { navigationList } = useNavigationList()
-
+export const NavListItemDesktop: FC<Props> = ({
+  onChangeItem,
+  isActiveItem,
+  navigationList,
+  sx,
+}) => {
   return (
     <ul style={sx} className={styles.navListItemContainer}>
       {navigationList.map(({ id, href, text, icon }) => (
@@ -21,7 +25,7 @@ export const NavListItem: FC<Props> = ({ onChangeItem, isActiveItem, sx }) => {
           href={href}
           text={text}
           icon={icon}
-          active={isActiveItem(id)}
+          active={isActiveItem === id}
         />
       ))}
     </ul>

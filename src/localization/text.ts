@@ -14,6 +14,7 @@ export const text = {
   },
 
   navigation: {
+    HOME: 'Home',
     SERVICES: 'Services',
     PORTFOLIO: 'Portfolio',
     RECOMMEND: 'Recommendations',

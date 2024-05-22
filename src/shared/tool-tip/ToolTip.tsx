@@ -9,11 +9,11 @@ type Props = {
 
 export const ToolTip: FC<Props> = ({ text, children, sx }) => {
   return (
-    <div style={sx} className={styles.tooltipContainer}>
+    <span style={sx} className={styles.tooltipContainer}>
       {children}
       <div className={styles.tooltip}>
         <span className={styles.tooltipText}>{text}</span>
       </div>
-    </div>
+    </span>
   )
 }

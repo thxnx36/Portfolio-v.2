@@ -1,14 +1,13 @@
-import { CSSProperties, FC, ReactNode } from 'react'
+import { CSSProperties, FC, HTMLAttributes, ReactNode } from 'react'
 import styles from './Container.module.css'
 
-type Props = {
+type Props = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode
-  sx?: CSSProperties
 }
 
-export const Container: FC<Props> = ({ children, sx }) => {
+export const Container: FC<Props> = ({ children, ...props }) => {
   return (
-    <div style={sx} className={styles.container}>
+    <div className={styles.container} {...props}>
       {children}
     </div>
   )

@@ -1,0 +1,26 @@
+.toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+.listItem {
+  height: 100%;
+  display: none;
+}
+
+button svg {
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 865px) {
+  .listItem {
+    display: block;
+  }
+}

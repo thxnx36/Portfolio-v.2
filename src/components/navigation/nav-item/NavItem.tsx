@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 import styles from './NavItem.module.css'
-import { ToolTip } from '../../../shared'
+import { useNavigationList } from "../../../hooks"
 
 type Props = {
   href: string
@@ -11,16 +11,16 @@ type Props = {
 }
 
 export const NavItem: FC<Props> = ({ href, icon, text, active, onClick }) => {
+  // const { navigationList } = useNavigationList()
   return (
     <li
       className={active ? `${styles.navItem} ${styles.active}` : styles.navItem}
       onClick={onClick}
     >
-      <ToolTip sx={{ width: '100%', height: '100%' }} text={text}>
-        <a className={styles.link} href={href}>
-          {icon}
-        </a>
-      </ToolTip>
+      <a className={styles.link} href={href}>
+        <p className={styles.text}>{text}</p>
+        {icon}
+      </a>
     </li>
   )
 }

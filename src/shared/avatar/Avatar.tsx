@@ -1,24 +1,25 @@
-import { CSSProperties, FC } from 'react'
+import { FC, HTMLAttributes } from 'react'
 import styles from './Avatar.module.css'
 
-type Props = {
+type Props = HTMLAttributes<HTMLDivElement> & {
   src: string
   withBorder?: boolean
-  sx?: CSSProperties
-  tag?: 'div' | 'button'
   onClick?: () => void
 }
-export const Avatar: FC<Props> = ({ src, withBorder, sx, tag, onClick }) => {
-  const Tag = tag || 'div'
+export const Avatar: FC<Props> = ({
+  src,
+  withBorder,
+  onClick,
+  className,
+  ...props
+}) => {
   return (
-    <Tag
+    <div
       onClick={onClick}
-      style={sx}
-      className={
-        withBorder ? `${styles.photo} ${styles.withBorder}` : styles.photo
-      }
+      className={`${styles.photo} ${withBorder ? styles.withBorder : ''} ${className || ''}`}
+      {...props}
     >
       <img src={src} alt='User-photo' />
-    </Tag>
+    </div>
   )
 }

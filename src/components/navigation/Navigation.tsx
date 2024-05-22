@@ -1,29 +1,28 @@
-import { useScrollListener } from '../../hooks'
 import { useState, useCallback, useContext, CSSProperties } from 'react'
-import { useResizeScreen } from '../../hooks'
-import { DesktopNavigation } from './desktop-navigation/DesktopNavigation'
-import { MobileNavigation } from './mobile-navigation/MobileNavigation'
+import { useNavigationList, useResizeScreen } from '../../hooks'
 import { TABLET } from '../../constans'
 import { ThemeContext } from '../../providers'
 import { DARK, LIGHT } from '../../constans'
 import { Container, SideBar } from '../../shared'
 import { MySkills } from '../my-skills/MySkills'
+import { NavigationPanel } from './navigation-panel/NavigationPanel'
 
 export const Navigation = () => {
-  const [activeItem, setActiveItem] = useState<number>(1)
-  const [isOpenSideBar, setIsOpenSideBar] = useState<boolean>(false)
-
   const { theme, changeTheme } = useContext(ThemeContext)
-  const { isResizeScreen } = useResizeScreen(TABLET)
-  const { isScrollDown } = useScrollListener()
+  // const { isResizeScreen } = useResizeScreen(TABLET)
+  const { navigationList } = useNavigationList()
 
-  const onChangeItem = useCallback((id: number) => setActiveItem(id), [])
-  const handleSideBar = useCallback(() => setIsOpenSideBar(prev => !prev), [])
+  const [activeItem, setActiveItem] = useState<number>(1)
+  const [isShowSideBarSkills, setIsShowSideBarSkills] = useState<boolean>(false)
+  const [isShowSideBarMenu, setIsShowSideBarMenu] = useState<boolean>(false)
 
-  const isActiveItem = useCallback(
-    (id: number) => id === activeItem,
-    [activeItem],
+  const handleMenu = useCallback(() => setIsShowSideBarMenu(prev => !prev), [])
+
+  const handleSkills = useCallback(
+    () => setIsShowSideBarSkills(prev => !prev),
+    [],
   )
+  const onClickItemMenu = useCallback((id: number) => setActiveItem(id), [])
 
   const onChangeTheme = useCallback(
     () => changeTheme(theme === LIGHT ? DARK : LIGHT),
@@ -32,28 +31,25 @@ export const Navigation = () => {
 
   return (
     <>
-      <Container
-        sx={{ ...additionalContainerStyles, top: !isScrollDown ? '0' : '-50%' }}
-      >
+      <Container style={additionalContainerStyles}>
         <nav>
-          {!isResizeScreen ? (
-            <DesktopNavigation
-              handleSideBar={handleSideBar}
-              onChangeItem={onChangeItem}
-              isActiveItem={isActiveItem}
-              onChangeTheme={onChangeTheme}
-            />
-          ) : (
-            <MobileNavigation
-              onChangeItem={onChangeItem}
-              isActiveItem={isActiveItem}
-              onChangeTheme={onChangeTheme}
-              handleSideBar={handleSideBar}
-            />
-          )}
+          <NavigationPanel
+            navigationList={navigationList}
+            handleSkills={handleSkills}
+            handleMenu={handleMenu}
+            onClickItemMenu={onClickItemMenu}
+            isActiveItem={activeItem}
+            isShowSideBarMenu={isShowSideBarMenu}
+            onChangeTheme={onChangeTheme}
+            checked={theme === LIGHT}
+          />
         </nav>
       </Container>
-      <SideBar isOpen={isOpenSideBar} onClose={handleSideBar}>
+      <SideBar
+        side={'left'}
+        isOpen={isShowSideBarSkills}
+        onClose={handleSkills}
+      >
         <MySkills />
       </SideBar>
     </>
@@ -61,8 +57,8 @@ export const Navigation = () => {
 }
 
 const additionalContainerStyles: CSSProperties = {
-  position: 'sticky',
-  zIndex: 99,
+  // position: 'sticky',
+  // top: 0,
+  // zIndex: 99,
   marginBottom: '10px',
-  transition: 'top .7s ease',
 }

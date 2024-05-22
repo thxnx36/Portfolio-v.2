@@ -13,15 +13,28 @@
   width: 280px;
   position: fixed;
   top: 0;
-  right: -100%;
-  transition: right 0.3s ease;
+  transition: transform 0.3s ease;
   z-index: 1000;
-  height: 100%;
+  /* height: 100%; */
   overflow: auto;
 }
 
-.sidebar.open {
+.sidebarRight {
   right: 0;
+  transform: translateX(100%);
+}
+
+.sidebarRight.open {
+  transform: translateX(0);
+}
+
+.sidebarLeft {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.sidebarLeft.open {
+  transform: translateX(0);
 }
 
 .content {
