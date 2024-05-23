@@ -1,14 +1,9 @@
 import { Container, MSection, SectionHead, Table } from '../../shared'
 import { text } from '../../localization'
 import { motionSection } from '../../constans'
-import { MyInfoType } from '../../types/my-info-type'
-import { FC } from 'react'
+import { education } from '../../db'
 
-type Props = {
-  data?: MyInfoType
-}
-
-export const Education: FC<Props> = ({ data }) => {
+export const Education = () => {
   return (
     <MSection
       id='education'
@@ -21,7 +16,7 @@ export const Education: FC<Props> = ({ data }) => {
         title={text.education.TITLE}
         subTitle={text.education.SUBTITLE}
       />
-      {data?.education?.map(
+      {education?.map(
         ({ university, position, date, title, description, url, id }) => (
           <Container key={id} style={{ margin: '0 0 5px' }}>
             <Table

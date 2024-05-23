@@ -1,14 +1,9 @@
 import { text } from '../../localization'
 import { Container, MSection, SectionHead, Table } from '../../shared'
 import { motionSection } from '../../constans'
-import { MyInfoType } from '../../types/my-info-type'
-import { FC } from 'react'
+import { workHistory } from '../../db'
 
-type Props = {
-  data?: MyInfoType
-}
-
-export const WorkHistory: FC<Props> = ({ data }) => {
+export const WorkHistory = () => {
   return (
     <MSection
       id='work-history'
@@ -21,7 +16,7 @@ export const WorkHistory: FC<Props> = ({ data }) => {
         title={text.workHistory.TITLE}
         subTitle={text.workHistory.SUBTITLE}
       />
-      {data?.workHistory?.map(
+      {workHistory?.map(
         ({ company, position, date, title, description, url, id }) => (
           <Container key={id} style={{ margin: '0 0 5px' }}>
             <Table

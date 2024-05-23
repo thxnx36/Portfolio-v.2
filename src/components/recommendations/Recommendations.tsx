@@ -4,14 +4,9 @@ import { text } from '../../localization'
 import { RecommedCard } from './card/RecommendCard'
 import { Slider } from '../../shared/slider/Slider'
 import { motionSection } from '../../constans'
-import { MyInfoType } from '../../types/my-info-type'
-import { FC } from 'react'
+import { recommendations } from '../../db'
 
-type Props = {
-  data?: MyInfoType
-}
-
-export const Recommendations: FC<Props> = ({ data }) => {
+export const Recommendations = () => {
   return (
     <MSection
       id='recommendations'
@@ -25,21 +20,17 @@ export const Recommendations: FC<Props> = ({ data }) => {
         subTitle={text.recommendations.SUBTITLE}
       />
       <div style={{ width: '100%' }}>
-        {data ? (
-          <Slider>
-            {data.recommendations.map(
-              ({ title, user, comment, rating, id }) => (
-                <RecommedCard
-                  key={id}
-                  title={title}
-                  user={user}
-                  comment={comment}
-                  rating={rating}
-                />
-              ),
-            )}
-          </Slider>
-        ) : null}
+        <Slider>
+          {recommendations.map(({ title, user, comment, rating, id }) => (
+            <RecommedCard
+              key={id}
+              title={title}
+              user={user}
+              comment={comment}
+              rating={rating}
+            />
+          ))}
+        </Slider>
       </div>
     </MSection>
   )
