@@ -3,8 +3,14 @@ import { portfolio } from '../../db/portfolio'
 import { text } from '../../localization'
 import { PortfolioCard } from './card/PortfolioCard'
 import { motionSection } from '../../constans'
+import { FC } from 'react'
+import { MyInfoType } from '../../types/my-info-type'
 
-export const Portfolio = () => {
+type Props = {
+  data?: MyInfoType
+}
+
+export const Portfolio: FC<Props> = ({ data }) => {
   return (
     <MSection
       id='portfolio'
@@ -18,7 +24,7 @@ export const Portfolio = () => {
         subTitle={text.portfolio.SUBTITLE}
       />
       <CardsContainer>
-        {portfolio.map(({ title, project, src, id }) => (
+        {data?.portfolio.map(({ title, project, src, id }) => (
           <PortfolioCard
             key={id}
             title={title}

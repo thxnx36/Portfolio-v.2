@@ -3,7 +3,7 @@ import { store } from './app/store'
 import { BrowserRouter } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { ThemeProvider } from './providers'
+import { AppProvider } from './providers'
 import { Routes } from './routes'
 
 const container = document.getElementById('root')
@@ -15,9 +15,9 @@ if (container) {
     <React.StrictMode>
       <Provider store={store}>
         <BrowserRouter>
-          <ThemeProvider>
+          <AppProvider>
             <Routes />
-          </ThemeProvider>
+          </AppProvider>
         </BrowserRouter>
       </Provider>
     </React.StrictMode>,

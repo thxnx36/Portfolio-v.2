@@ -6,7 +6,7 @@
       "position": "Student",
       "date": "Jan 2021 - Feb 2022",
       "title": "Front-end Developing",
-      "url": "UDEMY_URL",
+      "url": "https://www.udemy.com/course/javascript_full/?couponCode=KEEPLEARNINGL",
       "description": "In-depth learning front-end technologies including JavaScript, TypeScript, React and Redux"
     },
     {
@@ -15,7 +15,7 @@
       "position": "Student",
       "date": "Sep 2015 - May 2018",
       "title": "Energy management",
-      "url": "UNIVERSITY_URL",
+      "url": "#",
       "description": "Learning of energy supply plans and strategies, energy optimization and cost minimization"
     }
   ],
@@ -37,7 +37,7 @@
       "link": "TUTTIFY_URL",
       "srcPageFirst": "tutiffyPageRirst",
       "srcPageSecond": "tutiffyPageSecond",
-      "src": "tutiffy",
+      "src": "src/assets/mock-site2.webp",
       "project": "Tuttify",
       "title": "Multilingual and multiuser educational platform",
       "about": [
@@ -182,7 +182,7 @@
       "position": "Front-end Developer",
       "date": "Jan 2022 - Jan 2024",
       "title": "Creating web applications",
-      "url": "COMPANY_URL",
+      "url": "https://www.elementica.io/",
       "description": "In my role at 'Elementica' I collaborate with the team to develop and enhance the product, make technical decisions, and contribute to achieving common goals"
     },
     {

@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import { Education } from '../components/education/Education'
 import { Footer } from '../components/footer/Footer'
 import { Header } from '../components/header/Header'
@@ -9,18 +10,21 @@ import { WorkHistory } from '../components/work-history/WorkHistory'
 import { APP_URL } from '../constans'
 import { text } from '../localization'
 import { SEO } from '../shared'
+import { DataContext } from '../providers'
 
 export const MainPage = () => {
+  const { data } = useContext(DataContext)
+
   return (
     <>
       <Navigation />
       <Header />
       <main>
         <MyServices />
-        <Portfolio />
-        <Recommendations />
-        <WorkHistory />
-        <Education />
+        <Portfolio data={data} />
+        <Recommendations data={data} />
+        <WorkHistory data={data} />
+        <Education data={data} />
       </main>
       <Footer />
       <SEO
