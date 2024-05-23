@@ -1,0 +1,32 @@
+{
+  "recommendations": [
+    {
+      "id": 1,
+      "rating": 5,
+      "user": "Declan O'Salivan",
+      "title": "Good job",
+      "comment": "Excellent developer. The team is well structured with top level"
+    },
+    {
+      "id": 2,
+      "rating": 5,
+      "user": "Vikrant Gupta",
+      "title": "Amazing work",
+      "comment": "We highly recommend Elementica as a reliable team of solid engineers"
+    },
+    {
+      "id": 3,
+      "rating": 4,
+      "user": "Adrew S",
+      "title": "Nice",
+      "comment": "Another job well done by Elementica. I highly recommend Vlad & his team"
+    },
+    {
+      "id": 4,
+      "rating": 5,
+      "user": "Simon Riley",
+      "title": "Great dev",
+      "comment": "Vlad clearly understands the project goals and technical requirements"
+    }
+  ]
+}

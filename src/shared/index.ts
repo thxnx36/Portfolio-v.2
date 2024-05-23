@@ -24,7 +24,7 @@ import { Title, MTitle } from './title'
 import { Layout } from './layout'
 import { ScrollTopButton } from './buttons'
 import { Toast } from './toast'
-import { SideBar } from './side-bar'
+import { Drawer } from './drawer'
 import { FlippedCard } from './flipped-card'
 import { ToolTip } from './tool-tip'
 import { ReCaptcha } from './re-captcha'
@@ -57,7 +57,7 @@ export {
   Layout,
   ScrollTopButton,
   Toast,
-  SideBar,
+  Drawer,
   FlippedCard,
   ToolTip,
   ReCaptcha,

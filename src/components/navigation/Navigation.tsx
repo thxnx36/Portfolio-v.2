@@ -2,7 +2,7 @@ import { useState, useCallback, useContext, CSSProperties } from 'react'
 import { useScrollListener } from '../../hooks'
 import { ThemeContext } from '../../providers'
 import { DARK, LIGHT, motionNav } from '../../constans'
-import { MContainer, SideBar } from '../../shared'
+import { MContainer, Drawer } from '../../shared'
 import { MySkills } from '../my-skills/MySkills'
 import { NavigationPanel } from './navigation-panel/NavigationPanel'
 import { NavListItemMobile } from './nav-list-item-mobile/NavListItemMobile'
@@ -58,15 +58,11 @@ export const Navigation = () => {
         </nav>
       </MContainer>
 
-      <SideBar
-        side={'left'}
-        isOpen={isShowSideBarSkills}
-        onClose={handleSkills}
-      >
+      <Drawer side={'left'} isOpen={isShowSideBarSkills} onClose={handleSkills}>
         <MySkills />
-      </SideBar>
+      </Drawer>
 
-      <SideBar side='right' isOpen={isShowSideBarMenu} onClose={handleMenu}>
+      <Drawer side='right' isOpen={isShowSideBarMenu} onClose={handleMenu}>
         <NavListItemMobile
           checked={checkedSwitcher}
           onChangeTheme={onChangeTheme}
@@ -74,7 +70,7 @@ export const Navigation = () => {
           isActiveItem={activeItem}
           isMobile={isShowSideBarMenu}
         />
-      </SideBar>
+      </Drawer>
     </>
   )
 }

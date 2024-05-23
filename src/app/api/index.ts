@@ -1,3 +1,8 @@
-import { usePostEmailMutation, sendEmailApi } from './hooks'
+import {
+  usePostEmailMutation,
+  sendEmailApi,
+  useGetMyinfoQuery,
+  myInfoApi,
+} from './hooks'
 
-export { usePostEmailMutation, sendEmailApi }
+export { usePostEmailMutation, sendEmailApi, useGetMyinfoQuery, myInfoApi }
