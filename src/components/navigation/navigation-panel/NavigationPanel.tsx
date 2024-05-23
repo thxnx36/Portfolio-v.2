@@ -1,12 +1,5 @@
 import { FC } from 'react'
-import {
-  Avatar,
-  BurgerButton,
-  Switcher,
-  Container,
-  SideBar,
-  ToolTip,
-} from '../../../shared'
+import { Avatar, BurgerButton, Switcher, ToolTip } from '../../../shared'
 import { NavListItemDesktop } from '../nav-list-item-desktop/NavListItemDesktop'
 import { userPhoto } from '../../../assets'
 import { IoMoonSharp } from 'react-icons/io5'

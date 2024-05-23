@@ -9,7 +9,7 @@
   z-index: 999;
 }
 
-.sidebar {
+.drawer {
   width: 280px;
   height: 100vh;
   overflow: auto;
@@ -20,21 +20,21 @@
   background-color: var(--background-color);
 }
 
-.sidebarRight {
+.drawerRight {
   right: 0;
   transform: translateX(100%);
 }
 
-.sidebarRight.open {
+.drawerRight.open {
   transform: translateX(0);
 }
 
-.sidebarLeft {
+.drawerLeft {
   left: 0;
   transform: translateX(-100%);
 }
 
-.sidebarLeft.open {
+.drawerLeft.open {
   transform: translateX(0);
 }
 

@@ -62,7 +62,7 @@ export const text = {
   recommendations: {
     TITLE: 'Recommendations',
     SUBTITLE:
-      'Testimonials and recommendations from customers I have worked with',
+      'Testimonials and recommendations from clients I have worked with',
   },
 
   mySkills: {

@@ -63,6 +63,11 @@
     color: inherit;
   }
 
+  .navItem.active:hover {
+    background: var(--bg-linear);
+    color: var(--secondary-color);
+  }
+
   .link {
     justify-content: space-between;
   }
