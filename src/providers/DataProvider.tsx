@@ -1,8 +1,9 @@
-import { createContext, ReactNode, FC } from 'react'
+import type { ReactNode, FC } from 'react';
+import { createContext } from 'react'
 import { useGetMyinfoQuery } from '../app/api'
-import { MyInfoType } from '../types/my-info-type'
-import { FetchBaseQueryError } from '@reduxjs/toolkit/query'
-import { SerializedError } from '@reduxjs/toolkit'
+import type { MyInfoType } from '../types'
+import type { FetchBaseQueryError } from '@reduxjs/toolkit/query'
+import type { SerializedError } from '@reduxjs/toolkit'
 
 type DataContextProps = {
   data: MyInfoType | undefined

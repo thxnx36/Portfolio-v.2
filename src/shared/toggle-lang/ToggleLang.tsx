@@ -1,8 +1,7 @@
-import { ChangeEvent, FC } from 'react'
-import { HiMiniLanguage } from 'react-icons/hi2'
+import type { ChangeEvent, FC } from 'react'
 import { LANG } from '../../constans'
 import styles from './ToggleLang.module.css'
-
+import { BsTranslate } from 'react-icons/bs'
 type Props = {
   uniqSelectId: string
   onChange: (value: string) => void
@@ -13,7 +12,7 @@ export const ToggleLang: FC<Props> = ({
   onChange,
   uniqSelectId,
   selectValue,
-  size = '1.6em',
+  size = '1.4em',
 }) => {
   const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) =>
     onChange(e.target.value)
@@ -28,7 +27,7 @@ export const ToggleLang: FC<Props> = ({
           </option>
         ))}
       </select>
-      <HiMiniLanguage size={size} />
+      <BsTranslate size={size} />
     </div>
   )
 }

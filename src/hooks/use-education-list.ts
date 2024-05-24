@@ -1,11 +1,12 @@
 import { useMemo } from 'react'
 import { UDEMY_URL, UNIVERSITY_URL } from '../constans'
 import { useTranslation } from 'react-i18next'
+import { EducationListType } from '../types'
 
 export const useEducationList = () => {
   const { t } = useTranslation()
 
-  const educationList = useMemo(
+  const educationList: EducationListType[] = useMemo(
     () => [
       {
         id: 1,

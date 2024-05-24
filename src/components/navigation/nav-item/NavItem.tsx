@@ -1,9 +1,10 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { useNavigationList } from '../../../hooks'
-import { TfiNewWindow } from 'react-icons/tfi'
 import { ProjectsList } from '../projects-list/ProjectsList'
 import { Link } from 'react-router-dom'
 import styles from './NavItem.module.css'
+
+const ID = 7
 
 type Props = {
   isActiveItem: number
@@ -16,7 +17,6 @@ export const NavItem: FC<Props> = ({
   onChangeItem,
   isMobile,
 }) => {
-
   const { navigationList, projectsPages } = useNavigationList()
   return (
     <>
@@ -31,15 +31,10 @@ export const NavItem: FC<Props> = ({
           onClick={() => onChangeItem(id)}
           style={{ borderBottom: isActiveItem === id ? 'none' : '' }}
         >
-          {text === 'About me' ? (
+          {id === ID ? (
             <Link className={styles.link} to={href}>
-              {isMobile ? (
-                <>
-                  {text} <TfiNewWindow />
-                </>
-              ) : (
-                icon
-              )}
+              <p className={styles.text}>{text}</p>
+              {icon}
             </Link>
           ) : (
             <a className={styles.link} href={href}>

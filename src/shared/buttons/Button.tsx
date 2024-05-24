@@ -1,4 +1,4 @@
-import { CSSProperties, FC, HTMLAttributes, ReactNode } from 'react'
+import type { FC, HTMLAttributes, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Button.module.css'
 

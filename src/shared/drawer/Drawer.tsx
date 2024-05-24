@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
 import { useOverLay } from '../../hooks'
 import styles from './Drawer.module.css'
 

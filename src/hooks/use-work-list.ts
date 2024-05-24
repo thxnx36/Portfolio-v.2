@@ -1,11 +1,12 @@
 import { useMemo } from 'react'
 import { UDEMY_URL, UNIVERSITY_URL } from '../constans'
 import { useTranslation } from 'react-i18next'
+import { WorkListType } from '../types'
 
 export const useWorkList = () => {
   const { t } = useTranslation()
 
-  const workList = useMemo(
+  const workList: WorkListType[] = useMemo(
     () => [
       {
         id: 1,

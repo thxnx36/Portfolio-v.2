@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { AiOutlineApple } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { Container } from '../../../shared'

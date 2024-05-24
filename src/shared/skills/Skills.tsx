@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { Paragraph } from '../paragraph/Paragraph'
 import { ProgressLine } from '../progress-line/ProgressLine'
 import styles from './Skils.module.css'

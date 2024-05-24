@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
 import { Title } from '../title'
 import { Paragraph } from '../paragraph'
 import styles from './FlippedCard.module.css'

@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, ReactNode } from 'react'
+import type { FC, HTMLAttributes, ReactNode } from 'react'
 import styles from './Switcher.module.css'
 
 type Props = HTMLAttributes<HTMLDivElement> & {

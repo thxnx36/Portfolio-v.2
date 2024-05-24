@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, TextareaHTMLAttributes } from 'react'
+import type { ChangeEvent, FC, TextareaHTMLAttributes } from 'react'
 import styles from './Textarea.module.css'
 
 type Props = TextareaHTMLAttributes<HTMLTextAreaElement> & {

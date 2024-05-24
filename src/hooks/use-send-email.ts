@@ -1,11 +1,6 @@
-import {
-  useState,
-  useCallback,
-  ChangeEvent,
-  SyntheticEvent,
-  useEffect,
-} from 'react'
-import { FormType } from '../types/form-type'
+import type { ChangeEvent, SyntheticEvent } from 'react'
+import { useState, useCallback, useEffect } from 'react'
+import type { FormType } from '../types'
 import { usePostEmailMutation } from '../app/api'
 import { toast } from 'react-toastify'
 
@@ -51,7 +46,7 @@ export const useSendEmail = ({ infoMessage, reCaptchaToken, f }: Props) => {
       toast.success(infoMessage)
       f()
     }
-  }, [isError, isSuccess, f, setIsSendError])
+  }, [isError, isSuccess, f, setIsSendError, infoMessage])
 
   const isDisabledButton =
     !form.name_from ||

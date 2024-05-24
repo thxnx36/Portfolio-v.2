@@ -1,4 +1,4 @@
-import { ServicesListType } from '../types/services-list-type'
+import type { ServicesListType } from '../types'
 import { FaReact } from 'react-icons/fa'
 import { SiPagespeedinsights } from 'react-icons/si'
 import { PiBrowsersThin } from 'react-icons/pi'

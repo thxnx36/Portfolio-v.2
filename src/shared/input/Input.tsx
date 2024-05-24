@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, InputHTMLAttributes } from 'react'
+import type { ChangeEvent, FC, InputHTMLAttributes } from 'react'
 import styles from './Input.module.css'
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {

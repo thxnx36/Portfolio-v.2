@@ -3,7 +3,7 @@ import { FaLinkedin } from 'react-icons/fa'
 import { FaTelegramPlane } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { FaGithubSquare } from 'react-icons/fa'
-import { MySocialListType } from '../types/my-social-list-type'
+import type { MySocialListType } from '../types'
 
 export const useMySocialList = () => {
   const socialList: MySocialListType[] = [

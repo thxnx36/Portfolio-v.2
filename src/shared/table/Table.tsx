@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import styles from './Table.module.css'
 import { Paragraph } from '../paragraph/Paragraph'
 import { Title } from '../title/Title'
@@ -30,7 +30,7 @@ export const Table: FC<Props> = ({
               : `${styles.link} ${styles.disabledLink}`
           }
           href={url}
-          target='_blank'
+          target='_blank' rel="noreferrer"
         >
           <Title
             style={{ marginBottom: '15px' }}

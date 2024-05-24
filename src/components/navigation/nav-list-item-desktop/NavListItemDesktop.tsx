@@ -1,6 +1,5 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { NavItem } from '../nav-item/NavItem'
-import { NavigationListType } from '../../../types/navigation-list-type'
 import styles from './NavListItemDesktop.module.css'
 
 type Props = {

@@ -1,4 +1,5 @@
-import { useState, useCallback, useContext, CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
+import { useState, useCallback } from 'react'
 import { useScrollListener } from '../../hooks'
 import { motionNav } from '../../constans'
 import { MContainer, Drawer } from '../../shared'
