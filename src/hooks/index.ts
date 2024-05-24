@@ -7,6 +7,9 @@ import { useScrollListener } from './use-scroll-listener'
 import { useSendEmail } from './use-send-email'
 import { useOverLay } from './use-overlay'
 import { useSpinner } from './use-spinner'
+import { usePortfolioList } from './use-portfolio-list'
+import { useEducationList } from './use-education-list'
+import { useWorkList } from './use-work-list'
 
 export {
   useGetProjectById,
@@ -18,4 +21,7 @@ export {
   useSendEmail,
   useOverLay,
   useSpinner,
+  usePortfolioList,
+  useEducationList,
+  useWorkList,
 }

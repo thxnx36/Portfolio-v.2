@@ -1,12 +1,14 @@
 import { SectionHead } from '../../shared/section-head/SectionHead'
 import { MSection } from '../../shared/section/Section'
-import { text } from '../../localization'
 import { RecommedCard } from './card/RecommendCard'
 import { Slider } from '../../shared/slider/Slider'
 import { motionSection } from '../../constans'
 import { recommendations } from '../../db'
+import { useTranslation } from 'react-i18next'
 
 export const Recommendations = () => {
+  const { t } = useTranslation()
+
   return (
     <MSection
       id='recommendations'
@@ -16,8 +18,8 @@ export const Recommendations = () => {
       whileInView={motionSection.whileInView}
     >
       <SectionHead
-        title={text.recommendations.TITLE}
-        subTitle={text.recommendations.SUBTITLE}
+        title={t('recommendations.TITLE')}
+        subTitle={t('recommendations.SUBTITLE')}
       />
       <div style={{ width: '100%' }}>
         <Slider>

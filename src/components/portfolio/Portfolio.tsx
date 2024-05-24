@@ -1,10 +1,13 @@
 import { CardsContainer, MSection, SectionHead } from '../../shared'
-import { text } from '../../localization'
 import { PortfolioCard } from './card/PortfolioCard'
 import { motionSection } from '../../constans'
-import { portfolio } from '../../db'
+import { useTranslation } from 'react-i18next'
+import { usePortfolioList } from '../../hooks'
 
 export const Portfolio = () => {
+  const { t } = useTranslation()
+  const { portfolioList } = usePortfolioList()
+
   return (
     <MSection
       id='portfolio'
@@ -14,11 +17,11 @@ export const Portfolio = () => {
       whileInView={motionSection.whileInView}
     >
       <SectionHead
-        title={text.portfolio.TITLE}
-        subTitle={text.portfolio.SUBTITLE}
+        title={t('portfolio.TITLE')}
+        subTitle={t('portfolio.SUBTITLE')}
       />
       <CardsContainer>
-        {portfolio.map(({ title, project, src, id }) => (
+        {portfolioList.map(({ title, project, src, id }) => (
           <PortfolioCard
             key={id}
             title={title}

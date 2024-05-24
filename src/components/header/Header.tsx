@@ -1,17 +1,15 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { Form } from '../form/Form'
 import { headerPhoto } from '../../assets'
 import { Button, Container, Modal, Title } from '../../shared'
-import { text } from '../../localization'
+import { useTranslation } from 'react-i18next'
 import styles from './Header.module.css'
 
 export const Header = () => {
+  const { t } = useTranslation()
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 
-  const handleModal = useCallback(
-    () => setIsOpenModal(prev => !prev),
-    [setIsOpenModal],
-  )
+  const handleModal = () => setIsOpenModal(prev => !prev)
 
   return (
     <header className={styles.header}>
@@ -19,14 +17,14 @@ export const Header = () => {
         <div className={styles.content}>
           <div className={styles.info}>
             <Title size='lg'>
-              {text.header.NAME} <br />{' '}
-              <span className={styles.speciality}>{text.header.PATH}</span>{' '}
-              {text.header.SPECIALTY}
+              {t('header.NAME')} <br />{' '}
+              <span className={styles.speciality}>{t('header.PATH')}</span>{' '}
+              {t('header.SPECIALTY')}
             </Title>
             <blockquote className={styles.infoText}>
-              {text.header.DESCRIPTION} 💪
+              {t('header.DESCRIPTION')} 💪
             </blockquote>
-            <Button onClick={handleModal} text={text.button.HIRE} />
+            <Button onClick={handleModal} text={t('button.HIRE')} />
           </div>
           <div className={styles.image}>
             <img src={headerPhoto} alt='header-picture' />

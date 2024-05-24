@@ -1,0 +1,218 @@
+{
+  "button": {
+    "HIRE": "Hire me",
+    "SEND_MESSAGE": "send message",
+    "DOWNLOAD": "Download CV",
+    "GO_BACK": "Go Back",
+    "LOADING": "Loading...",
+    "SHOW_MORE_CARD": "show more",
+    "CLOSE_CARD": "close"
+  },
+  "tooltip": {
+    "MY_SKILLS": "My skills"
+  },
+  "navigation": {
+    "HOME": "Home",
+    "SERVICES": "Services",
+    "PORTFOLIO": "Portfolio",
+    "RECOMMEND": "Recommendations",
+    "WORK_HISTORY": "Work History",
+    "EDUCATION": "Education",
+    "ABOUT_ME": "About me",
+    "PROJECTS": "Projects"
+  },
+  "header": {
+    "NAME": "Hi! I'm Vlad Kryvytchenko",
+    "PATH": "Front-end",
+    "SPECIALTY": "Developer",
+    "DESCRIPTION": "Combining modern technology and creativity, I build websites and apps that will help you achieve your goals"
+  },
+  "footer": {
+    "CREATED_BY": "Created by",
+    "TELEGRAM_NAME": "Vladosik"
+  },
+  "myServices": {
+    "TITLE": "My services",
+    "SUBTITLE": "You can find more detailed information about me and my technical stack on the",
+    "ABOUT_ME": "About me page",
+
+    "cards": {
+      "FRONT_END_DEVELOPMENT_TITLE": "Front-end development",
+      "FRONT_END_DEVELOPMENT_TEXT": "Development UI and business logic using React/Next, TypeScript, CSS",
+      "RESPONSIVE_DESIGN_TITLE": "Responsive design",
+      "RESPONSIVE_DESIGN_TEXT": "Responsive websites and apps ensuring optimal display on all devices and screen resolutions",
+      "API_BACKEND_INTEGRATION_TITLE": "API and backend integration",
+      "API_BACKEND_INTEGRATION_TEXT": "Work with APIs and backend to implement web application functionality, including data exchange",
+      "PERFORMANCE_OPTIMIZATION_TITLE": "Performance optimization",
+      "PERFORMANCE_OPTIMIZATION_TEXT": "Optimizing the performance of web applications for fast loading times and maximum responsiveness",
+      "CROSS_BROWSER_COMPATIBILITY_TITLE": "Cross-browser compatibility",
+      "CROSS_BROWSER_COMPATIBILITY_TEXT": "Ensuring compatibility of web applications with various browsers",
+      "TECHNICAL_SUPPORT_TITLE": "Technical support",
+      "TECHNICAL_SUPPORT_TEXT": "Updating and supporting existing code to ensure stable operation of the application"
+    }
+  },
+  "education": {
+    "TITLE": "Education",
+    "SUBTITLE": "My education journey and the qualifications I have obtained",
+    "table": {
+      "udemy": {
+        "POSITION": "Student",
+        "DATE": "Jan 2021 - Feb 2022",
+        "TITLE": "Front-end Developing",
+        "DESCRIPTION": "In-depth learning front-end technologies including JavaScript, TypeScript, React and Redux"
+      },
+      "institute": {
+        "POSITION": "Student",
+        "DATE": "Sep 2015 - May 2018",
+        "TITLE": "Energy management",
+        "DESCRIPTION": "Learning of energy supply plans and strategies, energy optimization and cost minimization"
+      }
+    }
+  },
+  "workHistory": {
+    "TITLE": "Work histrory",
+    "SUBTITLE": "My professional journey and work experience",
+    "table": {
+      "elementica": {
+        "NAME": "Elementica",
+        "POSITION": "Front-end Developer",
+        "DATE": "Jan 2022 - Jan 2024",
+        "TITLE": "Creating web applications",
+        "DESCRIPTION": "In my role at 'Elementica' I collaborate with the team to develop and enhance the product, make technical decisions, and contribute to achieving common goals"
+      },
+      "freelance": {
+        "NAME": "Freelance",
+        "POSITION": "Web Developer",
+        "DATE": "Jun 2021 - Dec 2021",
+        "TITLE": "Creating websites",
+        "DESCRIPTION": "I was creating websites for clients using HTML, CSS, and JavaScript"
+      }
+    }
+  },
+  "portfolio": {
+    "TITLE": "Portfolio",
+    "SUBTITLE": "Key projects in development that I participated in both collaboratively with my team and independently",
+    "projects": {
+      "tutiffy": {
+        "NAME": "Tuttify",
+        "DESCR": "Multilingual and multiuser educational platform",
+        "about": {
+          "p_1": {
+            "TEXT_1": "Front-end team - 4 developers. Back-end team - 4 developers. QA team - 2 developers.",
+            "TEXT_2": "Main goal of this app is to empower children and students to explore, imagine and engage with ideas as they learn and to help parents or family members to communicate with children by participating in lessons, games, and even sharing story time.",
+            "TEXT_3": "Project had a complex structure with 6 front-end apps and 7 back-end microservices on Node.js and Python. Core features - live chat/video streams, live activities between users, multitenancy, internationalization, user generated content, moderation, kids accounts, payments, automated/manual tests, CI/CD, etc."
+          },
+          "p_2": {
+            "TEXT_1": "On the project, I focused on interface development, including creating user-friendly navigation, designing and placing educational content, and interacting with the back-end through REST API or GraphQL.",
+            "TEXT_2": "Additionally, I worked on enhancing the user experience by adding animations, intuitive controls, and optimized workflows.",
+            "TEXT_3": "Overall, working on the project was an interesting and productive experience that helped me develop skills in front-end development, multilingual support, and web application performance optimization."
+          }
+        },
+        "stack": "#React #TypeScript #Redux Toolkit #RTK Query #Apollo GraphQL #Material-UI"
+      },
+      "ASX": {
+        "NAME": "ASX Sports",
+        "DESCR": "Sports betting platform",
+        "about": {
+          "p_1": {
+            "TEXT_1": "Front-end team - 2 developers.\nBack-end team - 2 developers.\nQA team - 1 developer.",
+            "TEXT_2": "Platform where users could register their account, buy in-game currency and bet on their favorite team on live streams.",
+            "TEXT_3": "The project consisted of a core platform as well as an admin panel through which the administrator could fully manage the core application and user support."
+          },
+          "p_2": {
+            "TEXT_1": "The app is developed using Next for the front-end part and Express for the back-end part.",
+            "TEXT_2": "On the project I was engaged in development of UI components, implementation of new features such as - full user registration using Keycloack, connection of Stripe payment system, connection of SumSab library for user verification, etc. I also got experience in the back-end.",
+            "TEXT_3": "What I found interesting was participating in rallies with the CTO and the customer where we discussed the business logic of the application. I also enjoyed expressing my ideas, which in the future were turned into reality."
+          }
+        },
+        "stack": "#Next #TypeScript #Redux Toolkit #RTK Query #Styled-components #Express"
+      },
+      "maven": {
+        "NAME": "Maven 11",
+        "DESCR": "Landing page for a crypto-native fund",
+        "about": {
+          "p_1": {
+            "TEXT_1": "Front-end team - 1 developer. QA team - 1 developer.",
+            "TEXT_2": "Landing page for a foundation, main goal to attract new clients.",
+            "TEXT_3": "The project is implemented using HTML, SCSS, and the GSAP library. The task I was given was to create a dynamic website using animations."
+          },
+          "p_2": {
+            "TEXT_1": "On the project, I did the development on my own under the guidance of the CTO. I solved all the technical tasks and problems myself, which gave me experience in organizing projects.",
+            "TEXT_2": "The interesting and challenging part for me was working with the GSAP library, where it took a lot of time to learn all the intricacies and the right approach, which gave me additional experience in developing complex animations.",
+            "TEXT_3": "Also together with QA we conducted functional testing and fixed all the issues in a short period of time."
+          }
+        },
+        "stack": "#HTML #JavaScript #SCSS #GSAP"
+      }
+    }
+  },
+  "recommendations": {
+    "TITLE": "Recommendations",
+    "SUBTITLE": "Testimonials and recommendations from clients I have worked with"
+  },
+  "mySkills": {
+    "NAME": "Vlad Kryvytchenko",
+    "SKILLS": "Skills",
+    "LANGUAGES": "Languages"
+  },
+  "form": {
+    "TITLE": "Leave me Your info",
+    "TEXT_ME_MESSENGERS": "Or contact me via the messengers",
+    "CONTACT_ME_IF_ERROR": "Ops, something went wrong! Please, contact me via the messengers"
+  },
+  "toast": {
+    "success": {
+      "EMAIL_SENT": "Thanks! Your email has been sent"
+    },
+    "error": {
+      "WRONG": "Something went wrong!"
+    }
+  },
+  "input": {
+    "placeholder": {
+      "YOUR_NAME": "Your full name",
+      "YOUR_EMAIL": "Your email",
+      "YOUR_SUBJECT": "Subject",
+      "YOUR_MESSAGE": "Your message"
+    }
+  },
+  "pages": {
+    "project": {
+      "MY_PROJECT": "My project",
+      "LIVE_DEMO": "Live Demo",
+      "seo": {
+        "PLATFORM_WHERE_USER": "Platform where users could buy in-game currency and bet on their favorite team on live streams",
+        "ABOUT_PROJECT": "About the project I developed"
+      }
+    },
+    "mainPage": {
+      "seo": {
+        "TITLE": "Front-end Developer | Kryvytchenko Vlad",
+        "DISCOVER_MORE": "Discover more about my skills, projects, and work experience",
+        "THE_BEST": "The best Front-end Developer in the world",
+        "PORTFOLIO_OF": "Portfolio of a Front-end Developer"
+      }
+    },
+    "notFound": {
+      "NOT_FOUND_TAB": "404 | Not found",
+      "NOT_FOUND": "SORRY, PAGE NOT FOUND!",
+      "RETURN_HOME": "Don't panic just click the big button to retun home"
+    },
+    "aboutMe": {
+      "TITLE": "About me",
+      "HEY_NICE_MEET": "Hey! Nice to meet you",
+      "TECHNOLOGIES_SUB_TITLE": "The basic technologies I use in my work",
+      "HOBBIES_SUB_TITLE": "Hobbies",
+      "GOT_IN_DEV_SUB_TITLE": "How I got into development",
+      "MY_CAREER": "I'm a Front-end developer with 2 years of commercial experience in creating applications of varying complexity. I always adhere to best development practices. My passion lies in the technical implementation and support of complex business needs, and I strive to be part of the decision-making process",
+      "HOBBIES": "Sports, traveling, learning English, active leisure, and socializing with friends - these are the main aspects of my hobbies. I enjoy maintaining an active lifestyle, exploring new places, improving language skills, finding engaging ways to spend free time, and connecting with close friends",
+      "DEVELOPMENT": "My passion for development began with small projects and experiments. Over time, I realized that I wanted to delve deeper into this field and made it my profession. I continued to learn, attended courses and workshops to expand my knowledge and skills. Now, I am happy to share my experience and help create unique and functional web applications",
+      "seo": {
+        "TITLE": "About me",
+        "ABOUTE_ME_MY_SKILLS": "About me, my skills, hobbies, and work experience",
+        "SHORT_STORY": "My short life story",
+        "SPECIALIZE": "I specialize in creating web applications using React, JS, TS, HTML, CSS"
+      }
+    }
+  }
+}

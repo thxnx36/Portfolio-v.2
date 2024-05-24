@@ -1,14 +1,12 @@
 import { useState, useCallback, useContext, CSSProperties } from 'react'
 import { useScrollListener } from '../../hooks'
-import { ThemeContext } from '../../providers'
-import { DARK, LIGHT, motionNav } from '../../constans'
+import { motionNav } from '../../constans'
 import { MContainer, Drawer } from '../../shared'
 import { MySkills } from '../my-skills/MySkills'
 import { NavigationPanel } from './navigation-panel/NavigationPanel'
 import { NavListItemMobile } from './nav-list-item-mobile/NavListItemMobile'
 
 export const Navigation = () => {
-  const { theme, changeTheme } = useContext(ThemeContext)
   const { isScrollDown } = useScrollListener()
 
   const [activeItem, setActiveItem] = useState<number>(1)
@@ -23,17 +21,10 @@ export const Navigation = () => {
   )
   const onClickItemMenu = useCallback((id: number) => setActiveItem(id), [])
 
-  const onChangeTheme = useCallback(
-    () => changeTheme(theme === LIGHT ? DARK : LIGHT),
-    [theme],
-  )
-
   const onCloseSideBarMenu = (id: number) => {
     onClickItemMenu(id)
     handleMenu()
   }
-
-  const checkedSwitcher = theme === LIGHT
 
   return (
     <>
@@ -52,8 +43,6 @@ export const Navigation = () => {
             onClickItemMenu={onClickItemMenu}
             isActiveItem={activeItem}
             isShowSideBarMenu={isShowSideBarMenu}
-            onChangeTheme={onChangeTheme}
-            checked={checkedSwitcher}
           />
         </nav>
       </MContainer>
@@ -64,8 +53,6 @@ export const Navigation = () => {
 
       <Drawer side='right' isOpen={isShowSideBarMenu} onClose={handleMenu}>
         <NavListItemMobile
-          checked={checkedSwitcher}
-          onChangeTheme={onChangeTheme}
           onChangeItem={onCloseSideBarMenu}
           isActiveItem={activeItem}
           isMobile={isShowSideBarMenu}

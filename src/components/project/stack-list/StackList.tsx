@@ -2,7 +2,7 @@ import { CSSProperties, FC } from 'react'
 import { Paragraph } from '../../../shared'
 
 type Props = {
-  stackList?: string[]
+  stackList?: string
 }
 
 export const StackList: FC<Props> = ({ stackList }) => {

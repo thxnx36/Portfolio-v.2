@@ -1,9 +1,11 @@
-import { text } from '../../localization'
 import { Container, MSection, SectionHead, Table } from '../../shared'
 import { motionSection } from '../../constans'
-import { workHistory } from '../../db'
+import { useTranslation } from 'react-i18next'
+import { useWorkList } from '../../hooks'
 
 export const WorkHistory = () => {
+  const { t } = useTranslation()
+  const { workList } = useWorkList()
   return (
     <MSection
       id='work-history'
@@ -13,10 +15,10 @@ export const WorkHistory = () => {
       whileInView={motionSection.whileInView}
     >
       <SectionHead
-        title={text.workHistory.TITLE}
-        subTitle={text.workHistory.SUBTITLE}
+        title={t('workHistory.TITLE')}
+        subTitle={t('workHistory.SUBTITLE')}
       />
-      {workHistory?.map(
+      {workList?.map(
         ({ company, position, date, title, description, url, id }) => (
           <Container key={id} style={{ margin: '0 0 5px' }}>
             <Table

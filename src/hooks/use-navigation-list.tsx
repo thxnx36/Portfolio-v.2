@@ -9,49 +9,51 @@ import { MdOutlineWork } from 'react-icons/md'
 import { IoSchoolSharp } from 'react-icons/io5'
 import { IoMdHome } from 'react-icons/io'
 import { SiAboutdotme } from 'react-icons/si'
-import { text } from '../localization'
 import { NAVIGATE, ROUTES } from '../constans'
+import { useTranslation } from 'react-i18next'
 
 export const useNavigationList = () => {
+  const { t } = useTranslation()
+
   const navigationList: NavigationListType[] = [
     {
-      text: text.navigation.HOME,
+      text: t('navigation.HOME'),
       icon: <IoMdHome size='1.3em' />,
       href: '#',
       id: 1,
     },
     {
-      text: text.navigation.SERVICES,
+      text: t('navigation.SERVICES'),
       icon: <FaFileCode size='1.3em' />,
       href: NAVIGATE.services,
       id: 2,
     },
     {
-      text: text.navigation.PORTFOLIO,
+      text: t('navigation.PORTFOLIO'),
       icon: <IoDocumentAttachSharp size='1.3em' />,
       href: NAVIGATE.portfolio,
       id: 3,
     },
     {
-      text: text.navigation.RECOMMEND,
+      text: t('navigation.RECOMMEND'),
       icon: <BiSolidMessageCheck size='1.3em' />,
       href: NAVIGATE.recommendations,
       id: 4,
     },
     {
-      text: text.navigation.WORK_HISTORY,
+      text: t('navigation.WORK_HISTORY'),
       icon: <MdOutlineWork size='1.3em' />,
       href: NAVIGATE.workHistory,
       id: 5,
     },
     {
-      text: text.navigation.EDUCATION,
+      text: t('navigation.EDUCATION'),
       icon: <IoSchoolSharp size='1.3em' />,
       href: NAVIGATE.education,
       id: 6,
     },
     {
-      text: 'About me',
+      text: t('navigation.ABOUT_ME'),
       icon: <SiAboutdotme size='1.3em' />,
       href: ROUTES.aboutMe,
       id: 7,

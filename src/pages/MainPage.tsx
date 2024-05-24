@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { Education } from '../components/education/Education'
 import { Footer } from '../components/footer/Footer'
 import { Header } from '../components/header/Header'
@@ -7,10 +8,11 @@ import { Portfolio } from '../components/portfolio/Portfolio'
 import { Recommendations } from '../components/recommendations/Recommendations'
 import { WorkHistory } from '../components/work-history/WorkHistory'
 import { APP_URL } from '../constans'
-import { text } from '../localization'
 import { SEO } from '../shared'
 
 export const MainPage = () => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Navigation />
@@ -24,10 +26,10 @@ export const MainPage = () => {
       </main>
       <Footer />
       <SEO
-        tabTitle={text.pages.mainPage.seo.TITLE}
-        metaDescriptionContent={text.pages.mainPage.seo.DISCOVER_MORE}
-        metaOgTitleContent={text.pages.mainPage.seo.THE_BEST}
-        metaOgDescriptionContent={text.pages.mainPage.seo.PORTFOLIO_OF}
+        tabTitle={t('pages.mainPage.seo.TITLE')}
+        metaDescriptionContent={t('pages.mainPage.seo.DISCOVER_MORE')}
+        metaOgTitleContent={t('pages.mainPage.seo.THE_BEST')}
+        metaOgDescriptionContent={t('pages.mainPage.seo.PORTFOLIO_OF')}
         metaOgURLContent={APP_URL}
         metaOgImageContent=''
       />

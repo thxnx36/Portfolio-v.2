@@ -16,8 +16,8 @@ export const NavItem: FC<Props> = ({
   onChangeItem,
   isMobile,
 }) => {
-  const { navigationList, projectsPages } = useNavigationList()
 
+  const { navigationList, projectsPages } = useNavigationList()
   return (
     <>
       {navigationList.map(({ id, href, text, icon }) => (
