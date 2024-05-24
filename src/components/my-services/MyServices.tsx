@@ -1,16 +1,11 @@
-import {
-  CardsContainer,
-  FlippedCard,
-  Paragraph,
-  Section,
-  SectionHead,
-} from '../../shared'
+import { CardsContainer, FlippedCard, Section, SectionHead } from '../../shared'
 import { useServicesList } from '../../hooks'
-import { text } from '../../localization/text'
 import { useCallback, useState } from 'react'
-import { ROUTES } from "../../constans"
+import { ROUTES } from '../../constans'
+import { useTranslation } from 'react-i18next'
 
 export const MyServices = () => {
+  const { t } = useTranslation()
   const { servicesList } = useServicesList()
   const [activeCards, setActiveCards] = useState<number[]>([])
 
@@ -27,11 +22,11 @@ export const MyServices = () => {
   return (
     <Section style={{ marginBottom: '30px' }} id='services'>
       <SectionHead
-        title={text.myServices.TITLE}
-        subTitle={text.myServices.SUBTITLE}
+        title={t('myServices.TITLE')}
+        subTitle={t('myServices.SUBTITLE')}
         isLink
         to={ROUTES.aboutMe}
-        linkText={text.myServices.ABOUT_ME}
+        linkText={t('myServices.ABOUT_ME')}
       />
       <CardsContainer>
         {servicesList.map(({ title, text, icon, id }) => (
@@ -40,6 +35,8 @@ export const MyServices = () => {
             isFlipped={isFlipped(id)}
             title={title}
             text={text}
+            showText={t('button.SHOW_MORE_CARD')}
+            closeText={t('button.CLOSE_CARD')}
             icon={icon}
             key={id}
           />

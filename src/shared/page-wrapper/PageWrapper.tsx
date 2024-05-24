@@ -1,4 +1,4 @@
-import { CSSProperties, FC, HTMLAttributes, ReactNode } from 'react'
+import { FC, HTMLAttributes, ReactNode } from 'react'
 import styles from './PageWrapper.module.css'
 
 type Props = HTMLAttributes<HTMLElement> & {

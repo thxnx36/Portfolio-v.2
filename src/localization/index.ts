@@ -1,3 +1,2 @@
-import { text } from './text'
-
-export { text }
+export { default as en } from './en.json'
+export { default as uk } from './uk.json'

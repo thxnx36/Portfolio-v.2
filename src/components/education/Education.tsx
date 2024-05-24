@@ -1,9 +1,11 @@
 import { Container, MSection, SectionHead, Table } from '../../shared'
-import { text } from '../../localization'
 import { motionSection } from '../../constans'
-import { education } from '../../db'
+import { useTranslation } from 'react-i18next'
+import { useEducationList } from '../../hooks'
 
 export const Education = () => {
+  const { t } = useTranslation()
+  const { educationList } = useEducationList()
   return (
     <MSection
       id='education'
@@ -13,10 +15,10 @@ export const Education = () => {
       whileInView={motionSection.whileInView}
     >
       <SectionHead
-        title={text.education.TITLE}
-        subTitle={text.education.SUBTITLE}
+        title={t('education.TITLE')}
+        subTitle={t('education.SUBTITLE')}
       />
-      {education?.map(
+      {educationList?.map(
         ({ university, position, date, title, description, url, id }) => (
           <Container key={id} style={{ margin: '0 0 5px' }}>
             <Table

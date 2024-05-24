@@ -21,10 +21,14 @@ import {
   CV_URL,
   APP_URL,
 } from './URLs'
+import { LANG, ENG, UK } from './lang'
 
 export {
   RESPONSIVE,
   TABLET,
+  LANG,
+  ENG,
+  UK,
   DARK,
   LIGHT,
   COLOR_YELLOW,

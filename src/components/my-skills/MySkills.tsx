@@ -3,29 +3,30 @@ import { UserContact } from './user-contact/UserContact'
 import { TechSkills } from './tech-skills/TechSkills'
 import { skills } from '../../db'
 import { languages } from '../../db'
-import { text } from '../../localization'
 import { CSSProperties } from 'react'
-import { Button, Container } from '../../shared'
+import { Button } from '../../shared'
 import { CV_URL } from '../../constans'
+import { useTranslation } from 'react-i18next'
 import styles from './MySkills.module.css'
 
 export const MySkills = () => {
+  const { t } = useTranslation()
   const { socialList } = useMySocialList()
 
   return (
     <div className={styles.mySkillsContainer}>
-      <UserContact socialList={socialList} userName={text.mySkills.NAME} />
+      <UserContact socialList={socialList} userName={t('mySkills.NAME')} />
       <div className={styles.line} />
-      <TechSkills title={text.mySkills.SKILLS} skillsList={skills} />
+      <TechSkills title={t('mySkills.SKILLS')} skillsList={skills} />
       <div className={styles.line} />
-      <TechSkills title={text.mySkills.LANGUAGES} skillsList={languages} />
+      <TechSkills title={t('mySkills.LANGUAGES')} skillsList={languages} />
       <div className={styles.line} />
       <Button
         tag='a'
         target='_blank'
         href={CV_URL}
         style={additionalButtonStyles}
-        text={text.button.DOWNLOAD}
+        text={t('button.DOWNLOAD')}
       />
     </div>
   )

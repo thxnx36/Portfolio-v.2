@@ -6,46 +6,53 @@ import { COLOR_YELLOW } from '../constans'
 import { CiDatabase } from 'react-icons/ci'
 import { CiMobile3 } from 'react-icons/ci'
 import { HiOutlineCodeBracket } from 'react-icons/hi2'
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const useServicesList = () => {
-  const servicesList: ServicesListType[] = [
-    {
-      title: 'Front-end development',
-      text: 'Development UI and business logic using React/Next, TypeScript, CSS',
-      icon: <FaReact size='5em' color={COLOR_YELLOW} />,
-      id: 1,
-    },
-    {
-      title: 'Responsive design',
-      text: 'Responsive websites and apps ensuring optimal display on all devices and screen resolutions',
-      icon: <CiMobile3 size='5em' color={COLOR_YELLOW} />,
-      id: 2,
-    },
-    {
-      title: 'API and backend integration',
-      text: 'Work with APIs and backend to implement web application functionality, including data exchange',
-      icon: <CiDatabase size='5em' color={COLOR_YELLOW} />,
-      id: 3,
-    },
-    {
-      title: 'Performance optimization',
-      text: 'Optimizing the performance of web applications for fast loading times and maximum responsiveness',
-      icon: <SiPagespeedinsights size='4.4em' color={COLOR_YELLOW} />,
-      id: 4,
-    },
-    {
-      title: 'Cross-browser compatibility',
-      text: 'Ensuring compatibility of web applications with various browsers',
-      icon: <PiBrowsersThin size='5em' color={COLOR_YELLOW} />,
-      id: 5,
-    },
-    {
-      title: 'Technical support',
-      text: 'Updating and supporting existing code to ensure stable operation of the application',
-      icon: <HiOutlineCodeBracket size='5em' color={COLOR_YELLOW} />,
-      id: 6,
-    },
-  ]
+  const { t } = useTranslation()
+
+  const servicesList: ServicesListType[] = useMemo(
+    () => [
+      {
+        title: t('myServices.cards.FRONT_END_DEVELOPMENT_TITLE'),
+        text: t('myServices.cards.FRONT_END_DEVELOPMENT_TEXT'),
+        icon: <FaReact size='5em' color={COLOR_YELLOW} />,
+        id: 1,
+      },
+      {
+        title: t('myServices.cards.RESPONSIVE_DESIGN_TITLE'),
+        text: t('myServices.cards.RESPONSIVE_DESIGN_TEXT'),
+        icon: <CiMobile3 size='5em' color={COLOR_YELLOW} />,
+        id: 2,
+      },
+      {
+        title: t('myServices.cards.API_BACKEND_INTEGRATION_TITLE'),
+        text: t('myServices.cards.API_BACKEND_INTEGRATION_TEXT'),
+        icon: <CiDatabase size='5em' color={COLOR_YELLOW} />,
+        id: 3,
+      },
+      {
+        title: t('myServices.cards.PERFORMANCE_OPTIMIZATION_TITLE'),
+        text: t('myServices.cards.PERFORMANCE_OPTIMIZATION_TEXT'),
+        icon: <SiPagespeedinsights size='4.4em' color={COLOR_YELLOW} />,
+        id: 4,
+      },
+      {
+        title: t('myServices.cards.CROSS_BROWSER_COMPATIBILITY_TITLE'),
+        text: t('myServices.cards.CROSS_BROWSER_COMPATIBILITY_TEXT'),
+        icon: <PiBrowsersThin size='5em' color={COLOR_YELLOW} />,
+        id: 5,
+      },
+      {
+        title: t('myServices.cards.TECHNICAL_SUPPORT_TITLE'),
+        text: t('myServices.cards.TECHNICAL_SUPPORT_TEXT'),
+        icon: <HiOutlineCodeBracket size='5em' color={COLOR_YELLOW} />,
+        id: 6,
+      },
+    ],
+    [t],
+  )
 
   return { servicesList }
 }

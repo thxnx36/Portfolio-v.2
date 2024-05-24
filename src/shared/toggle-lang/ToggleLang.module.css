@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+select {
+  background-color: transparent;
+  color: var(--font-color-main);
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
