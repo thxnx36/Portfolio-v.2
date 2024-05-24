@@ -28,7 +28,12 @@ export const Project = () => {
         />
         <Title size='sm' tag='h3'>
           {data?.title}
-          <a className={styles.link} target='_blank' href={data?.link}>
+          <a
+            className={styles.link}
+            target='_blank'
+            href={data?.link}
+            rel='noreferrer'
+          >
             {t('pages.project.LIVE_DEMO')} <FiExternalLink size='.8em' />
           </a>
         </Title>

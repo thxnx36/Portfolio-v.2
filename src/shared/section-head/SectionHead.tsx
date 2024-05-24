@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { Title } from '../title/Title'
 import { Paragraph } from '../paragraph'
 import { Link } from 'react-router-dom'

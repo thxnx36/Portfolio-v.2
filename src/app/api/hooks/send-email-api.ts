@@ -1,5 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import { sendEmailPayloadType } from '../../../types/send-email-payload-type'
+import type { sendEmailPayloadType } from '../../../types'
 import { apiBaseQuery } from '../api-base-query'
 import { getEnvVars } from '../../../utils'
 

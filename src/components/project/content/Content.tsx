@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { TextContent } from '../text-content/TextContent'
 import styles from './Content.module.css'
 

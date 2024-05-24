@@ -56,12 +56,14 @@
     "SUBTITLE": "My education journey and the qualifications I have obtained",
     "table": {
       "udemy": {
+        "NAME": "Udemy",
         "POSITION": "Student",
         "DATE": "Jan 2021 - Feb 2022",
         "TITLE": "Front-end Developing",
         "DESCRIPTION": "In-depth learning front-end technologies including JavaScript, TypeScript, React and Redux"
       },
       "institute": {
+        "NAME": "Institute of Engineering",
         "POSITION": "Student",
         "DATE": "Sep 2015 - May 2018",
         "TITLE": "Energy management",

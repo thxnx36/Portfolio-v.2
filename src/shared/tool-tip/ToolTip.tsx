@@ -1,6 +1,5 @@
-import { CSSProperties, FC, HTMLAttributes, ReactNode } from 'react'
+import type { FC, HTMLAttributes, ReactNode } from 'react';
 import styles from './ToolTip.module.css'
-import { PiDropSimpleBold } from "react-icons/pi"
 
 type Props = HTMLAttributes<HTMLElement> & {
   text: string

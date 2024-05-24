@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { IoClose } from 'react-icons/io5'
 import { useOverLay } from '../../hooks'

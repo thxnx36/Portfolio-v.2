@@ -1,4 +1,4 @@
-import { EnvVarsType } from '../types/env-vars-type'
+import type { EnvVarsType } from '../types'
 
 export const ENV_VARS: EnvVarsType = {
   apiServicesId: import.meta.env.VITE_SERVICE_ID,

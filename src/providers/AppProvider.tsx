@@ -1,4 +1,4 @@
-import { ReactNode, FC } from 'react'
+import type { ReactNode, FC } from 'react'
 import { ThemeProvider } from './ThemeProvider'
 import { DataProvider } from './DataProvider'
 

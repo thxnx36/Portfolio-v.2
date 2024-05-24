@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { FaBurger } from 'react-icons/fa6'
 import styles from './BurgerButton.module.css'
 

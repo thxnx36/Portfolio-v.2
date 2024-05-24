@@ -52,7 +52,7 @@ a {
   padding: 4px 7px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 827px) {
   .tableContainer {
     gap: 16px;
     flex-direction: column;

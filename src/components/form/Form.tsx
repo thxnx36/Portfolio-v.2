@@ -1,4 +1,5 @@
-import { CSSProperties, FC, useState } from 'react'
+import type { CSSProperties, FC} from 'react';
+import { useState } from 'react'
 import {
   Button,
   Input,

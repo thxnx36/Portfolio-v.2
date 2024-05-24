@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, ReactNode } from 'react'
+import type { FC, HTMLAttributes, ReactNode } from 'react'
 import styles from './Paragraph.module.css'
 
 export type Props = HTMLAttributes<HTMLElement> & {

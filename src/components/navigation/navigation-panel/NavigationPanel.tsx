@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { Avatar, BurgerButton, ToolTip } from '../../../shared'
 import { NavListItemDesktop } from '../nav-list-item-desktop/NavListItemDesktop'
 import { userPhoto } from '../../../assets'

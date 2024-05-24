@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import {
   AUTHOR,
@@ -23,7 +23,6 @@ export const SEO: FC<Props> = ({
   metaOgTitleContent,
   metaOgDescriptionContent,
   metaOgURLContent,
-  metaOgImageContent,
 }) => {
   return (
     <HelmetProvider>

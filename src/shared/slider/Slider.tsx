@@ -1,4 +1,4 @@
-import { FC, ReactElement, ReactNode } from 'react'
+import type { FC, ReactElement, ReactNode } from 'react'
 import Carousel from 'react-multi-carousel'
 import { RESPONSIVE } from '../../constans'
 import styles from './Slider.module.css'

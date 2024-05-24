@@ -1,4 +1,5 @@
-import { useEffect, createContext, ReactNode, FC } from 'react'
+import type { ReactNode, FC } from 'react';
+import { useEffect, createContext } from 'react'
 import { DARK } from '../constans'
 import { useLocalStorage } from '../hooks'
 

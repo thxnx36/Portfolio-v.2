@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { MdStar } from 'react-icons/md'
 import { COLOR_YELLOW } from '../../../constans'
 import { Paragraph, Title } from '../../../shared'

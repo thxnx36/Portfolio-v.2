@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { NavItem } from '../nav-item/NavItem'
 import { Toolbar } from '../toolbar/Toolbar'
 import styles from './NavListItemMobile.module.css'

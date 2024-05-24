@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import styles from './Head.module.css'
 import { BackButton } from '../../../shared/buttons'
 import { Title } from '../../../shared'
@@ -19,7 +19,7 @@ export const Head: FC<Props> = ({ onClick, projectTitle, imgSrc }) => {
         </Title>
       </div>
       <div className={styles.headImg}>
-        <img src={imgSrc} alt={`${projectTitle}-project-picture`} />
+        <img src={imgSrc} alt={`${projectTitle}-project`} />
       </div>
     </>
   )

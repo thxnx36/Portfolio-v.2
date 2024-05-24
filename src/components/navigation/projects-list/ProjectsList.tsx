@@ -1,5 +1,6 @@
-import { FC, useState } from 'react'
-import { ProjectsListType } from '../../../types/navigation-list-type'
+import type { FC } from 'react'
+import { useState } from 'react'
+import type { ProjectsListType } from '../../../types'
 import { Link } from 'react-router-dom'
 import { TfiNewWindow } from 'react-icons/tfi'
 import { MdArrowDropDown } from 'react-icons/md'

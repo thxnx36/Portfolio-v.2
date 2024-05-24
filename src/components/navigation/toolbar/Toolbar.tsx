@@ -1,4 +1,5 @@
-import { FC, useCallback, useContext, useState } from 'react'
+import type { FC } from 'react'
+import { useContext } from 'react'
 import { Switcher, ToggleLang } from '../../../shared'
 import { FaSun } from 'react-icons/fa'
 import { IoMoonSharp } from 'react-icons/io5'
