@@ -43,7 +43,7 @@
 
 @media screen and (max-width: 900px) {
   .content {
-    padding: 20px;
+    padding: 20px 5px;
   }
 
   .image {

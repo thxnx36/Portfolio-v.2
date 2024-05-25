@@ -44,3 +44,29 @@ export const motionNav = {
     visible: 'visible',
   },
 }
+
+export const motionProgrLine = {
+  variants: {
+    hidden: {
+      width: '0%',
+      opacity: 0,
+    },
+    visible: {
+      width: '90%',
+      opacity: 1,
+    },
+  },
+
+  transition: {
+    ease: 'easeInOut',
+    duration: 0.5,
+  },
+
+  viewport: {
+    amount: 0.2,
+    once: false,
+  },
+
+  initial: 'hidden',
+  whileInView: 'visible',
+}

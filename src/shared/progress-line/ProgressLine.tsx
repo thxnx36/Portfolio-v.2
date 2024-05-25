@@ -1,4 +1,6 @@
 import type { FC } from 'react'
+import { motion } from 'framer-motion'
+import { motionProgrLine } from '../../constans'
 import styles from './ProgressLine.module.css'
 
 type Props = {
@@ -7,8 +9,23 @@ type Props = {
 
 export const ProgressLine: FC<Props> = ({ progress }) => {
   return (
-    <div className={styles.line}>
-      <div className={styles.progress} style={{ width: `${progress}%` }} />
-    </div>
+    <ul className={styles.line}>
+      <motion.li
+        initial={motionProgrLine.initial}
+        whileInView={motionProgrLine.whileInView}
+        variants={{
+          hidden: {
+            width: '0%',
+            opacity: 1,
+          },
+          visible: {
+            width: `${progress}%`,
+            opacity: 1,
+          },
+        }}
+        transition={motionProgrLine.transition}
+        className={styles.progress}
+      />
+    </ul>
   )
 }
