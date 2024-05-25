@@ -3,8 +3,9 @@ import { Avatar, BurgerButton, ToolTip } from '../../../shared'
 import { NavListItemDesktop } from '../nav-list-item-desktop/NavListItemDesktop'
 import { userPhoto } from '../../../assets'
 import { Toolbar } from '../toolbar/Toolbar'
-import styles from './NavigationPanel.module.css'
 import { useTranslation } from 'react-i18next'
+import { PiDevToLogoFill } from 'react-icons/pi'
+import styles from './NavigationPanel.module.css'
 
 type Props = {
   onClickItemMenu: (id: number) => void
@@ -31,6 +32,9 @@ export const NavigationPanel: FC<Props> = ({
           onClick={handleSkills}
         />
       </ToolTip>
+      <div className={styles.logo}>
+        <PiDevToLogoFill size='1.5em' />
+      </div>
       <BurgerButton onClick={handleMenu} />
       <NavListItemDesktop
         onChangeItem={onClickItemMenu}
