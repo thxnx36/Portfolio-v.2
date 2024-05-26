@@ -9,8 +9,8 @@ type Props = {
 
 export const ProgressLine: FC<Props> = ({ progress }) => {
   return (
-    <ul className={styles.line}>
-      <motion.li
+    <div className={styles.line}>
+      <motion.progress
         initial={motionProgrLine.initial}
         whileInView={motionProgrLine.whileInView}
         variants={{
@@ -26,6 +26,6 @@ export const ProgressLine: FC<Props> = ({ progress }) => {
         transition={motionProgrLine.transition}
         className={styles.progress}
       />
-    </ul>
+    </div>
   )
 }

@@ -15,6 +15,10 @@ textarea:focus {
   border: 1px solid var(--main-color);
 }
 
+textarea::placeholder {
+  font-weight: var(--font-weight-normal);
+}
+
 .error:focus {
   border-color: var(--red-color);
 }

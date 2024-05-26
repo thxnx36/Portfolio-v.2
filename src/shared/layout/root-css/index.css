@@ -17,6 +17,7 @@ body {
   --background-color: var(--white-color);
   --text-color: var(--secondary-color);
   --box-shadow: var(--shadow-light);
+  --bg-body-color: var(--bg-color);
 }
 
 body.dark {
@@ -24,31 +25,7 @@ body.dark {
   --background-color: var(--bg-color-container);
   --text-color: var(--white-color);
   --box-shadow: var(--shadow-dark);
-}
-
-h1,
-h4,
-p {
-  margin: 0;
-}
-
-ul,
-ol,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: inherit;
-}
-
-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+  --bg-body-color: var(--bg-color-body-dark);
 }
 
 input,

@@ -1,4 +1,4 @@
-import type { CSSProperties, FC} from 'react';
+import type { CSSProperties, FC } from 'react'
 import { useState } from 'react'
 import {
   Button,
@@ -31,7 +31,8 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
     onSubmit,
   } = useSendEmail({
     f: onCloseModal,
-    infoMessage: t('toast.success.EMAIL_SENT'),
+    successMessage: t('toast.success.EMAIL_SENT'),
+    infoMessage: t('toast.info.FIXING'),
     reCaptchaToken: captchaToken,
   })
 
@@ -43,12 +44,14 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
         <form onSubmit={onSubmit}>
           <Title tag='h2'>{t('form.TITLE')}</Title>
           <Input
+            id='form-input-name'
             required
             onChange={handleChange('name_from')}
             value={form.name_from}
             placeholder={t('input.placeholder.YOUR_NAME')}
           />
           <Input
+            id='form-input-email'
             type='email'
             required
             onChange={handleChange('email_from')}
@@ -56,6 +59,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
             placeholder={t('input.placeholder.YOUR_EMAIL')}
           />
           <Textarea
+            id='form-textarea-message'
             onChange={handleChange('message')}
             value={form.message}
             required

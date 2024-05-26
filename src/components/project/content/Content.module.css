@@ -1,17 +1,13 @@
 .content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
+  margin-bottom: 20px;
 }
 
 .text li > p {
   margin-bottom: 20px;
-}
-
-.contentImg {
-  width: 440px;
-  height: 100%;
+  max-width: unset;
 }
 
 .contentImg img {
@@ -28,5 +24,12 @@
 
   .contentImg {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 0;
   }
 }

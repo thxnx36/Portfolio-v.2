@@ -18,10 +18,10 @@ export const Input: FC<Props> = ({
   return (
     <div className={styles.inputContainer}>
       <input
-        {...props}
         className={error ? `${styles.input} ${styles.error}` : styles.input}
         value={value}
         onChange={onChange}
+        {...props}
       />
       {error && (
         <p className={styles.errorMessage}>{errorText || 'Some errors'}</p>
