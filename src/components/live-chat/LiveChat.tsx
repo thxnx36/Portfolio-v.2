@@ -3,15 +3,24 @@ import { useLocalStorage } from '../../hooks'
 import { OPEN, CLOSE, KEY, SENDER_USER, SENDER_BOT } from '../../constans'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { useTranslation } from 'react-i18next'
-import { ChangeEvent, useRef, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
 import { ChatMessages } from './chat-messages/ChatMessages'
 import { ChatContentType } from '../../types'
 import { soundResponseMessage, soundSendMessage } from '../../assets'
 import { playSoundsInChat } from '../../utils'
+import { useSendTelegramMessageMutation } from '../../app/api'
 import styles from './LiveChat.module.css'
 
 export const LiveChat = () => {
   const { t } = useTranslation()
+  const [
+    sendTelegramMessage,
+    {
+      isLoading: isLoadingMessage,
+      isError: isErrorMessage,
+      isSuccess: isSuccessMessage,
+    },
+  ] = useSendTelegramMessageMutation()
 
   const messagesContainerRef = useRef<HTMLUListElement>(null)
   const [openChat, setOpenChat] = useLocalStorage(KEY, CLOSE)
@@ -20,8 +29,16 @@ export const LiveChat = () => {
 
   //mock messages
   const [messages, setMessages] = useState<ChatContentType[]>([
-    { sender: SENDER_BOT, text: t('chat.THERE_WILL_BE_CHAT') + '🧑‍💻🤏' },
-    { sender: SENDER_USER, text: t('chat.BELIEVE') + '🤞💪' },
+    {
+      sender: SENDER_BOT,
+      text: t('chat.THERE_WILL_BE_CHAT') + ' 🧑‍💻🤏',
+      status: 'none',
+    },
+    {
+      sender: SENDER_USER,
+      text: t('chat.BELIEVE') + ' 🤞💪',
+      status: 'success',
+    },
   ])
 
   const onToggleChat = () => setOpenChat(openChat === OPEN ? CLOSE : OPEN)
@@ -33,7 +50,7 @@ export const LiveChat = () => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
-      sendMessage()
+      sendMessage(e)
     }
   }
 
@@ -47,24 +64,51 @@ export const LiveChat = () => {
       }
     })
 
-  const sendMessage = () => {
+  useEffect(() => {
+    if (isLoadingMessage || isErrorMessage || isSuccessMessage) {
+      setMessages(prevMessages => {
+        const updatedMessages = [...prevMessages]
+        const lastIndex = updatedMessages.length - 1
+
+        if (updatedMessages[lastIndex].sender === SENDER_USER) {
+          if (isLoadingMessage) {
+            updatedMessages[lastIndex].status = 'loading'
+          } else if (isSuccessMessage) {
+            updatedMessages[lastIndex].status = 'success'
+          } else if (isErrorMessage) {
+            updatedMessages[lastIndex].status = 'error'
+          }
+        }
+
+        return updatedMessages
+      })
+    }
+  }, [isLoadingMessage, isErrorMessage, isSuccessMessage])
+
+  const sendMessage = async (e: FormEvent) => {
+    e.preventDefault()
     if (textareaContent.trim()) {
-      setMessages([...messages, { sender: SENDER_USER, text: textareaContent }])
+      const newMessage = {
+        sender: SENDER_USER,
+        text: textareaContent,
+        status: 'loading',
+      }
+      setMessages([...messages, newMessage])
       setTextareaContent('')
       setTextareaHeight(32)
       playSoundsInChat(soundSendMessage)
       scrollToBottom()
-
-      // simulate bot response
-      setTimeout(() => {
-        setMessages(prevMessages => [
-          ...prevMessages,
-          { sender: SENDER_BOT, text: 'This is a bot response!' },
-        ])
-        playSoundsInChat(soundResponseMessage)
-        scrollToBottom()
-      }, 1500)
+      await sendTelegramMessage({ message: textareaContent })
     }
+    // simulate bot response
+    setTimeout(() => {
+      setMessages(prevMessages => [
+        ...prevMessages,
+        { sender: SENDER_BOT, text: 'This is a bot response!', status: 'none' },
+      ])
+      playSoundsInChat(soundResponseMessage)
+      scrollToBottom()
+    }, 1500)
   }
 
   const isOpenChat = openChat === OPEN

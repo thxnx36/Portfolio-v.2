@@ -15,7 +15,7 @@
   background: transparent;
   color: var(--text-color);
   margin: 0;
-  padding: 7px 5px 0;
+  padding: 10px 0 0 10px;
   resize: none;
   width: 280px;
   overflow-y: auto;
