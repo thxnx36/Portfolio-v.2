@@ -14,7 +14,7 @@ export const LiveChat = () => {
   const { t } = useTranslation()
 
   const messagesContainerRef = useRef<HTMLUListElement>(null)
-  const [openChat, setOpenChat] = useLocalStorage(KEY, OPEN)
+  const [openChat, setOpenChat] = useLocalStorage(KEY, CLOSE)
   const [textareaContent, setTextareaContent] = useState<string>('')
   const [textareaHeight, setTextareaHeight] = useState<number>(32)
 
