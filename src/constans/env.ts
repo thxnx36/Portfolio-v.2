@@ -7,4 +7,7 @@ export const ENV_VARS: EnvVarsType = {
   apiUserId: import.meta.env.VITE_USER_ID,
   apiCaptchaSecretKey: import.meta.env.VITE_CAPTCHA_SEKRET_KEY,
   apiCaptchaSiteKey: import.meta.env.VITE_CAPTCHA_SITE_KEY,
+  apiTelegramUrl: import.meta.env.VITE_API_TELEGRAM_URL,
+  apiTelegramKey: import.meta.env.VITE_API_TELEGRAM_KEY,
+  apiTelegramChatId: import.meta.env.VITE_API_TELEGRAM_CHAT_ID,
 }

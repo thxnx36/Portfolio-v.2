@@ -1,11 +1,22 @@
 .messagesContent {
-  padding: 15px;
+  padding: 15px 5px;
   display: flex;
   flex-direction: column;
   overflow: auto;
   height: 450px;
   background-color: var(--bg-body-color);
   border-radius: var(--border-radius);
+  scrollbar-width: none;
+}
+
+.messagesContent::-webkit-scrollbar {
+  display: none;
+}
+
+.statusWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .bot,
@@ -44,8 +55,7 @@
   text-align: unset;
   max-width: 300px;
   display: inline-block;
-  padding: 12px;
-  border-radius: 15px;
+  border-radius: 10px;
   color: var(--white-color);
   box-shadow: var(--shadow-light);
   overflow-wrap: break-word;
@@ -57,9 +67,17 @@
 .botMessage {
   background: var(--bg-linear-reverse);
   margin-right: 30px;
+  padding: 10px;
 }
 
 .userMessage {
   background: var(--bg-linear);
   margin-left: 30px;
+  padding: 10px 10px 0;
+}
+
+.botMessage p,
+.userMessage p {
+  margin: 0;
+  text-align: unset;
 }

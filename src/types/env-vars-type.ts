@@ -5,4 +5,7 @@ export type EnvVarsType = {
   apiUserId: string
   apiCaptchaSecretKey: string
   apiCaptchaSiteKey: string
+  apiTelegramUrl: string
+  apiTelegramKey: string
+  apiTelegramChatId: string
 }
