@@ -1,4 +1,8 @@
-import type { ChangeEvent, FC, TextareaHTMLAttributes } from 'react'
+import {
+  forwardRef,
+  type ChangeEvent,
+  type TextareaHTMLAttributes,
+} from 'react'
 import styles from './Textarea.module.css'
 
 type Props = TextareaHTMLAttributes<HTMLTextAreaElement> & {
@@ -8,26 +12,23 @@ type Props = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
-export const Textarea: FC<Props> = ({
-  value,
-  error,
-  errorText,
-  onChange,
-  ...props
-}) => {
-  return (
-    <div className={styles.textareaContainer}>
-      <textarea
-        className={
-          error ? `${styles.textarea} ${styles.error}` : styles.textarea
-        }
-        onChange={onChange}
-        value={value}
-        {...props}
-      />
-      {error && (
-        <p className={styles.errorMessage}>{errorText || 'Some errors'}</p>
-      )}
-    </div>
-  )
-}
+export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
+  ({ value, error, errorText, onChange, ...props }, ref) => {
+    return (
+      <div className={styles.textareaContainer}>
+        <textarea
+          ref={ref}
+          className={
+            error ? `${styles.textarea} ${styles.error}` : styles.textarea
+          }
+          onChange={onChange}
+          value={value}
+          {...props}
+        />
+        {error && (
+          <p className={styles.errorMessage}>{errorText || 'Some errors'}</p>
+        )}
+      </div>
+    )
+  },
+)
