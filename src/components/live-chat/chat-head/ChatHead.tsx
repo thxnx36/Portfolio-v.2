@@ -27,7 +27,7 @@ export const ChatHead: FC<Props> = ({ onToggleChat, isOpenChat }) => {
               </div>
             </div>
             <button className={styles.closeButton} onClick={onToggleChat}>
-              <IoClose size={'1.5em'} />
+              <IoClose size={'2em'} />
             </button>
           </>
         ) : (
