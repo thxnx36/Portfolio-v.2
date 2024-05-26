@@ -1,12 +1,13 @@
 import type { FC, ReactNode } from 'react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
-import { ScrollTopButton } from '../buttons'
 import { Toast } from '../toast'
 import { useSpinner } from '../../hooks'
+import { LiveChat } from '../../components/live-chat'
 import styles from './Layout.module.css'
 import './root-css/variables.css'
 import './root-css/index.css'
 import './root-css/spinner.css'
+import './root-css/reset.css'
 import 'react-multi-carousel/lib/styles.css'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -20,8 +21,8 @@ export const Layout: FC<Props> = ({ children }) => {
     <div className={styles.app}>
       <div className={styles.appWrapper}>{children}</div>
       <SpeedInsights />
-      <ScrollTopButton />
       <Toast />
+      <LiveChat />
     </div>
   )
 }

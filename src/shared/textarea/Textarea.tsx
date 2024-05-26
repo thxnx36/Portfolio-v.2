@@ -18,12 +18,12 @@ export const Textarea: FC<Props> = ({
   return (
     <div className={styles.textareaContainer}>
       <textarea
-        {...props}
         className={
           error ? `${styles.textarea} ${styles.error}` : styles.textarea
         }
         onChange={onChange}
         value={value}
+        {...props}
       />
       {error && (
         <p className={styles.errorMessage}>{errorText || 'Some errors'}</p>

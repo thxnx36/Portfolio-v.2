@@ -1,9 +1,9 @@
-import React from 'react'
+import { StrictMode } from 'react'
 import { store } from './app/store'
 import { BrowserRouter } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { AppProvider } from './providers'
+import { ThemeProvider } from './providers'
 import { Routes } from './routes'
 import './i18n'
 const container = document.getElementById('root')
@@ -12,15 +12,15 @@ if (container) {
   const root = createRoot(container)
 
   root.render(
-    
+    <StrictMode>
       <Provider store={store}>
         <BrowserRouter>
-          <AppProvider>
+          <ThemeProvider>
             <Routes />
-          </AppProvider>
+          </ThemeProvider>
         </BrowserRouter>
       </Provider>
-    ,
+    </StrictMode>,
   )
 } else {
   throw new Error(

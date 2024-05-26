@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
 import { useScrollListener } from '../../hooks'
 import { motionNav } from '../../constans'
 import { MContainer, Drawer } from '../../shared'
@@ -14,13 +14,11 @@ export const Navigation = () => {
   const [isShowSideBarSkills, setIsShowSideBarSkills] = useState<boolean>(false)
   const [isShowSideBarMenu, setIsShowSideBarMenu] = useState<boolean>(false)
 
-  const handleMenu = useCallback(() => setIsShowSideBarMenu(prev => !prev), [])
+  const handleMenu = () => setIsShowSideBarMenu(prev => !prev)
 
-  const handleSkills = useCallback(
-    () => setIsShowSideBarSkills(prev => !prev),
-    [],
-  )
-  const onClickItemMenu = useCallback((id: number) => setActiveItem(id), [])
+  const handleSkills = () => setIsShowSideBarSkills(prev => !prev)
+
+  const onClickItemMenu = (id: number) => setActiveItem(id)
 
   const onCloseSideBarMenu = (id: number) => {
     onClickItemMenu(id)

@@ -22,11 +22,17 @@ import {
   APP_URL,
 } from './URLs'
 import { LANG, ENG, UK } from './lang'
+import { OPEN, CLOSE, KEY, SENDER_USER, SENDER_BOT } from './live-chat'
 
 export {
   RESPONSIVE,
   TABLET,
   LANG,
+  OPEN,
+  CLOSE,
+  KEY,
+  SENDER_USER,
+  SENDER_BOT,
   ENG,
   UK,
   DARK,

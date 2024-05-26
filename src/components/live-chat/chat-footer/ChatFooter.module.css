@@ -1,0 +1,53 @@
+.chatFooterWrap {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.chatFooterWrap div {
+  margin: 0;
+}
+
+.chatFooterWrap textarea {
+  background: transparent;
+  color: var(--text-color);
+  margin: 0;
+  padding: 7px 5px 0;
+  resize: none;
+  width: 280px;
+  overflow-y: auto;
+}
+
+.chatFooterWrap textarea:focus {
+  border: none;
+}
+
+.sendButton {
+  width: 32px;
+  height: 32px;
+  margin: 5px;
+  background: var(--bg-linear-reverse);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sendButton svg {
+  color: var(--white-color);
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 380px) {
+  .sendButton {
+    display: none;
+  }
+}

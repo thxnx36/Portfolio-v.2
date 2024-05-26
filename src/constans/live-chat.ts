@@ -1,0 +1,5 @@
+export const OPEN = 'open'
+export const CLOSE = 'close'
+export const KEY = 'chat'
+export const SENDER_USER = 'user'
+export const SENDER_BOT = 'bot'
