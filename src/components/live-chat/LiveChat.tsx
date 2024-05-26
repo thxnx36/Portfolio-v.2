@@ -1,6 +1,15 @@
 import { ChatHead } from './chat-head/ChatHead'
 import { useLocalStorage } from '../../hooks'
-import { OPEN, CLOSE, KEY, SENDER_USER, SENDER_BOT } from '../../constans'
+import {
+  OPEN,
+  CLOSE,
+  KEY,
+  SENDER_USER,
+  SENDER_BOT,
+  HEIGHT_INPUT,
+  MESSAGE_LENGTH,
+  STATUS_MESSAGE,
+} from '../../constans'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { useTranslation } from 'react-i18next'
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
@@ -9,6 +18,7 @@ import { ChatContentType } from '../../types'
 import { soundResponseMessage, soundSendMessage } from '../../assets'
 import { playSoundsInChat } from '../../utils'
 import { useSendTelegramMessageMutation } from '../../app/api'
+import { toast } from 'react-toastify'
 import styles from './LiveChat.module.css'
 
 export const LiveChat = () => {
@@ -25,7 +35,7 @@ export const LiveChat = () => {
   const messagesContainerRef = useRef<HTMLUListElement>(null)
   const [openChat, setOpenChat] = useLocalStorage(KEY, CLOSE)
   const [textareaContent, setTextareaContent] = useState<string>('')
-  const [textareaHeight, setTextareaHeight] = useState<number>(32)
+  const [textareaHeight, setTextareaHeight] = useState<number>(HEIGHT_INPUT)
 
   //mock messages
   const [messages, setMessages] = useState<ChatContentType[]>([
@@ -44,9 +54,15 @@ export const LiveChat = () => {
   const onToggleChat = () => setOpenChat(openChat === OPEN ? CLOSE : OPEN)
 
   const handleChangeTextArea = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setTextareaContent(e.target.value)
-    setTextareaHeight(e.target.scrollHeight)
+    const { value } = e.target
+    if (value.length <= MESSAGE_LENGTH) {
+      setTextareaContent(e.target.value)
+      setTextareaHeight(e.target.scrollHeight)
+    } else {
+      toast.warn(t('toast.warning.LENGTH_TEXT'))
+    }
   }
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
@@ -72,11 +88,11 @@ export const LiveChat = () => {
 
         if (updatedMessages[lastIndex].sender === SENDER_USER) {
           if (isLoadingMessage) {
-            updatedMessages[lastIndex].status = 'loading'
+            updatedMessages[lastIndex].status = STATUS_MESSAGE.loading
           } else if (isSuccessMessage) {
-            updatedMessages[lastIndex].status = 'success'
+            updatedMessages[lastIndex].status = STATUS_MESSAGE.success
           } else if (isErrorMessage) {
-            updatedMessages[lastIndex].status = 'error'
+            updatedMessages[lastIndex].status = STATUS_MESSAGE.error
           }
         }
 
@@ -91,7 +107,7 @@ export const LiveChat = () => {
       const newMessage = {
         sender: SENDER_USER,
         text: textareaContent,
-        status: 'loading',
+        status: STATUS_MESSAGE.loading,
       }
       setMessages([...messages, newMessage])
       setTextareaContent('')

@@ -11,7 +11,7 @@
   "tooltip": {
     "MY_SKILLS": "My skills"
   },
-  "chat" :{
+  "chat": {
     "THERE_WILL_BE_CHAT": "There's will be an online chat room here soon, but it's still in development",
     "BELIEVE": "do it! I believe in you"
   },
@@ -175,6 +175,9 @@
     },
     "info": {
       "FIXING": "I'm already fixing the problem"
+    },
+    "warning": {
+      "LENGTH_TEXT": "The length of the message should not exceed 75 characters"
     }
   },
   "input": {

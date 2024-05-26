@@ -14,9 +14,9 @@
 }
 
 .statusWrap {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  position: absolute;
+  bottom: -2px;
+  right: 5px;
 }
 
 .bot,
@@ -36,18 +36,16 @@
   margin-top: 18px;
 }
 
-.left,
+.left {
+  border-top: 2px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 10px solid var(--bg-color-bot-message);
+}
+
 .right {
   border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-}
-
-.left {
-  border-right: 6px solid var(--main-color);
-}
-
-.right {
-  border-left: 6px solid var(--main-color);
+  border-bottom: 2px solid transparent;
+  border-left: 10px solid var(--bg-color-user-message);
 }
 
 .botMessage,
@@ -57,6 +55,7 @@
   min-width: 100px;
   display: inline-block;
   border-radius: 15px;
+  padding: 10px;
   color: var(--white-color);
   box-shadow: var(--shadow-light);
   overflow-wrap: break-word;
@@ -66,19 +65,19 @@
 }
 
 .botMessage {
-  background: var(--bg-linear-reverse);
+  background-color: var(--bg-color-bot-message);
   margin-right: 30px;
-  padding: 10px;
 }
 
 .userMessage {
-  background: var(--bg-linear);
+  background-color: var(--bg-color-user-message);
   margin-left: 30px;
-  padding: 10px 10px 0;
+  position: relative;
 }
 
 .botMessage p,
 .userMessage p {
   margin: 0;
   text-align: unset;
+  line-height: normal;
 }

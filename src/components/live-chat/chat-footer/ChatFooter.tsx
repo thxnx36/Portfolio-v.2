@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, FormEvent } from 'react'
+import { ChangeEvent, FC, FormEvent, useEffect, useRef } from 'react'
 import { Textarea } from '../../../shared'
 import { IoSend } from 'react-icons/io5'
 import styles from './ChatFooter.module.css'
@@ -22,9 +22,18 @@ export const ChatFooter: FC<Props> = ({
   isDisabledButton,
   textareaHeight,
 }) => {
+  const textAreaRef = useRef<HTMLTextAreaElement>(null)
+
+  useEffect(() => {
+    if (textAreaRef.current) {
+      textAreaRef.current.focus()
+    }
+  }, [])
+
   return (
     <form onSubmit={sendMessage} className={styles.chatFooterWrap}>
       <Textarea
+        ref={textAreaRef}
         style={{
           height: textareaHeight,
           resize: 'none',

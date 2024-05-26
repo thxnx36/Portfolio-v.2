@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 import { Paragraph } from '../../../shared'
 import { ChatContentType } from '../../../types'
-import { SENDER_BOT, SENDER_USER } from '../../../constans'
+import { SENDER_BOT, SENDER_USER, STATUS_MESSAGE } from '../../../constans'
 import { IoCheckmarkOutline } from 'react-icons/io5'
 import { IoCheckmarkDone } from 'react-icons/io5'
 import { MdError } from 'react-icons/md'
@@ -35,9 +35,15 @@ export const ChatMessages = forwardRef<HTMLUListElement, Props>(
                 <span className={styles.statusWrap}>
                   {msg.sender === SENDER_USER && (
                     <span>
-                      {msg.status === 'loading' && <IoCheckmarkOutline />}
-                      {msg.status === 'success' && <IoCheckmarkDone />}
-                      {msg.status === 'error' && <MdError color='red' />}
+                      {msg.status === STATUS_MESSAGE.loading && (
+                        <IoCheckmarkOutline />
+                      )}
+                      {msg.status === STATUS_MESSAGE.success && (
+                        <IoCheckmarkDone />
+                      )}
+                      {msg.status === STATUS_MESSAGE.error && (
+                        <MdError color='red' />
+                      )}
                     </span>
                   )}
                 </span>

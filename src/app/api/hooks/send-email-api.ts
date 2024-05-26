@@ -24,7 +24,7 @@ export const sendEmailApi = createApi({
         }).toString()
 
         return {
-          url: '/',
+          url: '/send-form',
           method: 'post',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

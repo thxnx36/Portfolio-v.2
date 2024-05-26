@@ -12,6 +12,8 @@
   --bg-color-body-dark: #18191a;
   --bg-color-container: #242526;
   --bg-color-grey: #f0f0f6;
+  --bg-color-bot-message: #2e8b57;
+  --bg-color-user-message: #9370d8;
   --font-color-main: #767676;
   --bg-linear: linear-gradient(330deg, #ffb400 20%, #ff6d6d 100%);
   --bg-linear-reverse: linear-gradient(330deg, #ff6d6d 20%, #ffb400 100%);
