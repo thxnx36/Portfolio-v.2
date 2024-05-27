@@ -18,7 +18,6 @@ import { ChatContentType } from '../../types'
 import { soundResponseMessage, soundSendMessage } from '../../assets'
 import { playSoundsInChat } from '../../utils'
 import { useSendTelegramMessageMutation } from '../../app/api'
-import { toast } from 'react-toastify'
 import styles from './LiveChat.module.css'
 
 export const LiveChat = () => {
@@ -36,6 +35,7 @@ export const LiveChat = () => {
   const [openChat, setOpenChat] = useLocalStorage(KEY, CLOSE)
   const [textareaContent, setTextareaContent] = useState<string>('')
   const [textareaHeight, setTextareaHeight] = useState<number>(HEIGHT_INPUT)
+  const [isShowWarning, setIsShowWarning] = useState<boolean>(false)
 
   //mock messages
   const [messages, setMessages] = useState<ChatContentType[]>([
@@ -59,7 +59,7 @@ export const LiveChat = () => {
       setTextareaContent(e.target.value)
       setTextareaHeight(e.target.scrollHeight)
     } else {
-      toast.warn(t('toast.warning.LENGTH_TEXT'))
+      setIsShowWarning(true)
     }
   }
 
@@ -83,8 +83,8 @@ export const LiveChat = () => {
   useEffect(() => {
     if (isLoadingMessage || isErrorMessage || isSuccessMessage) {
       setMessages(prevMessages => {
-        const updatedMessages = [...prevMessages]
-        const lastIndex = updatedMessages.length - 1
+        const updatedMessages: ChatContentType[] = [...prevMessages]
+        const lastIndex: number = updatedMessages.length - 1
 
         if (updatedMessages[lastIndex].sender === SENDER_USER) {
           if (isLoadingMessage) {
@@ -101,6 +101,14 @@ export const LiveChat = () => {
     }
   }, [isLoadingMessage, isErrorMessage, isSuccessMessage])
 
+  useEffect(() => {
+    if (isShowWarning) {
+      const timeoutId = setTimeout(() => setIsShowWarning(false), 1500)
+
+      return () => clearTimeout(timeoutId)
+    }
+  }, [isShowWarning])
+
   const sendMessage = async (e: FormEvent) => {
     e.preventDefault()
     if (textareaContent.trim()) {
@@ -111,11 +119,12 @@ export const LiveChat = () => {
       }
       setMessages([...messages, newMessage])
       setTextareaContent('')
-      setTextareaHeight(32)
+      setTextareaHeight(HEIGHT_INPUT)
       playSoundsInChat(soundSendMessage)
       scrollToBottom()
       await sendTelegramMessage({ message: textareaContent })
     }
+
     // simulate bot response
     setTimeout(() => {
       setMessages(prevMessages => [
@@ -142,6 +151,12 @@ export const LiveChat = () => {
       {isOpenChat && (
         <>
           <ChatMessages ref={messagesContainerRef} messages={messages} />
+          {isShowWarning && (
+            <span className={styles.lengthWarning}>
+              {t('toast.warning.LENGTH_TEXT')}
+            </span>
+          )}
+
           <ChatFooter
             value={textareaContent}
             sendMessage={sendMessage}

@@ -10,14 +10,13 @@
 }
 
 .stack {
-  padding: 14px;
-  background-color: var(--dark-yellow-color);
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
 }
 
-@media screen and (max-width: 584px) {
-  .stack {
-    padding: 5px;
-  }
+.stack::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 520px) {
