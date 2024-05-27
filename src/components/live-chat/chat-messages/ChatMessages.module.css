@@ -15,7 +15,7 @@
 
 .statusWrap {
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   right: 5px;
 }
 
@@ -55,7 +55,6 @@
   min-width: 100px;
   display: inline-block;
   border-radius: 15px;
-  padding: 10px;
   color: var(--white-color);
   box-shadow: var(--shadow-light);
   overflow-wrap: break-word;
@@ -67,12 +66,14 @@
 .botMessage {
   background-color: var(--bg-color-bot-message);
   margin-right: 30px;
+  padding: 10px;
 }
 
 .userMessage {
   background-color: var(--bg-color-user-message);
   margin-left: 30px;
   position: relative;
+  padding: 10px 25px 10px 10px;
 }
 
 .botMessage p,
@@ -80,4 +81,10 @@
   margin: 0;
   text-align: unset;
   line-height: normal;
+}
+
+@media screen and (max-width: 550px) {
+  .messagesContent {
+    height: 100%;
+  }
 }

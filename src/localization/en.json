@@ -114,7 +114,7 @@
             "TEXT_3": "Overall, working on the project was an interesting and productive experience that helped me develop skills in front-end development, multilingual support, and web application performance optimization."
           }
         },
-        "stack": "#React #TypeScript #Redux Toolkit #RTK Query #Apollo GraphQL #Material-UI"
+        "stack": "#React #TypeScript #Redux Toolkit #RTK Query #Apollo GraphQL #Material UI"
       },
       "ASX": {
         "NAME": "ASX Sports",
@@ -131,7 +131,7 @@
             "TEXT_3": "What I found interesting was participating in rallies with the CTO and the customer where we discussed the business logic of the application. I also enjoyed expressing my ideas, which in the future were turned into reality."
           }
         },
-        "stack": "#Next #TypeScript #Redux Toolkit #RTK Query #Styled-components #Express"
+        "stack": "#Next #TypeScript #Redux Toolkit #RTK Query #Express #Styled components"
       },
       "maven": {
         "NAME": "Maven 11",

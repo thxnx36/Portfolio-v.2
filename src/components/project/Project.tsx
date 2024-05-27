@@ -38,11 +38,11 @@ export const Project = () => {
           </a>
         </Title>
         <Content aboutProject={data?.about} project={data} />
-        <div className={styles.stack}>
+        <ul className={styles.stack}>
           {data?.about?.map((item, i) => (
             <StackList key={i} stackList={item?.stack} />
           ))}
-        </div>
+        </ul>
       </PageWrapper>
       <SEO
         tabTitle={`${t('pages.project.MY_PROJECT')} | ${data?.project!}`}

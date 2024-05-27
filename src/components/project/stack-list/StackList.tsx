@@ -1,17 +1,21 @@
-import type { CSSProperties, FC } from 'react'
-import { Paragraph } from '../../../shared'
+import type { FC } from 'react'
+import styles from './StackList.module.css'
 
 type Props = {
   stackList?: string
 }
 
 export const StackList: FC<Props> = ({ stackList }) => {
-  return <Paragraph style={additionalStyles}>{stackList}</Paragraph>
-}
+  const regex = /#\w+(?:\s+\w+)*/g
+  const list = stackList!.match(regex)
 
-const additionalStyles: CSSProperties = {
-  maxWidth: '100%',
-  textAlign: 'center',
-  margin: 0,
-  fontStyle: 'italic',
+  return (
+    <>
+      {list?.map((item, i) => (
+        <li key={i} className={styles.tag}>
+          {item}
+        </li>
+      ))}
+    </>
+  )
 }
