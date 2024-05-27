@@ -43,11 +43,13 @@ export const LiveChat = () => {
       sender: SENDER_BOT,
       text: t('chat.THERE_WILL_BE_CHAT') + ' 🧑‍💻🤏',
       status: 'none',
+      timestamp: Date.now(),
     },
     {
       sender: SENDER_USER,
       text: t('chat.BELIEVE') + ' 🤞💪',
       status: 'success',
+      timestamp: Date.now(),
     },
   ])
 
@@ -116,6 +118,7 @@ export const LiveChat = () => {
         sender: SENDER_USER,
         text: textareaContent,
         status: STATUS_MESSAGE.loading,
+        timestamp: Date.now(),
       }
       setMessages([...messages, newMessage])
       setTextareaContent('')
@@ -129,7 +132,12 @@ export const LiveChat = () => {
     setTimeout(() => {
       setMessages(prevMessages => [
         ...prevMessages,
-        { sender: SENDER_BOT, text: 'This is a bot response!', status: 'none' },
+        {
+          sender: SENDER_BOT,
+          text: 'This is a bot response!',
+          status: 'none',
+          timestamp: Date.now(),
+        },
       ])
       playSoundsInChat(soundResponseMessage)
       scrollToBottom()

@@ -19,6 +19,22 @@
   right: 5px;
 }
 
+.userTime {
+  bottom: 3px;
+  right: 22px;
+}
+
+.botTime {
+  bottom: 3px;
+  right: 10px;
+}
+
+.botTime,
+.userTime {
+  position: absolute;
+  font-size: var(--font-size-xs-mobile);
+}
+
 .bot,
 .user {
   display: flex;
@@ -61,24 +77,23 @@
   overflow: hidden;
   word-wrap: break-word;
   text-overflow: ellipsis;
+  position: relative;
+  padding: 10px;
 }
 
 .botMessage {
   background-color: var(--bg-color-bot-message);
   margin-right: 30px;
-  padding: 10px;
 }
 
 .userMessage {
   background-color: var(--bg-color-user-message);
   margin-left: 30px;
-  position: relative;
-  padding: 10px 25px 10px 10px;
 }
 
 .botMessage p,
 .userMessage p {
-  margin: 0;
+  margin-bottom: 10px;
   text-align: unset;
   line-height: normal;
 }

@@ -31,6 +31,7 @@ import {
   HEIGHT_INPUT,
   MESSAGE_LENGTH,
   STATUS_MESSAGE,
+  FORMAT_DATE,
 } from './live-chat'
 
 export {
@@ -45,6 +46,7 @@ export {
   HEIGHT_INPUT,
   MESSAGE_LENGTH,
   STATUS_MESSAGE,
+  FORMAT_DATE,
   ENG,
   UK,
   DARK,
