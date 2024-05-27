@@ -12,32 +12,27 @@ type Props = {
 
 export const ChatHead: FC<Props> = ({ onToggleChat, isOpenChat }) => {
   return (
-    <>
-      {isOpenChat && (
-        <div className={styles.overlay} onClick={onToggleChat}></div>
-      )}
-      <div className={styles.buttonsContainer}>
-        {isOpenChat ? (
-          <>
-            <div className={styles.contactWrap}>
-              <Avatar className={styles.avatar} src={chatPhoto} />
-              <div className={styles.contact}>
-                <Paragraph>Vlad</Paragraph>
-                <Paragraph className={styles.status}>online</Paragraph>
-              </div>
+    <div className={styles.buttonsContainer}>
+      {isOpenChat ? (
+        <>
+          <div className={styles.contactWrap}>
+            <Avatar className={styles.avatar} src={chatPhoto} />
+            <div className={styles.contact}>
+              <Paragraph>Vlad</Paragraph>
+              <Paragraph className={styles.status}>online</Paragraph>
             </div>
-            <button className={styles.closeButton} onClick={onToggleChat}>
-              <IoClose size={'2em'} />
-            </button>
-          </>
-        ) : (
-          <button className={styles.openButton} onClick={onToggleChat}>
-            <Paragraph>
-              Live Chat <IoChatbubbles size={'1.2em'} />
-            </Paragraph>
+          </div>
+          <button className={styles.closeButton} onClick={onToggleChat}>
+            <IoClose size={'2em'} />
           </button>
-        )}
-      </div>
-    </>
+        </>
+      ) : (
+        <button className={styles.openButton} onClick={onToggleChat}>
+          <Paragraph>
+            Live Chat <IoChatbubbles size={'1.2em'} />
+          </Paragraph>
+        </button>
+      )}
+    </div>
   )
 }
