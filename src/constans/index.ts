@@ -31,8 +31,8 @@ import {
   HEIGHT_INPUT,
   MESSAGE_LENGTH,
   STATUS_MESSAGE,
-  FORMAT_DATE,
 } from './live-chat'
+import { FORMAT_DATE, FORMAT_TIME } from './format-date'
 
 export {
   RESPONSIVE,
@@ -47,6 +47,7 @@ export {
   MESSAGE_LENGTH,
   STATUS_MESSAGE,
   FORMAT_DATE,
+  FORMAT_TIME,
   ENG,
   UK,
   DARK,
