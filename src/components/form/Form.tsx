@@ -10,8 +10,8 @@ import {
   Title,
 } from '../../shared'
 import { useMySocialList, useSendEmail } from '../../hooks'
-import styles from './Form.module.css'
 import { useTranslation } from 'react-i18next'
+import styles from './Form.module.css'
 
 type Props = {
   onCloseModal: () => void

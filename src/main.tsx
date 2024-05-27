@@ -5,7 +5,9 @@ import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from './providers'
 import { Routes } from './routes'
+import { Layout } from './shared'
 import './i18n'
+
 const container = document.getElementById('root')
 
 if (container) {
@@ -16,7 +18,9 @@ if (container) {
       <Provider store={store}>
         <BrowserRouter>
           <ThemeProvider>
-            <Routes />
+            <Layout>
+              <Routes />
+            </Layout>
           </ThemeProvider>
         </BrowserRouter>
       </Provider>

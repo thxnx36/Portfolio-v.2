@@ -14,7 +14,9 @@ type Props = {
 
 export const ProjectsList: FC<Props> = ({ projectsPages }) => {
   const { t } = useTranslation()
+
   const [open, setOpen] = useState<boolean>(false)
+  
   const handleDropDown = () => setOpen(prev => !prev)
 
   return (

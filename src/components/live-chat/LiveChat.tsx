@@ -54,10 +54,10 @@ export const LiveChat = () => {
   const onToggleChat = () => setOpenChat(openChat === OPEN ? CLOSE : OPEN)
 
   const handleChangeTextArea = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    const { value } = e.target
+    const { value, scrollHeight } = e.target
     if (value.length <= MESSAGE_LENGTH) {
-      setTextareaContent(e.target.value)
-      setTextareaHeight(e.target.scrollHeight)
+      setTextareaContent(value)
+      setTextareaHeight(scrollHeight)
     } else {
       setIsShowWarning(true)
     }
