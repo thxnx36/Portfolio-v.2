@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Form } from '../form/Form'
 import { headerPhoto } from '../../assets'
 import { Button, Container, Modal, Title } from '../../shared'
 import { useTranslation } from 'react-i18next'
+import { Form } from '..'
 import styles from './Header.module.css'
 
 export const Header = () => {

@@ -22,6 +22,7 @@ export const NavigationPanel: FC<Props> = ({
   handleMenu,
 }) => {
   const { t } = useTranslation()
+  
   return (
     <div className={styles.navContent}>
       <ToolTip text={t('tooltip.MY_SKILLS')}>

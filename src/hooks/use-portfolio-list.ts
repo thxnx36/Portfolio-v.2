@@ -12,10 +12,11 @@ import {
   tutiffyPageSecond,
 } from '../assets'
 import { useTranslation } from 'react-i18next'
+import { PortfolioListType } from '../types'
 
 export const usePortfolioList = () => {
   const { t } = useTranslation()
-  const portfolioList = useMemo(
+  const portfolioList: PortfolioListType[] = useMemo(
     () => [
       {
         id: 1,

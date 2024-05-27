@@ -1,10 +1,11 @@
 import type { FC } from 'react'
 import { TextContent } from '../text-content/TextContent'
+import { AboutType, PortfolioListType } from '../../../types'
 import styles from './Content.module.css'
 
 type Props = {
-  aboutProject?: any[]
-  project: any
+  aboutProject?: AboutType[]
+  project?: PortfolioListType | null
 }
 
 export const Content: FC<Props> = ({ aboutProject, project }) => {
@@ -17,11 +18,11 @@ export const Content: FC<Props> = ({ aboutProject, project }) => {
       </ul>
 
       <div className={styles.contentImg}>
-        <img src={project.srcPageFirst} alt='content-picture' />
+        <img src={project?.srcPageFirst} alt='content-picture' />
       </div>
 
       <div className={styles.contentImg}>
-        <img src={project.srcPageSecond} alt='content-picture' />
+        <img src={project?.srcPageSecond} alt='content-picture' />
       </div>
 
       <ul className={styles.text}>

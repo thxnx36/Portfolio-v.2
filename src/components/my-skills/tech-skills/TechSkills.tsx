@@ -1,9 +1,10 @@
 import type { FC } from 'react'
 import { Skills, Title } from '../../../shared'
+import { SkillsType } from '../../../types'
 
 type Props = {
   title: string
-  skillsList: any[]
+  skillsList: SkillsType[]
 }
 
 export const TechSkills: FC<Props> = ({ title, skillsList }) => {

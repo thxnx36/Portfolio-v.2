@@ -2,7 +2,6 @@ import { Button, SEO, Section, Title } from '../../shared'
 import { TbError404 } from 'react-icons/tb'
 import { COLOR_YELLOW } from '../../constans'
 import { useNavigate } from 'react-router-dom'
-import { useCallback } from 'react'
 import { ROUTES } from '../../constans'
 import { useTranslation } from 'react-i18next'
 import styles from './NotFound.module.css'
@@ -11,7 +10,7 @@ export const NotFound = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
 
-  const handleBack = useCallback(() => navigate(-1), [navigate])
+  const handleBack = () => navigate(-1)
 
   return (
     <Section style={{ margin: 0 }}>
