@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { motion } from 'framer-motion'
-import { motionProgrLine } from '../../constans'
+import { motionProgrLine } from '../../constants'
 import styles from './ProgressLine.module.css'
 
 type Props = {

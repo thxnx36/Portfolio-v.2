@@ -1,4 +1,4 @@
-import { SENDER_BOT, SENDER_USER } from '../../../constans'
+import { SENDER_BOT, SENDER_USER } from '../../../constants'
 import { forwardRef } from 'react'
 import { Paragraph } from '../../../shared'
 import { ChatContentType } from '../../../types'

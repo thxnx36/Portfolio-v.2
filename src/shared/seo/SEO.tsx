@@ -6,7 +6,7 @@ import {
   OG_SITE_NAME,
   OG_TYPE_CONTENT,
   ROBOTS,
-} from '../../constans'
+} from '../../constants'
 
 type Props = {
   tabTitle?: string

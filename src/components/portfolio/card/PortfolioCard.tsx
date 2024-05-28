@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import { AiOutlineApple } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { Container } from '../../../shared'
-import { ROUTES } from '../../../constans'
+import { ROUTES } from '../../../constants'
 import { FiExternalLink } from 'react-icons/fi'
 import styles from './PortfolioCard.module.css'
 

@@ -1,4 +1,9 @@
-import { LINKEDIN_URL, TELEGRAM_URL, EMAIL_URL, GIT_HUB_URL } from '../constans'
+import {
+  LINKEDIN_URL,
+  TELEGRAM_URL,
+  EMAIL_URL,
+  GIT_HUB_URL,
+} from '../constants'
 import { FaLinkedin } from 'react-icons/fa'
 import { FaTelegramPlane } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'

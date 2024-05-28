@@ -10,7 +10,7 @@ import {
   LiveChat,
 } from '../components'
 import { useTranslation } from 'react-i18next'
-import { APP_URL } from '../constans'
+import { APP_URL } from '../constants'
 import { SEO } from '../shared'
 
 export const MainPage = () => {

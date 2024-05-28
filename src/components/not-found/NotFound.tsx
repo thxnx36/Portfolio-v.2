@@ -1,8 +1,8 @@
 import { Button, SEO, Section, Title } from '../../shared'
 import { TbError404 } from 'react-icons/tb'
-import { COLOR_YELLOW } from '../../constans'
+import { COLOR_YELLOW } from '../../constants'
 import { useNavigate } from 'react-router-dom'
-import { ROUTES } from '../../constans'
+import { ROUTES } from '../../constants'
 import { useTranslation } from 'react-i18next'
 import styles from './NotFound.module.css'
 

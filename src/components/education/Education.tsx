@@ -1,5 +1,5 @@
 import { Container, MSection, SectionHead, Table } from '../../shared'
-import { motionSection } from '../../constans'
+import { motionSection } from '../../constants'
 import { useTranslation } from 'react-i18next'
 import { useEducationList } from '../../hooks'
 

@@ -9,7 +9,7 @@ import {
   HEIGHT_INPUT,
   MESSAGE_LENGTH,
   STATUS_MESSAGE,
-} from '../../constans'
+} from '../../constants'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { useTranslation } from 'react-i18next'
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
