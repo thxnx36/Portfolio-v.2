@@ -7,6 +7,7 @@ import {
   Portfolio,
   Recommendations,
   WorkHistory,
+  LiveChat,
 } from '../components'
 import { useTranslation } from 'react-i18next'
 import { APP_URL } from '../constans'
@@ -35,6 +36,7 @@ export const MainPage = () => {
         metaOgURLContent={APP_URL}
         metaOgImageContent=''
       />
+      <LiveChat />
     </>
   )
 }

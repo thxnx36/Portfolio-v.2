@@ -40,10 +40,13 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  height: 160px;
+  padding-top: 55%; 
 }
 
 .imageContainer img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   transition: transform 0.3s ease;
@@ -88,7 +91,8 @@
 
 .logo {
   width: 100%;
-  height: 35px;
+  /* height: 35px; */
+  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;

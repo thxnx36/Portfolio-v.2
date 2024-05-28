@@ -3,6 +3,7 @@ import { Education } from './education'
 import { Footer } from './footer'
 import { Form } from './form'
 import { Header } from './header'
+import { LiveChat } from './live-chat'
 import { MyServices } from './my-services'
 import { Navigation } from './navigation'
 import { NotFound } from './not-found'
@@ -24,4 +25,5 @@ export {
   Form,
   NotFound,
   Project,
+  LiveChat,
 }

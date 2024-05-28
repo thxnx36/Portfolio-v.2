@@ -1,8 +1,7 @@
 import type { FC, ReactNode } from 'react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
-import { Toast } from '../toast'
-import { useSpinner } from '../../hooks'
-import { LiveChat } from '../../components/live-chat'
+import { Toast } from '../shared/toast'
+import { useSpinner } from '../hooks'
 import styles from './Layout.module.css'
 import './root-css/variables.css'
 import './root-css/index.css'
@@ -22,7 +21,6 @@ export const Layout: FC<Props> = ({ children }) => {
       <div className={styles.appWrapper}>{children}</div>
       <SpeedInsights />
       <Toast />
-      <LiveChat />
     </div>
   )
 }

@@ -11,7 +11,7 @@
 
 .drawer {
   width: 280px;
-  height: 100vh;
+  height: 100dvh;
   overflow: auto;
   position: fixed;
   top: 0;
