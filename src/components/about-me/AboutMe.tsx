@@ -22,7 +22,7 @@ export const AboutMe = () => {
             {t('pages.aboutMe.TITLE')}
           </Title>
         </div>
-        <article className={styles.content}>
+        <article>
           <Paragraph style={{ textAlign: 'left', maxWidth: '100%' }}>
             {t('pages.aboutMe.HEY_NICE_MEET')} 👋
             <br /> {t('pages.aboutMe.MY_CAREER')}

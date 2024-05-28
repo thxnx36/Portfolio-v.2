@@ -5,14 +5,14 @@
   gap: 20px;
 }
 
-@media screen and (max-width: 865px) {
+@media screen and (max-width: 940px) {
   .cardsContainer {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
 }
 
-@media screen and (max-width: 546px) {
+@media screen and (max-width: 660px) {
   .cardsContainer {
     grid-template-columns: repeat(1, 1fr);
     gap: 15px;
