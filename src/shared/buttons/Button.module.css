@@ -15,7 +15,6 @@
 
 .button:hover {
   background-position: right center;
-  color: var(--white-color);
 }
 
 .button:active {

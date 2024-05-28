@@ -1,16 +1,10 @@
-.buttonsContainer {
+.chatHeadContainer {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5px;
   position: relative;
-}
-
-.openButton {
-  width: 100%;
-  color: var(--text-color);
-  line-height: var(--line-height);
 }
 
 .closeButton {

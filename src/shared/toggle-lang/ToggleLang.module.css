@@ -10,4 +10,8 @@ select {
   border: none;
   cursor: pointer;
   outline: none;
+  font-size: var(--font-size-md-mobile);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
