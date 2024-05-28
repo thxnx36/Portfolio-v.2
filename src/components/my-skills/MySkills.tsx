@@ -5,7 +5,7 @@ import { skills } from '../../db'
 import { languages } from '../../db'
 import type { CSSProperties } from 'react'
 import { Button } from '../../shared'
-import { CV_URL } from '../../constans'
+import { CV_URL } from '../../constants'
 import { useTranslation } from 'react-i18next'
 import styles from './MySkills.module.css'
 

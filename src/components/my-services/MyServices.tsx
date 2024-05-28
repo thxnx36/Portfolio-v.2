@@ -1,7 +1,7 @@
 import { CardsContainer, FlippedCard, Section, SectionHead } from '../../shared'
 import { useServicesList } from '../../hooks'
 import { useCallback, useState } from 'react'
-import { ROUTES } from '../../constans'
+import { ROUTES } from '../../constants'
 import { useTranslation } from 'react-i18next'
 
 export const MyServices = () => {

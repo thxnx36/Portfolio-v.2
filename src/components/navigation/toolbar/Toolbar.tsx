@@ -5,7 +5,7 @@ import { FaSun } from 'react-icons/fa'
 import { IoMoonSharp } from 'react-icons/io5'
 import { useTranslation } from 'react-i18next'
 import { ThemeContext } from '../../../providers'
-import { DARK, LIGHT } from '../../../constans'
+import { DARK, LIGHT } from '../../../constants'
 import styles from './Toolbar.module.css'
 
 type Props = {

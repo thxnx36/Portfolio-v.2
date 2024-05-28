@@ -2,7 +2,7 @@ import { SectionHead } from '../../shared/section-head/SectionHead'
 import { MSection } from '../../shared/section/Section'
 import { RecommedCard } from './card/RecommendCard'
 import { Slider } from '../../shared/slider/Slider'
-import { motionSection } from '../../constans'
+import { motionSection } from '../../constants'
 import { recommendations } from '../../db'
 import { useTranslation } from 'react-i18next'
 

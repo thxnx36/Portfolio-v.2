@@ -3,7 +3,7 @@ import { PageWrapper, Paragraph, SEO, Section, Title } from '../../shared'
 import { BackButton } from '../../shared/buttons'
 import { useNavigate } from 'react-router-dom'
 import { technologies } from '../../db'
-import { APP_URL, ROUTES } from '../../constans'
+import { APP_URL, ROUTES } from '../../constants'
 import styles from './AboutMe.module.css'
 import { useTranslation } from 'react-i18next'
 

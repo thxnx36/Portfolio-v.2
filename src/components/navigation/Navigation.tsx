@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react'
 import { useState } from 'react'
 import { useScrollListener } from '../../hooks'
-import { motionNav } from '../../constans'
+import { motionNav } from '../../constants'
 import { MContainer, Drawer } from '../../shared'
 import { MySkills } from '../my-skills/MySkills'
 import { NavigationPanel } from './navigation-panel/NavigationPanel'

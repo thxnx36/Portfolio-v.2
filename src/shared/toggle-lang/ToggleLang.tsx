@@ -1,5 +1,5 @@
 import type { ChangeEvent, FC } from 'react'
-import { LANG } from '../../constans'
+import { LANG } from '../../constants'
 import { BsTranslate } from 'react-icons/bs'
 import styles from './ToggleLang.module.css'
 

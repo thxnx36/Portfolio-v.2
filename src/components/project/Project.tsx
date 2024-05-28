@@ -6,7 +6,7 @@ import { Head } from './head/Head'
 import { Content } from './content/Content'
 import { StackList } from './stack-list/StackList'
 import { FiExternalLink } from 'react-icons/fi'
-import { APP_URL, ROUTES } from '../../constans'
+import { APP_URL, ROUTES } from '../../constants'
 import { useTranslation } from 'react-i18next'
 import styles from './Project.module.css'
 

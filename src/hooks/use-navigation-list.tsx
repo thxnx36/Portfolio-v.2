@@ -6,7 +6,7 @@ import { MdOutlineWork } from 'react-icons/md'
 import { IoSchoolSharp } from 'react-icons/io5'
 import { IoMdHome } from 'react-icons/io'
 import { SiAboutdotme } from 'react-icons/si'
-import { NAVIGATE, ROUTES } from '../constans'
+import { NAVIGATE, ROUTES } from '../constants'
 import { useTranslation } from 'react-i18next'
 import { useMemo } from 'react'
 

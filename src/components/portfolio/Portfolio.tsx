@@ -1,6 +1,6 @@
 import { CardsContainer, MSection, SectionHead } from '../../shared'
 import { PortfolioCard } from './card/PortfolioCard'
-import { motionSection } from '../../constans'
+import { motionSection } from '../../constants'
 import { useTranslation } from 'react-i18next'
 import { usePortfolioList } from '../../hooks'
 

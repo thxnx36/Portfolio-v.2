@@ -1,9 +1,9 @@
-import { usePostEmailMutation, sendEmailApi } from './send-email-api'
-import { useGetMyinfoQuery, myInfoApi } from './get-my-info-api'
+import { usePostEmailMutation, sendEmailApi } from './use-send-email-api'
+import { useGetMyinfoQuery, myInfoApi } from './use-get-my-info-api'
 import {
   sendTelegramMessagelApi,
   useSendTelegramMessageMutation,
-} from './send-messages-chat'
+} from './use-send-messages-chat'
 
 export {
   usePostEmailMutation,

@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { ASX_URL, MAVEN_URL, TUTTIFY_URL } from '../constans'
+import { ASX_URL, MAVEN_URL, TUTTIFY_URL } from '../constants'
 import {
   asx,
   asxPageFirst,

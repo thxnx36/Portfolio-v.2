@@ -1,6 +1,6 @@
-import type { ReactNode, FC } from 'react';
+import type { ReactNode, FC } from 'react'
 import { useEffect, createContext } from 'react'
-import { DARK } from '../constans'
+import { DARK } from '../constants'
 import { useLocalStorage } from '../hooks'
 
 type ThemeContextProps = {
