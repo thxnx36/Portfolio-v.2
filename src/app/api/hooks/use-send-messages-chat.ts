@@ -2,6 +2,7 @@ import { createApi } from '@reduxjs/toolkit/query/react'
 import { apiBaseQuery } from '../api-base-query'
 import { getEnvVars } from '../../../utils'
 
+
 const env = getEnvVars()
 
 export const sendTelegramMessagelApi = createApi({
