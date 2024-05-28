@@ -10,10 +10,7 @@
 .openButton {
   width: 100%;
   color: var(--text-color);
-}
-
-.openButton p {
-  margin: 0;
+  line-height: var(--line-height);
 }
 
 .closeButton {

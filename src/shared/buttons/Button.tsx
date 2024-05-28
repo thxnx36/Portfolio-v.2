@@ -41,17 +41,17 @@ export const Button: FC<Props> = ({
           {innerContent()}
         </Link>
       ) : tag === 'a' ? (
-        <a {...props} target={target} className={styles.button} href={href}>
+        <a target={target} className={styles.button} href={href} {...props}>
           {innerContent()}
         </a>
       ) : (
         <button
-          type={type}
-          onClick={onClick}
-          {...props}
           className={
             disabled ? `${styles.button} ${styles.disabled}` : styles.button
           }
+          type={type}
+          onClick={onClick}
+          {...props}
         >
           <div className={styles.content}>{innerContent()}</div>
         </button>

@@ -28,9 +28,7 @@ export const ChatHead: FC<Props> = ({ onToggleChat, isOpenChat }) => {
         </>
       ) : (
         <button className={styles.openButton} onClick={onToggleChat}>
-          <Paragraph>
-            Live Chat <IoChatbubbles size={'1.2em'} />
-          </Paragraph>
+          Live Chat <IoChatbubbles size={'1.2em'} />
         </button>
       )}
     </div>
