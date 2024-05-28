@@ -1,7 +1,8 @@
 import type { ChangeEvent, FC } from 'react'
 import { LANG } from '../../constans'
-import styles from './ToggleLang.module.css'
 import { BsTranslate } from 'react-icons/bs'
+import styles from './ToggleLang.module.css'
+
 type Props = {
   uniqSelectId: string
   onChange: (value: string) => void

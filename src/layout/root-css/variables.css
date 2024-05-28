@@ -17,6 +17,12 @@
   --font-color-main: #767676;
   --bg-linear: linear-gradient(330deg, #ffb400 20%, #ff6d6d 100%);
   --bg-linear-reverse: linear-gradient(330deg, #ff6d6d 20%, #ffb400 100%);
+  --bg-linear-button: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
   --bg-overlay-color: rgba(0, 0, 0, 0.5);
 
   /* font size */
@@ -49,5 +55,6 @@
   --shadow-chat: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  --shadow-button: 0px 0px 14px -7px #f09819;
   /* --shadow-dark: 0px 0px 10px 0px #00000026; */
 }

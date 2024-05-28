@@ -18,6 +18,8 @@ import { ChatContentType } from '../../types'
 import { soundResponseMessage, soundSendMessage } from '../../assets'
 import { playSoundsInChat } from '../../utils'
 import { useSendTelegramMessageMutation } from '../../app/api'
+import { IoChatbubbles } from 'react-icons/io5'
+import { Button } from '../../shared'
 import styles from './LiveChat.module.css'
 
 export const LiveChat = () => {
@@ -148,23 +150,24 @@ export const LiveChat = () => {
   const isDisabledButton = !textareaContent
 
   return (
-    <div
-      className={
-        isOpenChat
-          ? `${styles.chat} ${styles.open}`
-          : `${styles.chat} ${styles.close}`
-      }
-    >
-      <ChatHead onToggleChat={onToggleChat} isOpenChat={isOpenChat} />
+    <>
+      <div className={styles.openButton}>
+        <Button
+          onClick={onToggleChat}
+          text='Live Chat'
+          icon={<IoChatbubbles size={'1.2em'} />}
+        />
+      </div>
+
       {isOpenChat && (
-        <>
+        <div className={styles.chat}>
+          <ChatHead onToggleChat={onToggleChat} />
           <ChatMessages ref={messagesContainerRef} messages={messages} />
           {isShowWarning && (
             <span className={styles.lengthWarning}>
               {t('toast.warning.LENGTH_TEXT')}
             </span>
           )}
-
           <ChatFooter
             value={textareaContent}
             sendMessage={sendMessage}
@@ -174,8 +177,8 @@ export const LiveChat = () => {
             placeholder={t('input.placeholder.YOUR_MESSAGE')}
             textareaHeight={textareaHeight}
           />
-        </>
+        </div>
       )}
-    </div>
+    </>
   )
 }

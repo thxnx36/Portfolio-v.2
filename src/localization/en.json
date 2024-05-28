@@ -1,9 +1,9 @@
 {
   "button": {
     "HIRE": "Hire me",
-    "SEND_MESSAGE": "send message",
+    "SEND_MESSAGE": "Send message",
     "DOWNLOAD": "Download CV",
-    "GO_BACK": "Go Back",
+    "GO_BACK": "Go back",
     "LOADING": "Loading...",
     "SHOW_MORE_CARD": "show more",
     "CLOSE_CARD": "close"

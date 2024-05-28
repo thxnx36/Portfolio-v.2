@@ -4,27 +4,27 @@
   bottom: 15px;
   left: 15px;
   border-radius: 15px;
-  box-shadow: var(--box-shadow);
-}
-
-.open {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 360px;
-  z-index: 2;
   background-color: var(--background-color);
   z-index: 1000;
-  border: 1px solid var(--bg-body-color);
   box-shadow: var(--shadow-chat);
 }
 
-.close {
-  max-width: 115px;
-  height: 33px;
+.openButton {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+}
+
+.openButton button {
+  padding: 7px;
+  border-radius: 20px;
   opacity: 0.9;
-  background: var(--bg-linear);
-  display: flex;
+  text-transform: capitalize;
+  font-size: var(--font-size-xs);
 }
 
 .lengthWarning {
@@ -37,21 +37,14 @@
 }
 
 @media screen and (max-width: 550px) {
-  .close {
+  .openButton {
     bottom: 15px;
     left: 0px;
-    height: 100px;
-    width: 30px;
-    max-width: none;
-    flex-direction: column;
-    text-align: center;
     writing-mode: vertical-rl;
-    justify-content: center;
-    align-items: center;
     transform: rotate(180deg);
   }
 
-  .open {
+  .chat {
     max-width: unset;
     width: 100%;
     height: 100dvh;
@@ -61,7 +54,7 @@
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
-  .open {
+  .chat {
     height: 100dvh;
     bottom: 0;
     left: 0;
