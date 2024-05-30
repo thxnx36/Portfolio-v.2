@@ -1,8 +1,8 @@
-import { CardsContainer, MSection, SectionHead } from '../../shared'
+import { motionSection } from 'src/constants'
+import { usePortfolioList } from 'src/hooks'
+import { MSection, SectionHead, CardsContainer } from 'src/shared'
 import { PortfolioCard } from './card/PortfolioCard'
-import { motionSection } from '../../constants'
 import { useTranslation } from 'react-i18next'
-import { usePortfolioList } from '../../hooks'
 
 export const Portfolio = () => {
   const { t } = useTranslation()

@@ -3,6 +3,7 @@ import { PageWrapper } from './page-wrapper'
 import {
   Button,
   BurgerButton,
+  BackButton,
   Switcher,
   CollapseButton,
   UserInfoButton,
@@ -58,6 +59,7 @@ export {
   MTitle,
   Layout,
   ScrollTopButton,
+  BackButton,
   Toast,
   Drawer,
   FlippedCard,

@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import { Avatar, Paragraph } from '../../../shared'
 import { IoClose } from 'react-icons/io5'
-import { chatPhoto } from '../../../assets'
+import { chatPhoto } from 'src/assets'
+import { Avatar, Paragraph } from 'src/shared'
 import styles from './ChatHead.module.css'
 
 type Props = {

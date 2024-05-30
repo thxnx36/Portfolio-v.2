@@ -1,10 +1,10 @@
 import type { FC } from 'react'
-import { Avatar, BurgerButton, ToolTip } from '../../../shared'
 import { NavListItemDesktop } from '../nav-list-item-desktop/NavListItemDesktop'
-import { userPhoto } from '../../../assets'
 import { Toolbar } from '../toolbar/Toolbar'
 import { useTranslation } from 'react-i18next'
 import { PiDevToLogoFill } from 'react-icons/pi'
+import { userPhoto } from 'src/assets'
+import { ToolTip, Avatar, BurgerButton } from 'src/shared'
 import styles from './NavigationPanel.module.css'
 
 type Props = {
@@ -22,7 +22,7 @@ export const NavigationPanel: FC<Props> = ({
   handleMenu,
 }) => {
   const { t } = useTranslation()
-  
+
   return (
     <div className={styles.navContent}>
       <ToolTip text={t('tooltip.MY_SKILLS')}>

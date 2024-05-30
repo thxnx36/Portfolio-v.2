@@ -1,15 +1,15 @@
 import type { CSSProperties, FC } from 'react'
 import { useState } from 'react'
+import { useMySocialList, useSendEmail } from 'src/hooks'
 import {
-  Button,
-  Input,
-  Paragraph,
-  ReCaptcha,
-  SocialList,
-  Textarea,
   Title,
-} from '../../shared'
-import { useMySocialList, useSendEmail } from '../../hooks'
+  Input,
+  Textarea,
+  ReCaptcha,
+  Button,
+  Paragraph,
+  SocialList,
+} from 'src/shared'
 import { useTranslation } from 'react-i18next'
 import styles from './Form.module.css'
 

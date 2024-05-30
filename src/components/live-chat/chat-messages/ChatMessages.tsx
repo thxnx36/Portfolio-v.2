@@ -1,9 +1,9 @@
-import { SENDER_BOT, SENDER_USER } from '../../../constants'
 import { forwardRef } from 'react'
-import { Paragraph } from '../../../shared'
-import { ChatContentType } from '../../../types'
 import { MessageTimeStatus } from './message-time-status/MessageTimeStatus'
-import { formatDateTime } from '../../../utils'
+import { SENDER_BOT, SENDER_USER } from 'src/constants'
+import { Paragraph } from 'src/shared'
+import { ChatContentType } from 'src/types'
+import { formatDateTime } from 'src/utils'
 import styles from './ChatMessages.module.css'
 
 type Props = {

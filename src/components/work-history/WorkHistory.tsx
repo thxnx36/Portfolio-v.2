@@ -1,7 +1,7 @@
-import { Container, MSection, SectionHead, Table } from '../../shared'
-import { motionSection } from '../../constants'
 import { useTranslation } from 'react-i18next'
-import { useWorkList } from '../../hooks'
+import { motionSection } from 'src/constants'
+import { useWorkList } from 'src/hooks'
+import { MSection, SectionHead, Container, Table } from 'src/shared'
 
 export const WorkHistory = () => {
   const { t } = useTranslation()

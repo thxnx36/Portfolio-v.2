@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, FormEvent } from 'react'
-import { Textarea } from '../../../shared'
+import { Textarea } from 'src/shared'
 import { IoSend } from 'react-icons/io5'
 import styles from './ChatFooter.module.css'
 

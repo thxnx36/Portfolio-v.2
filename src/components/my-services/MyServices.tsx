@@ -1,8 +1,8 @@
-import { CardsContainer, FlippedCard, Section, SectionHead } from '../../shared'
-import { useServicesList } from '../../hooks'
 import { useCallback, useState } from 'react'
-import { ROUTES } from '../../constants'
 import { useTranslation } from 'react-i18next'
+import { Section, SectionHead, CardsContainer, FlippedCard } from 'src/shared'
+import { ROUTES } from 'src/constants'
+import { useServicesList } from 'src/hooks'
 
 export const MyServices = () => {
   const { t } = useTranslation()

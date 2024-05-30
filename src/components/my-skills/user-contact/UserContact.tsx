@@ -1,7 +1,7 @@
 import type { FC } from 'react'
-import { Avatar, Paragraph, SocialList } from '../../../shared'
-import type { MySocialListType } from '../../../types'
-import { userPhoto } from '../../../assets'
+import { userPhoto } from 'src/assets'
+import { Avatar, Paragraph, SocialList } from 'src/shared'
+import { MySocialListType } from 'src/types'
 import styles from './UserContact.module.css'
 
 type Props = {

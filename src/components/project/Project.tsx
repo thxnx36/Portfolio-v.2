@@ -1,13 +1,13 @@
 import { useGetProjectById } from '../../hooks'
 import { useParams, useNavigate } from 'react-router-dom'
-import { PageWrapper, SEO, Section, Title } from '../../shared'
 import { useCallback } from 'react'
 import { Head } from './head/Head'
 import { Content } from './content/Content'
 import { StackList } from './stack-list/StackList'
 import { FiExternalLink } from 'react-icons/fi'
-import { APP_URL, ROUTES } from '../../constants'
 import { useTranslation } from 'react-i18next'
+import { APP_URL, ROUTES } from 'src/constants'
+import { Section, PageWrapper, Title, SEO } from 'src/shared'
 import styles from './Project.module.css'
 
 export const Project = () => {

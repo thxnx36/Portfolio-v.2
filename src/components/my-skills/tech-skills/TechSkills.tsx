@@ -1,6 +1,6 @@
 import type { FC } from 'react'
-import { Skills, Title } from '../../../shared'
-import { SkillsType } from '../../../types'
+import { Title, Skills } from 'src/shared'
+import { SkillsType } from 'src/types'
 
 type Props = {
   title: string

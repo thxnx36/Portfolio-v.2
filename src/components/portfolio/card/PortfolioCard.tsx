@@ -1,9 +1,9 @@
 import type { FC } from 'react'
 import { AiOutlineApple } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
-import { Container } from '../../../shared'
-import { ROUTES } from '../../../constants'
 import { FiExternalLink } from 'react-icons/fi'
+import { ROUTES } from 'src/constants'
+import { Container } from 'src/shared'
 import styles from './PortfolioCard.module.css'
 
 type Props = {
