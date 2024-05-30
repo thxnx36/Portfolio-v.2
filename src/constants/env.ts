@@ -1,13 +1,9 @@
 import type { EnvVarsType } from '../types'
 
 export const ENV_VARS: EnvVarsType = {
-  apiServicesId: import.meta.env.VITE_SERVICE_ID,
-  apiTemplateId: import.meta.env.VITE_TEMPLATE_ID,
-  apiEmailApiUrl: import.meta.env.VITE_API_URL,
-  apiUserId: import.meta.env.VITE_USER_ID,
+  apiMailerUrl: import.meta.env.VITE_MAILER_API_URL,
+  apiTelegramUrl: import.meta.env.VITE_API_TELEGRAM_URL,
   apiCaptchaSecretKey: import.meta.env.VITE_CAPTCHA_SEKRET_KEY,
   apiCaptchaSiteKey: import.meta.env.VITE_CAPTCHA_SITE_KEY,
-  apiTelegramUrl: import.meta.env.VITE_API_TELEGRAM_URL,
-  apiTelegramKey: import.meta.env.VITE_API_TELEGRAM_KEY,
-  apiTelegramChatId: import.meta.env.VITE_API_TELEGRAM_CHAT_ID,
+  getEmail: import.meta.env.VITE_EMAIL,
 }

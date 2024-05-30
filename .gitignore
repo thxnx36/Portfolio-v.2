@@ -27,3 +27,4 @@ dist-ssr
 src/hooks/unused
 src/shared/unused
 src/db/unused
+src/db/db.json

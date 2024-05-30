@@ -46,22 +46,22 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
           <Input
             id='form-input-name'
             required
-            onChange={handleChange('name_from')}
-            value={form.name_from}
+            onChange={handleChange('nameSender')}
+            value={form.nameSender}
             placeholder={t('input.placeholder.YOUR_NAME')}
           />
           <Input
             id='form-input-email'
             type='email'
             required
-            onChange={handleChange('email_from')}
-            value={form.email_from}
+            onChange={handleChange('from')}
+            value={form.from}
             placeholder={t('input.placeholder.YOUR_EMAIL')}
           />
           <Textarea
             id='form-textarea-message'
-            onChange={handleChange('message')}
-            value={form.message}
+            onChange={handleChange('text')}
+            value={form.text}
             required
             rows={7}
             cols={50}
