@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Project } from '../components'
+import { Project } from 'src/components'
 
 const PortfolioPage = () => {
   const { pathname } = useLocation()

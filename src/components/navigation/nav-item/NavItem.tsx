@@ -1,7 +1,7 @@
 import type { FC } from 'react'
-import { useNavigationList } from '../../../hooks'
 import { ProjectsList } from '../projects-list/ProjectsList'
 import { Link } from 'react-router-dom'
+import { useNavigationList } from 'src/hooks'
 import styles from './NavItem.module.css'
 
 const ID = 7

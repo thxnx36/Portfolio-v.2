@@ -1,12 +1,11 @@
-import { useMySocialList } from '../../hooks'
+import type { CSSProperties } from 'react'
 import { UserContact } from './user-contact/UserContact'
 import { TechSkills } from './tech-skills/TechSkills'
-import { skills } from '../../db'
-import { languages } from '../../db'
-import type { CSSProperties } from 'react'
-import { Button } from '../../shared'
-import { CV_URL } from '../../constants'
 import { useTranslation } from 'react-i18next'
+import { CV_URL } from 'src/constants'
+import { skills, languages } from 'src/db'
+import { useMySocialList } from 'src/hooks'
+import { Button } from 'src/shared'
 import styles from './MySkills.module.css'
 
 export const MySkills = () => {

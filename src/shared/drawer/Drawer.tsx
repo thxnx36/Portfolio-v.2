@@ -1,5 +1,5 @@
 import type { FC, ReactNode } from 'react'
-import { useOverLay } from '../../hooks'
+import { useOverLay } from 'src/hooks'
 import styles from './Drawer.module.css'
 
 type Props = {

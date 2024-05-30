@@ -1,9 +1,7 @@
-import { SectionHead } from '../../shared/section-head/SectionHead'
-import { MSection } from '../../shared/section/Section'
+import { motionSection } from 'src/constants'
+import { recommendations } from 'src/db'
+import { MSection, SectionHead, Slider } from 'src/shared'
 import { RecommedCard } from './card/RecommendCard'
-import { Slider } from '../../shared/slider/Slider'
-import { motionSection } from '../../constants'
-import { recommendations } from '../../db'
 import { useTranslation } from 'react-i18next'
 
 export const Recommendations = () => {

@@ -1,7 +1,7 @@
 import type { ReactNode, FC } from 'react'
 import { useEffect, createContext } from 'react'
-import { DARK } from '../constants'
-import { useLocalStorage } from '../hooks'
+import { DARK } from 'src/constants'
+import { useLocalStorage } from 'src/hooks'
 
 type ThemeContextProps = {
   theme: string

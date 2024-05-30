@@ -1,6 +1,5 @@
 import type { FC } from 'react'
-import { BackButton } from '../../../shared/buttons'
-import { Title } from '../../../shared'
+import { BackButton, Title } from 'src/shared'
 import styles from './Head.module.css'
 
 type Props = {

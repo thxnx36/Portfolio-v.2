@@ -1,17 +1,17 @@
+import { useTranslation } from 'react-i18next'
 import {
-  Education,
-  Footer,
   Header,
   MyServices,
-  Navigation,
   Portfolio,
   Recommendations,
   WorkHistory,
+  Education,
+  Footer,
   LiveChat,
-} from '../components'
-import { useTranslation } from 'react-i18next'
-import { APP_URL } from '../constants'
-import { SEO } from '../shared'
+  Navigation,
+} from 'src/components'
+import { APP_URL } from 'src/constants'
+import { SEO } from 'src/shared'
 
 export const MainPage = () => {
   const { t } = useTranslation()

@@ -33,6 +33,7 @@ import {
   STATUS_MESSAGE,
 } from './live-chat'
 import { FORMAT_DATE, FORMAT_TIME } from './format-date'
+import { APP } from './version-app'
 
 export {
   RESPONSIVE,
@@ -48,6 +49,7 @@ export {
   STATUS_MESSAGE,
   FORMAT_DATE,
   FORMAT_TIME,
+  APP,
   ENG,
   UK,
   DARK,

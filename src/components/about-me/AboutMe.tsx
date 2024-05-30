@@ -1,11 +1,17 @@
 import { useCallback } from 'react'
-import { PageWrapper, Paragraph, SEO, Section, Title } from '../../shared'
-import { BackButton } from '../../shared/buttons'
 import { useNavigate } from 'react-router-dom'
-import { technologies } from '../../db'
-import { APP_URL, ROUTES } from '../../constants'
-import styles from './AboutMe.module.css'
+import { technologies } from 'src/db'
 import { useTranslation } from 'react-i18next'
+import { APP_URL, ROUTES } from 'src/constants'
+import {
+  Section,
+  PageWrapper,
+  BackButton,
+  Title,
+  Paragraph,
+  SEO,
+} from 'src/shared'
+import styles from './AboutMe.module.css'
 
 export const AboutMe = () => {
   const { t } = useTranslation()

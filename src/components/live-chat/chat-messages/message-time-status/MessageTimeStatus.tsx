@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { IoCheckmarkDone, IoCheckmarkOutline } from 'react-icons/io5'
 import { MdError } from 'react-icons/md'
-import { STATUS_MESSAGE } from '../../../../constants'
+import { STATUS_MESSAGE } from 'src/constants'
 import styles from './MessageTimeStatus.module.css'
 
 type Props = {

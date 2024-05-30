@@ -1,11 +1,11 @@
 import type { FC } from 'react'
 import { useContext } from 'react'
-import { Switcher, ToggleLang } from '../../../shared'
 import { FaSun } from 'react-icons/fa'
 import { IoMoonSharp } from 'react-icons/io5'
 import { useTranslation } from 'react-i18next'
-import { ThemeContext } from '../../../providers'
-import { DARK, LIGHT } from '../../../constants'
+import { LIGHT, DARK } from 'src/constants'
+import { ThemeContext } from 'src/providers'
+import { Switcher, ToggleLang } from 'src/shared'
 import styles from './Toolbar.module.css'
 
 type Props = {

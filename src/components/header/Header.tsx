@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { headerPhoto } from '../../assets'
-import { Button, Container, Modal, Title } from '../../shared'
 import { useTranslation } from 'react-i18next'
+import { headerPhoto } from 'src/assets'
+import { Container, Title, Button, Modal } from 'src/shared'
 import { Form } from '..'
 import styles from './Header.module.css'
 

@@ -1,12 +1,12 @@
 import type { FC } from 'react'
 import { useState } from 'react'
-import type { ProjectsListType } from '../../../types'
 import { Link } from 'react-router-dom'
 import { TfiNewWindow } from 'react-icons/tfi'
 import { MdArrowDropDown } from 'react-icons/md'
 import { MdArrowDropUp } from 'react-icons/md'
-import styles from './ProjectsList.module.css'
 import { useTranslation } from 'react-i18next'
+import { ProjectsListType } from 'src/types'
+import styles from './ProjectsList.module.css'
 
 type Props = {
   projectsPages: ProjectsListType[]
@@ -16,7 +16,7 @@ export const ProjectsList: FC<Props> = ({ projectsPages }) => {
   const { t } = useTranslation()
 
   const [open, setOpen] = useState<boolean>(false)
-  
+
   const handleDropDown = () => setOpen(prev => !prev)
 
   return (

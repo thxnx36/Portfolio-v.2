@@ -1,25 +1,25 @@
 import { ChatHead } from './chat-head/ChatHead'
-import { useLocalStorage } from '../../hooks'
-import {
-  OPEN,
-  CLOSE,
-  KEY,
-  SENDER_USER,
-  SENDER_BOT,
-  HEIGHT_INPUT,
-  MESSAGE_LENGTH,
-  STATUS_MESSAGE,
-} from '../../constants'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { useTranslation } from 'react-i18next'
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
 import { ChatMessages } from './chat-messages/ChatMessages'
-import { ChatContentType } from '../../types'
-import { soundResponseMessage, soundSendMessage } from '../../assets'
-import { playSoundsInChat } from '../../utils'
-import { useSendTelegramMessageMutation } from '../../app/api'
 import { IoChatbubbles } from 'react-icons/io5'
-import { Button } from '../../shared'
+import { useSendTelegramMessageMutation } from 'src/app/api'
+import { soundSendMessage, soundResponseMessage } from 'src/assets'
+import {
+  KEY,
+  CLOSE,
+  HEIGHT_INPUT,
+  SENDER_BOT,
+  SENDER_USER,
+  OPEN,
+  MESSAGE_LENGTH,
+  STATUS_MESSAGE,
+} from 'src/constants'
+import { useLocalStorage } from 'src/hooks'
+import { Button } from 'src/shared'
+import { ChatContentType } from 'src/types'
+import { playSoundsInChat } from 'src/utils'
 import styles from './LiveChat.module.css'
 
 export const LiveChat = () => {

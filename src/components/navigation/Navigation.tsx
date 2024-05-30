@@ -1,11 +1,11 @@
 import type { CSSProperties } from 'react'
 import { useState } from 'react'
-import { useScrollListener } from '../../hooks'
-import { motionNav } from '../../constants'
-import { MContainer, Drawer } from '../../shared'
 import { MySkills } from '../my-skills/MySkills'
 import { NavigationPanel } from './navigation-panel/NavigationPanel'
 import { NavListItemMobile } from './nav-list-item-mobile/NavListItemMobile'
+import { motionNav } from 'src/constants'
+import { useScrollListener } from 'src/hooks'
+import { MContainer, Drawer } from 'src/shared'
 
 export const Navigation = () => {
   const { isScrollDown } = useScrollListener()

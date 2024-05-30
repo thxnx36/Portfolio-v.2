@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { Routes as ReactDOMRoutes, Route } from 'react-router-dom'
-import { ROUTES } from '../constants'
-import { MainPage } from '../pages'
+import { ROUTES } from 'src/constants'
+import { MainPage } from 'src/pages'
 
 const PortfolioPage = lazy(() => import('../pages/PortfolioPage'))
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'))
