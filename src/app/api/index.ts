@@ -1,8 +1,6 @@
 import {
   usePostEmailMutation,
   sendEmailApi,
-  useGetMyinfoQuery,
-  myInfoApi,
   sendTelegramMessagelApi,
   useSendTelegramMessageMutation,
 } from './hooks'
@@ -10,8 +8,6 @@ import {
 export {
   usePostEmailMutation,
   sendEmailApi,
-  useGetMyinfoQuery,
-  myInfoApi,
   sendTelegramMessagelApi,
   useSendTelegramMessageMutation,
 }

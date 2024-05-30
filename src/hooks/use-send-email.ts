@@ -3,11 +3,15 @@ import type { FormType } from '../types'
 import { useState } from 'react'
 import { usePostEmailMutation } from '../app/api'
 import { toast } from 'react-toastify'
+import { getEnvVars } from '../utils'
+
+const env = getEnvVars()
 
 const INITIAL_STATE = {
-  name_from: '',
-  email_from: '',
-  message: '',
+  from: '',
+  to: env.getEmail,
+  nameSender: '',
+  text: '',
 }
 
 type Props = {
@@ -40,7 +44,7 @@ export const useSendEmail = ({
   const onSubmit = async (e: SyntheticEvent) => {
     e.preventDefault()
     try {
-      await sendEmail({ ...form, reCaptchaToken }).unwrap()
+      await sendEmail(form).unwrap()
       toast.success(successMessage)
       f()
     } catch {
@@ -50,11 +54,7 @@ export const useSendEmail = ({
   }
 
   const isDisabledButton =
-    !form.name_from ||
-    !form.email_from ||
-    !form.message ||
-    isLoading ||
-    !reCaptchaToken
+    !form.from || !form.nameSender || !form.text || isLoading || !reCaptchaToken
 
   return {
     form,

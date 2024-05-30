@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import type { sendEmailPayloadType } from '../../../types'
-import { apiBaseQuery } from '../api-base-query'
+import type { FormType } from '../../../types'
+import { apiBaseQuery } from '../base'
 import { getEnvVars } from '../../../utils'
 
 const env = getEnvVars()
@@ -8,27 +8,14 @@ const env = getEnvVars()
 export const sendEmailApi = createApi({
   reducerPath: 'sendEmailApi',
   baseQuery: apiBaseQuery({
-    baseUrl: env.apiEmailApiUrl,
+    baseUrl: env.apiMailerUrl,
   }),
   endpoints: build => ({
-    postEmail: build.mutation<void, sendEmailPayloadType>({
-      query: ({ name_from, message, email_from, reCaptchaToken }) => {
-        const data = new URLSearchParams({
-          service_id: env.apiServicesId,
-          template_id: env.apiTemplateId,
-          user_id: env.apiUserId,
-          name_from,
-          email_from,
-          message,
-          'g-recaptcha-response': reCaptchaToken as string,
-        }).toString()
-
+    postEmail: build.mutation<void, FormType>({
+      query: data => {
         return {
-          url: '/send-form',
+          url: '/sendEmail',
           method: 'post',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
           data,
         }
       },

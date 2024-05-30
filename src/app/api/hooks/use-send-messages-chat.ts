@@ -1,7 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import { apiBaseQuery } from '../api-base-query'
+import { apiBaseQuery } from '../base'
 import { getEnvVars } from '../../../utils'
-
 
 const env = getEnvVars()
 
@@ -14,8 +13,9 @@ export const sendTelegramMessagelApi = createApi({
     sendTelegramMessage: build.mutation<void, { message: string }>({
       query({ message }) {
         return {
-          url: `${env.apiTelegramKey}/sendMessage?chat_id=${env.apiTelegramChatId}&text=${message}`,
+          url: `/sendMessage`,
           method: 'post',
+          data: { message },
         }
       },
     }),

@@ -1,5 +1,7 @@
 export type FormType = {
-  name_from: string
-  email_from: string
-  message: string
+  from: string
+  to: string
+  subject?: string
+  nameSender?: string
+  text: string
 }
