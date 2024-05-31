@@ -1,6 +1,6 @@
 {
   "button": {
-    "HIRE": "Hire me",
+    "HIRE": "Contact me",
     "SEND_MESSAGE": "Send message",
     "DOWNLOAD": "Download CV",
     "GO_BACK": "Go back",
@@ -26,7 +26,7 @@
     "PROJECTS": "Projects"
   },
   "header": {
-    "NAME": "Hi! I'm Vlad Kryvytchenko",
+    "NAME": "Hi! I'm Vlad",
     "PATH": "Front-end",
     "SPECIALTY": "Developer",
     "DESCRIPTION": "Combining modern technology and creativity, I build websites and apps that will help you achieve your goals"

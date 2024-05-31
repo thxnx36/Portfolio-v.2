@@ -2,17 +2,6 @@
   margin-bottom: 30px;
 }
 
-.listItem {
-  height: 100%;
-  display: none;
-}
-
 button svg {
   color: var(--text-color);
-}
-
-@media screen and (max-width: 865px) {
-  .listItem {
-    display: block;
-  }
 }

@@ -1,7 +1,6 @@
 .button {
   padding: 15px 25px;
   text-align: center;
-  text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: var(--secondary-color);

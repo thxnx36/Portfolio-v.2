@@ -1,34 +1,43 @@
-import type { ChangeEvent, FC } from 'react'
-import { LANG } from '../../constants'
-import { BsTranslate } from 'react-icons/bs'
+import { Fragment, type ChangeEvent, type FC } from 'react'
+import { ENG, LANG } from 'src/constants'
 import styles from './ToggleLang.module.css'
 
 type Props = {
-  uniqSelectId: string
+  uniqueToggletId: string
   onChange: (value: string) => void
   selectValue: string
-  size?: string
 }
 export const ToggleLang: FC<Props> = ({
   onChange,
-  uniqSelectId,
+  uniqueToggletId,
   selectValue,
-  size = '1.4em',
 }) => {
-  const onChangeLang = (e: ChangeEvent<HTMLSelectElement>) =>
+  const onChangeLang = (e: ChangeEvent<HTMLInputElement>) =>
     onChange(e.target.value)
-  const disabledOption = (value: string) => value === selectValue
+
+  const isCurrentLang = (value: string) => value === selectValue
 
   return (
-    <div className={styles.container}>
-      <select id={uniqSelectId} value={selectValue} onChange={onChangeLang}>
-        {LANG.map(({ id, label, value }) => (
-          <option key={id} value={value} disabled={disabledOption(value)}>
+    <div className={styles.tabs}>
+      {LANG.map(({ id, label, value }) => (
+        <Fragment key={id}>
+          <input
+            value={value}
+            type='checkbox'
+            className={styles.checkbox}
+            id={`${uniqueToggletId}-${id}`}
+            onChange={onChangeLang}
+            checked={isCurrentLang(value)}
+            disabled={isCurrentLang(value)}
+          />
+          <label className={styles.tab} htmlFor={`${uniqueToggletId}-${id}`}>
             {label}
-          </option>
-        ))}
-      </select>
-      <BsTranslate size={size} />
+          </label>
+        </Fragment>
+      ))}
+      <span
+        className={`${styles.glider} ${isCurrentLang(ENG) ? styles.gliderEn : styles.gliderUk}`}
+      />
     </div>
   )
 }

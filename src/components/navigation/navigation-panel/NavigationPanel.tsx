@@ -43,9 +43,8 @@ export const NavigationPanel: FC<Props> = ({
       />
       <div className={styles.navToolbar}>
         <Toolbar
-          reverse
           uniqueIdForSwitcher='switch-theme-desk'
-          uniqSelectId='select-lang-desk'
+          uniqueToggletId='toggle-lang-desk'
         />
       </div>
     </div>

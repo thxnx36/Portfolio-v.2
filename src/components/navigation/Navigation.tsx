@@ -6,6 +6,7 @@ import { NavListItemMobile } from './nav-list-item-mobile/NavListItemMobile'
 import { motionNav } from 'src/constants'
 import { useScrollListener } from 'src/hooks'
 import { MContainer, Drawer } from 'src/shared'
+import styles from './Navigation.module.css'
 
 export const Navigation = () => {
   const { isScrollDown } = useScrollListener()
@@ -46,11 +47,16 @@ export const Navigation = () => {
         </nav>
       </MContainer>
 
-      <Drawer side={'left'} isOpen={isShowSideBarSkills} onClose={handleSkills}>
+      <Drawer side='left' isOpen={isShowSideBarSkills} onClose={handleSkills}>
         <MySkills />
       </Drawer>
 
-      <Drawer side='right' isOpen={isShowSideBarMenu} onClose={handleMenu}>
+      <Drawer
+        className={styles.menuDrawer}
+        side='right'
+        isOpen={isShowSideBarMenu}
+        onClose={handleMenu}
+      >
         <NavListItemMobile
           onChangeItem={onCloseSideBarMenu}
           isActiveItem={activeItem}
