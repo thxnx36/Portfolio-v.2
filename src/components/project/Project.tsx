@@ -1,6 +1,5 @@
-import { useGetProjectById } from '../../hooks'
-import { useParams, useNavigate } from 'react-router-dom'
-import { useCallback } from 'react'
+import { useGetProjectById, useGoBack } from '../../hooks'
+import { useParams } from 'react-router-dom'
 import { Head } from './head/Head'
 import { Content } from './content/Content'
 import { StackList } from './stack-list/StackList'
@@ -13,10 +12,8 @@ import styles from './Project.module.css'
 export const Project = () => {
   const { t } = useTranslation()
   const { id } = useParams()
+  const { handleBack } = useGoBack(-1)
   const { project: data } = useGetProjectById(+id!)
-  const navigate = useNavigate()
-
-  const handleBack = useCallback(() => navigate(-1), [navigate])
 
   return (
     <Section style={{ margin: 0 }}>

@@ -1,6 +1,7 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
 import { apiBaseQuery } from '../base'
-import { getEnvVars } from '../../../utils'
+import { getEnvVars } from "src/utils"
+
 
 const env = getEnvVars()
 

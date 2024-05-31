@@ -3,13 +3,9 @@ import type { FormType } from '../types'
 import { useState } from 'react'
 import { usePostEmailMutation } from '../app/api'
 import { toast } from 'react-toastify'
-import { getEnvVars } from '../utils'
-
-const env = getEnvVars()
 
 const INITIAL_STATE = {
   from: '',
-  to: env.getEmail,
   nameSender: '',
   text: '',
 }

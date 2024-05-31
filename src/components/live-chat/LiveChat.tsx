@@ -38,6 +38,7 @@ export const LiveChat = () => {
   const [textareaContent, setTextareaContent] = useState<string>('')
   const [textareaHeight, setTextareaHeight] = useState<number>(HEIGHT_INPUT)
   const [isShowWarning, setIsShowWarning] = useState<boolean>(false)
+  const [isZoomWindow, setIsZoomWindow] = useState<boolean>(false)
 
   //mock messages
   const [messages, setMessages] = useState<ChatContentType[]>([
@@ -56,6 +57,7 @@ export const LiveChat = () => {
   ])
 
   const onToggleChat = () => setOpenChat(openChat === OPEN ? CLOSE : OPEN)
+  const onToogleZoomWindow = () => setIsZoomWindow(prev => !prev)
 
   const handleChangeTextArea = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const { value, scrollHeight } = e.target
@@ -128,26 +130,26 @@ export const LiveChat = () => {
       playSoundsInChat(soundSendMessage)
       scrollToBottom()
       await sendTelegramMessage({ message: textareaContent })
-    }
 
-    // simulate bot response
-    setTimeout(() => {
-      setMessages(prevMessages => [
-        ...prevMessages,
-        {
-          sender: SENDER_BOT,
-          text: 'This is a bot response!',
-          status: 'none',
-          timestamp: Date.now(),
-        },
-      ])
-      playSoundsInChat(soundResponseMessage)
-      scrollToBottom()
-    }, 1500)
+      // simulate bot response
+      setTimeout(() => {
+        setMessages(prevMessages => [
+          ...prevMessages,
+          {
+            sender: SENDER_BOT,
+            text: 'This is a bot response!',
+            status: 'none',
+            timestamp: Date.now(),
+          },
+        ])
+        playSoundsInChat(soundResponseMessage)
+        scrollToBottom()
+      }, 1500)
+    }
   }
 
   const isOpenChat = openChat === OPEN
-  const isDisabledButton = !textareaContent
+  const isDisabledButton = !textareaContent.trim()
 
   return (
     <>
@@ -160,8 +162,16 @@ export const LiveChat = () => {
       </div>
 
       {isOpenChat && (
-        <div className={styles.chat}>
-          <ChatHead onToggleChat={onToggleChat} />
+        <div
+          className={
+            isZoomWindow ? `${styles.chat} ${styles.zoomWindow}` : styles.chat
+          }
+        >
+          <ChatHead
+            onToggleChat={onToggleChat}
+            onToogleZoomWindow={onToogleZoomWindow}
+            isZoomWindow={isZoomWindow}
+          />
           <ChatMessages ref={messagesContainerRef} messages={messages} />
           {isShowWarning && (
             <span className={styles.lengthWarning}>

@@ -19,6 +19,10 @@ input::placeholder {
   font-weight: var(--font-weight-normal);
 }
 
+.error {
+  border: 1px solid var(--red-color);
+}
+
 .error:focus {
   border-color: var(--red-color);
 }
