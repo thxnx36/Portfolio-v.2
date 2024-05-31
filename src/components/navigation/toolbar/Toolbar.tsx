@@ -10,15 +10,10 @@ import styles from './Toolbar.module.css'
 
 type Props = {
   uniqueIdForSwitcher: string
-  uniqSelectId: string
-  reverse?: boolean
+  uniqueToggletId: string
 }
 
-export const Toolbar: FC<Props> = ({
-  uniqueIdForSwitcher,
-  uniqSelectId,
-  reverse,
-}) => {
+export const Toolbar: FC<Props> = ({ uniqueIdForSwitcher, uniqueToggletId }) => {
   const { i18n } = useTranslation()
   const { theme, changeTheme } = useContext(ThemeContext)
 
@@ -29,11 +24,7 @@ export const Toolbar: FC<Props> = ({
   const currentLanguage = i18n.language
 
   return (
-    <div
-      className={
-        reverse ? `${styles.toolbarBtns} ${styles.reverse}` : styles.toolbarBtns
-      }
-    >
+    <div className={styles.toolbarBtns}>
       <Switcher
         checked={checkedSwitcher}
         checkedIcon={<FaSun />}
@@ -43,7 +34,7 @@ export const Toolbar: FC<Props> = ({
       />
       <ToggleLang
         selectValue={currentLanguage}
-        uniqSelectId={uniqSelectId}
+        uniqueToggletId={uniqueToggletId}
         onChange={onChangeLanguage}
       />
     </div>

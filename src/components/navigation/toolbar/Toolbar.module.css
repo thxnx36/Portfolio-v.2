@@ -6,7 +6,3 @@
   gap: 10px;
   padding: 5px;
 }
-
-.reverse {
-  flex-direction: row-reverse;
-}

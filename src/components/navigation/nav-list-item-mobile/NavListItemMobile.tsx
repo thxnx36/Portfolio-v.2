@@ -19,12 +19,12 @@ export const NavListItemMobile: FC<Props> = ({
       <div className={styles.toolbar}>
         <Toolbar
           uniqueIdForSwitcher='switch-theme-mob'
-          uniqSelectId='select-lang-mob'
+          uniqueToggletId='toggle-lang-mob'
         />
       </div>
 
       <nav>
-        <ul className={styles.listItem}>
+        <ul>
           <NavItem
             isMobile={isMobile}
             onChangeItem={onChangeItem}
