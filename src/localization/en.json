@@ -5,6 +5,7 @@
     "DOWNLOAD": "Download CV",
     "GO_BACK": "Go back",
     "LOADING": "Loading...",
+    "SLOW_SERVER": "Something, the server is so slow today 🥴",
     "SHOW_MORE_CARD": "show more",
     "CLOSE_CARD": "close"
   },
@@ -164,7 +165,15 @@
   "form": {
     "TITLE": "Leave me Your info",
     "TEXT_ME_MESSENGERS": "Or contact me via the messengers",
-    "CONTACT_ME_IF_ERROR": "Ops, something went wrong! Please, contact me via the messengers"
+    "error": {
+      "CONTACT_ME_IF_ERROR": "Ops, something went wrong! Please, contact me via the messengers",
+      "ENTER_NAME": "Please enter your name",
+      "ENTER_EMAIL": "Please enter your email",
+      "ENTER_MESSAGE": "Please enter a message",
+      "EMAIL_NOT_VALID": "The email is not valid",
+      "SHORT_NAME": "Hmm, too short of a name",
+      "SHORT_MESSAGE": "Please write the message a bit more"
+    }
   },
   "toast": {
     "success": {

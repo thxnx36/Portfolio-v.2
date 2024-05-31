@@ -1,16 +1,20 @@
 .chatHeadContainer {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 5px;
   position: relative;
 }
 
-.closeButton {
-  position: absolute;
-  right: 5px;
-  top: 10px;
+.buttonsWrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.zoomButton {
+  display: block;
 }
 
 .contactWrap {
@@ -32,4 +36,10 @@
 .status {
   color: var(--green-color);
   font-size: var(--font-size-xs-mobile);
+}
+
+@media screen and (max-width: 550px) {
+  .zoomButton {
+    display: none;
+  }
 }

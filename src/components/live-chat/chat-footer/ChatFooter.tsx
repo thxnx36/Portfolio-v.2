@@ -43,7 +43,7 @@ export const ChatFooter: FC<Props> = ({
             : styles.sendButton
         }
       >
-        <IoSend />
+        <IoSend size={'1.5em'} />
       </button>
     </form>
   )

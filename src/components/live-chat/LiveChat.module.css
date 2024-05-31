@@ -1,16 +1,26 @@
 .chat {
   position: fixed;
   width: 100%;
+  height: 100%;
   bottom: 15px;
   left: 15px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 360px;
+  max-width: 350px;
+  max-height: 550px;
   background-color: var(--background-color);
   z-index: 1000;
   box-shadow: var(--shadow-chat);
+  transition:
+    max-width 0.5s ease-in-out,
+    max-height 0.5s ease-in-out;
+}
+
+.zoomWindow {
+  max-width: 700px;
+  max-height: 800px;
 }
 
 .openButton {
@@ -46,16 +56,14 @@
 
   .chat {
     max-width: unset;
+    max-height: unset;
     width: 100%;
     height: 100dvh;
-    bottom: 0;
-    left: 0;
   }
 }
 
-@media (max-width: 900px) and (orientation: landscape) {
+@media screen and (max-width: 950px) {
   .chat {
-    height: 100dvh;
     bottom: 0;
     left: 0;
   }

@@ -34,10 +34,12 @@ import {
 } from './live-chat'
 import { FORMAT_DATE, FORMAT_TIME } from './format-date'
 import { APP } from './version-app'
+import { VALIDATE_EMAIL } from './regex'
 
 export {
   RESPONSIVE,
   TABLET,
+  VALIDATE_EMAIL,
   LANG,
   OPEN,
   CLOSE,

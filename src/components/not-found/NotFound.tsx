@@ -1,15 +1,13 @@
 import { TbError404 } from 'react-icons/tb'
-import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { COLOR_YELLOW, ROUTES } from 'src/constants'
 import { Section, Title, Button, SEO } from 'src/shared'
+import { useGoBack } from 'src/hooks'
 import styles from './NotFound.module.css'
 
 export const NotFound = () => {
   const { t } = useTranslation()
-  const navigate = useNavigate()
-
-  const handleBack = () => navigate(-1)
+  const { handleBack } = useGoBack(-1)
 
   return (
     <Section style={{ margin: 0 }}>

@@ -1,7 +1,6 @@
 .chatFooterWrap {
   margin: 10px;
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
   border-radius: 20px;
   box-shadow: var(--shadow-light);
@@ -17,7 +16,6 @@
   margin: 0;
   padding: 5px 0 0 10px;
   resize: none;
-  width: 280px;
   overflow-y: auto;
 }
 
@@ -27,9 +25,8 @@
 
 .sendButton {
   width: 32px;
-  height: 32px;
+  height: 30px;
   margin: 5px;
-  background: var(--bg-linear-reverse);
   border-radius: 100%;
   display: flex;
   justify-content: center;
@@ -37,17 +34,11 @@
 }
 
 .sendButton svg {
-  color: var(--white-color);
+  color: var(--text-color);
 }
 
 .disabled {
   pointer-events: none;
   cursor: default;
   opacity: 0.5;
-}
-
-@media screen and (max-width: 380px) {
-  .sendButton {
-    display: none;
-  }
 }

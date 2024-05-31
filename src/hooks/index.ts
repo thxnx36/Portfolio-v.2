@@ -10,6 +10,7 @@ import { useSpinner } from './use-spinner'
 import { usePortfolioList } from './use-portfolio-list'
 import { useEducationList } from './use-education-list'
 import { useWorkList } from './use-work-list'
+import { useGoBack } from './use-go-back'
 
 export {
   useGetProjectById,
@@ -24,4 +25,5 @@ export {
   usePortfolioList,
   useEducationList,
   useWorkList,
+  useGoBack,
 }

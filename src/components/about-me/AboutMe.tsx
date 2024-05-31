@@ -1,5 +1,3 @@
-import { useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { technologies } from 'src/db'
 import { useTranslation } from 'react-i18next'
 import { APP_URL, ROUTES } from 'src/constants'
@@ -12,12 +10,11 @@ import {
   SEO,
 } from 'src/shared'
 import styles from './AboutMe.module.css'
+import { useGoBack } from 'src/hooks'
 
 export const AboutMe = () => {
   const { t } = useTranslation()
-  const navigate = useNavigate()
-
-  const handleBack = useCallback(() => navigate(-1), [navigate])
+  const { handleBack } = useGoBack(-1)
 
   return (
     <Section style={{ margin: 0 }}>

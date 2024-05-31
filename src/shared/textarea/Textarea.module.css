@@ -1,4 +1,5 @@
 .textareaContainer {
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -9,6 +10,10 @@
   padding: 10px;
   outline: none;
   margin-bottom: 5px;
+}
+
+.error {
+  border: 1px solid var(--red-color);
 }
 
 textarea:focus {
