@@ -1,10 +1,11 @@
-import type { ChangeEvent, SyntheticEvent } from 'react'
+import type { ChangeEvent } from 'react'
 import type { FormType } from '../types'
 import { useState } from 'react'
 import { usePostEmailMutation } from '../app/api'
 import { toast } from 'react-toastify'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
-const INITIAL_STATE = {
+const INITIAL_STATE: FormType = {
   from: '',
   nameSender: '',
   text: '',
@@ -14,33 +15,31 @@ type Props = {
   f: () => void
   successMessage: string
   infoMessage: string
-  reCaptchaToken: string | null
 }
 
-export const useSendEmail = ({
-  successMessage,
-  infoMessage,
-  reCaptchaToken,
-  f,
-}: Props) => {
+export const useSendEmail = ({ successMessage, infoMessage, f }: Props) => {
   const [sendEmail, { isLoading }] = usePostEmailMutation()
-  const [form, setForm] = useState<FormType>(INITIAL_STATE)
   const [isSendFormError, setIsSendError] = useState<boolean>(false)
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors, isSubmitting, isValid },
+    clearErrors,
+  } = useForm<FormType>({ mode: 'onBlur', defaultValues: INITIAL_STATE })
 
   const handleChange =
     (field: keyof FormType) =>
     (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { value } = e.target as HTMLInputElement | HTMLTextAreaElement
-      setForm(prev => ({
-        ...prev,
-        [field]: value,
-      }))
+      setValue(field, value)
+      clearErrors(field)
     }
 
-  const onSubmit = async (e: SyntheticEvent) => {
-    e.preventDefault()
+  const onSubmit: SubmitHandler<FormType> = async (data: FormType) => {
     try {
-      await sendEmail(form).unwrap()
+      await sendEmail(data).unwrap()
       toast.success(successMessage)
       f()
     } catch {
@@ -49,15 +48,16 @@ export const useSendEmail = ({
     }
   }
 
-  const isDisabledButton =
-    !form.from || !form.nameSender || !form.text || isLoading || !reCaptchaToken
+  const isDisabledButton = isSubmitting || !isValid
 
   return {
-    form,
-    isLoading,
-    isSendFormError,
-    isDisabledButton,
-    onSubmit,
+    register,
+    handleSubmit,
     handleChange,
+    errors,
+    isLoading,
+    isDisabledButton,
+    isSendFormError,
+    onSubmit,
   }
 }

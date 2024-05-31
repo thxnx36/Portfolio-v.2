@@ -12,6 +12,7 @@ import {
 } from 'src/shared'
 import { useTranslation } from 'react-i18next'
 import styles from './Form.module.css'
+import { VALIDATE_EMAIL } from 'src/constants'
 
 type Props = {
   onCloseModal: () => void
@@ -19,21 +20,22 @@ type Props = {
 
 export const Form: FC<Props> = ({ onCloseModal }) => {
   const { t } = useTranslation()
+  const { socialList } = useMySocialList()
   const [captchaToken, setCaptchaToken] = useState<string | null>(null)
 
-  const { socialList } = useMySocialList()
   const {
-    form,
-    isDisabledButton,
-    isLoading,
-    isSendFormError,
+    register,
+    handleSubmit,
     handleChange,
+    errors,
+    isSendFormError,
+    isLoading,
+    isDisabledButton,
     onSubmit,
   } = useSendEmail({
     f: onCloseModal,
     successMessage: t('toast.success.EMAIL_SENT'),
     infoMessage: t('toast.info.FIXING'),
-    reCaptchaToken: captchaToken,
   })
 
   const handleCaptchaChange = (token: string | null) => setCaptchaToken(token)
@@ -41,30 +43,51 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
   return (
     <>
       {!isSendFormError && (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <Title tag='h2'>{t('form.TITLE')}</Title>
           <Input
             id='form-input-name'
-            required
+            type='text'
+            {...register('nameSender', {
+              required: true,
+              minLength: 3,
+            })}
             onChange={handleChange('nameSender')}
-            value={form.nameSender}
+            error={!!errors.nameSender}
+            errorText={
+              errors.nameSender?.type === 'minLength'
+                ? t('form.error.SHORT_NAME')
+                : t('form.error.ENTER_NAME')
+            }
             placeholder={t('input.placeholder.YOUR_NAME')}
           />
           <Input
             id='form-input-email'
             type='email'
-            required
+            {...register('from', {
+              required: t('form.error.ENTER_EMAIL'),
+              pattern: {
+                value: VALIDATE_EMAIL,
+                message: t('form.error.EMAIL_NOT_VALID'),
+              },
+            })}
             onChange={handleChange('from')}
-            value={form.from}
+            error={!!errors.from}
+            errorText={errors.from?.message}
             placeholder={t('input.placeholder.YOUR_EMAIL')}
           />
           <Textarea
             id='form-textarea-message'
-            onChange={handleChange('text')}
-            value={form.text}
-            required
+            {...register('text', { required: true, minLength: 10 })}
             rows={7}
             cols={50}
+            onChange={handleChange('text')}
+            error={!!errors.text}
+            errorText={
+              errors.text?.type === 'minLength'
+                ? t('form.error.SHORT_MESSAGE')
+                : t('form.error.ENTER_MESSAGE')
+            }
             placeholder={t('input.placeholder.YOUR_MESSAGE')}
           />
           <div className={styles.reCaptcha}>
@@ -74,7 +97,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
             style={additionalButtonStyles}
             text={isLoading ? t('button.LOADING') : t('button.SEND_MESSAGE')}
             type='submit'
-            disabled={isDisabledButton}
+            disabled={isDisabledButton || !captchaToken}
           />
         </form>
       )}
@@ -82,7 +105,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
         <Paragraph style={{ margin: '15px 0 0' }}>
           {!isSendFormError
             ? t('form.TEXT_ME_MESSENGERS')
-            : t('form.CONTACT_ME_IF_ERROR')}
+            : t('form.error.CONTACT_ME_IF_ERROR')}
         </Paragraph>
         <SocialList list={socialList} />
       </div>
