@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useNavigationList } from 'src/hooks'
 import styles from './NavItem.module.css'
 
-const ID = 7
+const ID = 6
 
 type Props = {
   isActiveItem: number
@@ -34,12 +34,12 @@ export const NavItem: FC<Props> = ({
           {id === ID ? (
             <Link className={styles.link} to={href}>
               <p className={styles.text}>{text}</p>
-              {icon}
+              <span className={styles.icon}>{icon}</span>
             </Link>
           ) : (
             <a className={styles.link} href={href}>
               <p className={styles.text}>{text}</p>
-              {icon}
+              <span className={styles.icon}>{icon}</span>
             </a>
           )}
         </li>
