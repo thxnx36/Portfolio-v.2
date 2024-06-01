@@ -122,8 +122,8 @@
         "DESCR": "Sports betting platform",
         "about": {
           "p_1": {
-            "TEXT_1": "Front-end team - 2 developers.\nBack-end team - 2 developers.\nQA team - 1 developer.",
-            "TEXT_2": "The project was a multifaceted platform that allowed users to register their accounts, buy in-game currency, and place bets on their favorite teams during live streams. It included a core platform with features like registration management, in-game currency transactions, live stream betting functionality.",
+            "TEXT_1": "Front-end team - 2 developers. Back-end team - 2 developers. QA team - 1 developer.",
+            "TEXT_2": "The project was a multifaceted platform that allowed users to register their accounts, buy in-game currency, and place bets on their favorite teams during live streams.",
             "TEXT_3": "Consisted of a core platform as well as an admin panel through which the administrator could fully manage the core application and user support."
           },
           "p_2": {
