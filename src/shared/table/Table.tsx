@@ -1,7 +1,7 @@
 import type { FC } from 'react'
+import { Paragraph } from '../paragraph'
+import { Title } from '../title'
 import styles from './Table.module.css'
-import { Paragraph } from '../paragraph/Paragraph'
-import { Title } from '../title/Title'
 
 type Props = {
   namePlace: string
@@ -30,7 +30,8 @@ export const Table: FC<Props> = ({
               : `${styles.link} ${styles.disabledLink}`
           }
           href={url}
-          target='_blank' rel="noreferrer"
+          target='_blank'
+          rel='noreferrer'
         >
           <Title
             style={{ marginBottom: '15px' }}
