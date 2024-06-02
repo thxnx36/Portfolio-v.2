@@ -13,6 +13,10 @@
   padding: 25px;
 }
 
+.info h1 {
+  font-family: 'Inter', sans-serif;
+}
+
 .speciality {
   background-image: var(--bg-linear-reverse);
   background-clip: text;
