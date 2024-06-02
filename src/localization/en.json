@@ -1,6 +1,6 @@
 {
   "button": {
-    "HIRE": "Contact me",
+    "HIRE": "Let's talk",
     "SEND_MESSAGE": "Send message",
     "DOWNLOAD": "Download CV",
     "GO_BACK": "Go back",
@@ -43,7 +43,7 @@
 
     "cards": {
       "FRONT_END_DEVELOPMENT_TITLE": "Front-end development",
-      "FRONT_END_DEVELOPMENT_TEXT": "Development UI and business logic using React/Next, TypeScript, CSS",
+      "FRONT_END_DEVELOPMENT_TEXT": "Development UI and business logic using React/Next, TypeScript, Redux",
       "RESPONSIVE_DESIGN_TITLE": "Responsive design",
       "RESPONSIVE_DESIGN_TEXT": "Responsive websites and apps ensuring optimal display on all devices and screen resolutions",
       "API_BACKEND_INTEGRATION_TITLE": "API and backend integration",
@@ -77,7 +77,7 @@
     }
   },
   "workHistory": {
-    "TITLE": "Work histrory",
+    "TITLE": "Work history",
     "SUBTITLE": "My professional journey and work experience",
     "table": {
       "elementica": {
@@ -163,7 +163,7 @@
     "LANGUAGES": "Languages"
   },
   "form": {
-    "TITLE": "Leave me Your info",
+    "TITLE": "Leave me your info",
     "TEXT_ME_MESSENGERS": "Or contact me via the messengers",
     "error": {
       "CONTACT_ME_IF_ERROR": "Ops, something went wrong! Please, contact me via the messengers",
@@ -191,7 +191,7 @@
   },
   "input": {
     "placeholder": {
-      "YOUR_NAME": "Your full name",
+      "YOUR_NAME": "Your name",
       "YOUR_EMAIL": "Your email",
       "YOUR_SUBJECT": "Subject",
       "YOUR_MESSAGE": "Your message"
