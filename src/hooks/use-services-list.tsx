@@ -1,13 +1,13 @@
-import type { ServicesListType } from '../types'
+import type { ServicesListType } from 'src/types'
+import { COLOR_YELLOW } from 'src/constants'
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaReact } from 'react-icons/fa'
 import { SiPagespeedinsights } from 'react-icons/si'
 import { PiBrowsersThin } from 'react-icons/pi'
-import { COLOR_YELLOW } from '../constants'
 import { CiDatabase } from 'react-icons/ci'
 import { CiMobile3 } from 'react-icons/ci'
 import { HiOutlineCodeBracket } from 'react-icons/hi2'
-import { useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
 
 export const useServicesList = () => {
   const { t } = useTranslation()

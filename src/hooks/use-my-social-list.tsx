@@ -3,12 +3,12 @@ import {
   TELEGRAM_URL,
   EMAIL_URL,
   GIT_HUB_URL,
-} from '../constants'
+} from 'src/constants'
+import type { MySocialListType } from 'src/types'
 import { FaLinkedin } from 'react-icons/fa'
 import { FaTelegramPlane } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { FaGithubSquare } from 'react-icons/fa'
-import type { MySocialListType } from '../types'
 
 export const useMySocialList = () => {
   const socialList: MySocialListType[] = [

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
 import { ChatMessages } from './chat-messages/ChatMessages'
 import { IoChatbubbles } from 'react-icons/io5'
-import { useSendTelegramMessageMutation } from 'src/app/api'
+import { useSendTelegramMessageMutation } from 'src/app'
 import { soundSendMessage, soundResponseMessage } from 'src/assets'
 import {
   KEY,

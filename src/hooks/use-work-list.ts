@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { UDEMY_URL, UNIVERSITY_URL } from '../constants'
+import { UDEMY_URL, UNIVERSITY_URL } from 'src/constants'
+import { WorkListType } from 'src/types'
 import { useTranslation } from 'react-i18next'
-import { WorkListType } from '../types'
 
 export const useWorkList = () => {
   const { t } = useTranslation()

@@ -1,6 +1,5 @@
 import { StrictMode } from 'react'
 import { store } from './app'
-import { BrowserRouter } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from './providers'
@@ -16,13 +15,11 @@ if (container) {
   root.render(
     <StrictMode>
       <Provider store={store}>
-        <BrowserRouter>
-          <ThemeProvider>
-            <Layout>
-              <Routes />
-            </Layout>
-          </ThemeProvider>
-        </BrowserRouter>
+        <ThemeProvider>
+          <Layout>
+            <Routes />
+          </Layout>
+        </ThemeProvider>
       </Provider>
     </StrictMode>,
   )

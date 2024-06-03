@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { ToastContainer } from 'react-toastify'
-import { ThemeContext } from '../../providers'
+import { ThemeContext } from 'src/providers'
 
 export const Toast = () => {
   const { theme } = useContext(ThemeContext)

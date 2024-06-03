@@ -1,7 +1,7 @@
 import type { ChangeEvent } from 'react'
-import type { FormType } from '../types'
+import type { FormType } from 'src/types'
 import { useState } from 'react'
-import { usePostEmailMutation } from '../app/api'
+import { usePostEmailMutation } from 'src/app'
 import { toast } from 'react-toastify'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
