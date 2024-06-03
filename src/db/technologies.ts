@@ -10,5 +10,4 @@ export const technologies = [
   'CSS',
   'CSS preprocessors',
   'Material-UI',
-  'Styled-components',
 ]

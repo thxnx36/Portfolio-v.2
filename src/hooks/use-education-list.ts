@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { UDEMY_URL, UNIVERSITY_URL } from '../constants'
+import { UDEMY_URL, UNIVERSITY_URL } from 'src/constants'
 import { useTranslation } from 'react-i18next'
-import { EducationListType } from '../types'
+import { EducationListType } from 'src/types'
 
 export const useEducationList = () => {
   const { t } = useTranslation()

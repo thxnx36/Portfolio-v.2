@@ -114,7 +114,7 @@
             "TEXT_3": "У цілому робота над проектом була цікавою та продуктивною, що допомогло мені розвивати навички у фронтенд-розробці, підтримці багатомовності та оптимізації продуктивності веб-застосунків."
           }
         },
-        "stack": "#React #TypeScript #Redux Toolkit #RTK Query #Apollo GraphQL #Material UI"
+        "stack": "#React #TypeScript #Redux Toolkit #RTK Query #Apollo GraphQL #i18next #Material UI"
       },
       "ASX": {
         "NAME": "ASX Sports",
@@ -131,7 +131,7 @@
             "TEXT_3": "Те, що я знайшов цікавим, це участь у зустрічах з CTO та клієнтом, де ми обговорювали бізнес-логіку додатка. Також мені подобалося висловлювати свої ідеї, які в подальшому ставали реальністю."
           }
         },
-        "stack": "#Next #TypeScript #Redux Toolkit #RTK Query #Express #Styled components"
+        "stack": "#Next #TypeScript #Redux Toolkit #RTK Query #Express #Stripe #SamSub #Keycloack #Radix UI"
       },
       "maven": {
         "NAME": "Maven 11",
