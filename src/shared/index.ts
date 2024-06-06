@@ -30,7 +30,7 @@ import { FlippedCard } from './flipped-card'
 import { ToolTip } from './tool-tip'
 import { ReCaptcha } from './re-captcha'
 import { SEO } from './seo'
-import { ToggleLang } from './toggle-lang'
+import { ToggleLang } from './buttons/toggle-lang'
 
 export {
   Avatar,
