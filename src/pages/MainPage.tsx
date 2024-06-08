@@ -7,7 +7,7 @@ import {
   WorkHistory,
   Education,
   Footer,
-  LiveChat,
+  UserChat,
   Navigation,
 } from 'src/components'
 import { APP_URL } from 'src/constants'
@@ -36,7 +36,7 @@ export const MainPage = () => {
         metaOgURLContent={APP_URL}
         metaOgImageContent=''
       />
-      <LiveChat />
+      <UserChat />
     </>
   )
 }

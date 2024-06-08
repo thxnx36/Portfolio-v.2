@@ -10,7 +10,6 @@ type Props = {
   onKeyDown: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void
   sendMessage: (e: FormEvent) => Promise<void>
   isDisabledButton: boolean
-  textareaHeight?: number
 }
 
 export const ChatFooter: FC<Props> = ({
@@ -20,21 +19,19 @@ export const ChatFooter: FC<Props> = ({
   sendMessage,
   placeholder,
   isDisabledButton,
-  textareaHeight,
 }) => {
   return (
     <form onSubmit={sendMessage} className={styles.chatFooterWrap}>
       <Textarea
         style={{
-          height: textareaHeight,
           resize: 'none',
-          maxHeight: '200px',
         }}
         id='chat-textarea'
         value={value}
         onChange={onChange}
         onKeyDown={onKeyDown}
         placeholder={placeholder}
+        rows={1}
       />
       <button
         className={

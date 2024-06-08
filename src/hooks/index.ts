@@ -11,6 +11,7 @@ import { usePortfolioList } from './use-portfolio-list'
 import { useEducationList } from './use-education-list'
 import { useWorkList } from './use-work-list'
 import { useGoBack } from './use-go-back'
+import { useJoinToChat } from "./use-join-to-chat"
 
 export {
   useGetProjectById,
@@ -26,4 +27,5 @@ export {
   useEducationList,
   useWorkList,
   useGoBack,
+  useJoinToChat,
 }

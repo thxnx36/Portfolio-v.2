@@ -1,42 +1,40 @@
 import { forwardRef } from 'react'
-import { MessageTimeStatus } from './message-time-status/MessageTimeStatus'
-import { SENDER_BOT, SENDER_USER } from 'src/constants'
 import { Paragraph } from 'src/shared'
-import { ChatContentType } from 'src/types'
 import { formatDateTime } from 'src/utils'
+import { MessageType } from 'src/types'
 import styles from './ChatMessages.module.css'
 
 type Props = {
-  messages: ChatContentType[]
+  messages: MessageType[]
+  adminSender: string
+  userSender: string
 }
 
 export const ChatMessages = forwardRef<HTMLUListElement, Props>(
-  ({ messages }, ref) => {
+  ({ messages, adminSender, userSender }, ref) => {
     return (
       <ul className={styles.messagesContent} ref={ref}>
         {messages.map((msg, index) => (
           <li
             key={index}
-            className={msg.sender === SENDER_BOT ? styles.bot : styles.user}
+            className={msg?.sender === adminSender ? styles.admin : styles.user}
           >
-            {msg.sender === SENDER_BOT && (
+            {msg.sender === adminSender && (
               <span className={`${styles.arrow} ${styles.left}`} />
             )}
             <div
               className={
-                msg.sender === SENDER_BOT
-                  ? styles.botMessage
+                msg.sender === adminSender
+                  ? styles.adminMessage
                   : styles.userMessage
               }
             >
-              <Paragraph>{msg.text}</Paragraph>
-              <MessageTimeStatus
-                isSenderUser={msg.sender === SENDER_USER}
-                time={formatDateTime(msg.timestamp)}
-                messageStatus={msg.status}
-              />
+              <Paragraph>{msg?.text}</Paragraph>
+              <small className={styles.time}>
+                {formatDateTime(msg?.timestamp!)}
+              </small>
             </div>
-            {msg.sender === SENDER_USER && (
+            {msg.sender === userSender && (
               <span className={`${styles.arrow} ${styles.right}`} />
             )}
           </li>

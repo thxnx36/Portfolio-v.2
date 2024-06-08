@@ -1,0 +1,24 @@
+.loaderContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--bg-linear);
+  -webkit-mask: var(--loader-bg);
+  mask: var(--loader-bg);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}

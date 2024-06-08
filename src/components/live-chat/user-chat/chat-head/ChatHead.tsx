@@ -4,18 +4,23 @@ import { chatPhoto } from 'src/assets'
 import { Avatar, Paragraph } from 'src/shared'
 import { BsFullscreen } from 'react-icons/bs'
 import { BsFullscreenExit } from 'react-icons/bs'
+import { RxExit } from 'react-icons/rx'
 import styles from './ChatHead.module.css'
 
 type Props = {
   onToggleChat: () => void
   onToogleZoomWindow: () => void
+  onLeaveChat: () => void
   isZoomWindow: boolean
+  showExitButton: string
 }
 
 export const ChatHead: FC<Props> = ({
   onToggleChat,
   onToogleZoomWindow,
+  onLeaveChat,
   isZoomWindow,
+  showExitButton,
 }) => {
   return (
     <div className={styles.chatHeadContainer}>
@@ -30,6 +35,11 @@ export const ChatHead: FC<Props> = ({
         <button className={styles.zoomButton} onClick={onToogleZoomWindow}>
           {isZoomWindow ? <BsFullscreenExit /> : <BsFullscreen />}
         </button>
+        {showExitButton === 'true' ? (
+          <button onClick={onLeaveChat}>
+            <RxExit size={'1.2em'} />
+          </button>
+        ) : null}
         <button onClick={onToggleChat}>
           <IoClose size={'2em'} />
         </button>

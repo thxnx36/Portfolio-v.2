@@ -1,3 +1,5 @@
-import store from './store'
+import { useChatMessages } from './hooks'
+import store, { RootState } from './store'
 
-export { store }
+export { store, useChatMessages }
+export type { RootState }

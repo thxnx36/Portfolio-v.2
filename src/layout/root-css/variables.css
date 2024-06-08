@@ -12,7 +12,7 @@
   --bg-color-body-dark: #18191a;
   --bg-color-container: #242526;
   --bg-color-grey: #f0f0f6;
-  --bg-color-bot-message: #2e8b57;
+  --bg-color-admin-message: #2e8b57;
   --bg-color-user-message: #9370d8;
   --font-color-main: #767676;
   --bg-linear: linear-gradient(330deg, #ffb400 20%, #ff6d6d 100%);
@@ -24,6 +24,8 @@
     #ff512f 100%
   );
   --bg-overlay-color: rgba(0, 0, 0, 0.5);
+  --loader-bg: conic-gradient(#0000 10%, #000),
+    linear-gradient(#000 0 0) content-box;
 
   /* font size */
   --font-size-xs-mobile: 0.75em;

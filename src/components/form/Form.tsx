@@ -11,8 +11,8 @@ import {
   SocialList,
 } from 'src/shared'
 import { useTranslation } from 'react-i18next'
-import styles from './Form.module.css'
 import { VALIDATE_EMAIL } from 'src/constants'
+import styles from './Form.module.css'
 
 type Props = {
   onCloseModal: () => void

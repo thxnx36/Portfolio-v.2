@@ -6,6 +6,7 @@ import { UserInfoButton } from './user-info-button/UserInfoButton'
 import { BackButton } from './back-button/BackButton'
 import { ScrollTopButton } from './scroll-top'
 import { ToggleLang } from './toggle-lang'
+import { CloseButton } from './close-button'
 
 export {
   Button,
@@ -16,4 +17,5 @@ export {
   BackButton,
   ScrollTopButton,
   ToggleLang,
+  CloseButton,
 }
