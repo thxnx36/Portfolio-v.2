@@ -11,8 +11,8 @@ import {
   SocialList,
 } from 'src/shared'
 import { useTranslation } from 'react-i18next'
-import styles from './Form.module.css'
 import { VALIDATE_EMAIL } from 'src/constants'
+import styles from './Form.module.css'
 
 type Props = {
   onCloseModal: () => void
@@ -95,7 +95,8 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
           </div>
           <Button
             style={additionalButtonStyles}
-            text={isLoading ? t('button.LOADING') : t('button.SEND_MESSAGE')}
+            text={t('button.SEND_MESSAGE')}
+            isLoading={isLoading}
             type='submit'
             disabled={isDisabledButton || !captchaToken}
           />
