@@ -1,5 +1,4 @@
-import headerPhoto from './images/header-pic.png'
-// ./images/header-pic.png
+import headerPhoto from './images/header-pic.webp'
 import asx from './images/site-mock.webp'
 import tutiffy from './images/mock-site2.webp'
 import maven from './images/mock-site3.webp'

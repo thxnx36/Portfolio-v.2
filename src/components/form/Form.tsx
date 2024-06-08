@@ -95,7 +95,8 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
           </div>
           <Button
             style={additionalButtonStyles}
-            text={isLoading ? t('button.LOADING') : t('button.SEND_MESSAGE')}
+            text={t('button.SEND_MESSAGE')}
+            isLoading={isLoading}
             type='submit'
             disabled={isDisabledButton || !captchaToken}
           />

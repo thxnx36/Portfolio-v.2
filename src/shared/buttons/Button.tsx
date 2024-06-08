@@ -11,6 +11,7 @@ type Props = HTMLAttributes<HTMLElement> & {
   target?: '_blank' | '_top'
   type?: 'submit'
   disabled?: boolean
+  isLoading?: boolean
   onClick?: () => void
 }
 
@@ -23,13 +24,16 @@ export const Button: FC<Props> = ({
   type,
   target,
   href,
+  isLoading,
   onClick,
   ...props
 }) => {
   const innerContent = () => {
     return (
       <>
-        <span className={styles.text}>{text}</span>
+        <span className={styles.text}>
+          {isLoading ? <div className={styles.loader} /> : text}
+        </span>
         <span className={styles.icon}>{icon}</span>
       </>
     )
