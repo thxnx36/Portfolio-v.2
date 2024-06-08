@@ -23,6 +23,8 @@
     #f09819 51%,
     #ff512f 100%
   );
+  --bg-lianer-loader: no-repeat
+    linear-gradient(#000 calc(50% - 10px), #0000 0 calc(50% + 10px), #000 0);
   --bg-overlay-color: rgba(0, 0, 0, 0.5);
 
   /* font size */

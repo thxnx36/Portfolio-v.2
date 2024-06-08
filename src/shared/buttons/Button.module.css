@@ -39,3 +39,40 @@
   cursor: default;
   opacity: 0.5;
 }
+
+.loader {
+  width: 15px;
+  aspect-ratio: 1;
+  background:
+    var(--bg-lianer-loader) 0% 100%,
+    var(--bg-lianer-loader) 50% 100%,
+    var(--bg-lianer-loader) 100% 100%;
+  background-size: 20% calc(200% + 20px);
+  animation: animate 1s infinite linear;
+}
+@keyframes animate {
+  33% {
+    background-position:
+      0% 50%,
+      50% 100%,
+      100% 100%;
+  }
+  50% {
+    background-position:
+      0% 0%,
+      50% 50%,
+      100% 100%;
+  }
+  66% {
+    background-position:
+      0% 0%,
+      50% 0%,
+      100% 50%;
+  }
+  100% {
+    background-position:
+      0% 0%,
+      50% 0%,
+      100% 0%;
+  }
+}

@@ -1,10 +1,8 @@
 import type { FC } from 'react'
 import { NavListItemDesktop } from '../nav-list-item-desktop/NavListItemDesktop'
 import { Toolbar } from '../toolbar/Toolbar'
-import { useTranslation } from 'react-i18next'
 import { PiDevToLogoFill } from 'react-icons/pi'
-import { userPhoto } from 'src/assets'
-import { ToolTip, Avatar, BurgerButton } from 'src/shared'
+import { BurgerButton, UserInfoButton } from 'src/shared'
 import styles from './NavigationPanel.module.css'
 
 type Props = {
@@ -21,18 +19,9 @@ export const NavigationPanel: FC<Props> = ({
   handleSkills,
   handleMenu,
 }) => {
-  const { t } = useTranslation()
-
   return (
     <div className={styles.navContent}>
-      <ToolTip text={t('tooltip.MY_SKILLS')}>
-        <Avatar
-          className={styles.avatar}
-          withBorder
-          src={userPhoto}
-          onClick={handleSkills}
-        />
-      </ToolTip>
+      <UserInfoButton onClick={handleSkills} />
       <div className={styles.logo}>
         <PiDevToLogoFill size='1.5em' />
       </div>
