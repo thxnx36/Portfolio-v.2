@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import headerPhoto from './images/header-pic.webp'
-=======
-import headerPhoto from './images/header-pic.png'
-// ./images/header-pic.png
->>>>>>> 477aa4d (Connect to chat services)
 import asx from './images/site-mock.webp'
 import tutiffy from './images/mock-site2.webp'
 import maven from './images/mock-site3.webp'
