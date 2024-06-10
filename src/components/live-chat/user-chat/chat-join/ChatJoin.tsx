@@ -48,7 +48,8 @@ export const ChatJoin: FC<Props> = ({ setIsJoined, setEmail }) => {
           placeholder={t('input.placeholder.YOUR_EMAIL')}
         />
         <Button
-          text={isLoading ? t('button.LOADING') : t('button.JOIN')}
+          isLoading={isLoading}
+          text={t('button.JOIN')}
           disabled={isDisabledButton}
         />
         <small style={{ margin: 20 }}>(beta)</small>
