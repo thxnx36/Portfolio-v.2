@@ -1,22 +1,23 @@
 import { useState } from 'react'
-import { toast } from "react-toastify"
-import {
-    useChatMessages,
-  useDeleteUserByUserIdMutation,
-  useGetAllUsersQuery,
-  useLazyGetUserByIdQuery,
-} from 'src/app'
+import { toast } from 'react-toastify'
+import { useChatMessages } from 'src/app'
 import { UserType } from 'src/types'
+import { useFetchUsers } from '.'
 
-export const useManageUsers = () => {
+export const useManageUsersForAdmin = () => {
   const [selectedUser, setSelectedUser] = useState<UserType | null>(null)
 
   const { messages, setNewMessages, addNewMessage } = useChatMessages()
-  
-  const { data: usersList, refetch: refetchUsersList } = useGetAllUsersQuery()
-  const [getUserById, { data: user, isLoading, isFetching }] =
-    useLazyGetUserByIdQuery()
-  const [deleteUser] = useDeleteUserByUserIdMutation()
+
+  const {
+    user,
+    isLoading,
+    isFetching,
+    usersList,
+    deleteUser,
+    getUserById,
+    refetchUsersList,
+  } = useFetchUsers({ skipFetchUsersList: false })
 
   const onSelectUser = async (user: UserType) => {
     setSelectedUser(user)
@@ -30,10 +31,10 @@ export const useManageUsers = () => {
   const onDeleteUser = async (user: UserType) => {
     try {
       await deleteUser({ userId: user.userId! }).unwrap()
-      toast.success('User has been deleted')
       refetchUsersList()
       setNewMessages([])
       setSelectedUser(null)
+      toast.success('User has been deleted')
     } catch {
       toast.error('Failed to delete user')
     }
@@ -44,5 +45,20 @@ export const useManageUsers = () => {
   const refetchUsers = () => {
     onResetSelectedUser()
     refetchUsersList()
+  }
+
+  return {
+    selectedUser,
+    messages,
+    usersList,
+    user,
+    isLoading,
+    isFetching,
+    setNewMessages,
+    addNewMessage,
+    onSelectUser,
+    onDeleteUser,
+    refetchUsers,
+    onResetSelectedUser,
   }
 }

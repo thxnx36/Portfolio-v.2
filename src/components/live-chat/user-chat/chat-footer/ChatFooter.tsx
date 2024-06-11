@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, FormEvent } from 'react'
+import { ChangeEvent, FC, FormEvent, RefObject } from 'react'
 import { Textarea } from 'src/shared'
 import { IoSend } from 'react-icons/io5'
 import styles from './ChatFooter.module.css'
@@ -10,6 +10,7 @@ type Props = {
   onKeyDown: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void
   sendMessage: (e: FormEvent) => Promise<void>
   isDisabledButton: boolean
+  textareaRef: RefObject<HTMLTextAreaElement>
 }
 
 export const ChatFooter: FC<Props> = ({
@@ -19,13 +20,13 @@ export const ChatFooter: FC<Props> = ({
   sendMessage,
   placeholder,
   isDisabledButton,
+  textareaRef,
 }) => {
   return (
     <form onSubmit={sendMessage} className={styles.chatFooterWrap}>
       <Textarea
-        style={{
-          resize: 'none',
-        }}
+        ref={textareaRef}
+        style={{ overflow: 'hidden', resize: 'none', maxHeight: '70px' }}
         id='chat-textarea'
         value={value}
         onChange={onChange}

@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../store'
 import { setEmail, setJoined, setUserId, resetUserData } from '../slices'
+import { useCallback } from 'react'
 
 export const useJoinUser = () => {
   const dispatch = useDispatch()
@@ -11,7 +12,7 @@ export const useJoinUser = () => {
   const setUserEmail = (email: string) => dispatch(setEmail(email))
   const setJoinedUser = (join: boolean) => dispatch(setJoined(join))
   const setIdUser = (userId: string) => dispatch(setUserId(userId))
-  const onLeave = () => dispatch(resetUserData())
+  const onLeave = useCallback(() => dispatch(resetUserData()), [dispatch])
 
   return {
     email,

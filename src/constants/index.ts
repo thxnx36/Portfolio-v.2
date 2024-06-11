@@ -34,7 +34,7 @@ import {
 } from './live-chat'
 import { FORMAT_DATE, FORMAT_TIME } from './format-date'
 import { APP } from './version-app'
-import { VALIDATE_EMAIL } from './regex'
+import { VALIDATE_EMAIL, CHECK_URL } from './regex'
 
 export {
   RESPONSIVE,
@@ -70,6 +70,7 @@ export {
   TUTTIFY_URL,
   MAVEN_URL,
   CV_URL,
+  CHECK_URL,
   ENV_VARS,
   motionSection,
   motionNav,

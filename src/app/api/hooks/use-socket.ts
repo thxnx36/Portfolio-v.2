@@ -1,26 +1,41 @@
 import { useEffect, useRef } from 'react'
+import { getEnvVars } from 'src/utils'
 import { io, Socket } from 'socket.io-client'
+
+const env = getEnvVars()
 
 type UseSocketProps = {
   userName: string
+  connectSocket: boolean
 }
 
-export const useSocket = ({ userName }: UseSocketProps): Socket | null => {
+export const useSocket = ({
+  userName,
+  connectSocket,
+}: UseSocketProps): Socket | null => {
   const socketRef = useRef<Socket | null>(null)
 
   useEffect(() => {
-    const socket = io('http://localhost:3000')
-    socketRef.current = socket
+    if (connectSocket) {
+      const socket = io(env.apiServerUrl)
+      socketRef.current = socket
 
-    if (userName) {
-      socket.emit('join', { userName })
-    }
+      if (userName) {
+        socket.emit('join', { userName })
+      }
 
-    return () => {
-      socket.emit('leave', { userName })
-      socket.disconnect()
+      return () => {
+        socket.emit('leave', { userName })
+        socket.disconnect()
+      }
+    } else {
+      if (socketRef.current) {
+        socketRef.current.emit('leave', { userName })
+        socketRef.current.disconnect()
+        socketRef.current = null
+      }
     }
-  }, [userName])
+  }, [userName, connectSocket])
 
   return socketRef.current
 }

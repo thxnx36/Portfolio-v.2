@@ -25,9 +25,6 @@ export const ChatJoin = () => {
           {t('chat.JOIN_TO_CHAT')}
         </Title>
         <Input
-          id='join-input-email'
-          autoComplete='email'
-          type='email'
           {...register('email', {
             required: t('form.error.ENTER_EMAIL'),
             pattern: {
@@ -35,6 +32,9 @@ export const ChatJoin = () => {
               message: t('form.error.EMAIL_NOT_VALID'),
             },
           })}
+          id='join-input-email'
+          autoComplete='email'
+          type='email'
           onChange={handleChange('email')}
           error={!!errors.email}
           errorText={errors.email?.message}
@@ -45,7 +45,7 @@ export const ChatJoin = () => {
           text={t('button.JOIN')}
           disabled={isDisabledButton}
         />
-        <small style={{ margin: 20 }}>(beta)</small>
+        <small style={{ margin: 20 }}>beta</small>
       </div>
     </form>
   )
