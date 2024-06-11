@@ -5,7 +5,7 @@ import { ChangeEvent, FC, FormEvent } from 'react'
 type Props = {
   textAreaValue: string
   onChangeMessage: (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: ChangeEvent<HTMLTextAreaElement>,
   ) => void
   onSendMessage: (e: FormEvent) => Promise<void>
 }

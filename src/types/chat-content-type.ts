@@ -15,8 +15,8 @@ export type MessageType = {
 
 export type UserType = {
   email: string
-  user: { messages: MessageType[] }
-  userId?: string
+  messages: MessageType[]
+  userId: string
 }
 
 export type UsersListType = {

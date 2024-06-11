@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
-import { store } from './app'
+import { persist, store } from './app'
 import { createRoot } from 'react-dom/client'
+import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from './providers'
 import { Routes } from './routes'
@@ -15,11 +16,13 @@ if (container) {
   root.render(
     <StrictMode>
       <Provider store={store}>
-        <ThemeProvider>
-          <Layout>
-            <Routes />
-          </Layout>
-        </ThemeProvider>
+        <PersistGate persistor={persist}>
+          <ThemeProvider>
+            <Layout>
+              <Routes />
+            </Layout>
+          </ThemeProvider>
+        </PersistGate>
       </Provider>
     </StrictMode>,
   )

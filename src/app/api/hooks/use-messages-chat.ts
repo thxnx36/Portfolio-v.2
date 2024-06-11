@@ -23,6 +23,15 @@ export const sendTelegramMessagelApi = createApi({
       },
     }),
 
+    createUser: build.mutation<UserType, { email: string }>({
+      query({ email }) {
+        return {
+          url: `/${email}/create`,
+          method: 'post',
+        }
+      },
+    }),
+
     getAllUsers: build.query<UsersListType, void>({
       query() {
         return {
@@ -32,20 +41,20 @@ export const sendTelegramMessagelApi = createApi({
       },
     }),
 
-    deleteUserByEmail: build.mutation<void, { email: string }>({
-      query({ email }) {
+    deleteUserByUserId: build.mutation<void, { userId: string }>({
+      query({ userId }) {
         return {
-          url: `/${email}/delete`,
+          url: `/${userId}/delete`,
           method: 'delete',
         }
       },
     }),
 
-    createUser: build.mutation<void, { email: string }>({
-      query({ email }) {
+    getUserById: build.query<UserType, { userId: string }>({
+      query({ userId }) {
         return {
-          url: `/${email}/create`,
-          method: 'post',
+          url: `/${userId}`,
+          method: 'get',
         }
       },
     }),
@@ -76,7 +85,9 @@ export const {
   useGetMessagesQuery,
   useLazyGetMessagesQuery,
   useAddMessageMutation,
-  useDeleteUserByEmailMutation,
+  useDeleteUserByUserIdMutation,
   useGetAllUsersQuery,
   useCreateUserMutation,
+  useGetUserByIdQuery,
+  useLazyGetUserByIdQuery,
 } = sendTelegramMessagelApi

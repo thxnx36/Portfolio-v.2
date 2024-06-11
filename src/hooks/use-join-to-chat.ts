@@ -1,4 +1,4 @@
-import { useCreateUserMutation } from 'src/app'
+import { useCreateUserMutation, useJoinUser } from 'src/app'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { toast } from 'react-toastify'
 
@@ -11,16 +11,11 @@ const INITIAL_STATE: FormEmail = {
 }
 
 type Props = {
-  setIsJoined: (value: string) => void
-  setEmail: (value: string) => void
   infoMessage: string
 }
 
-export const useJoinToChat = ({
-  infoMessage,
-  setIsJoined,
-  setEmail,
-}: Props) => {
+export const useJoinToChat = ({ infoMessage }: Props) => {
+  const { setUserEmail, setJoinedUser, setIdUser } = useJoinUser()
   const [createUser, { isLoading }] = useCreateUserMutation()
 
   const {
@@ -43,12 +38,16 @@ export const useJoinToChat = ({
 
   const onSubmit: SubmitHandler<FormEmail> = async ({ email }: FormEmail) => {
     try {
-      await createUser({ email }).unwrap()
-      setIsJoined('true')
-      setEmail(email)
+      const createdUser = await createUser({ email }).unwrap()
+      if (createdUser) {
+        setJoinedUser(true)
+        setUserEmail(createdUser?.email)
+        setIdUser(createdUser?.userId)
+      }
     } catch {
       toast.info(infoMessage)
-      setIsJoined('false')
+      setJoinedUser(false)
+      setUserEmail('')
     }
   }
 

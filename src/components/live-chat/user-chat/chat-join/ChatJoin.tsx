@@ -2,15 +2,9 @@ import { Button, Input, Title } from 'src/shared'
 import { useTranslation } from 'react-i18next'
 import { VALIDATE_EMAIL } from 'src/constants'
 import { useJoinToChat } from 'src/hooks'
-import { FC } from 'react'
 import styles from './ChatJoin.module.css'
 
-type Props = {
-  setIsJoined: (value: string) => void
-  setEmail: (value: string) => void
-}
-
-export const ChatJoin: FC<Props> = ({ setIsJoined, setEmail }) => {
+export const ChatJoin = () => {
   const { t } = useTranslation()
   const {
     register,
@@ -21,8 +15,6 @@ export const ChatJoin: FC<Props> = ({ setIsJoined, setEmail }) => {
     isDisabledButton,
     onSubmit,
   } = useJoinToChat({
-    setIsJoined,
-    setEmail,
     infoMessage: t('toast.info.FIXING'),
   })
 
@@ -33,7 +25,8 @@ export const ChatJoin: FC<Props> = ({ setIsJoined, setEmail }) => {
           {t('chat.JOIN_TO_CHAT')}
         </Title>
         <Input
-          id='form-input-email'
+          id='join-input-email'
+          autoComplete='email'
           type='email'
           {...register('email', {
             required: t('form.error.ENTER_EMAIL'),

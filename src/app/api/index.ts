@@ -5,10 +5,12 @@ import {
   useSendTelegramMessageMutation,
   useGetMessagesQuery,
   useAddMessageMutation,
-  useDeleteUserByEmailMutation,
+  useDeleteUserByUserIdMutation,
   useGetAllUsersQuery,
   useLazyGetMessagesQuery,
   useCreateUserMutation,
+  useGetUserByIdQuery,
+  useLazyGetUserByIdQuery,
   useSocket,
 } from './hooks'
 
@@ -20,8 +22,10 @@ export {
   useSendTelegramMessageMutation,
   useGetMessagesQuery,
   useAddMessageMutation,
-  useDeleteUserByEmailMutation,
+  useDeleteUserByUserIdMutation,
   useGetAllUsersQuery,
   useCreateUserMutation,
+  useGetUserByIdQuery,
+  useLazyGetUserByIdQuery,
   useLazyGetMessagesQuery
 }

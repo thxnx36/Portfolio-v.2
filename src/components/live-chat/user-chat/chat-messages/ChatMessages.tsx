@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, useMemo } from 'react'
 import { Paragraph } from 'src/shared'
 import { formatDateTime } from 'src/utils'
 import { MessageType } from 'src/types'
@@ -12,11 +12,25 @@ type Props = {
 
 export const ChatMessages = forwardRef<HTMLUListElement, Props>(
   ({ messages, adminSender, userSender }, ref) => {
+    const filteredMessages = useMemo(() => {
+      return messages.filter(
+        msg => msg.receiver === userSender || msg.sender === userSender,
+      )
+    }, [messages, userSender])
+
     return (
       <ul className={styles.messagesContent} ref={ref}>
-        {messages.map((msg, index) => (
+        <li className={styles.admin}>
+          <span className={`${styles.arrow} ${styles.left}`} />
+          <div className={styles.adminMessage}>
+            <Paragraph>😎🤙🤟</Paragraph>
+            <small className={styles.time}>{formatDateTime(Date.now())}</small>
+          </div>
+        </li>
+
+        {filteredMessages?.map(msg => (
           <li
-            key={index}
+            key={msg?.messageId}
             className={msg?.sender === adminSender ? styles.admin : styles.user}
           >
             {msg.sender === adminSender && (
@@ -24,7 +38,7 @@ export const ChatMessages = forwardRef<HTMLUListElement, Props>(
             )}
             <div
               className={
-                msg.sender === adminSender
+                msg?.sender === adminSender
                   ? styles.adminMessage
                   : styles.userMessage
               }

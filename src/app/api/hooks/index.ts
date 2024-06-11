@@ -4,10 +4,12 @@ import {
   useSendTelegramMessageMutation,
   useGetMessagesQuery,
   useAddMessageMutation,
-  useDeleteUserByEmailMutation,
+  useDeleteUserByUserIdMutation,
   useGetAllUsersQuery,
   useLazyGetMessagesQuery,
   useCreateUserMutation,
+  useGetUserByIdQuery,
+  useLazyGetUserByIdQuery,
 } from './use-messages-chat'
 import { useSocket } from './use-socket'
 
@@ -19,8 +21,10 @@ export {
   useSendTelegramMessageMutation,
   useGetMessagesQuery,
   useAddMessageMutation,
-  useDeleteUserByEmailMutation,
+  useDeleteUserByUserIdMutation,
   useGetAllUsersQuery,
   useCreateUserMutation,
   useLazyGetMessagesQuery,
+  useGetUserByIdQuery,
+  useLazyGetUserByIdQuery,
 }

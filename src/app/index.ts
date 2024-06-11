@@ -5,16 +5,19 @@ import {
   useSendTelegramMessageMutation,
   useGetMessagesQuery,
   useAddMessageMutation,
-  useDeleteUserByEmailMutation,
+  useDeleteUserByUserIdMutation,
   useGetAllUsersQuery,
   useLazyGetMessagesQuery,
+  useGetUserByIdQuery,
+  useLazyGetUserByIdQuery,
   useCreateUserMutation,
   useSocket,
 } from './api'
-import { store, useChatMessages } from './store'
+import { store, persist, useChatMessages, useJoinUser } from './store'
 
 export {
   store,
+  persist,
   sendEmailApi,
   sendTelegramMessagelApi,
   useSocket,
@@ -22,9 +25,12 @@ export {
   useSendTelegramMessageMutation,
   useGetMessagesQuery,
   useAddMessageMutation,
-  useDeleteUserByEmailMutation,
+  useDeleteUserByUserIdMutation,
   useGetAllUsersQuery,
   useLazyGetMessagesQuery,
   useCreateUserMutation,
+  useGetUserByIdQuery,
+  useLazyGetUserByIdQuery,
   useChatMessages,
+  useJoinUser,
 }
