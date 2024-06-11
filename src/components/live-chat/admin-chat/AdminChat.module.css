@@ -1,0 +1,13 @@
+.inner {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}

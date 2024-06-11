@@ -7,6 +7,7 @@ import {
   Switcher,
   CollapseButton,
   UserInfoButton,
+  CloseButton,
 } from './buttons'
 import { CardsContainer } from './cards-container'
 import { Container, MContainer } from './container'
@@ -31,11 +32,13 @@ import { ToolTip } from './tool-tip'
 import { ReCaptcha } from './re-captcha'
 import { SEO } from './seo'
 import { ToggleLang } from './buttons/toggle-lang'
+import { Loader } from "./loader"
 
 export {
   Avatar,
   ToggleLang,
   Button,
+  CloseButton,
   BurgerButton,
   Switcher,
   CollapseButton,
@@ -67,4 +70,5 @@ export {
   ReCaptcha,
   SEO,
   MContainer,
+  Loader,
 }

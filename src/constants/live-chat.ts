@@ -1,8 +1,8 @@
 export const OPEN = 'open'
 export const CLOSE = 'close'
 export const KEY = 'chat'
-export const SENDER_USER = 'user'
-export const SENDER_BOT = 'bot'
+export const USER = 'user'
+export const ADMIN = 'admin'
 export const HEIGHT_INPUT = 32
 export const MESSAGE_LENGTH = 75
 

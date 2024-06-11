@@ -46,12 +46,12 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <Title tag='h2'>{t('form.TITLE')}</Title>
           <Input
-            id='form-input-name'
-            type='text'
             {...register('nameSender', {
               required: true,
               minLength: 3,
             })}
+            id='form-input-name'
+            type='text'
             onChange={handleChange('nameSender')}
             error={!!errors.nameSender}
             errorText={
@@ -62,8 +62,6 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
             placeholder={t('input.placeholder.YOUR_NAME')}
           />
           <Input
-            id='form-input-email'
-            type='email'
             {...register('from', {
               required: t('form.error.ENTER_EMAIL'),
               pattern: {
@@ -71,16 +69,18 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
                 message: t('form.error.EMAIL_NOT_VALID'),
               },
             })}
+            id='form-input-email'
+            type='email'
             onChange={handleChange('from')}
             error={!!errors.from}
             errorText={errors.from?.message}
             placeholder={t('input.placeholder.YOUR_EMAIL')}
           />
           <Textarea
-            id='form-textarea-message'
             {...register('text', { required: true, minLength: 10 })}
             rows={7}
             cols={50}
+            id='form-textarea-message'
             onChange={handleChange('text')}
             error={!!errors.text}
             errorText={

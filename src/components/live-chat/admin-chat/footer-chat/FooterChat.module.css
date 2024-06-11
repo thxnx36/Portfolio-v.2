@@ -1,0 +1,17 @@
+.footerChat {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footerChat > div {
+  margin: 0;
+}
+
+.textArea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  padding: 10px;
+}

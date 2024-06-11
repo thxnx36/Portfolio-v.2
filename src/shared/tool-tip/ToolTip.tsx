@@ -1,4 +1,4 @@
-import type { FC, HTMLAttributes, ReactNode } from 'react';
+import type { FC, HTMLAttributes, ReactNode } from 'react'
 import styles from './ToolTip.module.css'
 
 type Props = HTMLAttributes<HTMLElement> & {

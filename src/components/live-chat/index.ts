@@ -1,3 +1,4 @@
-import { LiveChat } from './LiveChat'
+import { AdminChat } from './admin-chat'
+import { UserChat } from './user-chat'
 
-export { LiveChat }
+export { UserChat, AdminChat }

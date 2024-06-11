@@ -1,0 +1,43 @@
+.userList {
+  max-width: 350px;
+  width: 100%;
+  padding: 10px;
+  overflow: auto;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item {
+  padding: 5px;
+  color: var(--text-color);
+  margin: 0 0 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.active {
+  background: var(--bg-linear);
+  color: var(--white-color);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+.email {
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.controlButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

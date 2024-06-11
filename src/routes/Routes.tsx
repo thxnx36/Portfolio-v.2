@@ -10,6 +10,7 @@ import { MainPage } from 'src/pages'
 const PortfolioPage = lazy(() => import('../pages/PortfolioPage'))
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'))
 const AboutMePage = lazy(() => import('../pages/AboutMePage'))
+const AdminChatPage = lazy(() => import('../pages/AdminChatPage'))
 
 export const Routes = () => {
   return (
@@ -20,6 +21,7 @@ export const Routes = () => {
           <Route path={ROUTES.project} element={<PortfolioPage />} />
           <Route path={ROUTES.notFound} element={<NotFoundPage />} />
           <Route path={ROUTES.aboutMe} element={<AboutMePage />} />
+          <Route path={ROUTES.admin} element={<AdminChatPage />} />
         </ReactDOMRoutes>
       </Suspense>
     </BrowserRouter>
