@@ -33,6 +33,7 @@ import { ReCaptcha } from './re-captcha'
 import { SEO } from './seo'
 import { ToggleLang } from './buttons/toggle-lang'
 import { Loader } from "./loader"
+import { MarqueeBackground } from "./marquee-background"
 
 export {
   Avatar,
@@ -71,4 +72,5 @@ export {
   SEO,
   MContainer,
   Loader,
+  MarqueeBackground,
 }
