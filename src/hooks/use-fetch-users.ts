@@ -9,41 +9,45 @@ type Props = {
   userId?: string
   skipFetchUsersList: boolean
 }
+
 export const useFetchUsers = ({ userId, skipFetchUsersList }: Props) => {
   const [deleteUser, { isLoading: isLoadingDelete }] =
     useDeleteUserByUserIdMutation()
+
+  const [
+    getUserById,
+    {
+      data: userById,
+      isLoading: isLoadingUserById,
+      isFetching: isFetchingUserById,
+    },
+  ] = useLazyGetUserByIdQuery()
 
   const { data: usersList, refetch: refetchUsersList } = useGetAllUsersQuery(
     undefined,
     { skip: skipFetchUsersList },
   )
 
-  const [getUserById, { data: user, isLoading, isFetching }] =
-    useLazyGetUserByIdQuery()
-
   const {
     data: userMessages,
-    isLoading: isLoadengMessages,
-    isFetching: isFetchingNessages,
+    isLoading: isLoadingMessages,
+    isFetching: isFetchingMessages,
     isError: isErrorMessages,
-    refetch,
-  } = useGetUserByIdQuery(
-    { userId: userId as string },
-    { skip: !userId?.length },
-  )
+    refetch: refetchUserById,
+  } = useGetUserByIdQuery({ userId: userId! }, { skip: !userId?.length })
 
   return {
     userMessages,
-    isLoadengMessages,
-    isFetchingNessages,
+    isLoadingMessages,
+    isFetchingMessages,
     isErrorMessages,
     isLoadingDelete,
-    user,
-    isLoading,
-    isFetching,
+    userById,
+    isLoadingUserById,
+    isFetchingUserById,
     usersList,
     deleteUser,
-    refetch,
+    refetchUserById,
     getUserById,
     refetchUsersList,
   }

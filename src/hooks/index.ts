@@ -11,10 +11,9 @@ import { usePortfolioList } from './use-portfolio-list'
 import { useEducationList } from './use-education-list'
 import { useWorkList } from './use-work-list'
 import { useGoBack } from './use-go-back'
-import { useJoinToChat } from "./use-join-to-chat"
-import { useManageUsersForAdmin } from "./use-manage-users-for-admin"
-import { useFetchUsers } from "./use-fetch-user"
-import { useManageUser } from "./use-manage-user"
+import { useJoinToChat } from './use-join-to-chat'
+import { useFetchUsers } from './use-fetch-users'
+import { useChatManagement } from './use-chat-management'
 
 export {
   useGetProjectById,
@@ -31,7 +30,6 @@ export {
   useWorkList,
   useGoBack,
   useJoinToChat,
-  useManageUsersForAdmin,
+  useChatManagement,
   useFetchUsers,
-  useManageUser,
 }

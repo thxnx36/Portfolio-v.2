@@ -13,7 +13,7 @@ import {
   useCreateUserMutation,
   useSocket,
 } from './api'
-import { store, persist, useChatMessages, useJoinUser } from './store'
+import { store, persist, useChatMessages, useAuthUser } from './store'
 
 export {
   store,
@@ -32,5 +32,5 @@ export {
   useGetUserByIdQuery,
   useLazyGetUserByIdQuery,
   useChatMessages,
-  useJoinUser,
+  useAuthUser,
 }

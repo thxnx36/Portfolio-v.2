@@ -1,5 +1,4 @@
-import { useChatMessages, useJoinUser } from './hooks'
-import store, { RootState, persist } from './store'
+import { useChatMessages, useAuthUser } from './hooks'
+import { persist, store } from './store'
 
-export { store, persist, useChatMessages, useJoinUser }
-export type { RootState }
+export { store, persist, useChatMessages, useAuthUser }

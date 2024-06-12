@@ -12,7 +12,7 @@ const initialState: Props = {
   userId: '',
 }
 
-const joinUserSlice = createSlice({
+const chatAuthUserSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
@@ -33,6 +33,7 @@ const joinUserSlice = createSlice({
   },
 })
 
-export const { setJoined, setEmail, setUserId, resetUserData } = joinUserSlice.actions
+export const { setJoined, setEmail, setUserId, resetUserData } =
+chatAuthUserSlice.actions
 
-export default joinUserSlice.reducer
+export default chatAuthUserSlice.reducer

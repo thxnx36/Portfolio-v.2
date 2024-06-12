@@ -1,19 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { persistReducer, persistStore } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import authUserReducer from './slices/chat-auth-user-slice'
 import { sendEmailApi, sendTelegramMessagelApi } from '../api'
-import joinUserReducer from './slices/chat-user-slice'
 import { chatMessagesReducer } from './slices'
 
 const persistConfig = {
   key: 'userChatAuth',
   storage,
 }
-const persistedJoinUserReducer = persistReducer(persistConfig, joinUserReducer)
+const persistedAuthUserReducer = persistReducer(persistConfig, authUserReducer)
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    userAuth: persistedJoinUserReducer,
+    userAuth: persistedAuthUserReducer,
     messages: chatMessagesReducer,
     [sendEmailApi.reducerPath]: sendEmailApi.reducer,
     [sendTelegramMessagelApi.reducerPath]: sendTelegramMessagelApi.reducer,
@@ -27,6 +27,3 @@ const store = configureStore({
 })
 
 export const persist = persistStore(store)
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
-export default store

@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '../store'
+import { RootState } from 'src/types'
 import { setEmail, setJoined, setUserId, resetUserData } from '../slices'
 import { useCallback } from 'react'
 
-export const useJoinUser = () => {
+export const useAuthUser = () => {
   const dispatch = useDispatch()
   const email = useSelector((state: RootState) => state.userAuth.email)
   const isJoined = useSelector((state: RootState) => state.userAuth.joined)

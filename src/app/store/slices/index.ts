@@ -8,7 +8,7 @@ import {
   setJoined,
   setUserId,
   resetUserData,
-} from './chat-user-slice'
+} from './chat-auth-user-slice'
 
 export {
   chatMessagesReducer,

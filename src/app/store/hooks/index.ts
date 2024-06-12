@@ -1,4 +1,4 @@
 import { useChatMessages } from './use-chat-messages'
-import { useJoinUser } from "./use-join-user"
+import { useAuthUser } from "./use-auth-user"
 
-export { useChatMessages, useJoinUser }
+export { useChatMessages, useAuthUser }

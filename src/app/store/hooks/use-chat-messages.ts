@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '../store'
 import { addMessage, setMessages } from '../slices'
-import { MessageType } from 'src/types'
+import { MessageType, RootState } from 'src/types'
 
 export const useChatMessages = () => {
   const dispatch = useDispatch()

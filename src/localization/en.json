@@ -17,9 +17,10 @@
     "THERE_WILL_BE_CHAT": "There's will be an online chat room here soon, but it's still in development",
     "BELIEVE": "do it! I believe in you",
     "JOIN_TO_CHAT": "Hey! Let's join to chat",
+    "ONLINE_STATUS": "online",
+    "NAME": "Vlad",
     "setting_buttons": {
-      "DELETE_CHAT": "delete and leave",
-      "EXIT": "disconnect",
+      "DELETE_CHAT": "disconnect",
       "RESIZE_WINDOW": "resize window"
     }
   },

@@ -1,4 +1,4 @@
-import { useCreateUserMutation, useJoinUser } from 'src/app'
+import { useCreateUserMutation, useAuthUser } from 'src/app'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { toast } from 'react-toastify'
 
@@ -15,7 +15,7 @@ type Props = {
 }
 
 export const useJoinToChat = ({ infoMessage }: Props) => {
-  const { setUserEmail, setJoinedUser, setIdUser } = useJoinUser()
+  const { setUserEmail, setJoinedUser, setIdUser } = useAuthUser()
   const [createUser, { isLoading }] = useCreateUserMutation()
 
   const {
