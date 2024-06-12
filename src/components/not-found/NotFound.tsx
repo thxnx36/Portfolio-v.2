@@ -4,6 +4,7 @@ import { COLOR_YELLOW, ROUTES } from 'src/constants'
 import { Section, Title, Button, SEO } from 'src/shared'
 import { useGoBack } from 'src/hooks'
 import styles from './NotFound.module.css'
+import { Icon } from './Icon'
 
 export const NotFound = () => {
   const { t } = useTranslation()
@@ -12,7 +13,12 @@ export const NotFound = () => {
   return (
     <Section style={{ margin: 0 }}>
       <div className={styles.notFoundContainer}>
-        <TbError404 color={COLOR_YELLOW} size={'5em'} />
+        <div className={styles.iconsWrap}>
+          <TbError404 color={COLOR_YELLOW} size={'10em'} />
+          <div className={styles.icon}>
+            <Icon />
+          </div>
+        </div>
         <Title tag='h1'>{t('pages.notFound.NOT_FOUND')}</Title>
         <Title size='sm' tag='h4'>
           {t('pages.notFound.RETURN_HOME')}

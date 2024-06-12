@@ -71,5 +71,5 @@ const additionalContainerStyles: CSSProperties = {
   position: 'sticky',
   zIndex: 99,
   top: 0,
-  marginBottom: '10px',
+  margin: '10px 0',
 }
