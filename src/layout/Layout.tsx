@@ -17,10 +17,10 @@ type Props = {
 export const Layout: FC<Props> = ({ children }) => {
   useSpinner()
   return (
-    <div className={styles.app}>
-      <div className={styles.appWrapper}>{children}</div>
+    <>
+      <div className={styles.app}>{children}</div>
       <SpeedInsights />
       <Toast />
-    </div>
+    </>
   )
 }
