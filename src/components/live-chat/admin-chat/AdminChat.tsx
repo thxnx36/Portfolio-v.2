@@ -8,7 +8,7 @@ import { ChatWindow } from './chat-window/ChatWindow'
 import { FooterChat } from './footer-chat/FooterChat'
 import { ADMIN } from 'src/constants'
 import { AuthAdmin } from './auth-admin/AuthAdmin'
-import { useManageUsersForAdmin } from 'src/hooks'
+import { useChatManagement } from 'src/hooks'
 import { v4 as uuidv4 } from 'uuid'
 import styles from './AdminChat.module.css'
 
@@ -20,16 +20,16 @@ export const AdminChat = () => {
     selectedUser,
     messages,
     usersList,
-    user,
-    isLoading,
-    isFetching,
+    userById,
+    isLoadingUserById,
+    isFetchingUserById,
     setNewMessages,
     addNewMessage,
     onSelectUser,
     onDeleteUser,
     refetchUsers,
     onResetSelectedUser,
-  } = useManageUsersForAdmin()
+  } = useChatManagement({ skipFetchUsersList: false })
 
   const [content, setContent] = useState<string>('')
   const [password, setPassword] = useState<string>('')
@@ -38,9 +38,9 @@ export const AdminChat = () => {
   const socket = useSocket({ userName: ADMIN, connectSocket: isAuth })
 
   useEffect(() => {
-    if (user?.messages) setNewMessages(user?.messages)
+    if (userById?.messages) setNewMessages(userById?.messages)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user])
+  }, [userById])
 
   useEffect(() => {
     if (socket) {
@@ -85,6 +85,8 @@ export const AdminChat = () => {
     setContent('')
   }
 
+  const isLoading = isLoadingUserById || isFetchingUserById
+
   return (
     <Section>
       {isAuth ? (
@@ -99,7 +101,7 @@ export const AdminChat = () => {
               refetchUsersList={refetchUsers}
             />
             <div className={styles.chat}>
-              {isLoading || isFetching ? (
+              {isLoading ? (
                 <Loader />
               ) : (
                 <>

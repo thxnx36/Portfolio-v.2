@@ -4,12 +4,12 @@ import { Avatar, Paragraph } from 'src/shared'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'src/constants'
 import { ButtonsWrapper } from './buttons-wrapper/ButtonsWrapper'
+import { useTranslation } from 'react-i18next'
 import styles from './ChatHead.module.css'
 
 type Props = {
   onToggleChat: () => void
   onToogleZoomWindow: () => void
-  onLeaveChat: () => void
   onDeleteChat: () => Promise<void>
   isJoinedUser: boolean
 }
@@ -17,10 +17,10 @@ type Props = {
 export const ChatHead: FC<Props> = ({
   onToggleChat,
   onToogleZoomWindow,
-  onLeaveChat,
   onDeleteChat,
   isJoinedUser,
 }) => {
+  const { t } = useTranslation()
   return (
     <div className={styles.chatHeadContainer}>
       <div className={styles.contactWrap}>
@@ -28,14 +28,15 @@ export const ChatHead: FC<Props> = ({
           <Avatar className={styles.avatar} src={chatPhoto} />
         </Link>
         <div className={styles.contact}>
-          <Paragraph>Vlad</Paragraph>
-          <Paragraph className={styles.status}>online</Paragraph>
+          <Paragraph>{t('chat.NAME')}</Paragraph>
+          <Paragraph className={styles.status}>
+            {t('chat.ONLINE_STATUS')}
+          </Paragraph>
         </div>
       </div>
       <ButtonsWrapper
         onToggleChat={onToggleChat}
         onToogleZoomWindow={onToogleZoomWindow}
-        onLeaveChat={onLeaveChat}
         onDeleteChat={onDeleteChat}
         isJoinedUser={isJoinedUser}
       />

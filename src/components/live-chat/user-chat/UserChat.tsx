@@ -5,10 +5,10 @@ import { ChatJoin } from './chat-join/ChatJoin'
 import { useTranslation } from 'react-i18next'
 import { ChatMessages } from './chat-messages/ChatMessages'
 import { IoChatbubbles } from 'react-icons/io5'
-import { useSocket } from 'src/app'
+import { useAuthUser, useSocket } from 'src/app'
 import { soundSendMessage, soundResponseMessage } from 'src/assets'
 import { KEY, CLOSE, OPEN, MESSAGE_LENGTH, ADMIN } from 'src/constants'
-import { useLocalStorage, useManageUser } from 'src/hooks'
+import { useLocalStorage, useChatManagement } from 'src/hooks'
 import { Button, Loader } from 'src/shared'
 import { playSoundsInChat } from 'src/utils'
 import { MessageType } from 'src/types'
@@ -23,21 +23,21 @@ export const UserChat = () => {
 
   const { t } = useTranslation()
 
+  const { email, userId, isJoined } = useAuthUser()
+
   const {
-    onLeave,
-    setNewMessages,
-    addNewMessage,
-    refetch,
-    onDeleteChat,
-    email,
-    isJoined,
     messages,
     userMessages,
-    isLoadengMessages,
-    isFetchingNessages,
+    isLoadingMessages,
+    isFetchingMessages,
     isErrorMessages,
     isLoadingDelete,
-  } = useManageUser()
+    onLeave,
+    onDeleteChat,
+    setNewMessages,
+    addNewMessage,
+    refetchUserById,
+  } = useChatManagement({ skipFetchUsersList: true, userId })
 
   const [openChat, setOpenChat] = useLocalStorage(KEY, CLOSE)
   const [textareaContent, setTextareaContent] = useState<string>('')
@@ -52,8 +52,8 @@ export const UserChat = () => {
   })
 
   useEffect(() => {
-    if (email) refetch()
-  }, [email, refetch])
+    if (email) refetchUserById()
+  }, [email, refetchUserById])
 
   useEffect(() => {
     if (isErrorMessages) onLeave()
@@ -140,7 +140,7 @@ export const UserChat = () => {
   }
 
   const isDisabledButton = !textareaContent.trim()
-  const isLoading = isLoadengMessages || isFetchingNessages || isLoadingDelete
+  const isLoading = isLoadingMessages || isFetchingMessages || isLoadingDelete
 
   return (
     <>
@@ -159,7 +159,6 @@ export const UserChat = () => {
           }
         >
           <ChatHead
-            onLeaveChat={onLeave}
             onToggleChat={onToggleChat}
             onDeleteChat={onDeleteChat}
             onToogleZoomWindow={onToogleZoomWindow}
