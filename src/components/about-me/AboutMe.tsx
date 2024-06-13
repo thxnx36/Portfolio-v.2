@@ -1,6 +1,5 @@
 import { technologies } from 'src/db'
 import { useTranslation } from 'react-i18next'
-import { APP_URL, ROUTES } from 'src/constants'
 import {
   Section,
   PageWrapper,
@@ -65,14 +64,7 @@ export const AboutMe = () => {
           </article>
         </article>
       </PageWrapper>
-      <SEO
-        tabTitle={t('pages.aboutMe.seo.TITLE')}
-        metaDescriptionContent='About me, my skills, hobbies, and work experience'
-        metaOgTitleContent='My short life story'
-        metaOgDescriptionContent='I specialize in creating web applications using React, JS, TS, HTML, CSS'
-        metaOgURLContent={`${APP_URL}${ROUTES.aboutMe}`}
-        metaOgImageContent=''
-      />
+      <SEO tabTitle={t('pages.aboutMe.seo.TITLE')} />
     </Section>
   )
 }
