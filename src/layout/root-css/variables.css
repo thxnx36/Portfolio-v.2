@@ -51,7 +51,7 @@
   --border-radius: 5px;
 
   /* blur */
-  --blur-overlay: blur(5px);
+  --blur-overlay: blur(10px);
 
   /* box shadow */
   --shadow-light: 0 10px 10px #0505060d;

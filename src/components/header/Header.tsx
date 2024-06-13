@@ -33,7 +33,11 @@ export const Header = () => {
       </Container>
 
       {isOpenModal && (
-        <Modal isOpen={isOpenModal} onClose={handleModal}>
+        <Modal
+          isOpen={isOpenModal}
+          onClose={handleModal}
+          marqueeText='get in touch'
+        >
           <Form onCloseModal={handleModal} />
         </Modal>
       )}

@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { persistReducer, persistStore } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import authUserReducer from './slices/chat-auth-user-slice'
-import { sendEmailApi, sendTelegramMessagelApi } from '../api'
+import { sendEmailApi, liveChatApi } from '../api'
 import { chatMessagesReducer } from './slices'
 
 const persistConfig = {
@@ -16,14 +16,14 @@ export const store = configureStore({
     userAuth: persistedAuthUserReducer,
     messages: chatMessagesReducer,
     [sendEmailApi.reducerPath]: sendEmailApi.reducer,
-    [sendTelegramMessagelApi.reducerPath]: sendTelegramMessagelApi.reducer,
+    [liveChatApi.reducerPath]: liveChatApi.reducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: ['persist/PERSIST'],
       },
-    }).concat([sendEmailApi.middleware, sendTelegramMessagelApi.middleware]),
+    }).concat([sendEmailApi.middleware, liveChatApi.middleware]),
 })
 
 export const persist = persistStore(store)

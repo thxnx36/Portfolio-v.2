@@ -5,8 +5,8 @@ import { AddMessagePayload, UserType, UsersListType } from 'src/types'
 
 const env = getEnvVars()
 
-export const sendTelegramMessagelApi = createApi({
-  reducerPath: 'sendTelegramMessagelApi',
+export const liveChatApi = createApi({
+  reducerPath: 'liveChatApi',
   baseQuery: apiBaseQuery({
     baseUrl: env.apiChatUrl,
   }),
@@ -42,7 +42,16 @@ export const sendTelegramMessagelApi = createApi({
     deleteUserByUserId: build.mutation<void, { userId: string }>({
       query({ userId }) {
         return {
-          url: `/${userId}/delete`,
+          url: `/${userId}/deleteUser`,
+          method: 'delete',
+        }
+      },
+    }),
+
+    deleteChatByUserId: build.mutation<void, { userId: string }>({
+      query({ userId }) {
+        return {
+          url: `/${userId}/deleteChat`,
           method: 'delete',
         }
       },
@@ -84,8 +93,9 @@ export const {
   useLazyGetMessagesQuery,
   useAddMessageMutation,
   useDeleteUserByUserIdMutation,
+  useDeleteChatByUserIdMutation,
   useGetAllUsersQuery,
   useCreateUserMutation,
   useGetUserByIdQuery,
   useLazyGetUserByIdQuery,
-} = sendTelegramMessagelApi
+} = liveChatApi

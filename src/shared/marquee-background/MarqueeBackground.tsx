@@ -1,36 +1,41 @@
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, MouseEvent } from 'react'
 import styles from './MarqueeBackground.module.css'
 
 type Props = {
   children: ReactNode
-  text: string
+  marqueeText?: string
+  onClick?: (e: MouseEvent) => void
 }
 
-export const MarqueeBackground: FC<Props> = ({ children, text }) => {
+export const MarqueeBackground: FC<Props> = ({
+  children,
+  marqueeText,
+  onClick,
+}) => {
   const renderMarquee = (direction: string) =>
     Array.from({ length: 6 }).map((_, index) => (
-      <div key={index} className={`${styles.marquee} ${styles[direction]}`}>
-        <span>{text}</span>
-      </div>
+      <span key={index} className={`${styles.marquee} ${styles[direction]}`}>
+        {marqueeText}
+      </span>
     ))
 
   return (
-    <>
-      <div className={styles.inner}>{children}</div>
-      <div className={styles.blurredBackground}>
-        <div className={styles.marqueContainer}>
-          {renderMarquee('leftToRight')}
-        </div>
-        <div className={styles.marqueContainer}>
-          {renderMarquee('rightToLeft')}
-        </div>
-        <div className={styles.marqueContainer}>
-          {renderMarquee('leftToRight')}
-        </div>
-        <div className={styles.marqueContainer}>
-          {renderMarquee('rightToLeft')}
-        </div>
+    <div className={styles.container}>
+      <div onClick={onClick} className={styles.inner}>
+        {children}
       </div>
-    </>
+      <div className={styles.marqueeContainer}>
+        {renderMarquee('leftToRight')}
+      </div>
+      <div className={styles.marqueeContainer}>
+        {renderMarquee('rightToLeft')}
+      </div>
+      <div className={styles.marqueeContainer}>
+        {renderMarquee('leftToRight')}
+      </div>
+      <div className={styles.marqueeContainer}>
+        {renderMarquee('rightToLeft')}
+      </div>
+    </div>
   )
 }

@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { Container, Loader, Section } from 'src/shared'
-import { useSocket } from 'src/app'
+import { useSocketApi } from 'src/app'
 import { MessageType } from 'src/types'
 import { toast } from 'react-toastify'
 import { UsersList } from './users-list/UsersList'
@@ -35,7 +35,7 @@ export const AdminChat = () => {
   const [password, setPassword] = useState<string>('')
   const [isAuth, setIsAuth] = useState<boolean>(false)
 
-  const socket = useSocket({ userName: ADMIN, connectSocket: isAuth })
+  const socket = useSocketApi({ userName: ADMIN, connectSocket: isAuth })
 
   useEffect(() => {
     if (userById?.messages) setNewMessages(userById?.messages)

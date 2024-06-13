@@ -69,7 +69,7 @@ export const Navigation = () => {
 
 const additionalContainerStyles: CSSProperties = {
   position: 'sticky',
-  zIndex: 99,
+  zIndex: 1,
   top: 0,
   margin: '10px 0',
 }

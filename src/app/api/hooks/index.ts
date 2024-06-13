@@ -1,27 +1,29 @@
 import { usePostEmailMutation, sendEmailApi } from './use-send-email-api'
 import {
-  sendTelegramMessagelApi,
+  liveChatApi,
   useSendTelegramMessageMutation,
   useGetMessagesQuery,
   useAddMessageMutation,
   useDeleteUserByUserIdMutation,
+  useDeleteChatByUserIdMutation,
   useGetAllUsersQuery,
   useLazyGetMessagesQuery,
   useCreateUserMutation,
   useGetUserByIdQuery,
   useLazyGetUserByIdQuery,
-} from './use-messages-chat'
-import { useSocket } from './use-socket'
+} from './use-live-chat-api'
+import { useSocketApi } from './use-socket-api'
 
 export {
-  useSocket,
+  useSocketApi,
   sendEmailApi,
-  sendTelegramMessagelApi,
+  liveChatApi,
   usePostEmailMutation,
   useSendTelegramMessageMutation,
   useGetMessagesQuery,
   useAddMessageMutation,
   useDeleteUserByUserIdMutation,
+  useDeleteChatByUserIdMutation,
   useGetAllUsersQuery,
   useCreateUserMutation,
   useLazyGetMessagesQuery,

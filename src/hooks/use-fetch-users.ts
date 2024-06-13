@@ -1,4 +1,5 @@
 import {
+  useDeleteChatByUserIdMutation,
   useDeleteUserByUserIdMutation,
   useGetAllUsersQuery,
   useGetUserByIdQuery,
@@ -13,6 +14,9 @@ type Props = {
 export const useFetchUsers = ({ userId, skipFetchUsersList }: Props) => {
   const [deleteUser, { isLoading: isLoadingDelete }] =
     useDeleteUserByUserIdMutation()
+
+  const [deleteChat, { isLoading: isLoadingDeleteChat }] =
+    useDeleteChatByUserIdMutation()
 
   const [
     getUserById,
@@ -45,7 +49,9 @@ export const useFetchUsers = ({ userId, skipFetchUsersList }: Props) => {
     userById,
     isLoadingUserById,
     isFetchingUserById,
+    isLoadingDeleteChat,
     usersList,
+    deleteChat,
     deleteUser,
     refetchUserById,
     getUserById,

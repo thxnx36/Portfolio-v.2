@@ -9,7 +9,7 @@ type UseSocketProps = {
   connectSocket: boolean
 }
 
-export const useSocket = ({
+export const useSocketApi = ({
   userName,
   connectSocket,
 }: UseSocketProps): Socket | null => {

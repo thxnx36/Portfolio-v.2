@@ -2,24 +2,41 @@ import type { FC, ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { useOverLay } from 'src/hooks'
 import { CloseButton } from '../buttons'
+import { MarqueeBackground } from '../marquee-background'
 import styles from './Modal.module.css'
 
 type Props = {
   children: ReactNode
   onClose: () => void
   isOpen: boolean
+  marqueeText?: string
 }
 
-export const Modal: FC<Props> = ({ children, isOpen, onClose }) => {
-  const { onCloseContent, contentRef } = useOverLay({ f: onClose, isOpen })
+export const Modal: FC<Props> = ({
+  children,
+  isOpen,
+  marqueeText,
+  onClose,
+}) => {
+  const { onCloseContent, contentRef } = useOverLay({ onClose, isOpen })
+
+  const ModalContent = (
+    <div ref={contentRef} className={styles.modalContent}>
+      <CloseButton className={styles.closeButton} onClick={onClose} />
+      {children}
+    </div>
+  )
 
   return createPortal(
-    <div className={styles.overlay} onClick={onCloseContent}>
-      <div ref={contentRef} className={styles.content}>
-        <CloseButton className={styles.closeButton} onClick={onClose} />
-        {children}
+    marqueeText ? (
+      <MarqueeBackground marqueeText={marqueeText} onClick={onCloseContent}>
+        {ModalContent}
+      </MarqueeBackground>
+    ) : (
+      <div className={styles.overlay} onClick={onCloseContent}>
+        {ModalContent}
       </div>
-    </div>,
+    ),
     document.getElementById('root')!,
   )
 }
