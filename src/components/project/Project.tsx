@@ -43,9 +43,9 @@ export const Project = () => {
       </PageWrapper>
       <SEO
         tabTitle={`${t('pages.project.MY_PROJECT')} | ${data?.project!}`}
-        metaDescriptionContent={t('pages.project.seo.PLATFORM_WHERE_USER')}
+        metaDescriptionContent='Platform where users could buy in-game currency and bet on their favorite team on live streams'
         metaOgTitleContent={data?.title!}
-        metaOgDescriptionContent={t('pages.project.seo.ABOUT_PROJECT')}
+        metaOgDescriptionContent='About the project I developed'
         metaOgURLContent={`${APP_URL}${ROUTES.dynamic.projectId(data?.id!)}`}
         metaOgImageContent=''
       />

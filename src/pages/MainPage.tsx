@@ -30,9 +30,9 @@ export const MainPage = () => {
       <Footer />
       <SEO
         tabTitle={t('pages.mainPage.seo.TITLE')}
-        metaDescriptionContent={t('pages.mainPage.seo.DISCOVER_MORE')}
-        metaOgTitleContent={t('pages.mainPage.seo.THE_BEST')}
-        metaOgDescriptionContent={t('pages.mainPage.seo.PORTFOLIO_OF')}
+        metaDescriptionContent='Discover more about my skills, projects, and work experience'
+        metaOgTitleContent='The best Front-end Developer in the world'
+        metaOgDescriptionContent='Portfolio of a Front-end Developer'
         metaOgURLContent={APP_URL}
         metaOgImageContent=''
       />

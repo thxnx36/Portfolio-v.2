@@ -67,9 +67,9 @@ export const AboutMe = () => {
       </PageWrapper>
       <SEO
         tabTitle={t('pages.aboutMe.seo.TITLE')}
-        metaDescriptionContent={t('pages.aboutMe.seo.ABOUTE_ME_MY_SKILLS')}
-        metaOgTitleContent={t('pages.aboutMe.seo.SHORT_STORY')}
-        metaOgDescriptionContent={t('pages.aboutMe.seo.SPECIALIZE')}
+        metaDescriptionContent='About me, my skills, hobbies, and work experience'
+        metaOgTitleContent='My short life story'
+        metaOgDescriptionContent='I specialize in creating web applications using React, JS, TS, HTML, CSS'
         metaOgURLContent={`${APP_URL}${ROUTES.aboutMe}`}
         metaOgImageContent=''
       />
