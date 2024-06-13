@@ -11,7 +11,7 @@ export const NotFound = () => {
 
   return (
     <Section style={{ margin: 0 }}>
-      <MarqueeBackground text='page 404'>
+      <MarqueeBackground marqueeText='page 404'>
         <div className={styles.notFoundContainer}>
           <span className={styles.number}>
             404

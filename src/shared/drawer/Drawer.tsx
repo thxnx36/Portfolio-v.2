@@ -16,7 +16,7 @@ export const Drawer: FC<Props> = ({
   children,
   ...props
 }) => {
-  const { contentRef, onCloseContent } = useOverLay({ f: onClose, isOpen })
+  const { contentRef, onCloseContent } = useOverLay({ onClose, isOpen })
 
   const sideClass = side === 'left' ? styles.drawerLeft : styles.drawerRight
 

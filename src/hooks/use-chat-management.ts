@@ -25,6 +25,8 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
     isLoadingUserById,
     isFetchingUserById,
     usersList,
+    isLoadingDeleteChat,
+    deleteChat,
     deleteUser,
     refetchUserById,
     getUserById,
@@ -54,7 +56,7 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
 
   const onDeleteChat = async () => {
     try {
-      await deleteUser({ userId: userId! }).unwrap()
+      await deleteChat({ userId: userId! }).unwrap()
       onLeave()
       setNewMessages([])
       toast.success('Chat has been deleted')
@@ -82,6 +84,8 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
     isFetchingMessages,
     isErrorMessages,
     isLoadingDelete,
+    isLoadingDeleteChat,
+    deleteChat,
     onLeave,
     onDeleteChat,
     setNewMessages,

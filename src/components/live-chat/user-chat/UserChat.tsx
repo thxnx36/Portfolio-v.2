@@ -5,7 +5,7 @@ import { ChatJoin } from './chat-join/ChatJoin'
 import { useTranslation } from 'react-i18next'
 import { ChatMessages } from './chat-messages/ChatMessages'
 import { IoChatbubbles } from 'react-icons/io5'
-import { useAuthUser, useSocket } from 'src/app'
+import { useAuthUser, useSocketApi } from 'src/app'
 import { soundSendMessage, soundResponseMessage } from 'src/assets'
 import { KEY, CLOSE, OPEN, MESSAGE_LENGTH, ADMIN } from 'src/constants'
 import { useLocalStorage, useChatManagement } from 'src/hooks'
@@ -31,7 +31,7 @@ export const UserChat = () => {
     isLoadingMessages,
     isFetchingMessages,
     isErrorMessages,
-    isLoadingDelete,
+    isLoadingDeleteChat,
     onLeave,
     onDeleteChat,
     setNewMessages,
@@ -46,7 +46,7 @@ export const UserChat = () => {
 
   const isOpenChat = openChat === OPEN
 
-  const socket = useSocket({
+  const socket = useSocketApi({
     userName: email,
     connectSocket: isOpenChat,
   })
@@ -140,7 +140,7 @@ export const UserChat = () => {
   }
 
   const isDisabledButton = !textareaContent.trim()
-  const isLoading = isLoadingMessages || isFetchingMessages || isLoadingDelete
+  const isLoading = isLoadingMessages || isFetchingMessages || isLoadingDeleteChat
 
   return (
     <>

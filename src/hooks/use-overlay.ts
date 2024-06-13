@@ -1,11 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, MouseEvent } from 'react'
 
 type Props = {
-  f: () => void
+  onClose: () => void
   isOpen: boolean
 }
 
-export const useOverLay = ({ f, isOpen }: Props) => {
+export const useOverLay = ({ onClose, isOpen }: Props) => {
   const contentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -21,9 +21,9 @@ export const useOverLay = ({ f, isOpen }: Props) => {
     }
   }, [isOpen])
 
-  const onCloseContent = (e: React.MouseEvent<HTMLDivElement>) => {
+  const onCloseContent = (e: MouseEvent) => {
     if (e.target === e.currentTarget) {
-      f()
+      onClose()
     }
   }
 

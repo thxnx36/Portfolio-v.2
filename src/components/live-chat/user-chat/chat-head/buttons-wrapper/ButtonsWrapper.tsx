@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { PiResizeThin } from 'react-icons/pi'
+import { PiResizeLight } from 'react-icons/pi'
 import { VscDebugDisconnect } from 'react-icons/vsc'
 import { CloseButton, ToolTip } from 'src/shared'
 import { useTranslation } from 'react-i18next'
@@ -25,7 +25,7 @@ export const ButtonsWrapper: FC<Props> = ({
         <>
           <button className={styles.zoomButton} onClick={onToogleZoomWindow}>
             <ToolTip text={t('chat.setting_buttons.RESIZE_WINDOW')}>
-              <PiResizeThin size={'1.6em'} />
+              <PiResizeLight size={'1.6em'} />
             </ToolTip>
           </button>
           <button onClick={onDeleteChat}>
