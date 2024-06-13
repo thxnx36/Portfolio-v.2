@@ -5,7 +5,6 @@ import { Content } from './content/Content'
 import { StackList } from './stack-list/StackList'
 import { FiExternalLink } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
-import { APP_URL, ROUTES } from 'src/constants'
 import { Section, PageWrapper, Title, SEO } from 'src/shared'
 import styles from './Project.module.css'
 
@@ -41,14 +40,7 @@ export const Project = () => {
           ))}
         </ul>
       </PageWrapper>
-      <SEO
-        tabTitle={`${t('pages.project.MY_PROJECT')} | ${data?.project!}`}
-        metaDescriptionContent='Platform where users could buy in-game currency and bet on their favorite team on live streams'
-        metaOgTitleContent={data?.title!}
-        metaOgDescriptionContent='About the project I developed'
-        metaOgURLContent={`${APP_URL}${ROUTES.dynamic.projectId(data?.id!)}`}
-        metaOgImageContent=''
-      />
+      <SEO tabTitle={`${t('pages.project.MY_PROJECT')} | ${data?.project!}`} />
     </Section>
   )
 }
