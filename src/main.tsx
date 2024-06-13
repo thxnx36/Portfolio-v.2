@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from './providers'
+import { HelmetProvider } from 'react-helmet-async'
 import { Routes } from './routes'
 import { Layout } from './layout'
 import './i18n'
@@ -18,9 +19,11 @@ if (container) {
       <Provider store={store}>
         <PersistGate persistor={persist}>
           <ThemeProvider>
-            <Layout>
-              <Routes />
-            </Layout>
+            <HelmetProvider>
+              <Layout>
+                <Routes />
+              </Layout>
+            </HelmetProvider>
           </ThemeProvider>
         </PersistGate>
       </Provider>
