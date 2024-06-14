@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { getEnvVars } from 'src/utils'
 import { io, Socket } from 'socket.io-client'
 
-const env = getEnvVars(true)
+const env = getEnvVars()
 
 type UseSocketProps = {
   userName: string
