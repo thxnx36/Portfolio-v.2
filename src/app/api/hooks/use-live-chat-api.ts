@@ -3,7 +3,7 @@ import { apiBaseQuery } from '../base'
 import { getEnvVars } from 'src/utils'
 import { AddMessagePayload, UserType, UsersListType } from 'src/types'
 
-const env = getEnvVars()
+const env = getEnvVars(true)
 
 export const liveChatApi = createApi({
   reducerPath: 'liveChatApi',
@@ -21,11 +21,12 @@ export const liveChatApi = createApi({
       },
     }),
 
-    createUser: build.mutation<UserType, { email: string }>({
-      query({ email }) {
+    createUser: build.mutation<UserType, { userId: string; userName: string }>({
+      query({ userId, userName }) {
         return {
-          url: `/${email}/create`,
+          url: `/${userName}/create`,
           method: 'post',
+          data: { userId },
         }
       },
     }),
@@ -66,21 +67,21 @@ export const liveChatApi = createApi({
       },
     }),
 
-    getMessages: build.query<UserType, { email: string }>({
-      query({ email }) {
+    getMessages: build.query<UserType, { userId: string }>({
+      query({ userId }) {
         return {
-          url: `/${email}/messages`,
+          url: `/${userId}/messages`,
           method: 'get',
         }
       },
     }),
 
     addMessage: build.mutation<UserType, AddMessagePayload>({
-      query({ email, message }) {
+      query({ userId, message }) {
         return {
           url: `/add`,
           method: 'post',
-          data: { email, message },
+          data: { userId, message },
         }
       },
     }),

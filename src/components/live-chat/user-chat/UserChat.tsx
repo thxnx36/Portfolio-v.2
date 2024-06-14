@@ -16,14 +16,12 @@ import { v4 as uuidv4 } from 'uuid'
 import styles from './UserChat.module.css'
 
 export const UserChat = () => {
-  const UUID = uuidv4()
-
   const messagesContainerRef = useRef<HTMLUListElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   const { t } = useTranslation()
 
-  const { email, userId, isJoined } = useAuthUser()
+  const { userName, userId, isJoined } = useAuthUser()
 
   const {
     messages,
@@ -47,13 +45,13 @@ export const UserChat = () => {
   const isOpenChat = openChat === OPEN
 
   const socket = useSocketApi({
-    userName: email,
+    userName: userName,
     connectSocket: isOpenChat,
   })
 
   useEffect(() => {
-    if (email) refetchUserById()
-  }, [email, refetchUserById])
+    if (userName) refetchUserById()
+  }, [userName, refetchUserById])
 
   useEffect(() => {
     if (isErrorMessages) onLeave()
@@ -68,13 +66,13 @@ export const UserChat = () => {
     if (socket) {
       socket.on('response', (message: MessageType) => {
         addNewMessage(message)
-        if (message.receiver === email) {
+        if (message.receiver === userId) {
           playSoundsInChat(soundResponseMessage)
         }
       })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [email, socket])
+  }, [userId, socket])
 
   useEffect(() => {
     if (messagesContainerRef.current) {
@@ -117,11 +115,11 @@ export const UserChat = () => {
 
     if (textareaContent.trim()) {
       const message = {
-        sender: email,
+        sender: userId,
         receiver: ADMIN,
         text: textareaContent,
         timestamp: new Date().toISOString(),
-        messageId: UUID,
+        messageId: uuidv4(),
       }
 
       socket.emit('send_message', message)
@@ -140,7 +138,8 @@ export const UserChat = () => {
   }
 
   const isDisabledButton = !textareaContent.trim()
-  const isLoading = isLoadingMessages || isFetchingMessages || isLoadingDeleteChat
+  const isLoading =
+    isLoadingMessages || isFetchingMessages || isLoadingDeleteChat
 
   return (
     <>
@@ -173,7 +172,8 @@ export const UserChat = () => {
                   ref={messagesContainerRef}
                   messages={messages}
                   adminSender={ADMIN}
-                  userSender={email}
+                  userSender={userId}
+                  userName={userName}
                 />
                 {isShowWarning && (
                   <span className={styles.lengthWarning}>

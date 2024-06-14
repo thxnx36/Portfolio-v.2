@@ -2,16 +2,19 @@ import { forwardRef, useMemo } from 'react'
 import { Paragraph } from 'src/shared'
 import { formatDateTime, formatMessage } from 'src/utils'
 import { MessageType } from 'src/types'
+import { useTranslation } from 'react-i18next'
 import styles from './ChatMessages.module.css'
 
 type Props = {
   messages: MessageType[]
   adminSender: string
   userSender: string
+  userName: string
 }
 
 export const ChatMessages = forwardRef<HTMLUListElement, Props>(
-  ({ messages, adminSender, userSender }, ref) => {
+  ({ messages, adminSender, userSender, userName }, ref) => {
+    const { t } = useTranslation()
     const filteredMessages = useMemo(
       () =>
         messages.filter(
@@ -25,7 +28,9 @@ export const ChatMessages = forwardRef<HTMLUListElement, Props>(
         <li className={styles.admin}>
           <span className={`${styles.arrow} ${styles.left}`} />
           <div className={styles.adminMessage}>
-            <Paragraph>😎🤙🤟</Paragraph>
+            <Paragraph>
+              {t('chat.HI')}, {userName}! {t('chat.HOW_ARE_YOU')} 😎🤙
+            </Paragraph>
             <small className={styles.time}>{formatDateTime(Date.now())}</small>
           </div>
         </li>

@@ -18,6 +18,8 @@
     "BELIEVE": "Я вірю в тебе",
     "JOIN_TO_CHAT": "Привіт! Давай поспілкуємось",
     "ONLINE_STATUS": "в мережі",
+    "HI": "Привіт",
+    "HOW_ARE_YOU": "Як справи?",
     "NAME": "Влад",
     "setting_buttons": {
       "DELETE_CHAT": "відключитись",
@@ -201,7 +203,8 @@
       "YOUR_NAME": "Ваше повне ім'я",
       "YOUR_EMAIL": "Ваш email",
       "YOUR_SUBJECT": "Тема",
-      "YOUR_MESSAGE": "Ваше повідомлення"
+      "YOUR_MESSAGE": "Ваше повідомлення",
+      "WHATS_NAME": "Як вас звати?"
     }
   },
   "pages": {

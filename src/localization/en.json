@@ -18,6 +18,8 @@
     "BELIEVE": "do it! I believe in you",
     "JOIN_TO_CHAT": "Hey! Let's join to chat",
     "ONLINE_STATUS": "online",
+    "HI": "Hi",
+    "HOW_ARE_YOU": "How are you?",
     "NAME": "Vlad",
     "setting_buttons": {
       "DELETE_CHAT": "disconnect",
@@ -202,7 +204,8 @@
       "YOUR_NAME": "Your name",
       "YOUR_EMAIL": "Your email",
       "YOUR_SUBJECT": "Subject",
-      "YOUR_MESSAGE": "Your message"
+      "YOUR_MESSAGE": "Your message",
+      "WHATS_NAME": "What's your name?"
     }
   },
   "pages": {

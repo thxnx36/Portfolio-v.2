@@ -18,13 +18,15 @@ export const ChatWindow: FC<Props> = ({ messages, selectedUser }) => {
             <li
               key={msg?.messageId}
               className={
-                msg?.sender === selectedUser?.email ? styles.user : styles.admin
+                msg?.sender === selectedUser?.userId
+                  ? styles.user
+                  : styles.admin
               }
             >
               {msg?.text?.length && (
                 <div
                   className={
-                    msg?.sender === selectedUser?.email
+                    msg?.sender === selectedUser?.userId
                       ? styles.userMessage
                       : styles.adminMessage
                   }

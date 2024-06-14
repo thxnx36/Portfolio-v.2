@@ -1,5 +1,5 @@
 import { COLOR_YELLOW, COLOR_BLUE, GREY_COLOR } from './colors'
-import { ENV_VARS } from './env'
+import { ENV_VARS_PROD, ENV_VARS_DEV } from './env'
 import { motionSection, motionNav, motionProgrLine } from './motion'
 import { NAVIGATE } from './nav'
 import { ROUTES } from './routes'
@@ -71,7 +71,8 @@ export {
   MAVEN_URL,
   CV_URL,
   CHECK_URL,
-  ENV_VARS,
+  ENV_VARS_PROD,
+  ENV_VARS_DEV,
   motionSection,
   motionNav,
   ROUTES,

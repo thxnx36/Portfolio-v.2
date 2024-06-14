@@ -13,7 +13,6 @@ import { v4 as uuidv4 } from 'uuid'
 import styles from './AdminChat.module.css'
 
 export const AdminChat = () => {
-  const UUID = uuidv4()
   const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS
 
   const {
@@ -39,7 +38,8 @@ export const AdminChat = () => {
 
   useEffect(() => {
     if (userById?.messages) setNewMessages(userById?.messages)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userById])
 
   useEffect(() => {
@@ -75,10 +75,10 @@ export const AdminChat = () => {
 
     const message = {
       sender: ADMIN,
-      receiver: selectedUser.email,
+      receiver: selectedUser.userId,
       text: content,
       timestamp: new Date().toISOString(),
-      messageId: UUID,
+      messageId: uuidv4(),
     }
 
     socket.emit('send_message', message)

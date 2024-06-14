@@ -28,6 +28,16 @@ export const UsersList: FC<Props> = ({
         <Title tag='h4'>Users</Title>
         <button onClick={refetchUsersList}>{<TbReload size='1.5em' />}</button>
       </div>
+      <div
+        style={{
+          width: '100%',
+          justifyContent: 'space-between',
+          display: 'flex',
+        }}
+      >
+        <p>Name</p>
+        <p>Id</p>
+      </div>
       {usersList?.map(user => (
         <li
           key={user?.userId}
@@ -40,12 +50,12 @@ export const UsersList: FC<Props> = ({
           <Paragraph
             className={
               selectedUser === user
-                ? `${styles.email} ${styles.disabled}`
-                : styles.email
+                ? `${styles.userName} ${styles.disabled}`
+                : styles.userName
             }
             onClick={() => onSelectUser(user)}
           >
-            {user?.email}
+            {user?.userName} | {user?.userId}
           </Paragraph>
           {selectedUser === user && (
             <div className={styles.controlButtons}>

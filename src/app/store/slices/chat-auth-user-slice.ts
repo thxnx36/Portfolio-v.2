@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 type Props = {
-  email: string
+  name: string
   userId: string
   joined: boolean
 }
 
 const initialState: Props = {
   joined: false,
-  email: '',
+  name: '',
   userId: '',
 }
 
@@ -19,11 +19,11 @@ const chatAuthUserSlice = createSlice({
     setJoined: (state, action) => {
       state.joined = action.payload
     },
-    setEmail: (state, action) => {
-      state.email = action.payload
+    setName: (state, action) => {
+      state.name = action.payload
     },
 
-    setUserId: (state, action) => {
+    setId: (state, action) => {
       state.userId = action.payload
     },
 
@@ -33,7 +33,7 @@ const chatAuthUserSlice = createSlice({
   },
 })
 
-export const { setJoined, setEmail, setUserId, resetUserData } =
-chatAuthUserSlice.actions
+export const { setJoined, setName, setId, resetUserData } =
+  chatAuthUserSlice.actions
 
 export default chatAuthUserSlice.reducer
