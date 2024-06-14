@@ -1,4 +1,11 @@
-import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
+import {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { ChatHead } from './chat-head/ChatHead'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { ChatJoin } from './chat-join/ChatJoin'
@@ -13,6 +20,7 @@ import { Button, Loader } from 'src/shared'
 import { playSoundsInChat } from 'src/utils'
 import { MessageType } from 'src/types'
 import { v4 as uuidv4 } from 'uuid'
+import { NotificationIcon } from './chat-notification-icon/NotificationIcon'
 import styles from './UserChat.module.css'
 
 export const UserChat = () => {
@@ -41,12 +49,14 @@ export const UserChat = () => {
   const [textareaContent, setTextareaContent] = useState<string>('')
   const [isShowWarning, setIsShowWarning] = useState<boolean>(false)
   const [isZoomWindow, setIsZoomWindow] = useState<boolean>(false)
+  const [isShowNotification, setIsShowNotification] = useState<boolean>(false)
+  const [notificationCount, setNotificationCount] = useState<number>(0)
 
   const isOpenChat = openChat === OPEN
 
   const socket = useSocketApi({
     userName: userName,
-    connectSocket: isOpenChat,
+    connectSocket: isJoined,
   })
 
   useEffect(() => {
@@ -58,34 +68,15 @@ export const UserChat = () => {
   }, [isErrorMessages, onLeave])
 
   useEffect(() => {
-    if (userMessages?.messages) setNewMessages(userMessages?.messages)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userMessages])
+    if (!messagesContainerRef.current) return
+    messagesContainerRef.current.scrollTop =
+      messagesContainerRef.current.scrollHeight
+  }, [openChat, messages])
 
   useEffect(() => {
-    if (socket) {
-      socket.on('response', (message: MessageType) => {
-        addNewMessage(message)
-        if (message.receiver === userId) {
-          playSoundsInChat(soundResponseMessage)
-        }
-      })
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userId, socket])
-
-  useEffect(() => {
-    if (messagesContainerRef.current) {
-      messagesContainerRef.current.scrollTop =
-        messagesContainerRef.current.scrollHeight
-    }
-  }, [openChat, messages, isJoined])
-
-  useEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto'
-      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`
-    }
+    if (!textareaRef.current) return
+    textareaRef.current.style.height = 'auto'
+    textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`
   }, [textareaContent])
 
   useEffect(() => {
@@ -96,9 +87,41 @@ export const UserChat = () => {
     }
   }, [isShowWarning])
 
-  const onToggleChat = () => setOpenChat(isOpenChat ? CLOSE : OPEN)
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    if (!userMessages?.messages) return
 
-  const onToogleZoomWindow = () => setIsZoomWindow(prevZoom => !prevZoom)
+    setNewMessages(userMessages?.messages)
+  }, [userMessages])
+
+  useEffect(() => {
+    if (!socket) return
+
+    const handleResponse = (message: MessageType) => {
+      addNewMessage(message)
+
+      if (message.receiver === userId) {
+        playSoundsInChat(soundResponseMessage)
+
+        if (!isOpenChat) {
+          setIsShowNotification(true)
+          setNotificationCount(prevCount => prevCount + 1)
+        }
+      }
+    }
+
+    socket.on('response', handleResponse)
+
+    return () => {
+      socket.off('response', handleResponse)
+    }
+  }, [userId, socket, isOpenChat])
+
+  const onToggleChat = useCallback(() => {
+    setOpenChat(isOpenChat ? CLOSE : OPEN)
+    setIsShowNotification(false)
+    setNotificationCount(0)
+  }, [isOpenChat, setOpenChat])
 
   const handleChangeTextArea = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = e.target
@@ -137,6 +160,8 @@ export const UserChat = () => {
     }
   }
 
+  const onToogleZoomWindow = () => setIsZoomWindow(prevZoom => !prevZoom)
+
   const isDisabledButton = !textareaContent.trim()
   const isLoading =
     isLoadingMessages || isFetchingMessages || isLoadingDeleteChat
@@ -149,6 +174,7 @@ export const UserChat = () => {
           text='Live Chat'
           icon={<IoChatbubbles size={'1.2em'} />}
         />
+        {isShowNotification && <NotificationIcon count={notificationCount} />}
       </div>
 
       {isOpenChat && (
