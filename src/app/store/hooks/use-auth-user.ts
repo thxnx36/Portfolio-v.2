@@ -1,26 +1,26 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/types'
-import { setEmail, setJoined, setUserId, resetUserData } from '../slices'
+import { setName, setJoined, setId, resetUserData } from '../slices'
 import { useCallback } from 'react'
 
 export const useAuthUser = () => {
   const dispatch = useDispatch()
-  const email = useSelector((state: RootState) => state.userAuth.email)
+  const userName = useSelector((state: RootState) => state.userAuth.name)
   const isJoined = useSelector((state: RootState) => state.userAuth.joined)
   const userId = useSelector((state: RootState) => state.userAuth.userId)
 
-  const setUserEmail = (email: string) => dispatch(setEmail(email))
+  const setUserName = (email: string) => dispatch(setName(email))
   const setJoinedUser = (join: boolean) => dispatch(setJoined(join))
-  const setIdUser = (userId: string) => dispatch(setUserId(userId))
+  const setUserId = (userId: string) => dispatch(setId(userId))
   const onLeave = useCallback(() => dispatch(resetUserData()), [dispatch])
 
   return {
-    email,
+    userName,
     userId,
     isJoined,
-    setUserEmail,
+    setUserName,
     setJoinedUser,
-    setIdUser,
+    setUserId,
     onLeave,
   }
 }

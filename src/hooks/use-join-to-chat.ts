@@ -1,13 +1,14 @@
 import { useCreateUserMutation, useAuthUser } from 'src/app'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { v4 as uuidv4 } from 'uuid'
 import { toast } from 'react-toastify'
 
-type FormEmail = {
-  email: string
+type FormUserName = {
+  userName: string
 }
 
-const INITIAL_STATE: FormEmail = {
-  email: '',
+const INITIAL_STATE: FormUserName = {
+  userName: '',
 }
 
 type Props = {
@@ -15,7 +16,7 @@ type Props = {
 }
 
 export const useJoinToChat = ({ infoMessage }: Props) => {
-  const { setUserEmail, setJoinedUser, setIdUser } = useAuthUser()
+  const { setUserName, setJoinedUser, setUserId } = useAuthUser()
   const [createUser, { isLoading }] = useCreateUserMutation()
 
   const {
@@ -24,30 +25,35 @@ export const useJoinToChat = ({ infoMessage }: Props) => {
     setValue,
     formState: { errors, isSubmitting, isValid },
     clearErrors,
-  } = useForm<FormEmail>({
+  } = useForm<FormUserName>({
     mode: 'onBlur',
     defaultValues: INITIAL_STATE,
   })
 
   const handleChange =
-    (field: keyof FormEmail) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    (field: keyof FormUserName) => (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target
       setValue(field, value)
       clearErrors(field)
     }
 
-  const onSubmit: SubmitHandler<FormEmail> = async ({ email }: FormEmail) => {
+  const onSubmit: SubmitHandler<FormUserName> = async ({
+    userName,
+  }: FormUserName) => {
     try {
-      const createdUser = await createUser({ email }).unwrap()
+      const createdUser = await createUser({
+        userName,
+        userId: uuidv4(),
+      }).unwrap()
       if (createdUser) {
         setJoinedUser(true)
-        setUserEmail(createdUser?.email)
-        setIdUser(createdUser?.userId)
+        setUserName(createdUser?.userName)
+        setUserId(createdUser?.userId)
       }
     } catch {
       toast.info(infoMessage)
       setJoinedUser(false)
-      setUserEmail('')
+      setUserName('')
     }
   }
 

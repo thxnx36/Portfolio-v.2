@@ -1,6 +1,5 @@
 import { Button, Input, Title } from 'src/shared'
 import { useTranslation } from 'react-i18next'
-import { VALIDATE_EMAIL } from 'src/constants'
 import { useJoinToChat } from 'src/hooks'
 import styles from './ChatJoin.module.css'
 
@@ -25,20 +24,16 @@ export const ChatJoin = () => {
           {t('chat.JOIN_TO_CHAT')}
         </Title>
         <Input
-          {...register('email', {
-            required: t('form.error.ENTER_EMAIL'),
-            pattern: {
-              value: VALIDATE_EMAIL,
-              message: t('form.error.EMAIL_NOT_VALID'),
-            },
+          {...register('userName', {
+            required: t('form.error.ENTER_NAME'),
           })}
-          id='join-input-email'
-          autoComplete='email'
-          type='email'
-          onChange={handleChange('email')}
-          error={!!errors.email}
-          errorText={errors.email?.message}
-          placeholder={t('input.placeholder.YOUR_EMAIL')}
+          id='join-input-name'
+          autoComplete='text'
+          type='text'
+          onChange={handleChange('userName')}
+          error={!!errors.userName}
+          errorText={errors.userName?.message}
+          placeholder={t('input.placeholder.WHATS_NAME')}
         />
         <Button
           isLoading={isLoading}

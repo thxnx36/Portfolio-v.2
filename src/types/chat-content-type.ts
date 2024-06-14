@@ -14,7 +14,7 @@ export type MessageType = {
 }
 
 export type UserType = {
-  email: string
+  userName: string
   messages: MessageType[]
   userId: string
 }
@@ -24,6 +24,6 @@ export type UsersListType = {
 }
 
 export type AddMessagePayload = {
-  email: string
+  userId: string
   message: MessageType
 }

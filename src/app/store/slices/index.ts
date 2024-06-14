@@ -4,9 +4,9 @@ import chatMessagesReducer, {
   setMessages,
 } from './chat-messages-slice'
 import {
-  setEmail,
+  setName,
   setJoined,
-  setUserId,
+  setId,
   resetUserData,
 } from './chat-auth-user-slice'
 
@@ -16,7 +16,7 @@ export {
   setMessages,
   clearMessages,
   setJoined,
-  setEmail,
-  setUserId,
+  setName,
+  setId,
   resetUserData,
 }
