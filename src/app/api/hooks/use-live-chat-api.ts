@@ -3,7 +3,7 @@ import { apiBaseQuery } from '../base'
 import { getEnvVars } from 'src/utils'
 import { AddMessagePayload, UserType, UsersListType } from 'src/types'
 
-const env = getEnvVars(true)
+const env = getEnvVars()
 
 export const liveChatApi = createApi({
   reducerPath: 'liveChatApi',
