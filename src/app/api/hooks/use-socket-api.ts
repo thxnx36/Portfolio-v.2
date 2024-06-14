@@ -19,20 +19,11 @@ export const useSocketApi = ({
     if (connectSocket) {
       const socket = io(env.apiServerUrl)
       socketRef.current = socket
-
-      if (userName) {
-        socket.emit('join', { userName })
-      }
+      socket.emit('join', { userName })
 
       return () => {
         socket.emit('leave', { userName })
         socket.disconnect()
-      }
-    } else {
-      if (socketRef.current) {
-        socketRef.current.emit('leave', { userName })
-        socketRef.current.disconnect()
-        socketRef.current = null
       }
     }
   }, [userName, connectSocket])

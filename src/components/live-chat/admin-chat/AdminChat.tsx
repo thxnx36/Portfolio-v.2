@@ -8,7 +8,7 @@ import { ChatWindow } from './chat-window/ChatWindow'
 import { FooterChat } from './footer-chat/FooterChat'
 import { ADMIN } from 'src/constants'
 import { AuthAdmin } from './auth-admin/AuthAdmin'
-import { useChatManagement } from 'src/hooks'
+import { useChatManagement } from 'src/hooks/use-chat-management'
 import { v4 as uuidv4 } from 'uuid'
 import styles from './AdminChat.module.css'
 
