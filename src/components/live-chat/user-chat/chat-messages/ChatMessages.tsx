@@ -26,7 +26,6 @@ export const ChatMessages = forwardRef<HTMLUListElement, Props>(
     return (
       <ul ref={ref} className={styles.messagesContent}>
         <li className={styles.admin}>
-          <span className={`${styles.arrow} ${styles.left}`} />
           <div className={styles.adminMessage}>
             <Paragraph>
               {t('chat.HI')}, {userName}! {t('chat.HOW_ARE_YOU')} 😎🤙
@@ -40,9 +39,6 @@ export const ChatMessages = forwardRef<HTMLUListElement, Props>(
             key={msg?.messageId}
             className={msg?.sender === adminSender ? styles.admin : styles.user}
           >
-            {msg.sender === adminSender && (
-              <span className={`${styles.arrow} ${styles.left}`} />
-            )}
             <div
               className={
                 msg?.sender === adminSender
@@ -57,9 +53,6 @@ export const ChatMessages = forwardRef<HTMLUListElement, Props>(
                 {formatDateTime(msg?.timestamp!)}
               </small>
             </div>
-            {msg.sender === userSender && (
-              <span className={`${styles.arrow} ${styles.right}`} />
-            )}
           </li>
         ))}
       </ul>

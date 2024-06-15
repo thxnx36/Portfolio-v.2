@@ -33,7 +33,7 @@ import { ToolTip } from './tool-tip'
 import { ReCaptcha } from './re-captcha'
 import { SEO } from './seo'
 import { ToggleLang } from './buttons/toggle-lang'
-import { Loader } from './loader'
+import { Loader, ChatSkeleton } from './loader'
 import { MarqueeBackground } from './marquee-background'
 
 export {
@@ -74,5 +74,6 @@ export {
   SEO,
   MContainer,
   Loader,
+  ChatSkeleton,
   MarqueeBackground,
 }

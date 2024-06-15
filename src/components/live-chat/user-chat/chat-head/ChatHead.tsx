@@ -22,7 +22,7 @@ export const ChatHead: FC<Props> = ({
 }) => {
   const { t } = useTranslation()
   return (
-    <div className={styles.chatHeadContainer}>
+    <div className={`${styles.chatHeadContainer} drag-handle`}>
       <div className={styles.contactWrap}>
         <Link to={ROUTES.admin}>
           <Avatar className={styles.avatar} src={chatPhoto} />

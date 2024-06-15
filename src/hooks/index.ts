@@ -17,6 +17,7 @@ import { useChatManagement } from './use-chat-management'
 import { usePositionChatWindow } from "./use-position-chat-window"
 import { useTextAreaHeight } from "./use-textaerea-height"
 import { useSendMessageInChat } from "./use-send-message-in-chat"
+import { useDraggable } from "./use-draggable"
 
 export {
   useGetProjectById,
@@ -38,4 +39,5 @@ export {
   usePositionChatWindow,
   useTextAreaHeight,
   useSendMessageInChat,
+  useDraggable,
 }

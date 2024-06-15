@@ -23,24 +23,6 @@
   align-self: flex-end;
 }
 
-.arrow {
-  width: 0;
-  height: 0;
-  margin-top: 18px;
-}
-
-.left {
-  border-top: 2px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-right: 10px solid var(--bg-color-admin-message);
-}
-
-.right {
-  border-top: 6px solid transparent;
-  border-bottom: 2px solid transparent;
-  border-left: 10px solid var(--bg-color-user-message);
-}
-
 .adminMessage,
 .userMessage {
   text-align: unset;
@@ -61,11 +43,15 @@
 .adminMessage {
   background-color: var(--bg-color-admin-message);
   margin-right: 15px;
+  align-self: flex-start;
+  border-radius: 15px 15px 15px 0;
 }
 
 .userMessage {
   background-color: var(--bg-color-user-message);
   margin-left: 15px;
+  align-self: flex-end;
+  border-radius: 15px 15px 0 15px;
 }
 
 .adminMessage p,
