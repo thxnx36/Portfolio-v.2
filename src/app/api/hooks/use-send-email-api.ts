@@ -10,6 +10,7 @@ export const sendEmailApi = createApi({
   baseQuery: apiBaseQuery({
     baseUrl: env.apiMailerUrl,
   }),
+
   endpoints: build => ({
     postEmail: build.mutation<void, FormType>({
       query: data => {

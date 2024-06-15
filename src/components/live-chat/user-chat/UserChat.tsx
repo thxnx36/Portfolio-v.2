@@ -1,35 +1,41 @@
-import {
-  ChangeEvent,
-  FormEvent,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { ChatHead } from './chat-head/ChatHead'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { ChatJoin } from './chat-join/ChatJoin'
 import { useTranslation } from 'react-i18next'
 import { ChatMessages } from './chat-messages/ChatMessages'
+import { NotificationIcon } from './chat-notification-icon/NotificationIcon'
 import { IoChatbubbles } from 'react-icons/io5'
 import { useAuthUser, useSocketApi } from 'src/app'
-import { soundSendMessage, soundResponseMessage } from 'src/assets'
-import { KEY, CLOSE, OPEN, MESSAGE_LENGTH, ADMIN } from 'src/constants'
-import { useLocalStorage, useChatManagement } from 'src/hooks'
+import { soundResponseMessage } from 'src/assets'
+import { KEY, CLOSE, OPEN, ADMIN } from 'src/constants'
+import {
+  useLocalStorage,
+  useChatManagement,
+  usePositionChatWindow,
+  useTextAreaHeight,
+  useSendMessageInChat,
+} from 'src/hooks'
 import { Button, Loader } from 'src/shared'
 import { playSoundsInChat } from 'src/utils'
 import { MessageType } from 'src/types'
-import { v4 as uuidv4 } from 'uuid'
-import { NotificationIcon } from './chat-notification-icon/NotificationIcon'
 import styles from './UserChat.module.css'
 
 export const UserChat = () => {
-  const messagesContainerRef = useRef<HTMLUListElement>(null)
-  const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const [openChat, setOpenChat] = useLocalStorage(KEY, CLOSE)
+  const [isZoomWindow, setIsZoomWindow] = useState<boolean>(false)
+  const [isShowNotification, setIsShowNotification] = useState<boolean>(false)
+  const [notificationCount, setNotificationCount] = useState<number>(0)
+
+  const isOpenChat = openChat === OPEN
 
   const { t } = useTranslation()
-
   const { userName, userId, isJoined } = useAuthUser()
+
+  const socket = useSocketApi({
+    userName: userName,
+    connectSocket: isJoined,
+  })
 
   const {
     messages,
@@ -45,18 +51,24 @@ export const UserChat = () => {
     refetchUserById,
   } = useChatManagement({ skipFetchUsersList: true, userId })
 
-  const [openChat, setOpenChat] = useLocalStorage(KEY, CLOSE)
-  const [textareaContent, setTextareaContent] = useState<string>('')
-  const [isShowWarning, setIsShowWarning] = useState<boolean>(false)
-  const [isZoomWindow, setIsZoomWindow] = useState<boolean>(false)
-  const [isShowNotification, setIsShowNotification] = useState<boolean>(false)
-  const [notificationCount, setNotificationCount] = useState<number>(0)
+  const {
+    onSendMessage,
+    handleKeyDown,
+    handleChangeTextArea,
+    textareaContent,
+    isDisabledButton,
+  } = useSendMessageInChat({
+    socket,
+    sender: userId,
+    receiver: ADMIN,
+  })
 
-  const isOpenChat = openChat === OPEN
+  const { messagesContainerRef } = usePositionChatWindow({
+    dependencies: [messages, openChat],
+  })
 
-  const socket = useSocketApi({
-    userName: userName,
-    connectSocket: isJoined,
+  const { textareaRef } = useTextAreaHeight({
+    dependencies: [textareaContent],
   })
 
   useEffect(() => {
@@ -66,26 +78,6 @@ export const UserChat = () => {
   useEffect(() => {
     if (isErrorMessages) onLeave()
   }, [isErrorMessages, onLeave])
-
-  useEffect(() => {
-    if (!messagesContainerRef.current) return
-    messagesContainerRef.current.scrollTop =
-      messagesContainerRef.current.scrollHeight
-  }, [openChat, messages])
-
-  useEffect(() => {
-    if (!textareaRef.current) return
-    textareaRef.current.style.height = 'auto'
-    textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`
-  }, [textareaContent])
-
-  useEffect(() => {
-    if (isShowWarning) {
-      const timeoutId = setTimeout(() => setIsShowWarning(false), 1500)
-
-      return () => clearTimeout(timeoutId)
-    }
-  }, [isShowWarning])
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
@@ -123,46 +115,13 @@ export const UserChat = () => {
     setNotificationCount(0)
   }, [isOpenChat, setOpenChat])
 
-  const handleChangeTextArea = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    const { value } = e.target
-    if (value.length <= MESSAGE_LENGTH) {
-      setTextareaContent(value)
-    } else {
-      setIsShowWarning(true)
-    }
-  }
-
-  const onSendMessage = async (e: FormEvent) => {
-    e.preventDefault()
-    if (!socket) return
-
-    if (textareaContent.trim()) {
-      const message = {
-        sender: userId,
-        receiver: ADMIN,
-        text: textareaContent,
-        timestamp: new Date().toISOString(),
-        messageId: uuidv4(),
-      }
-
-      socket.emit('send_message', message)
-      playSoundsInChat(soundSendMessage)
-      setTextareaContent('')
-    }
-  }
-
-  const handleKeyDown = (
-    e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault()
-      onSendMessage(e)
-    }
-  }
-
   const onToogleZoomWindow = () => setIsZoomWindow(prevZoom => !prevZoom)
 
-  const isDisabledButton = !textareaContent.trim()
+  const onLeaveAndDeleteChat = () => {
+    onDeleteChat()
+    setIsZoomWindow(false)
+  }
+
   const isLoading =
     isLoadingMessages || isFetchingMessages || isLoadingDeleteChat
 
@@ -185,7 +144,7 @@ export const UserChat = () => {
         >
           <ChatHead
             onToggleChat={onToggleChat}
-            onDeleteChat={onDeleteChat}
+            onDeleteChat={onLeaveAndDeleteChat}
             onToogleZoomWindow={onToogleZoomWindow}
             isJoinedUser={isJoined}
           />
@@ -201,13 +160,8 @@ export const UserChat = () => {
                   userSender={userId}
                   userName={userName}
                 />
-                {isShowWarning && (
-                  <span className={styles.lengthWarning}>
-                    {t('toast.warning.LENGTH_TEXT')}
-                  </span>
-                )}
                 <ChatFooter
-                  textareaRef={textareaRef}
+                  ref={textareaRef}
                   value={textareaContent}
                   sendMessage={onSendMessage}
                   isDisabledButton={isDisabledButton}

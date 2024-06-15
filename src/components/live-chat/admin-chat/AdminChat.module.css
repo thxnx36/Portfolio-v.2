@@ -3,6 +3,15 @@
   height: 800px;
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+
+.headButtons {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .chat {

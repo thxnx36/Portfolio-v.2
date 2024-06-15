@@ -24,6 +24,7 @@ export const useSocketApi = ({
       return () => {
         socket.emit('leave', { userName })
         socket.disconnect()
+        socket.off()
       }
     }
   }, [userName, connectSocket])

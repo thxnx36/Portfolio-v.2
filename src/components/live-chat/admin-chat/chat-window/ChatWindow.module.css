@@ -4,7 +4,20 @@
   background-color: var(--bg-body-color);
   padding: 10px;
   margin: 0 0 10px;
-  overflow-y: scroll;
+  overflow: hidden;
+}
+
+.emptyWindow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userBadge {
+  display: flex;
+  justify-content: center;
 }
 
 .messagesContent {
@@ -12,6 +25,9 @@
   display: flex;
   flex-direction: column;
   overflow: auto;
+  height: 100%;
+  background-color: var(--bg-body-color);
+  scrollbar-width: none;
 }
 
 .adminMessage,

@@ -1,43 +1,34 @@
 import { FC } from 'react'
-import { CloseButton, Paragraph, Title } from 'src/shared'
+import { CloseButton, Paragraph } from 'src/shared'
 import { UserType } from 'src/types'
 import { MdOutlineDelete } from 'react-icons/md'
-import { TbReload } from 'react-icons/tb'
 import styles from './UsersList.module.css'
 
 type Props = {
   usersList?: UserType[]
   selectedUser: UserType | null
+  isOpenUsersList: boolean
   onSelectUser: (user: UserType) => Promise<void>
   onDeleteUser: (user: UserType) => Promise<void>
   onResetSelectedUser: () => void
-  refetchUsersList: () => void
 }
 
 export const UsersList: FC<Props> = ({
   usersList,
   selectedUser,
+  isOpenUsersList,
   onSelectUser,
   onDeleteUser,
   onResetSelectedUser,
-  refetchUsersList,
 }) => {
   return (
-    <ul className={styles.userList}>
-      <div className={styles.title}>
-        <Title tag='h4'>Users</Title>
-        <button onClick={refetchUsersList}>{<TbReload size='1.5em' />}</button>
-      </div>
-      <div
-        style={{
-          width: '100%',
-          justifyContent: 'space-between',
-          display: 'flex',
-        }}
-      >
-        <p>Name</p>
-        <p>Id</p>
-      </div>
+    <ul
+      className={
+        isOpenUsersList
+          ? `${styles.userList} ${styles.openUsersList}`
+          : styles.userList
+      }
+    >
       {usersList?.map(user => (
         <li
           key={user?.userId}
@@ -55,7 +46,7 @@ export const UsersList: FC<Props> = ({
             }
             onClick={() => onSelectUser(user)}
           >
-            {user?.userName} | {user?.userId}
+            {user?.userName}
           </Paragraph>
           {selectedUser === user && (
             <div className={styles.controlButtons}>

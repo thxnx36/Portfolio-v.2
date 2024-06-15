@@ -10,6 +10,7 @@ export const liveChatApi = createApi({
   baseQuery: apiBaseQuery({
     baseUrl: env.apiChatUrl,
   }),
+
   endpoints: build => ({
     sendTelegramMessage: build.mutation<void, { message: string }>({
       query({ message }) {

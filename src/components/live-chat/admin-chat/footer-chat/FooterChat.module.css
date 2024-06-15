@@ -1,7 +1,5 @@
 .footerChat {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
 
 .footerChat > div {

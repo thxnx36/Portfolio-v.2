@@ -8,6 +8,7 @@ import {
   CollapseButton,
   UserInfoButton,
   CloseButton,
+  SendMessageChatButton,
 } from './buttons'
 import { CardsContainer } from './cards-container'
 import { Container, MContainer } from './container'
@@ -32,8 +33,8 @@ import { ToolTip } from './tool-tip'
 import { ReCaptcha } from './re-captcha'
 import { SEO } from './seo'
 import { ToggleLang } from './buttons/toggle-lang'
-import { Loader } from "./loader"
-import { MarqueeBackground } from "./marquee-background"
+import { Loader } from './loader'
+import { MarqueeBackground } from './marquee-background'
 
 export {
   Avatar,
@@ -63,6 +64,7 @@ export {
   MTitle,
   Layout,
   ScrollTopButton,
+  SendMessageChatButton,
   BackButton,
   Toast,
   Drawer,

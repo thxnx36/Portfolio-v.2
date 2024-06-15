@@ -7,6 +7,7 @@ import { BackButton } from './back-button/BackButton'
 import { ScrollTopButton } from './scroll-top'
 import { ToggleLang } from './toggle-lang'
 import { CloseButton } from './close-button'
+import { SendMessageChatButton } from './send-message-chat-button'
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   ScrollTopButton,
   ToggleLang,
   CloseButton,
+  SendMessageChatButton,
 }

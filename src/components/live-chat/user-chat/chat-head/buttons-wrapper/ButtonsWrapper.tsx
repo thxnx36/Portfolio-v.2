@@ -8,7 +8,7 @@ import styles from './ButtonsWraapper.module.css'
 type Props = {
   onToggleChat: () => void
   onToogleZoomWindow: () => void
-  onDeleteChat: () => Promise<void>
+  onDeleteChat: () => void
   isJoinedUser: boolean
 }
 

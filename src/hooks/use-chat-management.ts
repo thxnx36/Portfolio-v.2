@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { toast } from 'react-toastify'
 import { useChatMessages, useAuthUser } from 'src/app'
 import { UserType } from 'src/types'
@@ -33,14 +33,17 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
     refetchUsersList,
   } = useFetchUsers({ skipFetchUsersList, userId })
 
-  const onSelectUser = async (user: UserType) => {
-    setSelectedUser(user)
-    try {
-      await getUserById({ userId: user.userId }).unwrap()
-    } catch {
-      toast.error('Failed to fetch messages')
-    }
-  }
+  const onSelectUser = useCallback(
+    async (user: UserType) => {
+      setSelectedUser(user)
+      try {
+        await getUserById({ userId: user.userId }).unwrap()
+      } catch {
+        toast.error('Failed to fetch messages')
+      }
+    },
+    [getUserById],
+  )
 
   const onDeleteUser = async (user: UserType) => {
     try {
