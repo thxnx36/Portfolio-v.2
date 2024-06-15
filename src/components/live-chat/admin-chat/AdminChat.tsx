@@ -9,11 +9,23 @@ import { FooterChat } from './footer-chat/FooterChat'
 import { ADMIN } from 'src/constants'
 import { AuthAdmin } from './auth-admin/AuthAdmin'
 import { useChatManagement } from 'src/hooks/use-chat-management'
-import { v4 as uuidv4 } from 'uuid'
+import { IoMenu } from 'react-icons/io5'
+import { TbReload } from 'react-icons/tb'
+import {
+  usePositionChatWindow,
+  useSendMessageInChat,
+  useTextAreaHeight,
+} from 'src/hooks'
 import styles from './AdminChat.module.css'
 
 export const AdminChat = () => {
   const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS
+
+  const [password, setPassword] = useState<string>('')
+  const [isAuth, setIsAuth] = useState<boolean>(false)
+  const [isOpenUsersList, setIsOpenUsersList] = useState<boolean>(false)
+
+  const socket = useSocketApi({ userName: ADMIN, connectSocket: isAuth })
 
   const {
     selectedUser,
@@ -30,16 +42,29 @@ export const AdminChat = () => {
     onResetSelectedUser,
   } = useChatManagement({ skipFetchUsersList: false })
 
-  const [content, setContent] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
-  const [isAuth, setIsAuth] = useState<boolean>(false)
+  const {
+    onSendMessage,
+    handleKeyDown,
+    handleChangeTextArea,
+    textareaContent,
+    isDisabledButton,
+  } = useSendMessageInChat({
+    socket,
+    sender: ADMIN,
+    receiver: selectedUser?.userId!,
+  })
 
-  const socket = useSocketApi({ userName: ADMIN, connectSocket: isAuth })
+  const { messagesContainerRef } = usePositionChatWindow({
+    dependencies: [messages, onSelectUser],
+  })
 
+  const { textareaRef } = useTextAreaHeight({
+    dependencies: [textareaContent],
+  })
+
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     if (userById?.messages) setNewMessages(userById?.messages)
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userById])
 
   useEffect(() => {
@@ -48,11 +73,7 @@ export const AdminChat = () => {
         addNewMessage(message)
       })
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [socket])
-
-  const onChangeMessage = (e: ChangeEvent<HTMLTextAreaElement>) =>
-    setContent(e.target.value)
 
   // temporary auth
   const onChangePass = (e: ChangeEvent<HTMLInputElement>) =>
@@ -69,48 +90,48 @@ export const AdminChat = () => {
     }
   }
 
-  const onSendMessage = async (e: FormEvent) => {
-    e.preventDefault()
-    if (!selectedUser || !socket) return
-
-    const message = {
-      sender: ADMIN,
-      receiver: selectedUser.userId,
-      text: content,
-      timestamp: new Date().toISOString(),
-      messageId: uuidv4(),
-    }
-
-    socket.emit('send_message', message)
-    setContent('')
-  }
+  const onToggleUsersLists = () =>
+    setIsOpenUsersList(prevOpenList => !prevOpenList)
 
   const isLoading = isLoadingUserById || isFetchingUserById
 
   return (
-    <Section style={{ margin: 0 }}>
+    <Section style={{ margin: '20px 0' }}>
       {isAuth ? (
         <Container>
+          <div className={styles.headButtons}>
+            <button onClick={onToggleUsersLists}>
+              {<IoMenu size='1.5em' />}
+            </button>
+            <button onClick={refetchUsers}>{<TbReload size='1.3em' />}</button>
+          </div>
           <div className={styles.inner}>
             <UsersList
               onSelectUser={onSelectUser}
               onDeleteUser={onDeleteUser}
+              isOpenUsersList={isOpenUsersList}
               onResetSelectedUser={onResetSelectedUser}
               usersList={usersList?.users}
               selectedUser={selectedUser}
-              refetchUsersList={refetchUsers}
             />
             <div className={styles.chat}>
               {isLoading ? (
                 <Loader />
               ) : (
                 <>
-                  <ChatWindow messages={messages} selectedUser={selectedUser} />
+                  <ChatWindow
+                    messages={messages}
+                    selectedUser={selectedUser}
+                    ref={messagesContainerRef}
+                  />
                   {selectedUser && (
                     <FooterChat
-                      textAreaValue={content}
-                      onChangeMessage={onChangeMessage}
+                      ref={textareaRef}
+                      isDisabledButton={isDisabledButton}
+                      textAreaValue={textareaContent}
+                      onChangeMessage={handleChangeTextArea}
                       onSendMessage={onSendMessage}
+                      onKeyDown={handleKeyDown}
                     />
                   )}
                 </>

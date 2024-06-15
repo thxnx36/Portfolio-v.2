@@ -24,7 +24,7 @@ export const ChatMessages = forwardRef<HTMLUListElement, Props>(
     )
 
     return (
-      <ul className={styles.messagesContent} ref={ref}>
+      <ul ref={ref} className={styles.messagesContent}>
         <li className={styles.admin}>
           <span className={`${styles.arrow} ${styles.left}`} />
           <div className={styles.adminMessage}>

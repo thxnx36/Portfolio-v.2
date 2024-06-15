@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { chatPhoto } from 'src/assets'
 import { Avatar, Paragraph } from 'src/shared'
 import { Link } from 'react-router-dom'
@@ -10,7 +10,7 @@ import styles from './ChatHead.module.css'
 type Props = {
   onToggleChat: () => void
   onToogleZoomWindow: () => void
-  onDeleteChat: () => Promise<void>
+  onDeleteChat: () => void
   isJoinedUser: boolean
 }
 

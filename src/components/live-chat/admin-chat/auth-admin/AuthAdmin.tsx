@@ -9,6 +9,7 @@ type Props = {
 }
 
 export const AuthAdmin: FC<Props> = ({ value, onLogin, onChangePass }) => {
+  const showLogInButton = value.length
   return (
     <div className={styles.authContainer}>
       <form onSubmit={onLogin} className={styles.auth}>
@@ -20,7 +21,9 @@ export const AuthAdmin: FC<Props> = ({ value, onLogin, onChangePass }) => {
           placeholder='password'
           onChange={onChangePass}
         />
-        <Button text='Log in' disabled={!value.length}  />
+        {showLogInButton ? (
+          <Button text='Log in' disabled={!value.length} />
+        ) : null}
       </form>
     </div>
   )
