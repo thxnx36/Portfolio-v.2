@@ -15,8 +15,9 @@ import {
   usePositionChatWindow,
   useTextAreaHeight,
   useSendMessageInChat,
+  useDraggable,
 } from 'src/hooks'
-import { Button, Loader } from 'src/shared'
+import { Button, ChatSkeleton } from 'src/shared'
 import { playSoundsInChat } from 'src/utils'
 import { MessageType } from 'src/types'
 import styles from './UserChat.module.css'
@@ -69,6 +70,10 @@ export const UserChat = () => {
 
   const { textareaRef } = useTextAreaHeight({
     dependencies: [textareaContent],
+  })
+
+  const chatWindowRef = useDraggable<HTMLDivElement>({
+    isVisibleElement: isOpenChat,
   })
 
   useEffect(() => {
@@ -127,17 +132,20 @@ export const UserChat = () => {
 
   return (
     <>
-      <div className={styles.openButton}>
-        <Button
-          onClick={onToggleChat}
-          text='Live Chat'
-          icon={<IoChatbubbles size={'1.2em'} />}
-        />
-        {isShowNotification && <NotificationIcon count={notificationCount} />}
-      </div>
+      {!isOpenChat && (
+        <div className={styles.openButton}>
+          <Button
+            onClick={onToggleChat}
+            text='Live Chat'
+            icon={<IoChatbubbles size={'1.2em'} />}
+          />
+          {isShowNotification && <NotificationIcon count={notificationCount} />}
+        </div>
+      )}
 
       {isOpenChat && (
         <div
+          ref={chatWindowRef}
           className={
             isZoomWindow ? `${styles.chat} ${styles.zoomWindow}` : styles.chat
           }
@@ -150,7 +158,7 @@ export const UserChat = () => {
           />
           {isJoined ? (
             isLoading ? (
-              <Loader />
+              <ChatSkeleton />
             ) : (
               <>
                 <ChatMessages
