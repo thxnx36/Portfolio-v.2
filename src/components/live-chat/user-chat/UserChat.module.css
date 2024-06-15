@@ -10,13 +10,24 @@
   justify-content: space-between;
   max-width: 350px;
   max-height: 550px;
-  background-color: var(--background-color);
+  border: 1px solid transparent;
   z-index: 1000;
   overflow: hidden;
   box-shadow: var(--shadow-chat);
   transition:
     max-width 0.5s ease-in-out,
     max-height 0.5s ease-in-out;
+
+  background:
+    linear-gradient(var(--background-color), var(--background-color))
+      padding-box,
+    linear-gradient(
+        103.55deg,
+        #7152dc 16.12%,
+        #2886a9 41.87%,
+        rgba(63, 122, 144, 0.53) 84.45%
+      )
+      border-box;
 }
 
 .zoomWindow {
