@@ -6,7 +6,10 @@
 .textarea {
   width: 100%;
   border: none;
-  background-color: var(--bg-color-grey);
+  background-color: var(--bg-body-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
   padding: 10px;
   outline: none;
   margin-bottom: 5px;

@@ -108,7 +108,7 @@
   },
   "portfolio": {
     "TITLE": "Portfolio",
-    "SUBTITLE": "Key projects in development that I participated in both collaboratively with my team and independently",
+    "SUBTITLE": "Key commercial projects in development that I participated in both collaboratively with my team and independently",
     "projects": {
       "tutiffy": {
         "NAME": "Tuttify",
