@@ -20,7 +20,6 @@ export const ChatFooter = forwardRef<HTMLTextAreaElement, Props>(
       <form onSubmit={sendMessage} className={styles.chatFooterWrap}>
         <Textarea
           ref={ref}
-          style={{ overflow: 'auto', resize: 'none', maxHeight: '70px' }}
           id='chat-textarea'
           value={value}
           onChange={onChange}

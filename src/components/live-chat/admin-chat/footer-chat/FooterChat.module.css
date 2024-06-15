@@ -6,10 +6,12 @@
   margin: 0;
 }
 
-.textArea {
-  width: 100%;
-  background: transparent;
-  border: 1px solid var(--secondary-color);
-  border-radius: var(--border-radius);
-  padding: 10px;
+.footerChat textarea {
+  overflow: auto;
+  max-height: 90px;
+  resize: none;
+}
+
+.footerChat textarea:focus {
+  border: 1px solid var(--border-color);
 }

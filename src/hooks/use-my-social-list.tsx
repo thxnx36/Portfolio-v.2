@@ -1,14 +1,7 @@
-import {
-  LINKEDIN_URL,
-  TELEGRAM_URL,
-  EMAIL_URL,
-  GIT_HUB_URL,
-} from 'src/constants'
+import { LINKEDIN_URL, TELEGRAM_URL } from 'src/constants'
 import type { MySocialListType } from 'src/types'
 import { FaLinkedin } from 'react-icons/fa'
 import { FaTelegramPlane } from 'react-icons/fa'
-import { MdEmail } from 'react-icons/md'
-import { FaGithubSquare } from 'react-icons/fa'
 
 export const useMySocialList = () => {
   const socialList: MySocialListType[] = [
@@ -23,18 +16,6 @@ export const useMySocialList = () => {
       name: 'Telegram',
       icon: <FaTelegramPlane size='1.2em' />,
       id: 2,
-    },
-    {
-      link: EMAIL_URL,
-      name: 'Email',
-      icon: <MdEmail size='1.2em' />,
-      id: 3,
-    },
-    {
-      link: GIT_HUB_URL,
-      name: 'GitHub',
-      icon: <FaGithubSquare size='1.2em' />,
-      id: 4,
     },
   ]
 
