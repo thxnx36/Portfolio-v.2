@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import { IoIosArrowBack } from 'react-icons/io'
 import { IoIosArrowForward } from 'react-icons/io'
 import { FiExternalLink } from 'react-icons/fi'
+import { RxReload } from 'react-icons/rx'
 import { Link } from 'react-router-dom'
 import { CiSearch } from 'react-icons/ci'
 import { ROUTES } from 'src/constants'
@@ -22,21 +23,15 @@ export const PortfolioCard: FC<Props> = ({ src, title, project, link, id }) => {
   return (
     <Container>
       <div className={styles.container}>
-        <div className={styles.line}>
-          <ul className={styles.dotContainer}>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <div className={styles.browser}>
-            <div className={styles.arrows}>
-              <IoIosArrowBack size='0.6em' />
-              <IoIosArrowForward size='0.6em' />
-            </div>
-            <div className={styles.searchBar}>
-              <CiSearch />
-              <span className={styles.urls}>{formatUrl(link)}</span>
-            </div>
+        <div className={styles.browser}>
+          <div className={styles.arrows}>
+            <IoIosArrowBack size='0.5em' />
+            <IoIosArrowForward size='0.5em' />
+          </div>
+          <RxReload size='0.6em' />
+          <div className={styles.searchBar}>
+            <CiSearch />
+            <span className={styles.urls}>{formatUrl(link)}</span>
           </div>
         </div>
         <div className={styles.imageContainer}>
