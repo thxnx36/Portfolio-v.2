@@ -3,19 +3,14 @@
   padding: 0 3px 3px;
 }
 
-.line {
-  display: flex;
-  gap: 5px;
-  background-color: var(--background-color);
-  justify-content: space-between;
-}
-
 .browser {
-  width: 80%;
+  width: 90%;
   height: 23px;
   padding: 4px 0;
   display: flex;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .arrows {
@@ -45,33 +40,6 @@
 
 .urls {
   font-size: 0.8em;
-}
-
-.dotContainer {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 0;
-  margin: 5px;
-}
-
-.dotContainer li {
-  list-style-type: none;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-}
-
-.dotContainer li:nth-child(1) {
-  background-color: var(--red-color);
-}
-
-.dotContainer li:nth-child(2) {
-  background-color: var(--orange-color);
-}
-
-.dotContainer li:nth-child(3) {
-  background-color: var(--green-color);
 }
 
 .imageContainer {
