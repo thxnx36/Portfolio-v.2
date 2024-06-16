@@ -10,7 +10,7 @@
 }
 
 .messageSkeleton {
-  width: 150px;
+  width: 180px;
   height: 60px;
   display: flex;
   flex-direction: column;

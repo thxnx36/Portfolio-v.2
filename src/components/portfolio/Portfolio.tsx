@@ -21,12 +21,13 @@ export const Portfolio = () => {
         subTitle={t('portfolio.SUBTITLE')}
       />
       <CardsContainer>
-        {portfolioList.map(({ title, project, src, id }) => (
+        {portfolioList.map(({ title, project, src, id, link }) => (
           <PortfolioCard
             key={id}
             title={title}
             project={project}
             src={src}
+            link={link}
             id={id}
           />
         ))}
