@@ -73,14 +73,14 @@
       "udemy": {
         "NAME": "Udemy",
         "POSITION": "Student",
-        "DATE": "Jan 2021 - Feb 2022",
+        "DATE": "2021 - 2022",
         "TITLE": "Front-end development",
         "DESCRIPTION": "In-depth learning front-end technologies including JavaScript, TypeScript, React and Redux"
       },
       "institute": {
         "NAME": "Institute of Engineering",
         "POSITION": "Student",
-        "DATE": "Sep 2015 - May 2018",
+        "DATE": "2015 - 2018",
         "TITLE": "Energy management",
         "DESCRIPTION": "Learning of energy supply plans and strategies, energy optimization and cost minimization"
       }
@@ -93,14 +93,14 @@
       "elementica": {
         "NAME": "Elementica",
         "POSITION": "Front-end Developer",
-        "DATE": "Jan 2022 - Jan 2024",
+        "DATE": "2022 - 2024",
         "TITLE": "Creating web applications",
         "DESCRIPTION": "In my role at 'Elementica' I collaborate with the team to develop and enhance the product, make technical decisions, and contribute to achieving common goals"
       },
       "freelance": {
         "NAME": "Freelance",
         "POSITION": "Web Developer",
-        "DATE": "Jun 2021 - Dec 2021",
+        "DATE": "2021 - 2021",
         "TITLE": "Creating websites",
         "DESCRIPTION": "I was creating websites for clients using HTML, CSS, and JavaScript"
       }

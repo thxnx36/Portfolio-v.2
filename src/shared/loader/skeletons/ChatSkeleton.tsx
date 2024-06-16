@@ -7,6 +7,7 @@ export const ChatSkeleton = () => {
       <div className={`${styles.messageSkeleton} ${styles.sender}`}></div>
       <div className={`${styles.messageSkeleton} ${styles.user}`}></div>
       <div className={`${styles.messageSkeleton} ${styles.sender}`}></div>
+      <div className={`${styles.messageSkeleton} ${styles.sender}`}></div>
     </div>
   )
 }

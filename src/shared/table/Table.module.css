@@ -47,9 +47,10 @@ a {
 
 .date {
   background: var(--bg-linear);
-  color: var(--white-color);
-  font-size: 10px;
+  color: var(--text-color);
+  font-size: var(--font-size-xs-mobile);
   padding: 4px 7px;
+  border-radius: var(--border-radius);
 }
 
 @media screen and (max-width: 827px) {
