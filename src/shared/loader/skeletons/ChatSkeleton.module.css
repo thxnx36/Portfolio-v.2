@@ -10,8 +10,8 @@
 }
 
 .messageSkeleton {
-  width: 180px;
-  height: 60px;
+  width: 170px;
+  height: 52px;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -20,6 +20,31 @@
   background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite ease-in-out;
+}
+
+.messageSkeleton:nth-child(1) {
+  width: 120px;
+}
+
+.messageSkeleton:nth-child(2) {
+  width: 150px;
+}
+
+.messageSkeleton:nth-child(3) {
+  width: 100px;
+}
+
+.messageSkeleton:nth-child(4) {
+  width: 190px;
+}
+
+.messageSkeleton:nth-child(5) {
+  width: 130px;
+}
+
+.messageSkeleton:nth-child(6) {
+  width: 200px;
+  height: 70px;
 }
 
 .user {

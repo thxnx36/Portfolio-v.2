@@ -2,12 +2,13 @@ import styles from './ChatSkeleton.module.css'
 
 export const ChatSkeleton = () => {
   return (
-    <div className={styles.chat}>
-      <div className={`${styles.messageSkeleton} ${styles.user}`}></div>
-      <div className={`${styles.messageSkeleton} ${styles.sender}`}></div>
-      <div className={`${styles.messageSkeleton} ${styles.user}`}></div>
-      <div className={`${styles.messageSkeleton} ${styles.sender}`}></div>
-      <div className={`${styles.messageSkeleton} ${styles.sender}`}></div>
-    </div>
+    <ul className={styles.chat}>
+      <li className={`${styles.messageSkeleton} ${styles.user}`} />
+      <li className={`${styles.messageSkeleton} ${styles.sender}`} />
+      <li className={`${styles.messageSkeleton} ${styles.user}`} />
+      <li className={`${styles.messageSkeleton} ${styles.sender} `} />
+      <li className={`${styles.messageSkeleton} ${styles.sender}`} />
+      <li className={`${styles.messageSkeleton} ${styles.user} `} />
+    </ul>
   )
 }
