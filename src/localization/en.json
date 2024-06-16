@@ -112,7 +112,7 @@
     "projects": {
       "tutiffy": {
         "NAME": "Tuttify",
-        "DESCR": "Multilingual and multiuser educational platform",
+        "DESCR": "Educational platform",
         "about": {
           "p_1": {
             "TEXT_1": "Front-end team - 4 developers. Back-end team - 4 developers. QA team - 2 developers.",
@@ -146,7 +146,7 @@
       },
       "maven": {
         "NAME": "Maven 11",
-        "DESCR": "Landing page for a crypto-native fund",
+        "DESCR": "Landing page for a crypto fund",
         "about": {
           "p_1": {
             "TEXT_1": "Front-end team - 1 developer. QA team - 1 developer.",
