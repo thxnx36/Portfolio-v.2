@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ChatHead } from './chat-head/ChatHead'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { ChatJoin } from './chat-join/ChatJoin'
@@ -45,6 +45,8 @@ export const UserChat = () => {
     isFetchingMessages,
     isErrorMessages,
     isLoadingDeleteChat,
+    isLoadingDeleteChatHistory,
+    onDeleteChatHistory,
     onLeave,
     onDeleteChat,
     setNewMessages,
@@ -127,8 +129,17 @@ export const UserChat = () => {
     setIsZoomWindow(false)
   }
 
+  const filteredMessages = useMemo(
+    () =>
+      messages.filter(msg => msg.receiver === userId || msg.sender === userId),
+    [messages, userId],
+  )
+
   const isLoading =
-    isLoadingMessages || isFetchingMessages || isLoadingDeleteChat
+    isLoadingMessages ||
+    isFetchingMessages ||
+    isLoadingDeleteChat ||
+    isLoadingDeleteChatHistory
 
   return (
     <>
@@ -153,8 +164,10 @@ export const UserChat = () => {
           <ChatHead
             onToggleChat={onToggleChat}
             onDeleteChat={onLeaveAndDeleteChat}
+            onDeleteChatHistory={onDeleteChatHistory}
             onToogleZoomWindow={onToogleZoomWindow}
             isJoinedUser={isJoined}
+            showDeleteHistory={!!filteredMessages.length}
           />
           {isJoined ? (
             isLoading ? (
@@ -163,9 +176,8 @@ export const UserChat = () => {
               <>
                 <ChatMessages
                   ref={messagesContainerRef}
-                  messages={messages}
+                  messages={filteredMessages}
                   adminSender={ADMIN}
-                  userSender={userId}
                   userName={userName}
                 />
               </>

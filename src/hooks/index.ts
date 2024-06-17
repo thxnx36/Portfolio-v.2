@@ -12,7 +12,6 @@ import { useEducationList } from './use-education-list'
 import { useWorkList } from './use-work-list'
 import { useGoBack } from './use-go-back'
 import { useJoinToChat } from './use-join-to-chat'
-import { useFetchUsers } from './use-fetch-users'
 import { useChatManagement } from './use-chat-management'
 import { usePositionChatWindow } from "./use-position-chat-window"
 import { useTextAreaHeight } from "./use-textaerea-height"
@@ -35,7 +34,6 @@ export {
   useGoBack,
   useJoinToChat,
   useChatManagement,
-  useFetchUsers,
   usePositionChatWindow,
   useTextAreaHeight,
   useSendMessageInChat,
