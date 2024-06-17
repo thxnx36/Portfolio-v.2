@@ -168,20 +168,21 @@ export const UserChat = () => {
                   userSender={userId}
                   userName={userName}
                 />
-                <ChatFooter
-                  ref={textareaRef}
-                  value={textareaContent}
-                  sendMessage={onSendMessage}
-                  isDisabledButton={isDisabledButton}
-                  onChange={handleChangeTextArea}
-                  onKeyDown={handleKeyDown}
-                  placeholder={t('input.placeholder.YOUR_MESSAGE')}
-                />
               </>
             )
           ) : (
             <ChatJoin />
           )}
+          <ChatFooter
+            ref={textareaRef}
+            value={textareaContent}
+            sendMessage={onSendMessage}
+            onChange={handleChangeTextArea}
+            onKeyDown={handleKeyDown}
+            isDisabledInput={isLoading || !isJoined}
+            isDisabledButton={isDisabledButton}
+            placeholder={t('input.placeholder.YOUR_MESSAGE')}
+          />
         </div>
       )}
     </>
