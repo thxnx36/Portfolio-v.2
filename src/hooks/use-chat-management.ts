@@ -1,8 +1,17 @@
 import { useCallback, useState } from 'react'
 import { toast } from 'react-toastify'
-import { useChatMessages, useAuthUser } from 'src/app'
+import {
+  useChatMessages,
+  useAuthUser,
+  useDeleteChatByUserIdMutation,
+  useDeleteChatHistoryByUserIdMutation,
+  useDeleteUserByUserIdMutation,
+  useGetAllUsersQuery,
+  useGetUserByIdQuery,
+  useLazyGetUserByIdQuery,
+} from 'src/app'
 import { UserType } from 'src/types'
-import { useFetchUsers } from '.'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
   skipFetchUsersList: boolean
@@ -12,26 +21,31 @@ type Props = {
 export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
   const [selectedUser, setSelectedUser] = useState<UserType | null>(null)
 
+  const { t } = useTranslation()
   const { onLeave } = useAuthUser()
   const { messages, setNewMessages, addNewMessage } = useChatMessages()
 
+  const [deleteUser, { isLoading: isLoadingDelete }] = useDeleteUserByUserIdMutation()
+
+  const [deleteChat, { isLoading: isLoadingDeleteChat }] = useDeleteChatByUserIdMutation()
+
+  const [deleteChatHistory, { isLoading: isLoadingDeleteChatHistory }] = useDeleteChatHistoryByUserIdMutation()
+
+  const [getUserById, { data: userById, isLoading: isLoadingUserById, isFetching: isFetchingUserById }] = useLazyGetUserByIdQuery()
+
+  const { data: usersList, refetch: refetchUsersList } = useGetAllUsersQuery(
+    undefined,
+    { skip: skipFetchUsersList },
+  )
+
   const {
-    userMessages,
-    isLoadingMessages,
-    isFetchingMessages,
-    isErrorMessages,
-    isLoadingDelete,
-    userById,
-    isLoadingUserById,
-    isFetchingUserById,
-    usersList,
-    isLoadingDeleteChat,
-    deleteChat,
-    deleteUser,
-    refetchUserById,
-    getUserById,
-    refetchUsersList,
-  } = useFetchUsers({ skipFetchUsersList, userId })
+    data: userMessages,
+    isLoading: isLoadingMessages,
+    isFetching: isFetchingMessages,
+    isError: isErrorMessages,
+    refetch: refetchUserById,
+  } = useGetUserByIdQuery({ userId: userId! }, { skip: !userId?.length })
+
 
   const onSelectUser = useCallback(
     async (user: UserType) => {
@@ -39,10 +53,10 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
       try {
         await getUserById({ userId: user.userId }).unwrap()
       } catch {
-        toast.error('Failed to fetch messages')
+        toast.error(t('toast.error.FAILED_GET_MESSAGES'))
       }
     },
-    [getUserById],
+    [getUserById, t],
   )
 
   const onDeleteUser = async (user: UserType) => {
@@ -51,9 +65,9 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
       refetchUsersList()
       setNewMessages([])
       setSelectedUser(null)
-      toast.success('User has been deleted')
+      toast.success(t('toast.error.SUCCESS_DELETE_USER'))
     } catch {
-      toast.error('Failed to delete user')
+      toast.error(t('toast.error.FAILED_DELETE_USER'))
     }
   }
 
@@ -62,9 +76,17 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
       await deleteChat({ userId: userId! }).unwrap()
       onLeave()
       setNewMessages([])
-      toast.success('Chat has been deleted')
     } catch {
-      toast.error('Failed to delete chat')
+      toast.error(t('toast.error.FAILED_DELETE_CHAT'))
+    }
+  }
+
+  const onDeleteChatHistory = async () => {
+    try {
+      await deleteChatHistory({ userId: userId! }).unwrap()
+      setNewMessages([])
+    } catch {
+      toast.error(t('toast.error.FAILED_DELETE_CHAT_HISTORY'))
     }
   }
 
@@ -80,14 +102,16 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
     messages,
     usersList,
     userById,
+    userMessages,
     isLoadingUserById,
     isFetchingUserById,
-    userMessages,
     isLoadingMessages,
     isFetchingMessages,
     isErrorMessages,
     isLoadingDelete,
     isLoadingDeleteChat,
+    isLoadingDeleteChatHistory,
+    onDeleteChatHistory,
     deleteChat,
     onLeave,
     onDeleteChat,

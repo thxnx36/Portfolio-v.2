@@ -59,6 +59,15 @@ export const liveChatApi = createApi({
       },
     }),
 
+    deleteChatHistoryByUserId: build.mutation<void, { userId: string }>({
+      query({ userId }) {
+        return {
+          url: `/${userId}/deleteChatHistory`,
+          method: 'delete',
+        }
+      },
+    }),
+
     getUserById: build.query<UserType, { userId: string }>({
       query({ userId }) {
         return {
@@ -96,6 +105,7 @@ export const {
   useAddMessageMutation,
   useDeleteUserByUserIdMutation,
   useDeleteChatByUserIdMutation,
+  useDeleteChatHistoryByUserIdMutation,
   useGetAllUsersQuery,
   useCreateUserMutation,
   useGetUserByIdQuery,

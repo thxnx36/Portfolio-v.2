@@ -23,6 +23,7 @@
     "NAME": "Vlad",
     "setting_buttons": {
       "DELETE_CHAT": "disconnect",
+      "DELETE_CHAT_HISTORY": "delete history",
       "RESIZE_WINDOW": "resize window"
     }
   },
@@ -187,10 +188,15 @@
   },
   "toast": {
     "success": {
-      "EMAIL_SENT": "Thanks! Your email has been sent"
+      "EMAIL_SENT": "Thanks! Your email has been sent",
+      "SUCCESS_DELETE_USER": "User has been deleted"
     },
     "error": {
-      "WRONG": "Something went wrong!"
+      "WRONG": "Something went wrong!",
+      "FAILED_DELETE_CHAT_HISTORY": "Failed to delete chat history",
+      "FAILED_DELETE_CHAT": "Failed to delete chat",
+      "FAILED_DELETE_USER": "Failed to delete user",
+      "FAILED_GET_MESSAGES": "Failed to get messages"
     },
     "info": {
       "FIXING": "I'm already fixing the problem"

@@ -11,14 +11,18 @@ type Props = {
   onToggleChat: () => void
   onToogleZoomWindow: () => void
   onDeleteChat: () => void
+  onDeleteChatHistory: () => Promise<void>
   isJoinedUser: boolean
+  showDeleteHistory: boolean
 }
 
 export const ChatHead: FC<Props> = ({
   onToggleChat,
   onToogleZoomWindow,
   onDeleteChat,
+  onDeleteChatHistory,
   isJoinedUser,
+  showDeleteHistory,
 }) => {
   const { t } = useTranslation()
   return (
@@ -38,7 +42,9 @@ export const ChatHead: FC<Props> = ({
         onToggleChat={onToggleChat}
         onToogleZoomWindow={onToogleZoomWindow}
         onDeleteChat={onDeleteChat}
+        onDeleteChatHistory={onDeleteChatHistory}
         isJoinedUser={isJoinedUser}
+        showDeleteHistory={showDeleteHistory}
       />
     </div>
   )

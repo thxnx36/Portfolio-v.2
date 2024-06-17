@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import { motionSection } from "src/constants"
-import { useEducationList } from "src/hooks"
-import { MSection, SectionHead, Container, Table } from "src/shared"
-
+import { motionSection } from 'src/constants'
+import { useEducationList } from 'src/hooks'
+import { MSection, SectionHead, Container, Table } from 'src/shared'
 
 export const Education = () => {
   const { t } = useTranslation()
