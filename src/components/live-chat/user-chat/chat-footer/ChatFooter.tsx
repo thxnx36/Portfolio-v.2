@@ -6,6 +6,7 @@ type Props = {
   value: string
   placeholder: string
   isDisabledButton: boolean
+  isDisabledInput: boolean
   onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void
   onKeyDown: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void
   sendMessage: (e: FormEvent) => Promise<void>
@@ -13,7 +14,15 @@ type Props = {
 
 export const ChatFooter = forwardRef<HTMLTextAreaElement, Props>(
   (
-    { value, onChange, onKeyDown, sendMessage, placeholder, isDisabledButton },
+    {
+      value,
+      onChange,
+      onKeyDown,
+      sendMessage,
+      placeholder,
+      isDisabledButton,
+      isDisabledInput,
+    },
     ref,
   ) => {
     return (
@@ -22,6 +31,7 @@ export const ChatFooter = forwardRef<HTMLTextAreaElement, Props>(
           ref={ref}
           id='chat-textarea'
           value={value}
+          disabled={isDisabledInput}
           onChange={onChange}
           onKeyDown={onKeyDown}
           placeholder={placeholder}
