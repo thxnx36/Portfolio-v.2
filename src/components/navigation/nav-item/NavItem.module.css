@@ -44,7 +44,7 @@
     border-radius: 5px;
     background-color: transparent;
     padding: 5px;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--border-color);
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
   }

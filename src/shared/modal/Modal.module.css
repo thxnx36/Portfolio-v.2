@@ -19,7 +19,6 @@
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   position: relative;
-  overflow: auto;
   border: 1px solid transparent;
   background:
     linear-gradient(var(--background-color), var(--background-color))

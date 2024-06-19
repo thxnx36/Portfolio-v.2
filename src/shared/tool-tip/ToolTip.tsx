@@ -8,11 +8,12 @@ type Props = HTMLAttributes<HTMLElement> & {
 
 export const ToolTip: FC<Props> = ({ text, children, ...props }) => {
   return (
-    <span className={styles.tooltipContainer} {...props}>
+    <div className={styles.tooltipContainer} {...props}>
       {children}
       <div className={styles.tooltip}>
-        <span className={styles.tooltipText}>{text}</span>
+        <div className={styles.line}></div>
+        <p className={styles.tolltipText}>{text}</p>
       </div>
-    </span>
+    </div>
   )
 }
