@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import type { MySocialListType } from '../../types'
+import type { MySocialListType } from 'src/types'
 import { ToolTip } from '../tool-tip'
 import styles from './SocialList.module.css'
 

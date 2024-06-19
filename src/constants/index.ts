@@ -19,6 +19,7 @@ import {
   MAVEN_URL,
   CV_URL,
   APP_URL,
+  UP_WORK_URL,
 } from './URLs'
 import { LANG, ENG, UK } from './lang'
 import {
@@ -60,6 +61,7 @@ export {
   GREY_COLOR,
   COMPANY_URL,
   UDEMY_URL,
+  UP_WORK_URL,
   UNIVERSITY_URL,
   TELEGRAM_URL,
   LINKEDIN_URL,

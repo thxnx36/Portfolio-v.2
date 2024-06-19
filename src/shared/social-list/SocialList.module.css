@@ -13,3 +13,7 @@
   color: var(--text-color);
   margin: 2px 0;
 }
+
+address {
+  font-style: normal;
+}
