@@ -1,15 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { persistReducer, persistStore } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import authUserReducer from './slices/chat-auth-user-slice'
 import { sendEmailApi, liveChatApi } from '../api'
-import { chatMessagesReducer } from './slices'
+import { chatAuthUserReducer, chatMessagesReducer } from './slices'
 
 const persistConfig = {
   key: 'userChatAuth',
   storage,
 }
-const persistedAuthUserReducer = persistReducer(persistConfig, authUserReducer)
+const persistedAuthUserReducer = persistReducer(
+  persistConfig,
+  chatAuthUserReducer,
+)
 
 export const store = configureStore({
   reducer: {

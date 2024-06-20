@@ -3,7 +3,7 @@ import { ChatHead } from './chat-head/ChatHead'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { ChatJoin } from './chat-join/ChatJoin'
 import { useTranslation } from 'react-i18next'
-import { ChatMessages } from './chat-messages/ChatMessages'
+import { ChatMessagesMemo } from './chat-messages/ChatMessages'
 import { NotificationIcon } from './chat-notification-icon/NotificationIcon'
 import { IoChatbubbles } from 'react-icons/io5'
 import { useAuthUser, useSocketApi } from 'src/app'
@@ -86,11 +86,11 @@ export const UserChat = () => {
     if (isErrorMessages) onLeave()
   }, [isErrorMessages, onLeave])
 
-  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     if (!userMessages?.messages) return
 
     setNewMessages(userMessages?.messages)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userMessages])
 
   useEffect(() => {
@@ -114,6 +114,7 @@ export const UserChat = () => {
     return () => {
       socket.off('response', handleResponse)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, socket, isOpenChat])
 
   const onToggleChat = useCallback(() => {
@@ -122,7 +123,7 @@ export const UserChat = () => {
     setNotificationCount(0)
   }, [isOpenChat, setOpenChat])
 
-  const onToogleZoomWindow = () => setIsZoomWindow(prevZoom => !prevZoom)
+  const onToggleZoomWindow = () => setIsZoomWindow(prevZoom => !prevZoom)
 
   const onLeaveAndDeleteChat = () => {
     onDeleteChat()
@@ -165,7 +166,7 @@ export const UserChat = () => {
             onToggleChat={onToggleChat}
             onDeleteChat={onLeaveAndDeleteChat}
             onDeleteChatHistory={onDeleteChatHistory}
-            onToogleZoomWindow={onToogleZoomWindow}
+            onToggleZoomWindow={onToggleZoomWindow}
             isJoinedUser={isJoined}
             showDeleteHistory={!!filteredMessages.length}
           />
@@ -174,7 +175,7 @@ export const UserChat = () => {
               <ChatSkeleton />
             ) : (
               <>
-                <ChatMessages
+                <ChatMessagesMemo
                   ref={messagesContainerRef}
                   messages={filteredMessages}
                   adminSender={ADMIN}

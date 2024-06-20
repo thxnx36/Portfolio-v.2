@@ -1,4 +1,4 @@
-import { forwardRef, useMemo } from 'react'
+import { forwardRef, memo } from 'react'
 import { MessageType, UserType } from 'src/types'
 import { Paragraph } from 'src/shared'
 import { formatDateTime } from 'src/utils'
@@ -9,23 +9,14 @@ type Props = {
   selectedUser: UserType | null
 }
 
-export const ChatWindow = forwardRef<HTMLUListElement, Props>(
+const ChatWindow = forwardRef<HTMLUListElement, Props>(
   ({ messages, selectedUser }, ref) => {
-    const filteredMessages = useMemo(
-      () =>
-        messages.filter(
-          msg =>
-            msg.receiver === selectedUser?.userId ||
-            msg.sender === selectedUser?.userId,
-        ),
-      [messages, selectedUser?.userId],
-    )
     return (
       <div className={styles.chatWindow}>
         <span className={styles.userBadge}>{selectedUser?.userName}</span>
         {selectedUser ? (
           <ul ref={ref} className={styles.messagesContent}>
-            {filteredMessages?.map(msg => (
+            {messages?.map(msg => (
               <li
                 key={msg?.messageId}
                 className={
@@ -62,3 +53,5 @@ export const ChatWindow = forwardRef<HTMLUListElement, Props>(
     )
   },
 )
+
+export const ChatWindowMemo = memo(ChatWindow)

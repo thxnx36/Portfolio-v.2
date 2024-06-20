@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, memo } from 'react'
 import { Paragraph } from 'src/shared'
 import { formatDateTime, formatMessage } from 'src/utils'
 import { MessageType } from 'src/types'
@@ -11,7 +11,7 @@ type Props = {
   userName: string
 }
 
-export const ChatMessages = forwardRef<HTMLUListElement, Props>(
+const ChatMessages = forwardRef<HTMLUListElement, Props>(
   ({ messages, adminSender, userName }, ref) => {
     const { t } = useTranslation()
     return (
@@ -50,3 +50,5 @@ export const ChatMessages = forwardRef<HTMLUListElement, Props>(
     )
   },
 )
+
+export const ChatMessagesMemo = memo(ChatMessages)
