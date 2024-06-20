@@ -1,9 +1,11 @@
-import chatMessagesReducer, {
+import {
+  chatMessagesReducer,
   addMessage,
   clearMessages,
   setMessages,
 } from './chat-messages-slice'
 import {
+  chatAuthUserReducer,
   setName,
   setJoined,
   setId,
@@ -11,6 +13,7 @@ import {
 } from './chat-auth-user-slice'
 
 export {
+  chatAuthUserReducer,
   chatMessagesReducer,
   addMessage,
   setMessages,

@@ -36,4 +36,4 @@ const chatAuthUserSlice = createSlice({
 export const { setJoined, setName, setId, resetUserData } =
   chatAuthUserSlice.actions
 
-export default chatAuthUserSlice.reducer
+export const chatAuthUserReducer = chatAuthUserSlice.reducer

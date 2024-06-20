@@ -8,7 +8,7 @@ import styles from './ButtonsWraapper.module.css'
 
 type Props = {
   onToggleChat: () => void
-  onToogleZoomWindow: () => void
+  onToggleZoomWindow: () => void
   onDeleteChat: () => void
   onDeleteChatHistory: () => Promise<void>
   isJoinedUser: boolean
@@ -16,7 +16,7 @@ type Props = {
 }
 
 export const ButtonsWrapper: FC<Props> = ({
-  onToogleZoomWindow,
+  onToggleZoomWindow,
   onDeleteChat,
   onToggleChat,
   onDeleteChatHistory,
@@ -28,7 +28,7 @@ export const ButtonsWrapper: FC<Props> = ({
     <div className={styles.buttonsWrap}>
       {isJoinedUser && (
         <>
-          <button className={styles.zoomButton} onClick={onToogleZoomWindow}>
+          <button className={styles.zoomButton} onClick={onToggleZoomWindow}>
             <ToolTip text={t('chat.setting_buttons.RESIZE_WINDOW')}>
               <PiResizeLight size={'1.6em'} />
             </ToolTip>

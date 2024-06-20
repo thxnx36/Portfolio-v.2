@@ -1,10 +1,10 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react'
 import { Container, Loader, Section } from 'src/shared'
 import { useSocketApi } from 'src/app'
 import { MessageType } from 'src/types'
 import { toast } from 'react-toastify'
 import { UsersList } from './users-list/UsersList'
-import { ChatWindow } from './chat-window/ChatWindow'
+import { ChatWindowMemo } from './chat-window/ChatWindow'
 import { FooterChat } from './footer-chat/FooterChat'
 import { ADMIN } from 'src/constants'
 import { AuthAdmin } from './auth-admin/AuthAdmin'
@@ -93,6 +93,16 @@ export const AdminChat = () => {
   const onToggleUsersLists = () =>
     setIsOpenUsersList(prevOpenList => !prevOpenList)
 
+  const filteredMessages = useMemo(
+    () =>
+      messages.filter(
+        msg =>
+          msg.receiver === selectedUser?.userId ||
+          msg.sender === selectedUser?.userId,
+      ),
+    [messages, selectedUser?.userId],
+  )
+
   const isLoading = isLoadingUserById || isFetchingUserById
 
   return (
@@ -119,8 +129,8 @@ export const AdminChat = () => {
                 <Loader />
               ) : (
                 <>
-                  <ChatWindow
-                    messages={messages}
+                  <ChatWindowMemo
+                    messages={filteredMessages}
                     selectedUser={selectedUser}
                     ref={messagesContainerRef}
                   />

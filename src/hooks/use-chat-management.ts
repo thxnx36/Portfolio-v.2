@@ -65,7 +65,7 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
       refetchUsersList()
       setNewMessages([])
       setSelectedUser(null)
-      toast.success(t('toast.error.SUCCESS_DELETE_USER'))
+      toast.success(t('toast.success.SUCCESS_DELETE_USER'))
     } catch {
       toast.error(t('toast.error.FAILED_DELETE_USER'))
     }

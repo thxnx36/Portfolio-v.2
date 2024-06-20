@@ -30,4 +30,4 @@ const chatMessagesSlice = createSlice({
 export const { addMessage, setMessages, clearMessages } =
   chatMessagesSlice.actions
 
-export default chatMessagesSlice.reducer
+export const chatMessagesReducer = chatMessagesSlice.reducer
