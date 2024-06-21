@@ -9,11 +9,12 @@ import {
   SEO,
 } from 'src/shared'
 import styles from './AboutMe.module.css'
-import { useGoBack } from 'src/hooks'
+import { useGoBack, useQualitiesList } from 'src/hooks'
 
 export const AboutMe = () => {
   const { t } = useTranslation()
   const { handleBack } = useGoBack(-1)
+  const { qualities } = useQualitiesList()
 
   return (
     <Section style={{ margin: 0 }}>
@@ -40,6 +41,27 @@ export const AboutMe = () => {
                   key={i}
                 >
                   {item}
+                </li>
+              ))}
+            </ul>
+          </article>
+          <article>
+            <Title size='sm' tag='h4'>
+              {t('pages.aboutMe.QUALITIES_SUB_TITLE')}
+            </Title>
+            <ul>
+              {qualities.map(({ id, title, text }) => (
+                <li key={id} className={styles.qualities}>
+                  <Paragraph
+                    style={{ textAlign: 'left', maxWidth: '100%', margin: 0 }}
+                  >
+                    {title}
+                  </Paragraph>
+                  <Paragraph
+                    style={{ textAlign: 'left', maxWidth: '100%', margin: 0 }}
+                  >
+                    {text}
+                  </Paragraph>
                 </li>
               ))}
             </ul>
