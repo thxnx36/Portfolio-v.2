@@ -8,8 +8,8 @@ import {
   Paragraph,
   SEO,
 } from 'src/shared'
-import styles from './AboutMe.module.css'
 import { useGoBack, useQualitiesList } from 'src/hooks'
+import styles from './AboutMe.module.css'
 
 export const AboutMe = () => {
   const { t } = useTranslation()
@@ -19,7 +19,7 @@ export const AboutMe = () => {
   return (
     <Section style={{ margin: 0 }}>
       <PageWrapper>
-        <div className={styles.title}>
+        <div className={styles.head}>
           <BackButton onClick={handleBack} />
           <Title tag='h2' style={{ margin: 0 }}>
             {t('pages.aboutMe.TITLE')}
