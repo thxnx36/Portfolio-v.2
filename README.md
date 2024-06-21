@@ -4,11 +4,12 @@ Welcome to my portfolio website! Here you'll find information about my skills, p
 
 ## Technologies
 
-- Redux Toolkit
-- RTK query
+- React
 - TypeScript
 - CSS
-- React Router
+- Framer motion
+- Redux Toolkit
+- RTK query
 - React Toastify
 - React Hook Form
 - EmailJS
@@ -19,8 +20,8 @@ Welcome to my portfolio website! Here you'll find information about my skills, p
 - Portfolio
 - Projects pages
 - About me page
-- Recommendations
-- Work histrory
+- Testimonials
+- Work history
 - Education
 
 [Click me](https://www.vladfrontend.pro/)

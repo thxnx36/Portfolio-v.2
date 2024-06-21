@@ -31,7 +31,7 @@
     "HOME": "Home",
     "SERVICES": "Services",
     "PORTFOLIO": "Portfolio",
-    "RECOMMEND": "Recommendations",
+    "RECOMMEND": "Testimonials",
     "WORK_HISTORY": "Work history",
     "EDUCATION": "Education",
     "ABOUT_ME": "About me",
@@ -165,7 +165,7 @@
     }
   },
   "recommendations": {
-    "TITLE": "Recommendations",
+    "TITLE": "Testimonials",
     "SUBTITLE": "Testimonials and recommendations from clients I have worked with"
   },
   "mySkills": {
