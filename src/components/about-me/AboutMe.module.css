@@ -1,14 +1,3 @@
-.head {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.head h2 {
-  margin: 0;
-  padding-left: 10px;
-}
-
 .qualities {
   display: flex;
   gap: 5px;

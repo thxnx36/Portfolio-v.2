@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next'
 import {
   Section,
   PageWrapper,
-  BackButton,
   Title,
   Paragraph,
   SEO,
+  PagesHead,
 } from 'src/shared'
 import { useGoBack, useQualitiesList } from 'src/hooks'
 import styles from './AboutMe.module.css'
@@ -19,12 +19,7 @@ export const AboutMe = () => {
   return (
     <Section style={{ margin: 0 }}>
       <PageWrapper>
-        <div className={styles.head}>
-          <BackButton onClick={handleBack} />
-          <Title tag='h2' style={{ margin: 0 }}>
-            {t('pages.aboutMe.TITLE')}
-          </Title>
-        </div>
+        <PagesHead onClick={handleBack} title={t('pages.aboutMe.TITLE')} />
         <article>
           <Paragraph style={{ textAlign: 'left', maxWidth: '100%' }}>
             {t('pages.aboutMe.HEY_NICE_MEET')} 👋

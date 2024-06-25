@@ -1,14 +1,3 @@
-.title {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.title h2 {
-  margin: 0;
-  padding-left: 10px;
-}
-
 .headImg {
   margin-bottom: 50px;
 }
