@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Section, SectionHead, CardsContainer, FlippedCard } from 'src/shared'
 import { ROUTES } from 'src/constants'
 import { useServicesList } from 'src/hooks'
+import styles from './MyServices.module.css'
 
 export const MyServices = () => {
   const { t } = useTranslation()
@@ -30,16 +31,18 @@ export const MyServices = () => {
       />
       <CardsContainer>
         {servicesList.map(({ title, text, icon, id }) => (
-          <FlippedCard
-            onFlip={() => onToggleCard(id)}
-            isFlipped={isFlipped(id)}
-            title={title}
-            text={text}
-            showText={t('button.SHOW_MORE_CARD')}
-            closeText={t('button.CLOSE_CARD')}
-            icon={icon}
-            key={id}
-          />
+          <div key={id} className={styles.cardWrapper}>
+            <FlippedCard
+              onFlip={() => onToggleCard(id)}
+              isFlipped={isFlipped(id)}
+              title={title}
+              text={text}
+              showText={t('button.SHOW_MORE_CARD')}
+              closeText={t('button.CLOSE_CARD')}
+              icon={icon}
+              key={id}
+            />
+          </div>
         ))}
       </CardsContainer>
     </Section>

@@ -7,7 +7,7 @@
   height: 200px;
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-card);
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
