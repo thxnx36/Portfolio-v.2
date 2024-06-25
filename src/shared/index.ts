@@ -35,6 +35,7 @@ import { SEO } from './seo'
 import { ToggleLang } from './buttons/toggle-lang'
 import { Loader, ChatSkeleton } from './loader'
 import { MarqueeBackground } from './marquee-background'
+import { PagesHead } from "./pages-head"
 
 export {
   Avatar,
@@ -76,4 +77,5 @@ export {
   Loader,
   ChatSkeleton,
   MarqueeBackground,
+  PagesHead,
 }

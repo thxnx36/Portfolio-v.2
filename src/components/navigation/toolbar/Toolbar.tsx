@@ -2,7 +2,6 @@ import type { FC } from 'react'
 import { useContext } from 'react'
 import { FaSun } from 'react-icons/fa'
 import { IoMoonSharp } from 'react-icons/io5'
-import { useTranslation } from 'react-i18next'
 import { LIGHT, DARK } from 'src/constants'
 import { ThemeContext } from 'src/providers'
 import { Switcher, ToggleLang } from 'src/shared'
@@ -13,15 +12,15 @@ type Props = {
   uniqueToggletId: string
 }
 
-export const Toolbar: FC<Props> = ({ uniqueIdForSwitcher, uniqueToggletId }) => {
-  const { i18n } = useTranslation()
+export const Toolbar: FC<Props> = ({
+  uniqueIdForSwitcher,
+  uniqueToggletId,
+}) => {
   const { theme, changeTheme } = useContext(ThemeContext)
 
   const onChangeTheme = () => changeTheme(theme === LIGHT ? DARK : LIGHT)
-  const onChangeLanguage = (language: string) => i18n.changeLanguage(language)
 
   const checkedSwitcher = theme === LIGHT
-  const currentLanguage = i18n.language
 
   return (
     <div className={styles.toolbarBtns}>
@@ -32,11 +31,7 @@ export const Toolbar: FC<Props> = ({ uniqueIdForSwitcher, uniqueToggletId }) => 
         uniqueId={uniqueIdForSwitcher}
         onChange={onChangeTheme}
       />
-      <ToggleLang
-        selectValue={currentLanguage}
-        uniqueToggletId={uniqueToggletId}
-        onChange={onChangeLanguage}
-      />
+      <ToggleLang uniqueToggletId={uniqueToggletId} />
     </div>
   )
 }

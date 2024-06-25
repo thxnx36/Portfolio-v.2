@@ -1,21 +1,19 @@
-import { Fragment, type ChangeEvent, type FC } from 'react'
+import { Fragment, type FC } from 'react'
 import { ENG, LANG } from 'src/constants'
 import styles from './ToggleLang.module.css'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
   uniqueToggletId: string
-  onChange: (value: string) => void
-  selectValue: string
 }
-export const ToggleLang: FC<Props> = ({
-  onChange,
-  uniqueToggletId,
-  selectValue,
-}) => {
-  const onChangeLang = (e: ChangeEvent<HTMLInputElement>) =>
-    onChange(e.target.value)
 
-  const isCurrentLang = (value: string) => value === selectValue
+export const ToggleLang: FC<Props> = ({ uniqueToggletId }) => {
+  const { i18n } = useTranslation()
+  const currentLanguage = i18n.language
+
+  const onChangeLanguage = (language: string) => i18n.changeLanguage(language)
+
+  const isCurrentLanguage = (value: string) => value === currentLanguage
 
   return (
     <div className={styles.tabs}>
@@ -26,9 +24,9 @@ export const ToggleLang: FC<Props> = ({
             type='checkbox'
             className={styles.checkbox}
             id={`${uniqueToggletId}-${id}`}
-            onChange={onChangeLang}
-            checked={isCurrentLang(value)}
-            disabled={isCurrentLang(value)}
+            onChange={() => onChangeLanguage(value)}
+            checked={isCurrentLanguage(value)}
+            disabled={isCurrentLanguage(value)}
           />
           <label className={styles.tab} htmlFor={`${uniqueToggletId}-${id}`}>
             {label}
@@ -36,7 +34,7 @@ export const ToggleLang: FC<Props> = ({
         </Fragment>
       ))}
       <span
-        className={`${styles.glider} ${isCurrentLang(ENG) ? styles.gliderEn : styles.gliderUk}`}
+        className={`${styles.glider} ${isCurrentLanguage(ENG) ? styles.gliderEn : styles.gliderUk}`}
       />
     </div>
   )
