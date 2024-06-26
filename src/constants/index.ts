@@ -3,7 +3,6 @@ import { ENV_VARS_PROD, ENV_VARS_DEV } from './env'
 import { motionSection, motionNav, motionProgrLine } from './motion'
 import { NAVIGATE } from './nav'
 import { ROUTES } from './routes'
-import { TABLET } from './screen'
 import { RESPONSIVE } from './slider'
 import { DARK, LIGHT } from './theme'
 import { KEYWORDS, ROBOTS, AUTHOR, OG_TYPE_CONTENT, OG_SITE_NAME } from './seo'
@@ -38,7 +37,6 @@ import { VALIDATE_EMAIL, CHECK_URL } from './regex'
 
 export {
   RESPONSIVE,
-  TABLET,
   VALIDATE_EMAIL,
   LANG,
   OPEN,

@@ -13,8 +13,10 @@ export const UserContact: FC<Props> = ({ socialList, userName }) => {
   return (
     <div className={styles.userContact}>
       <Avatar className={styles.avatar} withBorder src={userPhoto} />
-      <Paragraph style={{ margin: '10px 0 0' }}>{userName}</Paragraph>
-      <SocialList list={socialList} />
+      <div className={styles.info}>
+        <Paragraph style={{ margin: '0 0 5px' }}>{userName}</Paragraph>
+        <SocialList list={socialList} />
+      </div>
     </div>
   )
 }
