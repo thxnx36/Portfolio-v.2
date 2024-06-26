@@ -1,7 +1,7 @@
 .cardsContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: var(--columns, repeat(3, 1fr));
   gap: 20px;
 }
 
@@ -12,7 +12,7 @@
   }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 720px) {
   .cardsContainer {
     grid-template-columns: repeat(1, 1fr);
     gap: 15px;

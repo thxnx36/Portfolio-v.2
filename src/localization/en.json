@@ -48,7 +48,7 @@
     "TELEGRAM_NAME": "Vladosik"
   },
   "myServices": {
-    "TITLE": "My services",
+    "TITLE": "My services for your bussines",
     "SUBTITLE": "You can find more detailed information about me and my technical stack on the",
     "ABOUT_ME": "About me page",
 
@@ -108,8 +108,8 @@
     }
   },
   "portfolio": {
-    "TITLE": "Portfolio",
-    "SUBTITLE": "Key commercial projects in development that I participated in both collaboratively with my team and independently",
+    "TITLE": "Explore my projects",
+    "SUBTITLE": "Main commercial projects in development that I participated in both collaboratively with my team and independently",
     "projects": {
       "tutiffy": {
         "NAME": "Tuttify",

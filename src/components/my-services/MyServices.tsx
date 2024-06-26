@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Section, SectionHead, CardsContainer, FlippedCard } from 'src/shared'
+import { Section, SectionHead, CardsContainer } from 'src/shared'
 import { ROUTES } from 'src/constants'
 import { useServicesList } from 'src/hooks'
-import styles from './MyServices.module.css'
+import { ServiceCard } from './service-card/ServiceCard'
 
 export const MyServices = () => {
   const { t } = useTranslation()
@@ -29,20 +29,18 @@ export const MyServices = () => {
         to={ROUTES.aboutMe}
         linkText={t('myServices.ABOUT_ME')}
       />
-      <CardsContainer>
-        {servicesList.map(({ title, text, icon, id }) => (
-          <div key={id} className={styles.cardWrapper}>
-            <FlippedCard
-              onFlip={() => onToggleCard(id)}
-              isFlipped={isFlipped(id)}
-              title={title}
-              text={text}
-              showText={t('button.SHOW_MORE_CARD')}
-              closeText={t('button.CLOSE_CARD')}
-              icon={icon}
-              key={id}
-            />
-          </div>
+      <CardsContainer columns={2}>
+        {servicesList.map(({ title, text, id }) => (
+          <ServiceCard
+            onFlip={() => onToggleCard(id)}
+            isFlipped={isFlipped(id)}
+            title={title}
+            text={text}
+            order={id}
+            showText={t('button.SHOW_MORE_CARD')}
+            closeText={t('button.CLOSE_CARD')}
+            key={id}
+          />
         ))}
       </CardsContainer>
     </Section>

@@ -28,7 +28,6 @@ import { Layout } from '../layout'
 import { ScrollTopButton } from './buttons'
 import { Toast } from './toast'
 import { Drawer } from './drawer'
-import { FlippedCard } from './flipped-card'
 import { ToolTip } from './tool-tip'
 import { ReCaptcha } from './re-captcha'
 import { SEO } from './seo'
@@ -69,7 +68,6 @@ export {
   BackButton,
   Toast,
   Drawer,
-  FlippedCard,
   ToolTip,
   ReCaptcha,
   SEO,
