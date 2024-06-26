@@ -42,6 +42,27 @@ export const AboutMe = () => {
           </article>
           <article>
             <Title size='sm' tag='h4'>
+              {t('pages.aboutMe.LANG_SUB_TITLE')}
+            </Title>
+            <ul>
+              <li className={styles.qualities}>
+                <Paragraph
+                  style={{ textAlign: 'left', maxWidth: '100%', margin: 0 }}
+                >
+                  English: Intermediate
+                </Paragraph>
+              </li>
+              <li className={styles.qualities}>
+                <Paragraph
+                  style={{ textAlign: 'left', maxWidth: '100%', margin: 0 }}
+                >
+                  Ukrainian: Native
+                </Paragraph>
+              </li>
+            </ul>
+          </article>
+          <article>
+            <Title size='sm' tag='h4'>
               {t('pages.aboutMe.QUALITIES_SUB_TITLE')}
             </Title>
             <ul>

@@ -1,11 +1,16 @@
 .userContact {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .avatar {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

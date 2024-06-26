@@ -7,7 +7,7 @@ export const skills = [
   {
     id: 2,
     skill: 'Next',
-    progress: 90,
+    progress: 80,
   },
   {
     id: 3,
