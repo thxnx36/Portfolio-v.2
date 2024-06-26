@@ -20,7 +20,9 @@ export const SectionHead: FC<Props> = ({
 }) => {
   return (
     <>
-      <Title tag='h2'>{title}</Title>
+      <Title tag='h2' style={{ textAlign: 'center' }}>
+        {title}
+      </Title>
       <Paragraph>
         {subTitle}{' '}
         {isLink && to && (
