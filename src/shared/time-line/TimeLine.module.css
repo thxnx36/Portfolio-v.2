@@ -54,6 +54,10 @@
   background-color: var(--border-color);
 }
 
+.link {
+  position: relative;
+}
+
 .link::after {
   content: '';
   position: absolute;
