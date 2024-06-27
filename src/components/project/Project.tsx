@@ -30,7 +30,12 @@ export const Project = () => {
             href={data?.link}
             rel='noreferrer'
           >
-            {t('pages.project.LIVE_DEMO')} <FiExternalLink size='.8em' />
+            {data?.project !== 'ASX Sports' && (
+              <>
+                {t('pages.project.LIVE_DEMO')}
+                <FiExternalLink size='.8em' />
+              </>
+            )}
           </a>
         </Title>
         <Content aboutProject={data?.about} project={data} />
