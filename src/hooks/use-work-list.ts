@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { UDEMY_URL, UNIVERSITY_URL } from 'src/constants'
+import { COMPANY_URL } from 'src/constants'
 import { WorkListType } from 'src/types'
 import { useTranslation } from 'react-i18next'
 
@@ -12,18 +12,18 @@ export const useWorkList = () => {
         id: 1,
         company: t('workHistory.table.elementica.NAME'),
         position: t('workHistory.table.elementica.POSITION'),
-        date: t('workHistory.table.elementica.DATE'),
+        date: '2022 - 2024',
         title: t('workHistory.table.elementica.TITLE'),
-        url: UDEMY_URL,
+        url: COMPANY_URL,
         description: t('workHistory.table.elementica.DESCRIPTION'),
       },
       {
         id: 2,
         company: t('workHistory.table.freelance.NAME'),
         position: t('workHistory.table.freelance.POSITION'),
-        date: t('workHistory.table.freelance.DATE'),
+        date: '2021 - 2022',
         title: t('workHistory.table.freelance.TITLE'),
-        url: UNIVERSITY_URL,
+        url: '#',
         description: t('workHistory.table.freelance.DESCRIPTION'),
       },
     ],

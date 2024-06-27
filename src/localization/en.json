@@ -74,14 +74,18 @@
       "udemy": {
         "NAME": "Udemy",
         "POSITION": "Student",
-        "DATE": "2021 - 2022",
         "TITLE": "Front-end development",
-        "DESCRIPTION": "In-depth learning front-end technologies including JavaScript, TypeScript, React and Redux"
+        "DESCRIPTION": "In-depth learning front-end technologies including JavaScript, TypeScript, React, and Redux"
+      },
+      "imt": {
+        "NAME": "IMT Academy",
+        "POSITION": "Student",
+        "TITLE": "Web development",
+        "DESCRIPTION": "Learning HTML, CSS, JavaScript, and frameworks to create dynamic and responsive website"
       },
       "institute": {
         "NAME": "Institute of Engineering",
         "POSITION": "Student",
-        "DATE": "2015 - 2018",
         "TITLE": "Energy management",
         "DESCRIPTION": "Learning of energy supply plans and strategies, energy optimization and cost minimization"
       }
@@ -93,17 +97,16 @@
     "table": {
       "elementica": {
         "NAME": "Elementica",
-        "POSITION": "Front-end Developer",
+        "POSITION": "Front-end developer",
         "DATE": "2022 - 2024",
         "TITLE": "Creating web applications",
-        "DESCRIPTION": "In my role at 'Elementica' I collaborate with the team to develop and enhance the product, make technical decisions, and contribute to achieving common goals"
+        "DESCRIPTION": "In the 'Elementica' as a front-end developer, I collaborated with the team to develop and enhance the product, made strategic technical decisions, and contributed to achieving our common goals. My responsibilities included: optimizing performance, ensuring high-quality code, and implementing innovative solutions to drive our product forward"
       },
       "freelance": {
         "NAME": "Freelance",
-        "POSITION": "Web Developer",
-        "DATE": "2021 - 2021",
+        "POSITION": "Web developer",
         "TITLE": "Creating websites",
-        "DESCRIPTION": "I was creating websites for clients using HTML, CSS, and JavaScript"
+        "DESCRIPTION": "I was creating websites for clients using HTML, CSS, Jquery, Bootstrap, Gulp.js, and JavaScript"
       }
     }
   },
