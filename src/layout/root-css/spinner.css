@@ -11,77 +11,35 @@
   z-index: 11111;
 }
 
-.loader {
-  transform: rotateZ(45deg);
-  perspective: 1000px;
-  border-radius: 50%;
-  width: 78px;
-  height: 78px;
-  color: var(--main-color);
+.loader::before {
+  content: 'vladfrontend.pro';
+  padding: 12px 48px;
+  text-transform: uppercase;
+  background: linear-gradient(
+    to right,
+    #9f9f9f 0,
+    var(--white-color) 10%,
+    #868686 20%
+  );
+  background-position: 0;
+  background-clip: text;
+  color: transparent;
+  font-weight: var(--font-weight-bolder);
+  font-size: var(--font-size-md-mobile);
+  animation: shine 1.2s infinite linear;
 }
 
-.loader:before,
-.loader:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border-radius: 50%;
-  transform: rotateX(70deg);
-  animation: 1s spin linear infinite;
-}
-
-.loader:after {
-  color: var(--main-color-red);
-  transform: rotateY(70deg);
-  animation-delay: 0.4s;
-}
-
-@keyframes rotate {
+@keyframes shine {
   0% {
-    transform: translate(-50%, -50%) rotateZ(0deg);
+    background-position: 0;
   }
   100% {
-    transform: translate(-50%, -50%) rotateZ(360deg);
+    background-position: 250px;
   }
 }
 
-@keyframes rotateccw {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(-360deg);
-  }
-}
-
-@keyframes spin {
-  0%,
-  100% {
-    box-shadow: 0.2em 0px 0 0px currentcolor;
-  }
-  12% {
-    box-shadow: 0.2em 0.2em 0 0 currentcolor;
-  }
-  25% {
-    box-shadow: 0 0.2em 0 0px currentcolor;
-  }
-  37% {
-    box-shadow: -0.2em 0.2em 0 0 currentcolor;
-  }
-  50% {
-    box-shadow: -0.2em 0 0 0 currentcolor;
-  }
-  62% {
-    box-shadow: -0.2em -0.2em 0 0 currentcolor;
-  }
-  75% {
-    box-shadow: 0px -0.2em 0 0 currentcolor;
-  }
-  87% {
-    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+@media screen and (max-width: 768px) {
+  .loader::before {
+    font-size: var(--font-size-sm);
   }
 }
