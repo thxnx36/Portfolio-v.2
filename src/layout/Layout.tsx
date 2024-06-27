@@ -15,7 +15,7 @@ type Props = {
 }
 
 export const Layout: FC<Props> = ({ children }) => {
-  useSpinner(500)
+  useSpinner()
   return (
     <>
       <div className={styles.app}>{children}</div>
