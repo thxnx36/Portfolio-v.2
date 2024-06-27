@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import { motionSection } from 'src/constants'
 import { useWorkList } from 'src/hooks'
-import { MSection, SectionHead, Container, Table } from 'src/shared'
+import { MSection, SectionHead, TimeLine } from 'src/shared'
 
 export const WorkHistory = () => {
   const { t } = useTranslation()
   const { workList } = useWorkList()
+
   return (
     <MSection
       id='work-history'
@@ -19,17 +20,16 @@ export const WorkHistory = () => {
         subTitle={t('workHistory.SUBTITLE')}
       />
       {workList?.map(
-        ({ company, position, date, title, description, url, id }) => (
-          <Container key={id} style={{ margin: '0 0 5px' }}>
-            <Table
-              namePlace={company}
-              namePosition={position}
-              date={date}
-              title={title}
-              description={description}
-              url={url}
-            />
-          </Container>
+        ({ company, position, date, description, url, id }, index) => (
+          <TimeLine
+            key={id}
+            namePlace={company}
+            namePosition={position}
+            date={date}
+            description={description}
+            url={url}
+            isActiveDot={index === 0}
+          />
         ),
       )}
     </MSection>

@@ -19,6 +19,7 @@ import {
   CV_URL,
   APP_URL,
   UP_WORK_URL,
+  IMT_URL,
 } from './URLs'
 import { LANG, ENG, UK } from './lang'
 import {
@@ -64,6 +65,7 @@ export {
   TELEGRAM_URL,
   LINKEDIN_URL,
   GIT_HUB_URL,
+  IMT_URL,
   ASX_URL,
   TUTTIFY_URL,
   MAVEN_URL,
