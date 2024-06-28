@@ -5,12 +5,9 @@
   padding: 10px;
 }
 
-.footerContent a {
-  height: 37px;
-}
-
 .version {
   font-size: var(--font-size-xs-mobile);
+  margin: 5px 0 0;
 }
 
 @media screen and (max-width: 768px) {

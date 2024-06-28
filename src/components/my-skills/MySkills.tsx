@@ -4,17 +4,15 @@ import { TechSkills } from './tech-skills/TechSkills'
 import { useTranslation } from 'react-i18next'
 import { CV_URL } from 'src/constants'
 import { skills, languages } from 'src/db'
-import { useMySocialList } from 'src/hooks'
 import { Button } from 'src/shared'
 import styles from './MySkills.module.css'
 
 export const MySkills = () => {
   const { t } = useTranslation()
-  const { socialList } = useMySocialList()
 
   return (
     <div className={styles.mySkillsContainer}>
-      <UserContact socialList={socialList} userName={t('mySkills.NAME')} />
+      <UserContact userName={t('mySkills.NAME')} />
       <div className={styles.line} />
       <TechSkills title={t('mySkills.SKILLS')} skillsList={skills} />
       <div className={styles.line} />

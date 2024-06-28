@@ -1,6 +1,5 @@
 import type { CSSProperties } from 'react'
 import { useState } from 'react'
-import { MySkills } from '../my-skills/MySkills'
 import { NavigationPanel } from './navigation-panel/NavigationPanel'
 import { NavListItemMobile } from './nav-list-item-mobile/NavListItemMobile'
 import { motionNav } from 'src/constants'
@@ -12,12 +11,9 @@ export const Navigation = () => {
   const { isScrollDown } = useScrollListener()
 
   const [activeItem, setActiveItem] = useState<number>(1)
-  const [isShowSideBarSkills, setIsShowSideBarSkills] = useState<boolean>(false)
   const [isShowSideBarMenu, setIsShowSideBarMenu] = useState<boolean>(false)
 
   const handleMenu = () => setIsShowSideBarMenu(prev => !prev)
-
-  const handleSkills = () => setIsShowSideBarSkills(prev => !prev)
 
   const onClickItemMenu = (id: number) => setActiveItem(id)
 
@@ -38,7 +34,6 @@ export const Navigation = () => {
       >
         <nav>
           <NavigationPanel
-            handleSkills={handleSkills}
             handleMenu={handleMenu}
             onClickItemMenu={onClickItemMenu}
             isActiveItem={activeItem}
@@ -46,10 +41,6 @@ export const Navigation = () => {
           />
         </nav>
       </MContainer>
-
-      <Drawer side='left' isOpen={isShowSideBarSkills} onClose={handleSkills}>
-        <MySkills />
-      </Drawer>
 
       <Drawer
         className={styles.menuDrawer}
