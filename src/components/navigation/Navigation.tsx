@@ -62,5 +62,7 @@ const additionalContainerStyles: CSSProperties = {
   position: 'sticky',
   zIndex: 1,
   top: 0,
-  margin: '10px 0',
+  margin: '10px 0 0',
+  boxShadow: 'unset',
+  borderRadius: '5px 5px 0 0',
 }
