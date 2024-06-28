@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { CSSProperties, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { headerPhoto } from 'src/assets'
 import { Container, Title, Button, Modal } from 'src/shared'
@@ -13,7 +13,7 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Container>
+      <Container style={additionalContainerStyles}>
         <div className={styles.content}>
           <div className={styles.info}>
             <Title size='lg'>
@@ -43,4 +43,8 @@ export const Header = () => {
       )}
     </header>
   )
+}
+
+const additionalContainerStyles: CSSProperties = {
+  borderRadius: '0 0 5px 5px',
 }
