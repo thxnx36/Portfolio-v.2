@@ -1,44 +1,53 @@
-import { ChangeEvent, FormEvent, forwardRef } from 'react'
+import type { FC } from 'react'
 import { SendMessageChatButton, Textarea } from 'src/shared'
 import styles from './ChatFooter.module.css'
+import { useSendMessageInChat, useTextAreaHeight } from 'src/hooks'
+import { ADMIN } from 'src/constants'
+import { Socket } from 'socket.io-client'
 
 type Props = {
-  value: string
-  placeholder: string
-  isDisabledButton: boolean
+  userId: string
+  socket: Socket | null
   isDisabledInput: boolean
-  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void
-  onKeyDown: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void
-  sendMessage: (e: FormEvent) => Promise<void>
+  placeholder: string
 }
 
-export const ChatFooter = forwardRef<HTMLTextAreaElement, Props>(
-  (
-    {
-      value,
-      onChange,
-      onKeyDown,
-      sendMessage,
-      placeholder,
-      isDisabledButton,
-      isDisabledInput,
-    },
-    ref,
-  ) => {
-    return (
-      <form onSubmit={sendMessage} className={styles.chatFooterWrap}>
-        <Textarea
-          ref={ref}
-          id='chat-textarea'
-          value={value}
-          disabled={isDisabledInput}
-          onChange={onChange}
-          onKeyDown={onKeyDown}
-          placeholder={placeholder}
-          rows={1}
-        />
-        <SendMessageChatButton isDisabled={isDisabledButton} />
-      </form>
-    )
-  },
-)
+export const ChatFooter: FC<Props> = ({
+  socket,
+  userId,
+  isDisabledInput,
+  placeholder,
+}) => {
+
+  const {
+    onSendMessage,
+    handleKeyDown,
+    handleChangeTextArea,
+    textareaContent,
+    isDisabledButton,
+  } = useSendMessageInChat({
+    socket,
+    sender: userId,
+    receiver: ADMIN,
+  })
+  
+  const { textareaRef } = useTextAreaHeight({
+    dependencies: [textareaContent],
+  })
+
+  return (
+    <form onSubmit={onSendMessage} className={styles.chatFooterWrap}>
+      <Textarea
+        ref={textareaRef}
+        id='chat-textarea'
+        value={textareaContent}
+        disabled={isDisabledInput}
+        onChange={handleChangeTextArea}
+        onKeyDown={handleKeyDown}
+        placeholder={placeholder}
+        rows={1}
+      />
+      <SendMessageChatButton isDisabled={isDisabledButton} />
+    </form>
+  )
+}

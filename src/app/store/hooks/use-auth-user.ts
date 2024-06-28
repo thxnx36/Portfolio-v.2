@@ -9,9 +9,18 @@ export const useAuthUser = () => {
   const isJoined = useSelector((state: RootState) => state.userAuth.joined)
   const userId = useSelector((state: RootState) => state.userAuth.userId)
 
-  const setUserName = (email: string) => dispatch(setName(email))
-  const setJoinedUser = (join: boolean) => dispatch(setJoined(join))
-  const setUserId = (userId: string) => dispatch(setId(userId))
+  const setUserName = useCallback(
+    (email: string) => dispatch(setName(email)),
+    [dispatch],
+  )
+  const setJoinedUser = useCallback(
+    (join: boolean) => dispatch(setJoined(join)),
+    [dispatch],
+  )
+  const setUserId = useCallback(
+    (userId: string) => dispatch(setId(userId)),
+    [dispatch],
+  )
   const onLeave = useCallback(() => dispatch(resetUserData()), [dispatch])
 
   return {
