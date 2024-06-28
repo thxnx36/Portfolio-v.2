@@ -2,13 +2,12 @@ import type { FC } from 'react'
 import { NavListItemDesktop } from '../nav-list-item-desktop/NavListItemDesktop'
 import { Toolbar } from '../toolbar/Toolbar'
 import { PiDevToLogoFill } from 'react-icons/pi'
-import { BurgerButton, UserInfoButton } from 'src/shared'
+import { BurgerButton } from 'src/shared'
 import styles from './NavigationPanel.module.css'
 
 type Props = {
   onClickItemMenu: (id: number) => void
   handleMenu: () => void
-  handleSkills: () => void
   isShowSideBarMenu: boolean
   isActiveItem: number
 }
@@ -16,12 +15,10 @@ type Props = {
 export const NavigationPanel: FC<Props> = ({
   onClickItemMenu,
   isActiveItem,
-  handleSkills,
   handleMenu,
 }) => {
   return (
     <div className={styles.navContent}>
-      <UserInfoButton onClick={handleSkills} />
       <div className={styles.logo}>
         <PiDevToLogoFill size='1.5em' />
       </div>

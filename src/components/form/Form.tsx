@@ -1,11 +1,9 @@
 import type { CSSProperties, FC } from 'react'
-import { useState } from 'react'
-import { useMySocialList, useSendEmail } from 'src/hooks'
+import { useSendEmail } from 'src/hooks'
 import {
   Title,
   Input,
   Textarea,
-  ReCaptcha,
   Button,
   Paragraph,
   SocialList,
@@ -20,8 +18,7 @@ type Props = {
 
 export const Form: FC<Props> = ({ onCloseModal }) => {
   const { t } = useTranslation()
-  const { socialList } = useMySocialList()
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+  // const [captchaToken, setCaptchaToken] = useState<string | null>(null)
 
   const {
     register,
@@ -38,7 +35,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
     infoMessage: t('toast.info.FIXING'),
   })
 
-  const handleCaptchaChange = (token: string | null) => setCaptchaToken(token)
+  // const handleCaptchaChange = (token: string | null) => setCaptchaToken(token)
 
   return (
     <>
@@ -90,25 +87,25 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
             }
             placeholder={t('input.placeholder.YOUR_MESSAGE')}
           />
-          <div className={styles.reCaptcha}>
+          {/* <div className={styles.reCaptcha}>
             <ReCaptcha onChange={handleCaptchaChange} />
-          </div>
+          </div> */}
           <Button
             style={additionalButtonStyles}
             text={t('button.SEND_MESSAGE')}
             isLoading={isLoading}
             type='submit'
-            disabled={isDisabledButton || !captchaToken}
+            disabled={isDisabledButton}
           />
         </form>
       )}
       <div className={styles.contacts}>
-        <Paragraph style={{ margin: '15px 0 0' }}>
+        <Paragraph style={{ margin: '15px 0 15px' }}>
           {!isSendFormError
             ? t('form.TEXT_ME_MESSENGERS')
             : t('form.error.CONTACT_ME_IF_ERROR')}
         </Paragraph>
-        <SocialList list={socialList} />
+        <SocialList visibleIds={[1, 2]} />
       </div>
     </>
   )
