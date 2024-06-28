@@ -13,8 +13,6 @@ import {
   useLocalStorage,
   useChatManagement,
   usePositionChatWindow,
-  useTextAreaHeight,
-  useSendMessageInChat,
   useDraggable,
 } from 'src/hooks'
 import { Button, ChatSkeleton } from 'src/shared'
@@ -27,6 +25,7 @@ export const UserChat = () => {
   const [isZoomWindow, setIsZoomWindow] = useState<boolean>(false)
   const [isShowNotification, setIsShowNotification] = useState<boolean>(false)
   const [notificationCount, setNotificationCount] = useState<number>(0)
+
 
   const isOpenChat = openChat === OPEN
 
@@ -54,24 +53,8 @@ export const UserChat = () => {
     refetchUserById,
   } = useChatManagement({ skipFetchUsersList: true, userId })
 
-  const {
-    onSendMessage,
-    handleKeyDown,
-    handleChangeTextArea,
-    textareaContent,
-    isDisabledButton,
-  } = useSendMessageInChat({
-    socket,
-    sender: userId,
-    receiver: ADMIN,
-  })
-
   const { messagesContainerRef } = usePositionChatWindow({
     dependencies: [messages, openChat],
-  })
-
-  const { textareaRef } = useTextAreaHeight({
-    dependencies: [textareaContent],
   })
 
   const chatWindowRef = useDraggable<HTMLDivElement>({
@@ -90,8 +73,7 @@ export const UserChat = () => {
     if (!userMessages?.messages) return
 
     setNewMessages(userMessages?.messages)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userMessages])
+  }, [setNewMessages, userMessages])
 
   useEffect(() => {
     if (!socket) return
@@ -114,8 +96,7 @@ export const UserChat = () => {
     return () => {
       socket.off('response', handleResponse)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userId, socket, isOpenChat])
+  }, [userId, socket, isOpenChat, addNewMessage])
 
   const onToggleChat = useCallback(() => {
     setOpenChat(isOpenChat ? CLOSE : OPEN)
@@ -187,13 +168,9 @@ export const UserChat = () => {
             <ChatJoin />
           )}
           <ChatFooter
-            ref={textareaRef}
-            value={textareaContent}
-            sendMessage={onSendMessage}
-            onChange={handleChangeTextArea}
-            onKeyDown={handleKeyDown}
+            userId={userId}
+            socket={socket}
             isDisabledInput={isLoading || !isJoined}
-            isDisabledButton={isDisabledButton}
             placeholder={t('input.placeholder.YOUR_MESSAGE')}
           />
         </div>

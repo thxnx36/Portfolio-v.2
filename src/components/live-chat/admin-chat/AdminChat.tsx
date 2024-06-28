@@ -62,10 +62,10 @@ export const AdminChat = () => {
     dependencies: [textareaContent],
   })
 
-  /* eslint-disable react-hooks/exhaustive-deps */
+
   useEffect(() => {
     if (userById?.messages) setNewMessages(userById?.messages)
-  }, [userById])
+  }, [setNewMessages, userById])
 
   useEffect(() => {
     if (socket) {
@@ -73,7 +73,7 @@ export const AdminChat = () => {
         addNewMessage(message)
       })
     }
-  }, [socket])
+  }, [addNewMessage, socket])
 
   // temporary auth
   const onChangePass = (e: ChangeEvent<HTMLInputElement>) =>
