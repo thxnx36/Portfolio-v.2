@@ -1,6 +1,6 @@
 import { type FC } from 'react'
-import styles from './SocialList.module.css'
 import { useMySocialList } from 'src/hooks'
+import styles from './SocialList.module.css'
 
 type Props = {
   visibleIds?: number[]
@@ -16,7 +16,7 @@ export const SocialList: FC<Props> = ({ visibleIds }) => {
   return (
     <address>
       <ul className={styles.socialContainer}>
-        {filteredSocialList.map(({ id, icon, link, bgColor }) => (
+        {filteredSocialList.map(({ id, icon, link }) => (
           <li key={id} className={styles.socialItem}>
             <a
               className={styles.link}
@@ -26,10 +26,10 @@ export const SocialList: FC<Props> = ({ visibleIds }) => {
             >
               {icon}
             </a>
-            <span
+            {/* <span
               className={styles.background}
               style={{ backgroundColor: bgColor }}
-            ></span>
+            ></span> */}
           </li>
         ))}
       </ul>

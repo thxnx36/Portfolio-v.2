@@ -41,6 +41,7 @@
   --font-size-lg: 3em;
 
   /* font weight */
+  --font-weight-lighter: 300;
   --font-weight-normal: 400;
   --font-weight-regular: 500;
   --font-weight-bold: 600;

@@ -17,6 +17,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+.name {
+  font-weight: var(--font-weight-lighter);
+}
+
 .speciality {
   background-image: var(--bg-linear-reverse);
   background-clip: text;

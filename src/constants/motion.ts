@@ -16,8 +16,8 @@ export const motionSection = {
   },
 
   viewport: {
-    amount: 0.2,
-    once: false,
+    // amount: 0.2,
+    once: true,
   },
 
   initial: 'hidden',
