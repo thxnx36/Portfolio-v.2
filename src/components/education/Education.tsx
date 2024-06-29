@@ -13,6 +13,7 @@ export const Education = () => {
       transition={motionSection.transition}
       initial={motionSection.initial}
       whileInView={motionSection.whileInView}
+      viewport={motionSection.viewport}
     >
       <SectionHead
         title={t('education.TITLE')}

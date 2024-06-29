@@ -15,6 +15,7 @@ export const Portfolio = () => {
       transition={motionSection.transition}
       initial={motionSection.initial}
       whileInView={motionSection.whileInView}
+      viewport={motionSection.viewport}
     >
       <SectionHead
         title={t('portfolio.TITLE')}

@@ -26,7 +26,6 @@ export const UserChat = () => {
   const [isShowNotification, setIsShowNotification] = useState<boolean>(false)
   const [notificationCount, setNotificationCount] = useState<number>(0)
 
-
   const isOpenChat = openChat === OPEN
 
   const { t } = useTranslation()

@@ -17,7 +17,8 @@ export const Header = () => {
         <div className={styles.content}>
           <div className={styles.info}>
             <Title size='lg'>
-              {t('header.NAME')} <br />{' '}
+              <span className={styles.name}>{t('header.NAME')}</span>
+              <br />{' '}
               <span className={styles.speciality}>{t('header.PATH')}</span>{' '}
               {t('header.SPECIALTY')}
             </Title>

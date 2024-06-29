@@ -37,7 +37,7 @@ export const useMySocialList = () => {
       link: CV_URL,
       name: 'CV',
       bgColor: '#4285F4',
-      icon: <TbFileCv size='1.5em' />,
+      icon: <TbFileCv size='1.3em' />,
       id: 4,
     },
     {

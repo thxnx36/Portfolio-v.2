@@ -14,6 +14,7 @@ export const Recommendations = () => {
       transition={motionSection.transition}
       initial={motionSection.initial}
       whileInView={motionSection.whileInView}
+      viewport={motionSection.viewport}
     >
       <SectionHead
         title={t('recommendations.TITLE')}
