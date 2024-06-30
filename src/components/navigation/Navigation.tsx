@@ -8,7 +8,7 @@ import { MContainer, Drawer } from 'src/shared'
 import styles from './Navigation.module.css'
 
 export const Navigation = () => {
-  const { isScrollDown } = useScrollListener()
+  const { isScrollDown, scrollToTop } = useScrollListener()
 
   const [activeItem, setActiveItem] = useState<number>(1)
   const [isShowSideBarMenu, setIsShowSideBarMenu] = useState<boolean>(false)
@@ -34,6 +34,7 @@ export const Navigation = () => {
       >
         <nav>
           <NavigationPanel
+            scrollToTop={scrollToTop}
             handleMenu={handleMenu}
             onClickItemMenu={onClickItemMenu}
             isActiveItem={activeItem}
