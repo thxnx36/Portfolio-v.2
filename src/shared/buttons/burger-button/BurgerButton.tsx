@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { FaBurger } from 'react-icons/fa6'
+import { RxHamburgerMenu } from 'react-icons/rx'
 import styles from './BurgerButton.module.css'
 
 type Props = {
@@ -13,7 +13,7 @@ export const BurgerButton: FC<Props> = ({ onClick, className }) => {
         className ? `${styles.burgerButton} ${className}` : styles.burgerButton
       }
     >
-      <FaBurger size='1.4em' onClick={onClick} />
+      <RxHamburgerMenu size='1.4em' onClick={onClick} />
     </button>
   )
 }
