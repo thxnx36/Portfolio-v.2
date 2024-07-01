@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from 'react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
+import { Analytics } from '@vercel/analytics/react'
 import { useSpinner } from 'src/hooks'
 import { Toast } from 'src/shared'
 import styles from './Layout.module.css'
@@ -20,6 +21,7 @@ export const Layout: FC<Props> = ({ children }) => {
     <>
       <div className={styles.app}>{children}</div>
       <SpeedInsights />
+      <Analytics />
       <Toast />
     </>
   )
