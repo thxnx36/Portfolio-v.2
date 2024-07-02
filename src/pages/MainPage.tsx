@@ -3,12 +3,12 @@ import {
   Header,
   MyServices,
   Portfolio,
-  Recommendations,
   WorkHistory,
   Education,
   Footer,
   UserChat,
   Navigation,
+  MySkills,
 } from 'src/components'
 import { SEO } from 'src/shared'
 
@@ -22,7 +22,7 @@ export const MainPage = () => {
       <main>
         <MyServices />
         <Portfolio />
-        <Recommendations />
+        <MySkills />
         <WorkHistory />
         <Education />
       </main>

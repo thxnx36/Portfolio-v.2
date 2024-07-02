@@ -5,6 +5,7 @@ import { Form } from './form'
 import { Header } from './header'
 import { AdminChat, UserChat } from './live-chat'
 import { MyServices } from './my-services'
+import { MySkills } from './my-skills/MySkills'
 import { Navigation } from './navigation'
 import { NotFound } from './not-found'
 import { Portfolio } from './portfolio'
@@ -27,4 +28,5 @@ export {
   Project,
   UserChat,
   AdminChat,
+  MySkills,
 }

@@ -1,4 +1,3 @@
-import { technologies } from 'src/db'
 import { useTranslation } from 'react-i18next'
 import {
   Section,
@@ -9,6 +8,7 @@ import {
   PagesHead,
 } from 'src/shared'
 import { useGoBack, useQualitiesList } from 'src/hooks'
+import { technologies } from 'src/constants'
 import styles from './AboutMe.module.css'
 
 export const AboutMe = () => {

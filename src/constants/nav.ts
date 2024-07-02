@@ -3,6 +3,7 @@ export const NAVIGATE = {
   services: '#services',
   portfolio: '#portfolio',
   recommendations: '#recommendations',
+  skills: '#skills',
   workHistory: '#work-history',
   education: '#education',
 }

@@ -1,21 +1,46 @@
-.mySkillsContainer {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
+.mySkillsContainer div {
+  flex-direction: unset;
 }
 
-.line {
+.slillsWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 30px;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+}
+
+.aboutMeLink {
+  position: relative;
+}
+
+.aboutMeLink::after {
+  content: '';
+  position: absolute;
   width: 100%;
   height: 1px;
-  background-color: var(--border-color);
-  margin: 15px 0;
+  bottom: -2px;
+  left: 0;
+  background: var(--bg-linear);
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 @media screen and (max-width: 865px) {
-  .mySkillsContainer {
-    justify-content: unset;
-    height: unset;
+  .slillsWrapper {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .slillsWrapper {
+    flex-direction: column;
   }
 }
