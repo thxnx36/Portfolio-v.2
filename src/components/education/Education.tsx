@@ -1,20 +1,12 @@
 import { useTranslation } from 'react-i18next'
-import { motionSection } from 'src/constants'
 import { useEducationList } from 'src/hooks'
-import { MSection, SectionHead, TimeLine } from 'src/shared'
+import { Section, SectionHead, TimeLine } from 'src/shared'
 
 export const Education = () => {
   const { t } = useTranslation()
   const { educationList } = useEducationList()
   return (
-    <MSection
-      id='education'
-      variants={motionSection.variants}
-      transition={motionSection.transition}
-      initial={motionSection.initial}
-      whileInView={motionSection.whileInView}
-      viewport={motionSection.viewport}
-    >
+    <Section id='education'>
       <SectionHead
         title={t('education.TITLE')}
         subTitle={t('education.SUBTITLE')}
@@ -31,6 +23,6 @@ export const Education = () => {
           />
         ),
       )}
-    </MSection>
+    </Section>
   )
 }

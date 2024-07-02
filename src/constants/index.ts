@@ -35,6 +35,8 @@ import {
 import { FORMAT_DATE, FORMAT_TIME } from './format-date'
 import { APP } from './version-app'
 import { VALIDATE_EMAIL, CHECK_URL } from './regex'
+import { recommendations } from "./recommendations"
+import { technologies } from "./technologies"
 
 export {
   RESPONSIVE,
@@ -75,6 +77,8 @@ export {
   ENV_VARS_DEV,
   motionSection,
   motionNav,
+  recommendations,
+  technologies,
   ROUTES,
   NAVIGATE,
   KEYWORDS,

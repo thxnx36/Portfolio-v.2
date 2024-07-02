@@ -21,11 +21,10 @@ export const MyServices = () => {
   const isFlipped = (id: number) => activeCards.includes(id)
 
   return (
-    <Section style={{ marginBottom: '30px' }} id='services'>
+    <Section id='services'>
       <SectionHead
         title={t('myServices.TITLE')}
-        subTitle={t('myServices.SUBTITLE')}
-        isLink
+        subTitle=''
         to={ROUTES.aboutMe}
         linkText={t('myServices.ABOUT_ME')}
       />

@@ -1,21 +1,13 @@
 import { useTranslation } from 'react-i18next'
-import { motionSection } from 'src/constants'
 import { useWorkList } from 'src/hooks'
-import { MSection, SectionHead, TimeLine } from 'src/shared'
+import { Section, SectionHead, TimeLine } from 'src/shared'
 
 export const WorkHistory = () => {
   const { t } = useTranslation()
   const { workList } = useWorkList()
 
   return (
-    <MSection
-      id='work-history'
-      variants={motionSection.variants}
-      transition={motionSection.transition}
-      initial={motionSection.initial}
-      whileInView={motionSection.whileInView}
-      viewport={motionSection.viewport}
-    >
+    <Section id='work-history'>
       <SectionHead
         title={t('workHistory.TITLE')}
         subTitle={t('workHistory.SUBTITLE')}
@@ -33,6 +25,6 @@ export const WorkHistory = () => {
           />
         ),
       )}
-    </MSection>
+    </Section>
   )
 }

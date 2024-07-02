@@ -32,7 +32,7 @@
   border-radius: 50%;
   position: relative;
   margin: 0 0 10px;
-  box-shadow: 0px 0px 30px 1px rgba(255, 81, 47, 0.3);
+  box-shadow: var(--shadow-hover);
 }
 
 .active::before {

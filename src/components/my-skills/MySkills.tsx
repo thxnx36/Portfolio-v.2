@@ -1,36 +1,46 @@
 import type { CSSProperties } from 'react'
-import { UserContact } from './user-contact/UserContact'
-import { TechSkills } from './tech-skills/TechSkills'
 import { useTranslation } from 'react-i18next'
-import { CV_URL } from 'src/constants'
-import { skills, languages } from 'src/db'
-import { Button } from 'src/shared'
+import { CV_URL, ROUTES } from 'src/constants'
+import { Button, Paragraph, Section, Title, Container } from 'src/shared'
+import { Link } from 'react-router-dom'
+import { TechnologiesCard } from './technologies-card/TechnologiesCard'
 import styles from './MySkills.module.css'
 
 export const MySkills = () => {
   const { t } = useTranslation()
 
   return (
-    <div className={styles.mySkillsContainer}>
-      <UserContact userName={t('mySkills.NAME')} />
-      <div className={styles.line} />
-      <TechSkills title={t('mySkills.SKILLS')} skillsList={skills} />
-      <div className={styles.line} />
-      <TechSkills title={t('mySkills.LANGUAGES')} skillsList={languages} />
-      <div className={styles.line} />
-      <Button
-        tag='a'
-        target='_blank'
-        href={CV_URL}
-        style={additionalButtonStyles}
-        text={t('button.DOWNLOAD')}
-      />
-    </div>
+    <Section id='skills'>
+      <Container>
+        <div className={styles.slillsWrapper}>
+          <div className={styles.text}>
+            <Title tag='h2'>{t('SKILLS.TITLE')}</Title>
+            <Paragraph style={{ textAlign: 'left' }}>
+              {t('SKILLS.SUBTITLE')}
+            </Paragraph>
+            <div className={styles.buttons}>
+              <Button
+                tag='a'
+                target='_blank'
+                href={CV_URL}
+                style={additionalButtonStyles}
+                text={t('button.DOWNLOAD')}
+              />
+              <Link className={styles.aboutMeLink} to={ROUTES.aboutMe}>
+                {t('SKILLS.MORE_ME_LINK')}
+              </Link>
+            </div>
+          </div>
+          <div className={styles.stackCard}>
+            <TechnologiesCard />
+          </div>
+        </div>
+      </Container>
+    </Section>
   )
 }
 
 const additionalButtonStyles: CSSProperties = {
-  width: '100%',
   padding: '10px',
-  fontSize: '12px',
+  fontSize: '0.75em',
 }

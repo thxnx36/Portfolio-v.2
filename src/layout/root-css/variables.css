@@ -64,5 +64,6 @@
   --shadow-chat: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   --shadow-button: 0px 0px 14px -7px #f09819;
+  --shadow-hover: 0px 0px 30px 1px rgba(255, 81, 47, 0.3);
   /* --shadow-dark: 0px 0px 10px 0px #00000026; */
 }

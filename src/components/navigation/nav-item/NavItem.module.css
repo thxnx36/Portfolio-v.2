@@ -10,19 +10,19 @@
 .navItem::after {
   content: '';
   position: absolute;
-  right: 0;
-  bottom: -3px;
-  width: 0;
-  height: 2px;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
   background: var(--bg-linear);
-  opacity: 0.5;
-  transition:
-    width 0.3s ease,
-    background-color 0.3s ease;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
 .navItem:hover::after {
-  width: 100%;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .link {

@@ -1,7 +1,6 @@
 import type { NavigationListType, ProjectsListType } from '../types'
 import { FaFileCode } from 'react-icons/fa'
 import { IoDocumentAttachSharp } from 'react-icons/io5'
-import { BiSolidMessageCheck } from 'react-icons/bi'
 import { MdOutlineWork } from 'react-icons/md'
 import { IoSchoolSharp } from 'react-icons/io5'
 import { SiAboutdotme } from 'react-icons/si'
@@ -27,9 +26,9 @@ export const useNavigationList = () => {
         id: 2,
       },
       {
-        text: t('navigation.RECOMMEND'),
-        icon: <BiSolidMessageCheck size='1.3em' />,
-        href: NAVIGATE.recommendations,
+        text: t('navigation.ABOUT_ME'),
+        icon: <SiAboutdotme size='1.3em' />,
+        href: NAVIGATE.skills,
         id: 3,
       },
       {
@@ -43,12 +42,6 @@ export const useNavigationList = () => {
         icon: <IoSchoolSharp size='1.3em' />,
         href: NAVIGATE.education,
         id: 5,
-      },
-      {
-        text: t('navigation.ABOUT_ME'),
-        icon: <SiAboutdotme size='1.3em' />,
-        href: ROUTES.aboutMe,
-        id: 6,
       },
     ],
     [t],

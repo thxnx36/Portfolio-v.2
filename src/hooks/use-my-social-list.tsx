@@ -1,5 +1,4 @@
 import {
-  CV_URL,
   GIT_HUB_URL,
   LINKEDIN_URL,
   TELEGRAM_URL,
@@ -8,7 +7,6 @@ import {
 import type { MySocialListType } from 'src/types'
 import { FaLinkedin, FaTelegramPlane } from 'react-icons/fa'
 import { FaSquareUpwork, FaSquareGithub } from 'react-icons/fa6'
-import { TbFileCv } from "react-icons/tb";
 
 export const useMySocialList = () => {
   const socialList: MySocialListType[] = [
@@ -34,20 +32,12 @@ export const useMySocialList = () => {
       id: 3,
     },
     {
-      link: CV_URL,
-      name: 'CV',
-      bgColor: '#4285F4',
-      icon: <TbFileCv size='1.3em' />,
-      id: 4,
-    },
-    {
       link: GIT_HUB_URL,
       name: 'GitHub',
       bgColor: '#242526',
       icon: <FaSquareGithub size='1.2em' />,
-      id: 5,
+      id: 4,
     },
-
   ]
 
   return { socialList }

@@ -1,6 +1,5 @@
-import { motionSection } from 'src/constants'
 import { usePortfolioList } from 'src/hooks'
-import { MSection, SectionHead, CardsContainer } from 'src/shared'
+import { Section, SectionHead, CardsContainer } from 'src/shared'
 import { PortfolioCard } from './card/PortfolioCard'
 import { useTranslation } from 'react-i18next'
 
@@ -9,14 +8,7 @@ export const Portfolio = () => {
   const { portfolioList } = usePortfolioList()
 
   return (
-    <MSection
-      id='portfolio'
-      variants={motionSection.variants}
-      transition={motionSection.transition}
-      initial={motionSection.initial}
-      whileInView={motionSection.whileInView}
-      viewport={motionSection.viewport}
-    >
+    <Section id='portfolio'>
       <SectionHead
         title={t('portfolio.TITLE')}
         subTitle={t('portfolio.SUBTITLE')}
@@ -33,6 +25,6 @@ export const Portfolio = () => {
           />
         ))}
       </CardsContainer>
-    </MSection>
+    </Section>
   )
 }
