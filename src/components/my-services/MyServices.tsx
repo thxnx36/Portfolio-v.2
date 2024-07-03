@@ -24,7 +24,7 @@ export const MyServices = () => {
     <Section id='services'>
       <SectionHead
         title={t('myServices.TITLE')}
-        subTitle=''
+        subTitle={t('myServices.SUBTITLE')}
         to={ROUTES.aboutMe}
         linkText={t('myServices.ABOUT_ME')}
       />
