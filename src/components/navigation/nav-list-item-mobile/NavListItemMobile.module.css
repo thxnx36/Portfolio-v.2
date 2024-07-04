@@ -1,5 +1,7 @@
 .toolbar {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 button svg {

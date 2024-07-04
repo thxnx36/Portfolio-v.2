@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { NavItem } from '../nav-item/NavItem'
-import { Toolbar } from '../toolbar/Toolbar'
+import { Toolbar } from 'src/shared'
 import styles from './NavListItemMobile.module.css'
 
 type Props = {
@@ -17,10 +17,7 @@ export const NavListItemMobile: FC<Props> = ({
   return (
     <>
       <div className={styles.toolbar}>
-        <Toolbar
-          uniqueIdForSwitcher='switch-theme-mob'
-          uniqueToggletId='toggle-lang-mob'
-        />
+        <Toolbar />
       </div>
 
       <nav>

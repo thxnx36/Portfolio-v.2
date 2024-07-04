@@ -36,6 +36,7 @@ import { Loader, ChatSkeleton } from './loader'
 import { MarqueeBackground } from './marquee-background'
 import { PagesHead } from "./pages-head"
 import { TimeLine } from "./time-line"
+import { Toolbar } from "./toolbar"
 
 export {
   Avatar,
@@ -78,4 +79,5 @@ export {
   MarqueeBackground,
   PagesHead,
   TimeLine,
+  Toolbar,
 }
