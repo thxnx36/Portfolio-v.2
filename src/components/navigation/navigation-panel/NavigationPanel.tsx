@@ -1,8 +1,7 @@
 import type { FC } from 'react'
 import { NavListItemDesktop } from '../nav-list-item-desktop/NavListItemDesktop'
-import { Toolbar } from '../toolbar/Toolbar'
 import { FaReact } from 'react-icons/fa'
-import { BurgerButton } from 'src/shared'
+import { BurgerButton, Toolbar } from 'src/shared'
 import styles from './NavigationPanel.module.css'
 
 type Props = {
@@ -30,10 +29,7 @@ export const NavigationPanel: FC<Props> = ({
         isActiveItem={isActiveItem}
       />
       <div className={styles.navToolbar}>
-        <Toolbar
-          uniqueIdForSwitcher='switch-theme-desk'
-          uniqueToggletId='toggle-lang-desk'
-        />
+        <Toolbar />
       </div>
     </div>
   )

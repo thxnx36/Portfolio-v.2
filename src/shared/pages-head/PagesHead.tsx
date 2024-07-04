@@ -1,9 +1,8 @@
-
-import { BackButton, ToggleLang } from "../buttons"
-import { Title } from "../title"
-import styles from './PagesHead.module.css'
-
 import { FC } from 'react'
+import { BackButton } from '../buttons'
+import { Title } from '../title'
+import { Toolbar } from '../toolbar'
+import styles from './PagesHead.module.css'
 
 type Props = {
   onClick: () => void
@@ -19,7 +18,7 @@ export const PagesHead: FC<Props> = ({ onClick, title }) => {
           {title}
         </Title>
       </div>
-      <ToggleLang uniqueToggletId={'toggle-lang-on-page'} />
+      <Toolbar />
     </div>
   )
 }

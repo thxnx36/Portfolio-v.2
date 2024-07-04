@@ -1,0 +1,27 @@
+.toolbarContainer {
+  padding: 3px;
+  width: fit-content;
+  display: flex;
+  border-radius: 25px;
+  border: 1px solid var(--border-color);
+  transition: border 0.3s ease-in-out;
+}
+
+.toolbarSwitch {
+  width: 25px;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
+}
+
+.toolbarSwitch:active {
+  background-color: rgba(128, 128, 128, 0.35);
+}
