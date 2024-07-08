@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      src: '/src'
-    }
+      src: '/src',
+    },
   },
   envDir: './src',
   define: {
@@ -35,6 +35,10 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
+      input: {
+        main: 'index.html',
+        robots: 'robots.txt',
+      },
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
