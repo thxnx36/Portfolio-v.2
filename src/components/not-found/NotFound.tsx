@@ -1,6 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import { ROUTES } from 'src/constants'
-import { Section, Title, Button, SEO, MarqueeBackground } from 'src/shared'
+import {
+  Section,
+  Title,
+  Button,
+  BrowserTabTitle,
+  MarqueeBackground,
+} from 'src/shared'
 import { useGoBack } from 'src/hooks'
 import { Icon } from './Icon'
 import styles from './NotFound.module.css'
@@ -32,7 +38,7 @@ export const NotFound = () => {
         </div>
       </MarqueeBackground>
 
-      <SEO tabTitle={t('pages.notFound.NOT_FOUND_TAB')} />
+      <BrowserTabTitle title={t('pages.notFound.NOT_FOUND_TAB')} />
     </Section>
   )
 }

@@ -4,7 +4,7 @@ import {
   PageWrapper,
   Title,
   Paragraph,
-  SEO,
+  BrowserTabTitle,
   PagesHead,
 } from 'src/shared'
 import { useGoBack, useQualitiesList } from 'src/hooks'
@@ -102,7 +102,7 @@ export const AboutMe = () => {
           </article>
         </article>
       </PageWrapper>
-      <SEO tabTitle={t('pages.aboutMe.seo.TITLE')} />
+      <BrowserTabTitle title={t('pages.aboutMe.seo.TITLE')} />
     </Section>
   )
 }

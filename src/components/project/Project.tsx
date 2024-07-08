@@ -5,7 +5,7 @@ import { Content } from './content/Content'
 import { StackList } from './stack-list/StackList'
 import { FiExternalLink } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
-import { Section, PageWrapper, Title, SEO } from 'src/shared'
+import { Section, PageWrapper, BrowserTabTitle, Title } from 'src/shared'
 import styles from './Project.module.css'
 
 export const Project = () => {
@@ -45,7 +45,9 @@ export const Project = () => {
           ))}
         </ul>
       </PageWrapper>
-      <SEO tabTitle={`${t('pages.project.MY_PROJECT')} | ${data?.project!}`} />
+      <BrowserTabTitle
+        title={`${t('pages.project.MY_PROJECT')} | ${data?.project!}`}
+      />
     </Section>
   )
 }

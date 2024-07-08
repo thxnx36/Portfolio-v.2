@@ -30,13 +30,13 @@ import { Toast } from './toast'
 import { Drawer } from './drawer'
 import { ToolTip } from './tool-tip'
 import { ReCaptcha } from './re-captcha'
-import { SEO } from './seo'
 import { ToggleLang } from './buttons/toggle-lang'
 import { Loader, ChatSkeleton } from './loader'
 import { MarqueeBackground } from './marquee-background'
 import { PagesHead } from "./pages-head"
 import { TimeLine } from "./time-line"
 import { Toolbar } from "./toolbar"
+import { BrowserTabTitle } from "./browser-tab-title"
 
 export {
   Avatar,
@@ -72,7 +72,7 @@ export {
   Drawer,
   ToolTip,
   ReCaptcha,
-  SEO,
+  BrowserTabTitle,
   MContainer,
   Loader,
   ChatSkeleton,
