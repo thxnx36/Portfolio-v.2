@@ -6,4 +6,5 @@ export type EnvVarsType = {
   apiServerUrl: string
   apiChatUrl: string
   getEmail: string
+  CVUrl: string
 }

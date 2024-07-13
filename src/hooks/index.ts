@@ -18,6 +18,7 @@ import { useTextAreaHeight } from './use-textaerea-height'
 import { useSendMessageInChat } from './use-send-message-in-chat'
 import { useDraggable } from './use-draggable'
 import { useQualitiesList } from './use-qualities-list'
+import { useAnimateDuringScroll } from "./use-animate-during-scroll"
 
 export {
   useGetProjectById,
@@ -40,4 +41,5 @@ export {
   useTextAreaHeight,
   useSendMessageInChat,
   useDraggable,
+  useAnimateDuringScroll,
 }

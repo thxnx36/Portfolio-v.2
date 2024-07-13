@@ -17,10 +17,10 @@ export const MainPage = () => {
       <Header />
       <main>
         <MyServices />
-        <Portfolio />
-        <MySkills />
-        <WorkHistory />
-        <Education />
+        <Portfolio sectionId='portfolio' />
+        <MySkills sectionId='skills' />
+        <WorkHistory sectionId='work-history' />
+        <Education sectionId='education' />
       </main>
       <Footer />
       <UserChat />

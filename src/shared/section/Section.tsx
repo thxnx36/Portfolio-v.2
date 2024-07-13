@@ -1,4 +1,4 @@
-import type { FC, HTMLAttributes, ReactNode} from 'react';
+import type { FC, HTMLAttributes, ReactNode } from 'react'
 import { forwardRef } from 'react'
 import { motion } from 'framer-motion'
 import styles from './Section.module.css'

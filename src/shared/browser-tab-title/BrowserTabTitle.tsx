@@ -8,7 +8,7 @@ export const BrowserTabTitle: FC<Props> = ({ title }) => {
   useEffect(() => {
     document.title = title
     return () => {
-      document.title = 'Front-end Developer | Vlad Kryvytchenko'
+      document.title = 'Frontend Developer | Vlad Kryvytchenko'
     }
   }, [title])
 

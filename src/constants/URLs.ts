@@ -1,5 +1,3 @@
-export const CV_URL =
-  'https://drive.google.com/file/d/1JHV9TcRhorPRA31GedmZCQ9g6ZhgHJ0j/view?usp=sharing'
 export const COMPANY_URL = 'https://www.elementica.io/'
 export const UDEMY_URL =
   'https://www.udemy.com/course/javascript_full/?couponCode=KEEPLEARNING'
@@ -14,4 +12,4 @@ export const UP_WORK_URL =
 export const ASX_URL = 'https://www.asx.ai/'
 export const TUTTIFY_URL = 'https://tuttify.io/'
 export const MAVEN_URL = 'https://www.maven11.com/'
-export const APP_URL = 'https://vladfrontendpro.vercel.app'
+export const APP_URL = 'https://vladfrontend.pro'

@@ -4,6 +4,7 @@ const commonEnvVars = {
   getEmail: import.meta.env.VITE_EMAIL,
   apiCaptchaSecretKey: import.meta.env.VITE_CAPTCHA_SEKRET_KEY,
   apiCaptchaSiteKey: import.meta.env.VITE_CAPTCHA_SITE_KEY,
+  CVUrl: import.meta.env.VITE_CV_URL,
 }
 
 export const ENV_VARS_PROD: EnvVarsType = {

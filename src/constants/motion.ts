@@ -11,8 +11,8 @@ export const motionSection = {
   },
 
   transition: {
-    ease: 'easeOut',
-    duration: 0.8,
+    duration: 1.1,
+    ease: 'easeInOut',
   },
 
   viewport: {
@@ -20,7 +20,7 @@ export const motionSection = {
     once: true,
   },
 
-  initial: 'hidden',
+  initial: { opacity: 0 },
   whileInView: 'visible',
 }
 

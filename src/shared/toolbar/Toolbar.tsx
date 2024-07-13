@@ -45,26 +45,17 @@ export const Toolbar = () => {
           {icon}
         </button>
       ))}
-
-      {currentLanguage === ENG ? (
-        <button
-          key={LANG[1].id}
-          className={styles.toolbarSwitch}
-          value={LANG[1].value}
-          onClick={() => onChangeLanguage(LANG[1].value)}
-        >
-          {LANG[1].label}
-        </button>
-      ) : (
-        <button
-          key={LANG[0].id}
-          className={styles.toolbarSwitch}
-          value={LANG[0].value}
-          onClick={() => onChangeLanguage(LANG[0].value)}
-        >
-          {LANG[0].label}
-        </button>
-      )}
+      <button
+        className={`${styles.toolbarSwitch} ${styles.switchLang}`}
+        value={currentLanguage === ENG ? LANG[1].value : LANG[0].value}
+        onClick={() =>
+          onChangeLanguage(
+            currentLanguage === ENG ? LANG[1].value : LANG[0].value,
+          )
+        }
+      >
+        {currentLanguage === ENG ? LANG[1].label : LANG[0].label}
+      </button>
     </div>
   )
 }
