@@ -1,13 +1,14 @@
 import { useTranslation } from 'react-i18next'
+import { withAnimationSection } from 'src/hoc'
 import { useWorkList } from 'src/hooks'
-import { Section, SectionHead, TimeLine } from 'src/shared'
+import { SectionHead, TimeLine } from 'src/shared'
 
-export const WorkHistory = () => {
+const WorkHistorySection = () => {
   const { t } = useTranslation()
   const { workList } = useWorkList()
 
   return (
-    <Section id='work-history'>
+    <>
       <SectionHead
         title={t('workHistory.TITLE')}
         subTitle={t('workHistory.SUBTITLE')}
@@ -25,6 +26,8 @@ export const WorkHistory = () => {
           />
         ),
       )}
-    </Section>
+    </>
   )
 }
+
+export const WorkHistory = withAnimationSection(WorkHistorySection)

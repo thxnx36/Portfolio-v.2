@@ -1,12 +1,14 @@
 import { useTranslation } from 'react-i18next'
+import { withAnimationSection } from 'src/hoc'
 import { useEducationList } from 'src/hooks'
-import { Section, SectionHead, TimeLine } from 'src/shared'
+import { SectionHead, TimeLine } from 'src/shared'
 
-export const Education = () => {
+export const EducationSection = () => {
   const { t } = useTranslation()
   const { educationList } = useEducationList()
+
   return (
-    <Section id='education'>
+    <>
       <SectionHead
         title={t('education.TITLE')}
         subTitle={t('education.SUBTITLE')}
@@ -23,6 +25,8 @@ export const Education = () => {
           />
         ),
       )}
-    </Section>
+    </>
   )
 }
+
+export const Education = withAnimationSection(EducationSection)

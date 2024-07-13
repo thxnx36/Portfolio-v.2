@@ -1,7 +1,6 @@
 import type { FC, ReactNode } from 'react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Analytics } from '@vercel/analytics/react'
-import { useSpinner } from 'src/hooks'
 import { Toast } from 'src/shared'
 import styles from './Layout.module.css'
 import './root-css/variables.css'
@@ -16,7 +15,6 @@ type Props = {
 }
 
 export const Layout: FC<Props> = ({ children }) => {
-  useSpinner()
   return (
     <>
       <div className={styles.app}>{children}</div>

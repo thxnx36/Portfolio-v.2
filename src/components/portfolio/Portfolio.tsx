@@ -1,14 +1,15 @@
 import { usePortfolioList } from 'src/hooks'
-import { Section, SectionHead, CardsContainer } from 'src/shared'
+import { SectionHead, CardsContainer } from 'src/shared'
 import { PortfolioCard } from './card/PortfolioCard'
 import { useTranslation } from 'react-i18next'
+import { withAnimationSection } from 'src/hoc'
 
-export const Portfolio = () => {
+const PortfolioSection = () => {
   const { t } = useTranslation()
   const { portfolioList } = usePortfolioList()
 
   return (
-    <Section id='portfolio'>
+    <>
       <SectionHead
         title={t('portfolio.TITLE')}
         subTitle={t('portfolio.SUBTITLE')}
@@ -25,6 +26,8 @@ export const Portfolio = () => {
           />
         ))}
       </CardsContainer>
-    </Section>
+    </>
   )
 }
+
+export const Portfolio = withAnimationSection(PortfolioSection)

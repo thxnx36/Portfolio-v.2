@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-Welcome to my portfolio website! Here you'll find information about my skills, projects, and the services I provide as a front-end developer
+Welcome to my portfolio website! Here you'll find information about my skills, projects, and the services I provide as a frontend developer
 
 ## Technologies
 
