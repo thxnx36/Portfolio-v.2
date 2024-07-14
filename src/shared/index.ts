@@ -38,6 +38,8 @@ import { TimeLine } from "./time-line"
 import { Toolbar } from "./toolbar"
 import { BrowserTabTitle } from "./browser-tab-title"
 import { FlipWord } from "./flip-word"
+import { PreviewLink } from "./preview-link"
+import { AnimatedContainer } from "./animated-container"
 
 export {
   Avatar,
@@ -82,4 +84,6 @@ export {
   TimeLine,
   Toolbar,
   FlipWord,
+  PreviewLink,
+  AnimatedContainer,
 }

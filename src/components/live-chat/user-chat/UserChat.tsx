@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import { ChatHead } from './chat-head/ChatHead'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { ChatJoin } from './chat-join/ChatJoin'
@@ -15,7 +16,7 @@ import {
   usePositionChatWindow,
   useDraggable,
 } from 'src/hooks'
-import { Button, ChatSkeleton } from 'src/shared'
+import { AnimatedContainer, Button, ChatSkeleton } from 'src/shared'
 import { playSoundsInChat } from 'src/utils'
 import { MessageType } from 'src/types'
 import styles from './UserChat.module.css'
@@ -134,46 +135,47 @@ export const UserChat = () => {
           {isShowNotification && <NotificationIcon count={notificationCount} />}
         </div>
       )}
-
-      {isOpenChat && (
-        <div
-          ref={chatWindowRef}
-          className={
-            isZoomWindow ? `${styles.chat} ${styles.zoomWindow}` : styles.chat
-          }
-        >
-          <ChatHead
-            onToggleChat={onToggleChat}
-            onDeleteChat={onLeaveAndDeleteChat}
-            onDeleteChatHistory={onDeleteChatHistory}
-            onToggleZoomWindow={onToggleZoomWindow}
-            isJoinedUser={isJoined}
-            showDeleteHistory={!!filteredMessages.length}
-          />
-          {isJoined ? (
-            isLoading ? (
-              <ChatSkeleton />
+      <AnimatePresence>
+        {isOpenChat && (
+          <AnimatedContainer
+            ref={chatWindowRef}
+            className={
+              isZoomWindow ? `${styles.chat} ${styles.zoomWindow}` : styles.chat
+            }
+          >
+            <ChatHead
+              onToggleChat={onToggleChat}
+              onDeleteChat={onLeaveAndDeleteChat}
+              onDeleteChatHistory={onDeleteChatHistory}
+              onToggleZoomWindow={onToggleZoomWindow}
+              isJoinedUser={isJoined}
+              showDeleteHistory={!!filteredMessages.length}
+            />
+            {isJoined ? (
+              isLoading ? (
+                <ChatSkeleton />
+              ) : (
+                <>
+                  <ChatMessagesMemo
+                    ref={messagesContainerRef}
+                    messages={filteredMessages}
+                    adminSender={ADMIN}
+                    userName={userName}
+                  />
+                </>
+              )
             ) : (
-              <>
-                <ChatMessagesMemo
-                  ref={messagesContainerRef}
-                  messages={filteredMessages}
-                  adminSender={ADMIN}
-                  userName={userName}
-                />
-              </>
-            )
-          ) : (
-            <ChatJoin />
-          )}
-          <ChatFooter
-            userId={userId}
-            socket={socket}
-            isDisabledInput={isLoading || !isJoined}
-            placeholder={t('input.placeholder.YOUR_MESSAGE')}
-          />
-        </div>
-      )}
+              <ChatJoin />
+            )}
+            <ChatFooter
+              userId={userId}
+              socket={socket}
+              isDisabledInput={isLoading || !isJoined}
+              placeholder={t('input.placeholder.YOUR_MESSAGE')}
+            />
+          </AnimatedContainer>
+        )}
+      </AnimatePresence>
     </>
   )
 }

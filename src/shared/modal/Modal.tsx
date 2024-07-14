@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { useOverLay } from 'src/hooks'
 import { CloseButton } from '../buttons'
 import { MarqueeBackground } from '../marquee-background'
+import { AnimatedContainer } from '../animated-container'
 import styles from './Modal.module.css'
 
 type Props = {
@@ -21,10 +22,10 @@ export const Modal: FC<Props> = ({
   const { onCloseContent, contentRef } = useOverLay({ onClose, isOpen })
 
   const ModalContent = (
-    <div ref={contentRef} className={styles.modalContent}>
+    <AnimatedContainer ref={contentRef} className={styles.modalContent}>
       <CloseButton className={styles.closeButton} onClick={onClose} />
       {children}
-    </div>
+    </AnimatedContainer>
   )
 
   return createPortal(

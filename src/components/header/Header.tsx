@@ -2,7 +2,7 @@ import { CSSProperties, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { headerPhoto } from 'src/assets'
 import { Container, Title, Button, Modal, FlipWord } from 'src/shared'
-import { Form } from '..'
+import { Form } from "../form"
 import styles from './Header.module.css'
 
 const words = ['Frontend Developer', 'React Developer', 'JavaScript Developer']
@@ -22,7 +22,6 @@ export const Header = () => {
               <Title size='lg'>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <span className={styles.name}>{t('header.NAME')}</span>
-                  {/* <br /> */}
                   <FlipWord
                     words={words}
                     classNameText={styles.speciality}

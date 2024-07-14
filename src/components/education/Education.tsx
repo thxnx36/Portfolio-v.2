@@ -14,7 +14,7 @@ export const EducationSection = () => {
         subTitle={t('education.SUBTITLE')}
       />
       {educationList?.map(
-        ({ university, position, date, description, url, id }) => (
+        ({ university, position, date, description, img, url, id }) => (
           <TimeLine
             key={id}
             namePlace={university}
@@ -22,6 +22,7 @@ export const EducationSection = () => {
             date={date}
             description={description}
             url={url}
+            imageSrc={img}
           />
         ),
       )}

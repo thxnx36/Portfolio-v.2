@@ -6,4 +6,5 @@ export type WorkListType = {
   title: string
   url: string
   description: string
+  img: string
 }

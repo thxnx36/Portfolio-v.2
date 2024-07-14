@@ -3,6 +3,7 @@ import styles from './TimeLine.module.css'
 import { Title } from '../title'
 import { Paragraph } from '../paragraph'
 import { TfiNewWindow } from 'react-icons/tfi'
+import { PreviewLink } from '../preview-link'
 
 type Props = {
   namePlace: string
@@ -10,6 +11,7 @@ type Props = {
   date: string | number
   description: string
   url: string
+  imageSrc: string
   isActiveDot?: boolean
 }
 
@@ -19,6 +21,7 @@ export const TimeLine: FC<Props> = ({
   date,
   isActiveDot,
   description,
+  imageSrc,
   url,
 }) => {
   return (
@@ -38,16 +41,7 @@ export const TimeLine: FC<Props> = ({
 
       <div>
         <div className={styles.infoHead}>
-          <a
-            className={
-              url !== '#'
-                ? `${styles.link}`
-                : `${styles.link} ${styles.disabledLink}`
-            }
-            href={url}
-            target='_blank'
-            rel='noreferrer'
-          >
+          <PreviewLink href={url} imageSrc={imageSrc}>
             <div className={styles.titleWrap}>
               <Title
                 style={{ margin: 0 }}
@@ -60,7 +54,7 @@ export const TimeLine: FC<Props> = ({
               {url !== '#' && <TfiNewWindow size='0.7em' />}
               <small className={styles.dateMobile}>{date}</small>
             </div>
-          </a>
+          </PreviewLink>
           <p className={styles.namePosition}>{namePosition}</p>
         </div>
         <div className={styles.infoWrapper}>

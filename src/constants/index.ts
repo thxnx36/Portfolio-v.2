@@ -1,6 +1,6 @@
 import { COLOR_YELLOW, COLOR_BLUE, GREY_COLOR } from './colors'
 import { ENV_VARS_PROD, ENV_VARS_DEV } from './env'
-import { motionSection, motionNav, motionProgrLine } from './motion'
+import { motionSection, motionNav, motionProgrLine, motionAnimatedContainer } from './motion'
 import { NAVIGATE } from './nav'
 import { ROUTES } from './routes'
 import { RESPONSIVE } from './slider'
@@ -86,4 +86,5 @@ export {
   OG_SITE_NAME,
   APP_URL,
   motionProgrLine,
+  motionAnimatedContainer,
 }
