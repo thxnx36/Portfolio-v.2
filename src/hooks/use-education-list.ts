@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { UDEMY_URL, UNIVERSITY_URL, IMT_URL } from 'src/constants'
 import { useTranslation } from 'react-i18next'
 import { EducationListType } from 'src/types'
+import { imtHomePage, udemyHomePage } from 'src/assets'
 
 export const useEducationList = () => {
   const { t } = useTranslation()
@@ -15,6 +16,7 @@ export const useEducationList = () => {
         date: '2021 - 2022',
         title: t('education.table.udemy.TITLE'),
         url: UDEMY_URL,
+        img: udemyHomePage,
         description: t('education.table.udemy.DESCRIPTION'),
       },
       {
@@ -24,6 +26,7 @@ export const useEducationList = () => {
         date: '2021 - 2021',
         title: t('education.table.imt.TITLE'),
         url: IMT_URL,
+        img: imtHomePage,
         description: t('education.table.imt.DESCRIPTION'),
       },
       {
@@ -33,6 +36,7 @@ export const useEducationList = () => {
         date: '2015 - 2018',
         title: t('education.table.institute.TITLE'),
         url: UNIVERSITY_URL,
+        img: '',
         description: t('education.table.institute.DESCRIPTION'),
       },
     ],

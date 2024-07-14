@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { COMPANY_URL } from 'src/constants'
 import { WorkListType } from 'src/types'
 import { useTranslation } from 'react-i18next'
+import { elementicaHomePage } from 'src/assets'
 
 export const useWorkList = () => {
   const { t } = useTranslation()
@@ -15,6 +16,7 @@ export const useWorkList = () => {
         date: '2022 - 2024',
         title: t('workHistory.table.elementica.TITLE'),
         url: COMPANY_URL,
+        img: elementicaHomePage,
         description: t('workHistory.table.elementica.DESCRIPTION'),
       },
       {
@@ -24,6 +26,7 @@ export const useWorkList = () => {
         date: '2021 - 2022',
         title: t('workHistory.table.freelance.TITLE'),
         url: '#',
+        img: '',
         description: t('workHistory.table.freelance.DESCRIPTION'),
       },
     ],

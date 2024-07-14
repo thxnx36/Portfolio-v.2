@@ -10,6 +10,10 @@ import tutiffyPageSecond from './images/tut-page2.webp'
 import mavenPageRirst from './images/mav-page1.webp'
 import mavenPageSecond from './images/mav-page2.webp'
 import chatPhoto from './images/chat-img.webp'
+import elementicaHomePage from './images/elementica.webp'
+import imtHomePage from './images/imt.webp'
+import udemyHomePage from './images/udemy.webp'
+
 import soundSendMessage from './sounds/telegram-sound-send.mp3'
 import soundResponseMessage from './sounds/telegram-sound-response.mp3'
 
@@ -26,6 +30,9 @@ export {
   mavenPageRirst,
   mavenPageSecond,
   chatPhoto,
+  elementicaHomePage,
+  imtHomePage,
+  udemyHomePage,
   soundSendMessage,
   soundResponseMessage,
 }

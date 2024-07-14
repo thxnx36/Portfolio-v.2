@@ -6,4 +6,5 @@ export type EducationListType = {
   title: string
   url: string
   description: string
+  img: string
 }

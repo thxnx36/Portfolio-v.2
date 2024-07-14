@@ -14,7 +14,7 @@ const WorkHistorySection = () => {
         subTitle={t('workHistory.SUBTITLE')}
       />
       {workList?.map(
-        ({ company, position, date, description, url, id }, index) => (
+        ({ company, position, date, description, url, img, id }, index) => (
           <TimeLine
             key={id}
             namePlace={company}
@@ -22,6 +22,7 @@ const WorkHistorySection = () => {
             date={date}
             description={description}
             url={url}
+            imageSrc={img}
             isActiveDot={index === 0}
           />
         ),
