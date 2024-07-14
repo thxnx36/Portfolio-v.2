@@ -37,6 +37,7 @@ import { PagesHead } from "./pages-head"
 import { TimeLine } from "./time-line"
 import { Toolbar } from "./toolbar"
 import { BrowserTabTitle } from "./browser-tab-title"
+import { FlipWord } from "./flip-word"
 
 export {
   Avatar,
@@ -80,4 +81,5 @@ export {
   PagesHead,
   TimeLine,
   Toolbar,
+  FlipWord,
 }
