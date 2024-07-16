@@ -33,13 +33,14 @@ import { ReCaptcha } from './re-captcha'
 import { ToggleLang } from './buttons/toggle-lang'
 import { Loader, ChatSkeleton } from './loader'
 import { MarqueeBackground } from './marquee-background'
-import { PagesHead } from "./pages-head"
-import { TimeLine } from "./time-line"
-import { Toolbar } from "./toolbar"
-import { BrowserTabTitle } from "./browser-tab-title"
-import { FlipWord } from "./flip-word"
-import { PreviewLink } from "./preview-link"
-import { AnimatedContainer } from "./animated-container"
+import { PagesHead } from './pages-head'
+import { TimeLine } from './time-line'
+import { Toolbar } from './toolbar'
+import { BrowserTabTitle } from './browser-tab-title'
+import { FlipWord } from './flip-word'
+import { PreviewLink } from './preview-link'
+import { AnimatedContainer } from './animated-container'
+import { TransitionContainer } from './transition-container'
 
 export {
   Avatar,
@@ -86,4 +87,5 @@ export {
   FlipWord,
   PreviewLink,
   AnimatedContainer,
+  TransitionContainer,
 }
