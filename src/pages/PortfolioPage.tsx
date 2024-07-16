@@ -1,15 +1,6 @@
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
 import { Project } from 'src/components'
+import { withTransitionPage } from 'src/hoc'
 
-const PortfolioPage = () => {
-  const { pathname } = useLocation()
+const PortfolioPage = () => <Project />
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
-
-  return <Project />
-}
-
-export default PortfolioPage
+export default withTransitionPage(PortfolioPage)

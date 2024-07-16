@@ -1,5 +1,6 @@
 import { AboutMe } from 'src/components'
+import { withTransitionPage } from 'src/hoc'
 
 const AboutMePage = () => <AboutMe />
 
-export default AboutMePage
+export default withTransitionPage(AboutMePage)
