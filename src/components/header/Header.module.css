@@ -24,13 +24,10 @@
 .speciality {
   background-image: var(--bg-linear-reverse);
   background-clip: text;
+  background-size: 1%;
   color: transparent;
-}
-
-.specialityWrap {
-  display: inline-block;
-  max-width: 550px;
-  min-width: 500px;
+  width: max-content;
+  height: max-content;
 }
 
 .infoText {
@@ -65,9 +62,6 @@
   }
 
   .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
     padding: 0;
   }
@@ -76,8 +70,7 @@
     font-size: var(--font-size-md);
   }
 
-  .specialityWrap {
-    max-width: unset;
-    min-width: unset;
+  .speciality {
+    width: unset;
   }
 }
