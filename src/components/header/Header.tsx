@@ -2,10 +2,23 @@ import { CSSProperties, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { headerPhoto } from 'src/assets'
 import { Container, Title, Button, Modal, FlipWord } from 'src/shared'
-import { Form } from "../form"
+import { Form } from '../form'
 import styles from './Header.module.css'
 
-const words = ['Frontend Developer', 'React Developer', 'JavaScript Developer']
+const words = [
+  {
+    id: 1,
+    content: 'Frontend Developer',
+  },
+  {
+    id: 2,
+    content: 'React Developer',
+  },
+  {
+    id: 3,
+    content: 'JavaScript Developer',
+  },
+]
 
 export const Header = () => {
   const { t } = useTranslation()
@@ -22,11 +35,7 @@ export const Header = () => {
               <Title size='lg'>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <span className={styles.name}>{t('header.NAME')}</span>
-                  <FlipWord
-                    words={words}
-                    classNameText={styles.speciality}
-                    classNameTextWrap={styles.specialityWrap}
-                  />
+                  <FlipWord words={words} classNameText={styles.speciality} />
                 </div>
               </Title>
 
