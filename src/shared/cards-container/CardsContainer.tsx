@@ -12,8 +12,8 @@ export const CardsContainer: FC<Props> = ({ children, columns = 3 }) => {
   } as CSSProperties
 
   return (
-    <div className={styles.cardsContainer} style={style}>
+    <ul className={styles.cardsContainer} style={style}>
       {children}
-    </div>
+    </ul>
   )
 }

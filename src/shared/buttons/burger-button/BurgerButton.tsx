@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 import { RxHamburgerMenu } from 'react-icons/rx'
+import { classNames } from 'src/utils'
 import styles from './BurgerButton.module.css'
 
 type Props = {
@@ -8,11 +9,7 @@ type Props = {
 }
 export const BurgerButton: FC<Props> = ({ onClick, className }) => {
   return (
-    <button
-      className={
-        className ? `${styles.burgerButton} ${className}` : styles.burgerButton
-      }
-    >
+    <button className={classNames(styles.burgerButton, className)}>
       <RxHamburgerMenu size='1.4em' onClick={onClick} />
     </button>
   )

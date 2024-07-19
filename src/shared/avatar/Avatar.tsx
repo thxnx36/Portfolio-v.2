@@ -1,4 +1,5 @@
 import type { FC, HTMLAttributes } from 'react'
+import { classNames } from 'src/utils'
 import styles from './Avatar.module.css'
 
 type Props = HTMLAttributes<HTMLElement> & {
@@ -20,10 +21,14 @@ export const Avatar: FC<Props> = ({
   return (
     <Tag
       onClick={onClick}
-      className={`${styles.avatar} ${withBorder ? styles.withBorder : ''} ${className || ''}`}
+      className={classNames(
+        styles.avatar,
+        withBorder && styles.withBorder,
+        className,
+      )}
       {...props}
     >
-      <img src={src} alt='User-photo' />
+      <img src={src} alt='User photo' />
     </Tag>
   )
 }

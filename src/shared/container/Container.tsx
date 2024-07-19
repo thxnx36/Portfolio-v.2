@@ -1,5 +1,6 @@
-import type { FC, HTMLAttributes, ReactNode} from 'react';
+import type { FC, HTMLAttributes, ReactNode } from 'react'
 import { forwardRef } from 'react'
+import { classNames } from 'src/utils'
 import { motion } from 'framer-motion'
 import styles from './Container.module.css'
 
@@ -12,9 +13,7 @@ export const Container: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
     return (
       <div
         ref={ref}
-        className={
-          className ? `${styles.container} ${className}` : styles.container
-        }
+        className={classNames(styles.container, className)}
         {...props}
       >
         {children}

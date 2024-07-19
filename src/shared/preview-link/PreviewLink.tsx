@@ -1,6 +1,7 @@
 import { FC, ReactNode, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { AnimatedContainer } from '../animated-container'
+import { classNames } from 'src/utils'
 import styles from './PreviewLink.module.css'
 
 type Props = {
@@ -18,9 +19,7 @@ export const PreviewLink: FC<Props> = ({ href, imageSrc, children }) => {
         href={href}
         target='_blank'
         rel='noreferrer'
-        className={
-          href !== '#' ? styles.link : `${styles.link} ${styles.disabledLink}`
-        }
+        className={classNames(styles.link, href === '#' && styles.disabledLink)}
         onMouseEnter={() => setIsShown(true)}
         onMouseLeave={() => setIsShown(false)}
       >

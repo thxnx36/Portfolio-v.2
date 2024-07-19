@@ -1,3 +1,4 @@
+import { classNames } from "./class-names"
 import { formatDateTime } from './format-date-time'
 import { formatMessage } from "./format-message"
 import { getEnvVars } from './get-env-vars'
@@ -16,4 +17,5 @@ export {
   playSoundsInChat,
   formatDateTime,
   formatMessage,
+  classNames,
 }

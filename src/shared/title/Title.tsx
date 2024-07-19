@@ -1,6 +1,7 @@
 import type { FC, HTMLAttributes, ReactNode } from 'react'
 import { forwardRef } from 'react'
 import { motion } from 'framer-motion'
+import { classNames } from 'src/utils'
 import styles from './Title.module.css'
 
 export type Props = HTMLAttributes<HTMLElement> & {
@@ -13,10 +14,17 @@ export type Props = HTMLAttributes<HTMLElement> & {
 export const Title: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
   ({ children, tag, size, fontWeight, ...props }, ref) => {
     const Tag = tag || 'h1'
-    const className = `${styles.title} ${size ? styles[size] : ''} ${fontWeight ? styles[fontWeight] : ''}`
 
     return (
-      <Tag ref={ref} className={`${styles.title} ${className}`} {...props}>
+      <Tag
+        ref={ref}
+        className={classNames(
+          styles.title,
+          size && styles[size],
+          fontWeight && styles[fontWeight],
+        )}
+        {...props}
+      >
         {children}
       </Tag>
     )

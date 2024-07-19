@@ -1,6 +1,7 @@
 import type { FC, HTMLAttributes, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Button.module.css'
+import { classNames } from 'src/utils'
 
 type Props = HTMLAttributes<HTMLElement> & {
   text: string
@@ -50,9 +51,7 @@ export const Button: FC<Props> = ({
         </a>
       ) : (
         <button
-          className={
-            disabled ? `${styles.button} ${styles.disabled}` : styles.button
-          }
+          className={classNames(styles.button, disabled && styles.disabled)}
           type={type}
           onClick={onClick}
           {...props}

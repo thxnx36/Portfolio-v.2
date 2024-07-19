@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import { ProjectsList } from '../projects-list/ProjectsList'
 import { Link } from 'react-router-dom'
 import { useNavigationList } from 'src/hooks'
+import { classNames } from 'src/utils'
 import styles from './NavItem.module.css'
 
 const ID = 6
@@ -23,11 +24,10 @@ export const NavItem: FC<Props> = ({
       {navigationList.map(({ id, href, text, icon }) => (
         <li
           key={id}
-          className={
-            isActiveItem === id
-              ? `${styles.navItem} ${styles.active}`
-              : styles.navItem
-          }
+          className={classNames(
+            styles.navItem,
+            isActiveItem === id && styles.active,
+          )}
           onClick={() => onChangeItem(id)}
           style={{ borderBottom: isActiveItem === id ? 'none' : '' }}
         >

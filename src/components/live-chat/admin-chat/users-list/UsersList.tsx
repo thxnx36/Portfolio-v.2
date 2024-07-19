@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { CloseButton, Paragraph } from 'src/shared'
 import { UserType } from 'src/types'
 import { MdOutlineDelete } from 'react-icons/md'
+import { classNames } from 'src/utils'
 import styles from './UsersList.module.css'
 
 type Props = {
@@ -23,27 +24,24 @@ export const UsersList: FC<Props> = ({
 }) => {
   return (
     <ul
-      className={
-        isOpenUsersList
-          ? `${styles.userList} ${styles.openUsersList}`
-          : styles.userList
-      }
+      className={classNames(
+        styles.userList,
+        isOpenUsersList && styles.openUsersList,
+      )}
     >
       {usersList?.map(user => (
         <li
           key={user?.userId}
-          className={
-            selectedUser === user
-              ? `${styles.item} ${styles.active}`
-              : styles.item
-          }
+          className={classNames(
+            styles.item,
+            selectedUser === user && styles.active,
+          )}
         >
           <Paragraph
-            className={
-              selectedUser === user
-                ? `${styles.userName} ${styles.disabled}`
-                : styles.userName
-            }
+            className={classNames(
+              styles.userName,
+              selectedUser === user && styles.disabled,
+            )}
             onClick={() => onSelectUser(user)}
           >
             {user?.userName}
