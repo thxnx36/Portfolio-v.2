@@ -18,5 +18,6 @@ export type PortfolioListType = {
   src: string
   project: string
   title: string
+  description: string
   about: AboutType[]
 }

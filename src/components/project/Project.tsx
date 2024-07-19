@@ -1,11 +1,16 @@
-import { useGetProjectById, useGoBack } from '../../hooks'
+import { useGetProjectById, useGoBack } from 'src/hooks'
 import { useParams } from 'react-router-dom'
 import { Head } from './head/Head'
 import { Content } from './content/Content'
-import { StackList } from './stack-list/StackList'
 import { FiExternalLink } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
-import { Section, PageWrapper, BrowserTabTitle, Title } from 'src/shared'
+import {
+  Section,
+  PageWrapper,
+  BrowserTabTitle,
+  Title,
+  StackList,
+} from 'src/shared'
 import styles from './Project.module.css'
 
 export const Project = () => {

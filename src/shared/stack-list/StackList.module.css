@@ -7,6 +7,6 @@
   color: var(--font-color-main);
 }
 
-.tag:not(:last-child) {
+/* .tag:not(:last-child) {
   margin-right: 10px;
-}
+} */
