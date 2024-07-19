@@ -17,7 +17,7 @@ import {
   useDraggable,
 } from 'src/hooks'
 import { AnimatedContainer, Button, ChatSkeleton } from 'src/shared'
-import { playSoundsInChat } from 'src/utils'
+import { classNames, playSoundsInChat } from 'src/utils'
 import { MessageType } from 'src/types'
 import styles from './UserChat.module.css'
 
@@ -139,9 +139,10 @@ export const UserChat = () => {
         {isOpenChat && (
           <AnimatedContainer
             ref={chatWindowRef}
-            className={
-              isZoomWindow ? `${styles.chat} ${styles.zoomWindow}` : styles.chat
-            }
+            className={classNames(
+              styles.chat,
+              isZoomWindow && styles.zoomWindow,
+            )}
           >
             <ChatHead
               onToggleChat={onToggleChat}

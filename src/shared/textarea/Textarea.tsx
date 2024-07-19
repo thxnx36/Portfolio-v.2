@@ -3,6 +3,7 @@ import {
   type ChangeEvent,
   type TextareaHTMLAttributes,
 } from 'react'
+import { classNames } from 'src/utils'
 import styles from './Textarea.module.css'
 
 type Props = TextareaHTMLAttributes<HTMLTextAreaElement> & {
@@ -18,9 +19,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
       <div className={styles.textareaContainer}>
         <textarea
           ref={ref}
-          className={
-            error ? `${styles.textarea} ${styles.error}` : styles.textarea
-          }
+          className={classNames(styles.textarea, error && styles.error)}
           onChange={onChange}
           value={value}
           {...props}

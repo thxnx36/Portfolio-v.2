@@ -1,9 +1,10 @@
 import type { FC } from 'react'
-import styles from './TimeLine.module.css'
 import { Title } from '../title'
 import { Paragraph } from '../paragraph'
 import { TfiNewWindow } from 'react-icons/tfi'
 import { PreviewLink } from '../preview-link'
+import { classNames } from 'src/utils'
+import styles from './TimeLine.module.css'
 
 type Props = {
   namePlace: string
@@ -32,9 +33,7 @@ export const TimeLine: FC<Props> = ({
 
       <div className={styles.lineWrapper}>
         <span
-          className={
-            isActiveDot ? `${styles.dot} ${styles.active}` : styles.dot
-          }
+          className={classNames(styles.dot, isActiveDot && styles.active)}
         />
         <span className={styles.line} />
       </div>

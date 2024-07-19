@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import { GoArrowUpRight } from 'react-icons/go'
 import { Paragraph, Title } from 'src/shared'
+import { classNames } from 'src/utils'
 import styles from './ServiceCard.module.css'
 
 type Props = {
@@ -21,8 +22,8 @@ export const ServiceCard: FC<Props> = ({
   onFlip,
 }) => {
   return (
-    <div
-      className={`${styles.cardContainer} ${isFlipped ? styles.flipped : ''}`}
+    <li
+      className={classNames(styles.cardContainer, isFlipped && styles.flipped)}
     >
       <div className={styles.card} onClick={onFlip}>
         <div className={styles.cardFront}>
@@ -45,6 +46,6 @@ export const ServiceCard: FC<Props> = ({
           <Paragraph style={{ margin: 0 }}>{text}</Paragraph>
         </div>
       </div>
-    </div>
+    </li>
   )
 }

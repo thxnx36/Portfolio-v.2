@@ -95,7 +95,7 @@
   background-color: var(--background-color);
   border-radius: 5px;
   padding: 10px;
-  border: 1px solid var(--border-color);
+  border: 0.5px solid var(--border-color);
 }
 
 @keyframes pulse {

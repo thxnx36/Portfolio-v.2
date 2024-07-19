@@ -9,13 +9,17 @@
   --green-color: #008000;
   --dark-yellow-color: #ffb40033;
   --bg-color: #f0f0f6;
-  --bg-color-body-dark: #18191a;
-  --bg-color-container: #242526;
+  --bg-color-body-dark: #101010;
+  --bg-color-body-dark-secondary: #18191a;
+  --bg-color-container: rgba(242, 242, 242, 0.04);
+  --bg-color-container-old: #242526;
   --bg-color-grey: #f0f0f6;
   --bg-color-admin-message: #2e8b57;
   --bg-color-user-message: #9370d8;
   --font-color-main: #767676;
+  --border-color-dark: rgba(242, 242, 242, 0.04);
   --border-color: rgba(105, 105, 105, 0.397);
+  
   /* linear gradient */
   --bg-linear: linear-gradient(330deg, #ffb400 20%, #ff6d6d 100%);
   --bg-linear-reverse: linear-gradient(330deg, #ff6d6d 20%, #ffb400 100%);
@@ -65,5 +69,4 @@
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   --shadow-button: 0px 0px 14px -7px #f09819;
   --shadow-hover: 0px 0px 30px 1px rgba(255, 81, 47, 0.3);
-  /* --shadow-dark: 0px 0px 10px 0px #00000026; */
 }

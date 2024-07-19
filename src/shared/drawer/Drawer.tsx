@@ -1,5 +1,6 @@
 import type { FC, HTMLAttributes, ReactNode } from 'react'
 import { useOverLay } from 'src/hooks'
+import { classNames } from 'src/utils'
 import styles from './Drawer.module.css'
 
 type Props = HTMLAttributes<HTMLDivElement> & {
@@ -26,7 +27,7 @@ export const Drawer: FC<Props> = ({
         <div className={styles.overlay} onClick={onCloseContent}></div>
       )}
       <div
-        className={`${styles.drawer} ${sideClass} ${isOpen ? styles.open : ''}`}
+        className={classNames(styles.drawer, sideClass, isOpen && styles.open)}
       >
         <div ref={contentRef} className={styles.content}>
           {children}

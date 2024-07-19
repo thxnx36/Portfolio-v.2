@@ -1,7 +1,14 @@
 import { CSSProperties, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { headerPhoto } from 'src/assets'
-import { Container, Title, Button, Modal, FlipWord } from 'src/shared'
+import {
+  Container,
+  Title,
+  Button,
+  Modal,
+  FlipWord,
+  Paragraph,
+} from 'src/shared'
 import { Form } from '../form'
 import styles from './Header.module.css'
 
@@ -33,14 +40,14 @@ export const Header = () => {
           <div className={styles.content}>
             <div className={styles.info}>
               <Title size='lg'>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <span className={styles.name}>{t('header.NAME')}</span>
-                  <FlipWord words={words} classNameText={styles.speciality} />
-                </div>
+                <span className={styles.name}>{t('header.NAME')}</span>
+                <FlipWord words={words} classNameText={styles.speciality} />
               </Title>
 
-              <blockquote className={styles.infoText}>
-                {t('header.DESCRIPTION')} 💪
+              <blockquote>
+                <Paragraph className={styles.infoText}>
+                  {t('header.DESCRIPTION')} 💪
+                </Paragraph>
               </blockquote>
               <Button onClick={handleModal} text={t('button.HIRE')} />
             </div>

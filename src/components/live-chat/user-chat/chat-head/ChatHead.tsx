@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import { chatPhoto } from 'src/assets'
 import { Avatar, Paragraph } from 'src/shared'
+import { classNames } from 'src/utils'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'src/constants'
 import { ButtonsWrapper } from './buttons-wrapper/ButtonsWrapper'
@@ -26,7 +27,7 @@ export const ChatHead: FC<Props> = ({
 }) => {
   const { t } = useTranslation()
   return (
-    <div className={`${styles.chatHeadContainer} drag-handle`}>
+    <div className={classNames(styles.chatHeadContainer, 'drag-handle')}>
       <div className={styles.contactWrap}>
         <Link to={ROUTES.admin}>
           <Avatar className={styles.avatar} src={chatPhoto} />

@@ -21,31 +21,33 @@ export const PortfolioCard: FC<Props> = ({ src, title, project, link, id }) => {
   const formatUrl = (value: string) => value.substring(0, link.length - 1)
 
   return (
-    <Container>
-      <div className={styles.container}>
-        <div className={styles.browser}>
-          <div className={styles.arrows}>
-            <IoIosArrowBack size='0.5em' />
-            <IoIosArrowForward size='0.5em' />
+    <li>
+      <Container>
+        <div className={styles.container}>
+          <div className={styles.browser}>
+            <div className={styles.arrows}>
+              <IoIosArrowBack size='0.5em' />
+              <IoIosArrowForward size='0.5em' />
+            </div>
+            <RxReload size='0.6em' />
+            <div className={styles.searchBar}>
+              <CiSearch />
+              <span className={styles.urls}>{formatUrl(link)}</span>
+            </div>
           </div>
-          <RxReload size='0.6em' />
-          <div className={styles.searchBar}>
-            <CiSearch />
-            <span className={styles.urls}>{formatUrl(link)}</span>
+          <div className={styles.imageContainer}>
+            <img src={src} alt='portfolio-picture' />
+            <div className={styles.content}>
+              <Link to={ROUTES.dynamic.projectId(id)}>
+                <h4 className={styles.nameProject}>
+                  {project} <FiExternalLink size='0.5em' />
+                </h4>
+              </Link>
+              <p className={styles.titleProject}>{title}</p>
+            </div>
           </div>
         </div>
-        <div className={styles.imageContainer}>
-          <img src={src} alt='portfolio-picture' />
-          <div className={styles.content}>
-            <Link to={ROUTES.dynamic.projectId(id)}>
-              <h4 className={styles.nameProject}>
-                {project} <FiExternalLink size='0.5em' />
-              </h4>
-            </Link>
-            <p className={styles.titleProject}>{title}</p>
-          </div>
-        </div>
-      </div>
-    </Container>
+      </Container>
+    </li>
   )
 }

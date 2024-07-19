@@ -4,6 +4,7 @@ import {
   type FC,
   type InputHTMLAttributes,
 } from 'react'
+import { classNames } from 'src/utils'
 import styles from './Input.module.css'
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
@@ -18,7 +19,7 @@ export const Input: FC<Props> = forwardRef<HTMLInputElement, Props>(
     return (
       <div className={styles.inputContainer}>
         <input
-          className={error ? `${styles.input} ${styles.error}` : styles.input}
+          className={classNames(styles.input, error && styles.error)}
           value={value}
           onChange={onChange}
           ref={ref}

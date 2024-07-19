@@ -3,6 +3,7 @@ import { BsSun, BsMoon } from 'react-icons/bs'
 import { ThemeContext } from 'src/providers'
 import { DARK, ENG, LANG, LIGHT } from 'src/constants'
 import { useTranslation } from 'react-i18next'
+import { classNames } from 'src/utils'
 import styles from './Toolbar.module.css'
 
 export const Toolbar = () => {
@@ -32,11 +33,10 @@ export const Toolbar = () => {
       {themeButtons.map(({ id, icon, value }) => (
         <button
           key={id}
-          className={
-            value === theme
-              ? `${styles.toolbarSwitch} ${styles.disabled}`
-              : styles.toolbarSwitch
-          }
+          className={classNames(
+            styles.toolbarSwitch,
+            value === theme && styles.disabled,
+          )}
           value={value}
           role='radio'
           disabled={value === theme}
@@ -46,7 +46,7 @@ export const Toolbar = () => {
         </button>
       ))}
       <button
-        className={`${styles.toolbarSwitch} ${styles.switchLang}`}
+        className={classNames(styles.toolbarSwitch, styles.switchLang)}
         value={currentLanguage === ENG ? LANG[1].value : LANG[0].value}
         onClick={() =>
           onChangeLanguage(

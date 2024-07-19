@@ -2,6 +2,7 @@ import { Fragment, type FC } from 'react'
 import { ENG, LANG } from 'src/constants'
 import styles from './ToggleLang.module.css'
 import { useTranslation } from 'react-i18next'
+import { classNames } from 'src/utils'
 
 type Props = {
   uniqueToggletId: string
@@ -34,7 +35,10 @@ export const ToggleLang: FC<Props> = ({ uniqueToggletId }) => {
         </Fragment>
       ))}
       <span
-        className={`${styles.glider} ${isCurrentLanguage(ENG) ? styles.gliderEn : styles.gliderUk}`}
+        className={classNames(
+          styles.glider,
+          isCurrentLanguage(ENG) ? styles.gliderEn : styles.gliderUk,
+        )}
       />
     </div>
   )

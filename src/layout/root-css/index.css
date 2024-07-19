@@ -18,6 +18,7 @@ body {
   --text-color: var(--secondary-color);
   --box-shadow: var(--shadow-light);
   --bg-body-color: var(--bg-color);
+  --bg-box-color: var(--white-color);
 }
 
 body.dark {
@@ -26,6 +27,7 @@ body.dark {
   --text-color: var(--white-color);
   --box-shadow: var(--shadow-dark);
   --bg-body-color: var(--bg-color-body-dark);
+  --bg-box-color: var(--bg-color-body-dark-secondary);
 }
 
 input,

@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import { Paragraph } from '../paragraph'
 import { Title } from '../title'
+import { classNames } from 'src/utils'
 import styles from './Table.module.css'
 
 type Props = {
@@ -24,11 +25,10 @@ export const Table: FC<Props> = ({
     <div className={styles.tableContainer}>
       <div className={styles.place}>
         <a
-          className={
-            url !== '#'
-              ? `${styles.link}`
-              : `${styles.link} ${styles.disabledLink}`
-          }
+          className={classNames(
+            styles.link,
+            url === '#' && styles.disabledLink,
+          )}
           href={url}
           target='_blank'
           rel='noreferrer'

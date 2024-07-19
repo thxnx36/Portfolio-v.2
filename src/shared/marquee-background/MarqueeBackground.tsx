@@ -1,4 +1,5 @@
 import { FC, ReactNode, MouseEvent } from 'react'
+import { classNames } from 'src/utils'
 import styles from './MarqueeBackground.module.css'
 
 type Props = {
@@ -14,7 +15,10 @@ export const MarqueeBackground: FC<Props> = ({
 }) => {
   const renderMarquee = (direction: string) =>
     Array.from({ length: 6 }).map((_, index) => (
-      <span key={index} className={`${styles.marquee} ${styles[direction]}`}>
+      <span
+        key={index}
+        className={classNames(styles.marquee, styles[direction])}
+      >
         {marqueeText}
       </span>
     ))

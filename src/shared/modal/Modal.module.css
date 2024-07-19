@@ -21,7 +21,7 @@
   position: relative;
   border: 1px solid transparent;
   background:
-    linear-gradient(var(--background-color), var(--background-color))
+    linear-gradient(var(--bg-box-color), var(--bg-box-color))
       padding-box,
     linear-gradient(
         103.55deg,
