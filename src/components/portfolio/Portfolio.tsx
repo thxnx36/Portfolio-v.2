@@ -1,8 +1,8 @@
 import { usePortfolioList } from 'src/hooks'
 import { SectionHead, CardsContainer } from 'src/shared'
-import { PortfolioCard } from './card/PortfolioCard'
 import { useTranslation } from 'react-i18next'
 import { withAnimationSection } from 'src/hoc'
+import { ProjectCard } from './new-card/ProjectCard'
 
 const PortfolioSection = () => {
   const { t } = useTranslation()
@@ -15,13 +15,13 @@ const PortfolioSection = () => {
         subTitle={t('portfolio.SUBTITLE')}
       />
       <CardsContainer>
-        {portfolioList.map(({ title, project, src, id, link }) => (
-          <PortfolioCard
+        {portfolioList.map(({ title, project, description, src, id }) => (
+          <ProjectCard
             key={id}
             title={title}
+            description={description}
             project={project}
             src={src}
-            link={link}
             id={id}
           />
         ))}

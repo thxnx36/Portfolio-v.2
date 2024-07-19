@@ -26,6 +26,7 @@ export const usePortfolioList = () => {
         src: tutiffy,
         project: t('portfolio.projects.tutiffy.NAME'),
         title: t('portfolio.projects.tutiffy.DESCR'),
+        description: t('portfolio.projects.tutiffy.MAIN_INFO'),
         about: [
           {
             paragraphFirst: {
@@ -38,7 +39,8 @@ export const usePortfolioList = () => {
               textTwo: t('portfolio.projects.tutiffy.about.p_2.TEXT_2'),
               textThree: t('portfolio.projects.tutiffy.about.p_2.TEXT_3'),
             },
-            stack: t('portfolio.projects.tutiffy.stack'),
+            stack:
+              '#React #TypeScript #Redux Toolkit #RTK Query #Apollo GraphQL #i18next #Material UI',
           },
         ],
       },
@@ -50,6 +52,7 @@ export const usePortfolioList = () => {
         src: asx,
         project: t('portfolio.projects.ASX.NAME'),
         title: t('portfolio.projects.ASX.DESCR'),
+        description: t('portfolio.projects.ASX.MAIN_INFO'),
         about: [
           {
             paragraphFirst: {
@@ -62,7 +65,8 @@ export const usePortfolioList = () => {
               textTwo: t('portfolio.projects.ASX.about.p_2.TEXT_2'),
               textThree: t('portfolio.projects.ASX.about.p_2.TEXT_3'),
             },
-            stack: t('portfolio.projects.ASX.stack'),
+            stack:
+              '#Next #TypeScript #Redux Toolkit #RTK Query #Express #Stripe #SamSub #Keycloack #Radix UI',
           },
         ],
       },
@@ -74,6 +78,7 @@ export const usePortfolioList = () => {
         src: maven,
         project: t('portfolio.projects.maven.NAME'),
         title: t('portfolio.projects.maven.DESCR'),
+        description: t('portfolio.projects.maven.MAIN_INFO'),
         about: [
           {
             paragraphFirst: {
@@ -86,7 +91,7 @@ export const usePortfolioList = () => {
               textTwo: t('portfolio.projects.maven.about.p_2.TEXT_2'),
               textThree: t('portfolio.projects.maven.about.p_2.TEXT_3'),
             },
-            stack: t('portfolio.projects.maven.stack'),
+            stack: '#HTML #JavaScript #SCSS #GSAP #Gulp',
           },
         ],
       },

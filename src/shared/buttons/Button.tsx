@@ -13,6 +13,7 @@ type Props = HTMLAttributes<HTMLElement> & {
   type?: 'submit'
   disabled?: boolean
   isLoading?: boolean
+  className?: string
   onClick?: () => void
 }
 
@@ -26,6 +27,7 @@ export const Button: FC<Props> = ({
   target,
   href,
   isLoading,
+  className,
   onClick,
   ...props
 }) => {
@@ -42,16 +44,29 @@ export const Button: FC<Props> = ({
   return (
     <>
       {tag === 'link' && to ? (
-        <Link className={styles.button} to={to} {...props}>
+        <Link
+          className={classNames(styles.button, className)}
+          to={to}
+          {...props}
+        >
           {innerContent()}
         </Link>
       ) : tag === 'a' ? (
-        <a target={target} className={styles.button} href={href} {...props}>
+        <a
+          target={target}
+          className={classNames(styles.button, className)}
+          href={href}
+          {...props}
+        >
           {innerContent()}
         </a>
       ) : (
         <button
-          className={classNames(styles.button, disabled && styles.disabled)}
+          className={classNames(
+            styles.button,
+            className,
+            disabled && styles.disabled,
+          )}
           type={type}
           onClick={onClick}
           {...props}

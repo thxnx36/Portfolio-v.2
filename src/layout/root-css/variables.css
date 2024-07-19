@@ -19,7 +19,7 @@
   --font-color-main: #767676;
   --border-color-dark: rgba(242, 242, 242, 0.04);
   --border-color: rgba(105, 105, 105, 0.397);
-  
+
   /* linear gradient */
   --bg-linear: linear-gradient(330deg, #ffb400 20%, #ff6d6d 100%);
   --bg-linear-reverse: linear-gradient(330deg, #ff6d6d 20%, #ffb400 100%);
@@ -56,7 +56,7 @@
 
   /* border radius */
   --border-radius: 5px;
-  --border-radius-card: 16px;
+  --border-radius-card: 15px;
 
   /* blur */
   --blur-overlay: blur(10px);

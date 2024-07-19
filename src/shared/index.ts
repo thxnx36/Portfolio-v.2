@@ -41,6 +41,7 @@ import { FlipWord } from './flip-word'
 import { PreviewLink } from './preview-link'
 import { AnimatedContainer } from './animated-container'
 import { TransitionContainer } from './transition-container'
+import { StackList } from "./stack-list"
 
 export {
   Avatar,
@@ -88,4 +89,5 @@ export {
   PreviewLink,
   AnimatedContainer,
   TransitionContainer,
+  StackList,
 }
