@@ -4,6 +4,12 @@
   margin: 0 0 15px;
 }
 
+.gradient {
+  background: var(--title-color-linear);
+  color: transparent;
+  background-clip: text;
+}
+
 .xs {
   font-size: var(--font-size-xs);
 }

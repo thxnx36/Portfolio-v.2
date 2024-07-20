@@ -17,7 +17,9 @@ const MySkillsSection = () => {
     <Container>
       <div className={styles.slillsWrapper}>
         <div className={styles.text}>
-          <Title tag='h2'>{t('SKILLS.TITLE')}</Title>
+          <Title withGradient tag='h2'>
+            {t('SKILLS.TITLE')}
+          </Title>
           <Paragraph style={{ textAlign: 'left' }}>
             {t('SKILLS.SUBTITLE')}
           </Paragraph>

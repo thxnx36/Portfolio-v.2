@@ -9,10 +9,11 @@ export type Props = HTMLAttributes<HTMLElement> & {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
   size?: 'xs' | 'sm' | 'lg'
   fontWeight?: 'normal' | 'regular' | 'bold'
+  withGradient?: boolean
 }
 
 export const Title: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
-  ({ children, tag, size, fontWeight, ...props }, ref) => {
+  ({ children, tag, size, fontWeight, withGradient, ...props }, ref) => {
     const Tag = tag || 'h1'
 
     return (
@@ -20,6 +21,7 @@ export const Title: FC<Props> = forwardRef<HTMLHeadingElement, Props>(
         ref={ref}
         className={classNames(
           styles.title,
+          withGradient && styles.gradient,
           size && styles[size],
           fontWeight && styles[fontWeight],
         )}
