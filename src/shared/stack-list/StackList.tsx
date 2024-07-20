@@ -1,4 +1,5 @@
 import type { FC } from 'react'
+import { ADD_HASH_SYMBOL } from 'src/constants'
 import styles from './StackList.module.css'
 
 type Props = {
@@ -6,8 +7,7 @@ type Props = {
 }
 
 export const StackList: FC<Props> = ({ stackList }) => {
-  const regex = /#\w+(?:\s+\w+)*/g
-  const list = stackList!.match(regex)
+  const list = stackList!.match(ADD_HASH_SYMBOL)
 
   return (
     <>

@@ -44,6 +44,5 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
   font-size: var(--font-size-xs-mobile);
 }
