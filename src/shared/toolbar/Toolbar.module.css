@@ -2,7 +2,7 @@
   padding: 3px;
   width: fit-content;
   display: flex;
-  border-radius: 25px;
+  border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   transition: border 0.3s ease-in-out;
 }

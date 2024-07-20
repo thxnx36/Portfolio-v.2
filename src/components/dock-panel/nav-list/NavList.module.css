@@ -1,10 +1,10 @@
-.socialContainer {
+.NavListContainer {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.socialItem {
+.navItem {
   width: 30px;
   height: 30px;
   display: flex;
@@ -35,4 +35,8 @@
 .link:hover {
   box-shadow: var(--shadow-hover);
   border: 0.5px solid var(--main-color);
+}
+
+.link svg {
+  color: var(--text-color);
 }

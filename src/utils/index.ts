@@ -7,6 +7,7 @@ import {
   getStorageValue,
   removeStorageValue,
 } from './local-storage'
+import { logger } from "./logger"
 import { playSoundsInChat } from './play-sound'
 
 export {
@@ -18,4 +19,5 @@ export {
   formatDateTime,
   formatMessage,
   classNames,
+  logger,
 }

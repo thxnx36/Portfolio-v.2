@@ -4,16 +4,14 @@ import {
   Portfolio,
   WorkHistory,
   Education,
-  Footer,
   UserChat,
-  Navigation,
   MySkills,
+  DockPanel,
 } from 'src/components'
 
 export const MainPage = () => {
   return (
     <>
-      <Navigation />
       <Header />
       <main>
         <MyServices />
@@ -22,7 +20,7 @@ export const MainPage = () => {
         <WorkHistory sectionId='work-history' />
         <Education sectionId='education' />
       </main>
-      <Footer />
+      <DockPanel />
       <UserChat />
     </>
   )

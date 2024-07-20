@@ -45,6 +45,24 @@ export const motionNav = {
   },
 }
 
+export const motionDockPanel = {
+  initial: {
+    opacity: 0,
+    y: 100,
+    x: '-50%',
+  },
+
+  transition: {
+    duration: 0.5,
+  },
+
+  animate: {
+    opacity: 1,
+    y: 0,
+    x: '-50%',
+  },
+}
+
 export const motionProgrLine = {
   variants: {
     hidden: {
