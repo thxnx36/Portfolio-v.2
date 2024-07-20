@@ -33,13 +33,14 @@ import {
 } from './live-chat'
 import { FORMAT_DATE, FORMAT_TIME } from './format-date'
 import { APP } from './version-app'
-import { VALIDATE_EMAIL, CHECK_URL } from './regex'
+import { VALIDATE_EMAIL, CHECK_URL, ADD_HASH_SYMBOL } from './regex'
 import { recommendations } from "./recommendations"
 import { technologies } from "./technologies"
 
 export {
   RESPONSIVE,
   VALIDATE_EMAIL,
+  ADD_HASH_SYMBOL,
   LANG,
   OPEN,
   CLOSE,
