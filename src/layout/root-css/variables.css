@@ -34,6 +34,8 @@
   --bg-overlay-color: rgba(0, 0, 0, 0.5);
   --loader-bg: conic-gradient(#0000 10%, #000),
     linear-gradient(#000 0 0) content-box;
+  --title-linear-dark: linear-gradient(to right, white -250%, black 600%);
+  --title-linear-light: linear-gradient(to right, white -700%, black 600%);
 
   /* font size */
   --font-size-xs-mobile: 0.75em;

@@ -20,7 +20,7 @@ export const SectionHead: FC<Props> = ({
 }) => {
   return (
     <>
-      <Title tag='h2' style={{ textAlign: 'center' }}>
+      <Title withGradient tag='h2' style={{ textAlign: 'center' }}>
         {title}
       </Title>
       <Paragraph>
