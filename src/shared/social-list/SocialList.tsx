@@ -26,10 +26,6 @@ export const SocialList: FC<Props> = ({ visibleIds }) => {
             >
               {icon}
             </a>
-            {/* <span
-              className={styles.background}
-              style={{ backgroundColor: bgColor }}
-            ></span> */}
           </li>
         ))}
       </ul>

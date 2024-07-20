@@ -32,6 +32,10 @@ body.dark {
   --title-color-linear: var(--title-linear-dark);
 }
 
+svg {
+  color: var(--text-color);
+}
+
 input,
 textarea {
   font-size: var(--font-size-sm);

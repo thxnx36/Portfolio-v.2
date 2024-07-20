@@ -2,6 +2,9 @@ import type { FC, ReactNode } from 'react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Analytics } from '@vercel/analytics/react'
 import { Toast } from 'src/shared'
+import { APP } from 'src/constants'
+import { logger } from 'src/utils'
+
 import styles from './Layout.module.css'
 import './root-css/variables.css'
 import './root-css/index.css'
@@ -14,6 +17,7 @@ type Props = {
 }
 
 export const Layout: FC<Props> = ({ children }) => {
+  logger(`App version: ${APP.version}`)
   return (
     <>
       <div className={styles.app}>{children}</div>
