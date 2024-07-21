@@ -3,17 +3,17 @@ import styles from './Head.module.css'
 import { PagesHead } from 'src/shared'
 
 type Props = {
-  onClick: () => void
   projectTitle?: string
   imgSrc?: string
+  goBack?: () => void
 }
 
-export const Head: FC<Props> = ({ onClick, projectTitle, imgSrc }) => {
+export const Head: FC<Props> = ({ goBack, projectTitle, imgSrc }) => {
   return (
     <>
-      <PagesHead onClick={onClick} title={projectTitle} />
+      <PagesHead goBack={goBack} title={projectTitle} />
       <div className={styles.headImg}>
-        <img src={imgSrc} alt={`${projectTitle}-project`} />
+        <img src={imgSrc} alt={'project banner'} />
       </div>
     </>
   )

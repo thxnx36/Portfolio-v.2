@@ -7,20 +7,22 @@ import {
   BrowserTabTitle,
   PagesHead,
 } from 'src/shared'
-import { useGoBack, useQualitiesList } from 'src/hooks'
-import { technologies } from 'src/constants'
+import { useNavigateTo, useQualitiesList } from 'src/hooks'
+import { ROUTES, technologies } from 'src/constants'
 import styles from './AboutMe.module.css'
 
 export const AboutMe = () => {
   const { t } = useTranslation()
-  const { handleBack } = useGoBack(-1)
   const { qualities } = useQualitiesList()
+  const { navigateTo } = useNavigateTo()
 
   return (
     <Section style={{ margin: 0 }}>
       <PageWrapper>
-        <PagesHead onClick={handleBack} title={t('pages.aboutMe.TITLE')} />
-
+        <PagesHead
+          title={t('pages.aboutMe.TITLE')}
+          goBack={() => navigateTo(ROUTES.main)}
+        />
         <Paragraph style={{ textAlign: 'left', maxWidth: '100%' }}>
           {t('pages.aboutMe.HEY_NICE_MEET')} 👋
           <br /> {t('pages.aboutMe.MY_CAREER')}

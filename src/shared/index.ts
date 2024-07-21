@@ -2,11 +2,8 @@ import { Avatar } from './avatar'
 import { PageWrapper } from './page-wrapper'
 import {
   Button,
-  BurgerButton,
-  BackButton,
+  ArrowButton,
   Switcher,
-  CollapseButton,
-  UserInfoButton,
   CloseButton,
   SendMessageChatButton,
 } from './buttons'
@@ -41,17 +38,14 @@ import { FlipWord } from './flip-word'
 import { PreviewLink } from './preview-link'
 import { AnimatedContainer } from './animated-container'
 import { TransitionContainer } from './transition-container'
-import { StackList } from "./stack-list"
+import { StackList } from './stack-list'
 
 export {
   Avatar,
   ToggleLang,
   Button,
   CloseButton,
-  BurgerButton,
   Switcher,
-  CollapseButton,
-  UserInfoButton,
   PageWrapper,
   MSection,
   CardsContainer,
@@ -72,7 +66,7 @@ export {
   Layout,
   ScrollTopButton,
   SendMessageChatButton,
-  BackButton,
+  ArrowButton,
   Toast,
   Drawer,
   ToolTip,

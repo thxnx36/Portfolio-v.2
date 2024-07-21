@@ -7,13 +7,13 @@ import {
   BrowserTabTitle,
   MarqueeBackground,
 } from 'src/shared'
-import { useGoBack } from 'src/hooks'
+import { useNavigateTo } from 'src/hooks'
 import { Icon } from './Icon'
 import styles from './NotFound.module.css'
 
 export const NotFound = () => {
   const { t } = useTranslation()
-  const { handleBack } = useGoBack(-1)
+  const { navigateTo } = useNavigateTo()
 
   return (
     <Section style={{ margin: 0 }}>
@@ -32,7 +32,7 @@ export const NotFound = () => {
           <Button
             tag='link'
             to={ROUTES.main}
-            onClick={handleBack}
+            onClick={() => navigateTo(ROUTES.main)}
             text={t('button.GO_BACK')}
           />
         </div>
