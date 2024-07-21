@@ -1,31 +1,56 @@
-import { useGetProjectById, useGoBack } from 'src/hooks'
+import { useGetProjectById, useNavigateTo } from 'src/hooks'
 import { useParams } from 'react-router-dom'
 import { Head } from './head/Head'
 import { Content } from './content/Content'
 import { FiExternalLink } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
+import { HiMiniArrowLongRight, HiMiniArrowLongLeft } from 'react-icons/hi2'
 import {
   Section,
   PageWrapper,
   BrowserTabTitle,
   Title,
   StackList,
+  ArrowButton,
 } from 'src/shared'
+import { ROUTES } from 'src/constants'
 import styles from './Project.module.css'
 
 export const Project = () => {
   const { t } = useTranslation()
   const { id } = useParams()
-  const { handleBack } = useGoBack(-1)
   const { project: data } = useGetProjectById(+id!)
+  const { navigateTo } = useNavigateTo()
+
+  const currentProjectId = Number(id)
+
+  const onTogglePage = (direction: string) => {
+    const newProjectId =
+      direction === 'back' ? currentProjectId - 1 : currentProjectId + 1
+
+    navigateTo(ROUTES.dynamic.projectId(newProjectId))
+  }
+
+  const buttonsConfig = [
+    {
+      condition: currentProjectId !== 1,
+      icon: <HiMiniArrowLongLeft size={'2em'} />,
+      direction: 'back',
+    },
+    {
+      condition: currentProjectId !== 3,
+      icon: <HiMiniArrowLongRight size={'2em'} />,
+      direction: 'forward',
+    },
+  ]
 
   return (
     <Section style={{ margin: 0 }}>
       <PageWrapper>
         <Head
-          onClick={handleBack}
           projectTitle={data?.project}
           imgSrc={data?.src}
+          goBack={() => navigateTo(ROUTES.main)}
         />
         <Title size='sm' tag='h3'>
           {data?.title}
@@ -35,12 +60,8 @@ export const Project = () => {
             href={data?.link}
             rel='noreferrer'
           >
-            {data?.project !== 'ASX Sports' && (
-              <>
-                {t('pages.project.LIVE_DEMO')}
-                <FiExternalLink size='.8em' />
-              </>
-            )}
+            {t('pages.project.LIVE_DEMO')}
+            <FiExternalLink size='.8em' />
           </a>
         </Title>
         <Content aboutProject={data?.about} project={data} />
@@ -49,6 +70,18 @@ export const Project = () => {
             <StackList key={i} stackList={item?.stack} />
           ))}
         </ul>
+        <div className={styles.arrowButtonsWrap}>
+          {buttonsConfig.map(
+            ({ direction, icon, condition }) =>
+              condition && (
+                <ArrowButton
+                  key={direction}
+                  icon={icon}
+                  onClick={() => onTogglePage(direction)}
+                />
+              ),
+          )}
+        </div>
       </PageWrapper>
       <BrowserTabTitle
         title={`${t('pages.project.MY_PROJECT')} | ${data?.project!}`}

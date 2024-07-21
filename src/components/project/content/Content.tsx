@@ -18,11 +18,11 @@ export const Content: FC<Props> = ({ aboutProject, project }) => {
       </ul>
 
       <div className={styles.contentImg}>
-        <img src={project?.srcPageFirst} alt='content-picture' />
+        <img src={project?.srcPageFirst} alt='project picture' />
       </div>
 
       <div className={styles.contentImg}>
-        <img src={project?.srcPageSecond} alt='content-picture' />
+        <img src={project?.srcPageSecond} alt='project picture' />
       </div>
 
       <ul className={styles.text}>
