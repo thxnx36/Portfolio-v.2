@@ -24,8 +24,16 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 15px;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.arrowButton {
+  visibility: hidden;
+}
+
+.arrowButton.visible {
+  visibility: visible;
 }
 
 @media screen and (max-width: 520px) {

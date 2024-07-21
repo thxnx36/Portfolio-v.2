@@ -1,7 +1,7 @@
 import type { FC, HTMLAttributes, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './Button.module.css'
 import { classNames } from 'src/utils'
+import styles from './Button.module.css'
 
 type Props = HTMLAttributes<HTMLElement> & {
   text: string

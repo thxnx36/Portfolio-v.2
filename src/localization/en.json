@@ -54,11 +54,11 @@
 
     "cards": {
       "FRONT_END_DEVELOPMENT_TITLE": "Frontend development",
-      "FRONT_END_DEVELOPMENT_TEXT": "Development UI and business logic using React/Next, TypeScript, Redux",
+      "FRONT_END_DEVELOPMENT_TEXT": "Development of UI and business logic using React/Next, TypeScript, and Redux",
       "RESPONSIVE_DESIGN_TITLE": "Responsive design",
-      "RESPONSIVE_DESIGN_TEXT": "Responsive websites and apps ensuring optimal display on all devices and screen resolutions",
+      "RESPONSIVE_DESIGN_TEXT": "Responsive websites and apps, ensuring optimal display on all devices and screen resolutions",
       "API_BACKEND_INTEGRATION_TITLE": "API and backend integration",
-      "API_BACKEND_INTEGRATION_TEXT": "Work with APIs and backend to implement web application functionality, including data exchange",
+      "API_BACKEND_INTEGRATION_TEXT": "Work with APIs and the backend to implement web application functionality, including data exchange",
       "PERFORMANCE_OPTIMIZATION_TITLE": "Performance optimization",
       "PERFORMANCE_OPTIMIZATION_TEXT": "Optimizing the performance of web applications for fast loading times and maximum responsiveness",
       "CROSS_BROWSER_COMPATIBILITY_TITLE": "Cross-browser compatibility",
