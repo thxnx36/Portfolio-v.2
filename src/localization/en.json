@@ -22,8 +22,8 @@
     "HOW_ARE_YOU": "How are you?",
     "NAME": "Vlad",
     "setting_buttons": {
-      "DELETE_CHAT": "disconnect",
-      "DELETE_CHAT_HISTORY": "delete history",
+      "DELETE_CHAT": "Disconnect",
+      "DELETE_CHAT_HISTORY": "Delete chat history",
       "RESIZE_WINDOW": "resize window"
     }
   },

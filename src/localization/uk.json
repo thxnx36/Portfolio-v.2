@@ -22,8 +22,8 @@
     "HOW_ARE_YOU": "Як справи?",
     "NAME": "Влад",
     "setting_buttons": {
-      "DELETE_CHAT": "відключитись",
-      "DELETE_CHAT_HISTORY": "видалити історію",
+      "DELETE_CHAT": "Відключитись",
+      "DELETE_CHAT_HISTORY": "Видалити історію чату",
       "RESIZE_WINDOW": "змінити розмір вікна"
     }
   },
