@@ -11,7 +11,7 @@ import {
   BrowserTabTitle,
   Title,
   StackList,
-  ArrowButton,
+  ButtonWithIcon,
 } from 'src/shared'
 import { ROUTES } from 'src/constants'
 import { classNames } from 'src/utils'
@@ -37,12 +37,12 @@ export const Project = () => {
   const buttonsConfig = [
     {
       condition: currentProjectId !== 1,
-      icon: <HiMiniArrowLongLeft size={'2em'} />,
+      icon: <HiMiniArrowLongLeft />,
       direction: 'back',
     },
     {
       condition: currentProjectId < lastProjectId,
-      icon: <HiMiniArrowLongRight size={'2em'} />,
+      icon: <HiMiniArrowLongRight />,
       direction: 'forward',
     },
   ]
@@ -83,7 +83,7 @@ export const Project = () => {
               )}
             >
               {condition && (
-                <ArrowButton
+                <ButtonWithIcon
                   icon={icon}
                   onClick={() => onTogglePage(direction)}
                 />

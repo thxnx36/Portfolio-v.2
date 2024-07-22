@@ -5,7 +5,7 @@ import { PagesHead } from 'src/shared'
 type Props = {
   projectTitle?: string
   imgSrc?: string
-  goBack?: () => void
+  goBack: () => void
 }
 
 export const Head: FC<Props> = ({ goBack, projectTitle, imgSrc }) => {

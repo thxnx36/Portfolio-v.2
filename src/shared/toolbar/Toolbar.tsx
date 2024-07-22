@@ -30,21 +30,6 @@ export const Toolbar = () => {
 
   return (
     <div role='radiogroup' className={styles.toolbarContainer}>
-      {/* {themeButtons.map(({ id, icon, value }) => (
-        <button
-          key={id}
-          className={classNames(
-            styles.toolbarSwitch,
-            value === theme && styles.disabled,
-          )}
-          value={value}
-          role='radio'
-          disabled={value === theme}
-          onClick={onChangeTheme}
-        >
-          {icon}
-        </button>
-      ))} */}
       <button
         className={styles.toolbarSwitch}
         value={theme === DARK ? themeButtons[0].value : themeButtons[1].value}
@@ -56,6 +41,7 @@ export const Toolbar = () => {
       <button
         className={classNames(styles.toolbarSwitch, styles.switchLang)}
         value={currentLanguage === ENG ? LANG[1].value : LANG[0].value}
+        role='radio'
         onClick={() =>
           onChangeLanguage(
             currentLanguage === ENG ? LANG[1].value : LANG[0].value,

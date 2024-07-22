@@ -1,7 +1,8 @@
 import { FC } from 'react'
-import { CloseButton, Paragraph } from 'src/shared'
+import { ButtonWithIcon, Paragraph } from 'src/shared'
 import { UserType } from 'src/types'
 import { MdOutlineDelete } from 'react-icons/md'
+import { IoClose } from 'react-icons/io5'
 import { classNames } from 'src/utils'
 import styles from './UsersList.module.css'
 
@@ -51,7 +52,10 @@ export const UsersList: FC<Props> = ({
               <button onClick={() => onDeleteUser(user)}>
                 <MdOutlineDelete />
               </button>
-              <CloseButton onClick={onResetSelectedUser} size='1.3em' />
+              <ButtonWithIcon
+                icon={<IoClose />}
+                onClick={onResetSelectedUser}
+              />
             </div>
           )}
         </li>

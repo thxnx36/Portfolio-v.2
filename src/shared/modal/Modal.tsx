@@ -1,7 +1,8 @@
 import type { FC, ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { useOverLay } from 'src/hooks'
-import { CloseButton } from '../buttons'
+import { IoClose } from 'react-icons/io5'
+import { ButtonWithIcon } from '../buttons'
 import { AnimatedContainer } from '../animated-container'
 import styles from './Modal.module.css'
 
@@ -17,7 +18,11 @@ export const Modal: FC<Props> = ({ children, isOpen, onClose }) => {
   return createPortal(
     <div className={styles.overlay} onClick={onCloseContent}>
       <AnimatedContainer ref={contentRef} className={styles.modalContent}>
-        <CloseButton className={styles.closeButton} onClick={onClose} />
+        <ButtonWithIcon
+          icon={<IoClose />}
+          className={styles.closeButton}
+          onClick={onClose}
+        />
         {children}
       </AnimatedContainer>
     </div>,

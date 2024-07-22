@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { ArrowButton } from '../buttons'
+import { ButtonWithIcon } from '../buttons'
 import { Title } from '../title'
 import { Toolbar } from '../toolbar'
 import { IoIosArrowBack } from 'react-icons/io'
@@ -14,7 +14,7 @@ export const PagesHead: FC<Props> = ({ title, goBack }) => {
   return (
     <div className={styles.pagesHead}>
       <div className={styles.title}>
-        <ArrowButton icon={<IoIosArrowBack size={'2em'} />} onClick={goBack} />
+        <ButtonWithIcon icon={<IoIosArrowBack />} onClick={goBack} />
         <Title style={{ margin: 0 }} tag='h2'>
           {title}
         </Title>
