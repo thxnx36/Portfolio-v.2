@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Section,
@@ -23,7 +24,7 @@ export const AboutMe = () => {
           title={t('pages.aboutMe.TITLE')}
           goBack={() => navigateTo(ROUTES.main)}
         />
-        <Paragraph style={{ textAlign: 'left', maxWidth: '100%' }}>
+        <Paragraph style={additionalStyles.paragraph}>
           {t('pages.aboutMe.HEY_NICE_MEET')} 👋
           <br /> {t('pages.aboutMe.MY_CAREER')}
         </Paragraph>
@@ -45,18 +46,10 @@ export const AboutMe = () => {
           </Title>
           <ul>
             <li className={styles.qualities}>
-              <Paragraph
-                style={{ textAlign: 'left', maxWidth: '100%', margin: 0 }}
-              >
-                English: Intermediate
-              </Paragraph>
+              <Paragraph>English: Intermediate</Paragraph>
             </li>
             <li className={styles.qualities}>
-              <Paragraph
-                style={{ textAlign: 'left', maxWidth: '100%', margin: 0 }}
-              >
-                Ukrainian: Native
-              </Paragraph>
+              <Paragraph>Ukrainian: Native</Paragraph>
             </li>
           </ul>
         </article>
@@ -67,16 +60,8 @@ export const AboutMe = () => {
           <ul>
             {qualities.map(({ id, title, text }) => (
               <li key={id} className={styles.qualities}>
-                <Paragraph
-                  style={{ textAlign: 'left', maxWidth: '100%', margin: 0 }}
-                >
-                  {title}
-                </Paragraph>
-                <Paragraph
-                  style={{ textAlign: 'left', maxWidth: '100%', margin: 0 }}
-                >
-                  {text}
-                </Paragraph>
+                <Paragraph style={{ textAlign: 'left' }}>{title}</Paragraph>
+                <Paragraph style={{ textAlign: 'left' }}>{text}</Paragraph>
               </li>
             ))}
           </ul>
@@ -85,7 +70,7 @@ export const AboutMe = () => {
           <Title size='sm' tag='h4'>
             {t('pages.aboutMe.HOBBIES_SUB_TITLE')}
           </Title>
-          <Paragraph style={{ textAlign: 'left', maxWidth: '100%' }}>
+          <Paragraph style={additionalStyles.paragraph}>
             {t('pages.aboutMe.HOBBIES')}
           </Paragraph>
         </article>
@@ -93,7 +78,7 @@ export const AboutMe = () => {
           <Title size='sm' tag='h4'>
             {t('pages.aboutMe.GOT_IN_DEV_SUB_TITLE')}
           </Title>
-          <Paragraph style={{ textAlign: 'left', maxWidth: '100%', margin: 0 }}>
+          <Paragraph style={additionalStyles.paragraph}>
             {t('pages.aboutMe.DEVELOPMENT')}
           </Paragraph>
         </article>
@@ -101,4 +86,11 @@ export const AboutMe = () => {
       <BrowserTabTitle title={t('pages.aboutMe.seo.TITLE')} />
     </Section>
   )
+}
+
+const additionalStyles = {
+  paragraph: {
+    textAlign: 'left' as CSSProperties['textAlign'],
+    margin: '0 0 25px',
+  },
 }

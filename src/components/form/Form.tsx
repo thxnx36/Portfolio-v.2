@@ -4,9 +4,9 @@ import {
   Title,
   Input,
   Textarea,
-  Button,
   Paragraph,
   SocialList,
+  Button,
 } from 'src/shared'
 import { useTranslation } from 'react-i18next'
 import { VALIDATE_EMAIL } from 'src/constants'
@@ -18,7 +18,6 @@ type Props = {
 
 export const Form: FC<Props> = ({ onCloseModal }) => {
   const { t } = useTranslation()
-  // const [captchaToken, setCaptchaToken] = useState<string | null>(null)
 
   const {
     register,
@@ -34,8 +33,6 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
     successMessage: t('toast.success.EMAIL_SENT'),
     infoMessage: t('toast.info.FIXING'),
   })
-
-  // const handleCaptchaChange = (token: string | null) => setCaptchaToken(token)
 
   return (
     <>
@@ -87,16 +84,14 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
             }
             placeholder={t('input.placeholder.YOUR_MESSAGE')}
           />
-          {/* <div className={styles.reCaptcha}>
-            <ReCaptcha onChange={handleCaptchaChange} />
-          </div> */}
           <Button
             style={additionalButtonStyles}
-            text={t('button.SEND_MESSAGE')}
             isLoading={isLoading}
             type='submit'
             disabled={isDisabledButton}
-          />
+          >
+            {t('button.SEND_MESSAGE')}
+          </Button>
         </form>
       )}
       <div className={styles.contacts}>

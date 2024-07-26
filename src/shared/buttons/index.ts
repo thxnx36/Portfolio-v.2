@@ -1,13 +1,4 @@
-import { Button } from './Button'
-import { Switcher } from './switcher/Switcher'
-import { ScrollTopButton } from './scroll-top'
-import { SendMessageChatButton } from './send-message-chat-button'
-import { ButtonWithIcon } from "./button-with-icon"
+import { ButtonWithIcon } from './button-with-icon'
+import { ButtonAnchor, ButtonLink, Button } from './main-button'
 
-export {
-  Button,
-  Switcher,
-  ScrollTopButton,
-  SendMessageChatButton,
-  ButtonWithIcon,
-}
+export { ButtonWithIcon, Button, ButtonLink, ButtonAnchor }

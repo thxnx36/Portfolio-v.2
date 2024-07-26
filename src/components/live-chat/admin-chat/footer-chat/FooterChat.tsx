@@ -1,5 +1,6 @@
-import { SendMessageChatButton, Textarea } from 'src/shared'
+import { ButtonWithIcon, Textarea } from 'src/shared'
 import { ChangeEvent, FormEvent, forwardRef } from 'react'
+import { BiSolidSend } from 'react-icons/bi'
 import styles from './FooterChat.module.css'
 
 type Props = {
@@ -32,7 +33,7 @@ export const FooterChat = forwardRef<HTMLTextAreaElement, Props>(
           style={{ overflow: 'auto', resize: 'none', maxHeight: '90px' }}
           rows={1}
         />
-        <SendMessageChatButton isDisabled={isDisabledButton} />
+        <ButtonWithIcon icon={<BiSolidSend />} isDisabled={isDisabledButton} />
       </form>
     )
   },

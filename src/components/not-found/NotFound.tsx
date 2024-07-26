@@ -3,17 +3,15 @@ import { ROUTES } from 'src/constants'
 import {
   Section,
   Title,
-  Button,
   BrowserTabTitle,
   MarqueeBackground,
+  ButtonLink,
 } from 'src/shared'
-import { useNavigateTo } from 'src/hooks'
 import { Icon } from './Icon'
 import styles from './NotFound.module.css'
 
 export const NotFound = () => {
   const { t } = useTranslation()
-  const { navigateTo } = useNavigateTo()
 
   return (
     <Section style={{ margin: 0 }}>
@@ -29,12 +27,7 @@ export const NotFound = () => {
           <Title size='sm' tag='h4'>
             {t('pages.notFound.RETURN_HOME')}
           </Title>
-          <Button
-            tag='link'
-            to={ROUTES.main}
-            onClick={() => navigateTo(ROUTES.main)}
-            text={t('button.GO_BACK')}
-          />
+          <ButtonLink to={ROUTES.main}>{t('button.GO_BACK')}</ButtonLink>
         </div>
       </MarqueeBackground>
 

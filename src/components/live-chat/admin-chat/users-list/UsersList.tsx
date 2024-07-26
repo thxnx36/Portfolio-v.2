@@ -49,9 +49,10 @@ export const UsersList: FC<Props> = ({
           </Paragraph>
           {selectedUser === user && (
             <div className={styles.controlButtons}>
-              <button onClick={() => onDeleteUser(user)}>
-                <MdOutlineDelete />
-              </button>
+              <ButtonWithIcon
+                icon={<MdOutlineDelete />}
+                onClick={() => onDeleteUser(user)}
+              />
               <ButtonWithIcon
                 icon={<IoClose />}
                 onClick={onResetSelectedUser}

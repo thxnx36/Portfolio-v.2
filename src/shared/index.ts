@@ -1,11 +1,6 @@
-import { Avatar } from './avatar'
+import { Avatar, AvatarButton, AvatarWrapper } from './avatar'
 import { PageWrapper } from './page-wrapper'
-import {
-  Button,
-  Switcher,
-  SendMessageChatButton,
-  ButtonWithIcon,
-} from './buttons'
+import { Button, ButtonWithIcon, ButtonLink, ButtonAnchor } from './buttons'
 import { CardsContainer } from './cards-container'
 import { Container, MContainer } from './container'
 import { Input } from './input'
@@ -17,7 +12,6 @@ import { Slider } from './slider'
 import { SocialList } from './social-list'
 import { Textarea } from './textarea'
 import { Title, MTitle } from './title'
-import { ScrollTopButton } from './buttons'
 import { Toast } from './toast'
 import { Drawer } from './drawer'
 import { ReCaptcha } from './re-captcha'
@@ -32,12 +26,16 @@ import { PreviewLink } from './preview-link'
 import { AnimatedContainer } from './animated-container'
 import { TransitionContainer } from './transition-container'
 import { StackList } from './stack-list'
-import { DropList } from "./drop-list"
+import { DropList } from './drop-list'
 
 export {
   Avatar,
+  AvatarButton,
+  AvatarWrapper,
   Button,
-  Switcher,
+  ButtonLink,
+  ButtonAnchor,
+  ButtonWithIcon,
   PageWrapper,
   MSection,
   CardsContainer,
@@ -52,9 +50,6 @@ export {
   Textarea,
   Title,
   MTitle,
-  ScrollTopButton,
-  SendMessageChatButton,
-  ButtonWithIcon,
   Toast,
   Drawer,
   ReCaptcha,

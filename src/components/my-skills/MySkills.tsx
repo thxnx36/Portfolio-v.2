@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ROUTES } from 'src/constants'
-import { Button, Paragraph, Title, Container } from 'src/shared'
+import { Paragraph, Title, Container, ButtonAnchor } from 'src/shared'
 import { Link } from 'react-router-dom'
 import { TechnologiesCard } from './technologies-card/TechnologiesCard'
 import { withAnimationSection } from 'src/hoc'
@@ -20,17 +20,17 @@ const MySkillsSection = () => {
           <Title withGradient tag='h2'>
             {t('SKILLS.TITLE')}
           </Title>
-          <Paragraph style={{ textAlign: 'left' }}>
+          <Paragraph style={additionalStyles.paragraph}>
             {t('SKILLS.SUBTITLE')}
           </Paragraph>
           <div className={styles.buttons}>
-            <Button
-              tag='a'
-              target='_blank'
+            <ButtonAnchor
               href={env.CVUrl}
-              style={additionalButtonStyles}
-              text={t('button.DOWNLOAD')}
-            />
+              target='blank'
+              style={additionalStyles.buttonLink}
+            >
+              {t('button.DOWNLOAD')}
+            </ButtonAnchor>
             <Link className={styles.aboutMeLink} to={ROUTES.aboutMe}>
               {t('SKILLS.MORE_ME_LINK')}
             </Link>
@@ -44,9 +44,15 @@ const MySkillsSection = () => {
   )
 }
 
-const additionalButtonStyles: CSSProperties = {
-  padding: '10px',
-  fontSize: '0.75em',
+const additionalStyles = {
+  buttonLink: {
+    padding: '10px',
+    fontSize: '0.75em',
+  },
+  paragraph: {
+    textAlign: 'left' as CSSProperties['textAlign'],
+    margin: '0 0 25px',
+  },
 }
 
 export const MySkills = withAnimationSection(MySkillsSection)

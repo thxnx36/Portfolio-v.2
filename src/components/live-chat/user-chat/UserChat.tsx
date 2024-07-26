@@ -127,11 +127,7 @@ export const UserChat = () => {
     <>
       {!isOpenChat && (
         <div className={styles.openButton}>
-          <Button
-            onClick={onToggleChat}
-            text='Live Chat'
-            icon={<IoChatbubbles size={'1.2em'} />}
-          />
+          <Button onClick={onToggleChat}>Live Chat {<IoChatbubbles />}</Button>
           {isShowNotification && <NotificationIcon count={notificationCount} />}
         </div>
       )}

@@ -49,7 +49,7 @@ export const Header = () => {
                   {t('header.DESCRIPTION')} 💪
                 </Paragraph>
               </blockquote>
-              <Button onClick={handleModal} text={t('button.HIRE')} />
+              <Button onClick={handleModal}>{t('button.HIRE')}</Button>
             </div>
 
             <div className={styles.image}>
