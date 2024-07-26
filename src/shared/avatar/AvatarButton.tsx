@@ -1,29 +1,28 @@
 import { FC, HTMLAttributes, ReactNode } from 'react'
 import { classNames } from 'src/utils'
-import styles from './ButtonWithIcon.module.css'
+import styles from './Avatar.module.css'
 
 type Props = HTMLAttributes<HTMLButtonElement> & {
-  icon: ReactNode
-  isDisabled?: boolean
-  className?: string
+  children: ReactNode
+  withBorder?: boolean
 }
 
-export const ButtonWithIcon: FC<Props> = ({
-  icon,
-  isDisabled,
+export const AvatarButton: FC<Props> = ({
+  children,
   className,
+  withBorder,
   ...props
 }) => {
   return (
     <button
       className={classNames(
-        styles.buttonWithIcon,
-        isDisabled && styles.disabled,
+        styles.avatar,
+        withBorder && styles.withBorder,
         className,
       )}
       {...props}
     >
-      {icon}
+      {children}
     </button>
   )
 }

@@ -57,11 +57,7 @@ export const TimeLine: FC<Props> = ({
           <p className={styles.namePosition}>{namePosition}</p>
         </div>
         <div className={styles.infoWrapper}>
-          <Paragraph
-            style={{ textAlign: 'left', margin: 0, maxWidth: '500px' }}
-          >
-            {description}
-          </Paragraph>
+          <Paragraph style={{ textAlign: 'left' }}>{description}</Paragraph>
         </div>
       </div>
     </div>

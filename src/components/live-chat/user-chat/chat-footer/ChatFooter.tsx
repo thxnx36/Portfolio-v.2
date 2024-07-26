@@ -1,9 +1,10 @@
 import type { FC } from 'react'
-import { SendMessageChatButton, Textarea } from 'src/shared'
-import styles from './ChatFooter.module.css'
+import { ButtonWithIcon, Textarea } from 'src/shared'
+import { BiSolidSend } from 'react-icons/bi'
 import { useSendMessageInChat, useTextAreaHeight } from 'src/hooks'
 import { ADMIN } from 'src/constants'
 import { Socket } from 'socket.io-client'
+import styles from './ChatFooter.module.css'
 
 type Props = {
   userId: string
@@ -18,7 +19,6 @@ export const ChatFooter: FC<Props> = ({
   isDisabledInput,
   placeholder,
 }) => {
-
   const {
     onSendMessage,
     handleKeyDown,
@@ -30,7 +30,7 @@ export const ChatFooter: FC<Props> = ({
     sender: userId,
     receiver: ADMIN,
   })
-  
+
   const { textareaRef } = useTextAreaHeight({
     dependencies: [textareaContent],
   })
@@ -47,7 +47,7 @@ export const ChatFooter: FC<Props> = ({
         placeholder={placeholder}
         rows={1}
       />
-      <SendMessageChatButton isDisabled={isDisabledButton} />
+      <ButtonWithIcon icon={<BiSolidSend />} isDisabled={isDisabledButton} />
     </form>
   )
 }

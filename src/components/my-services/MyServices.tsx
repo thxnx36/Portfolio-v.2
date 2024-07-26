@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Section, SectionHead, CardsContainer } from 'src/shared'
-import { ROUTES } from 'src/constants'
 import { useServicesList } from 'src/hooks'
 import { ServiceCard } from './service-card/ServiceCard'
 
@@ -25,8 +24,6 @@ export const MyServices = () => {
       <SectionHead
         title={t('myServices.TITLE')}
         subTitle={t('myServices.SUBTITLE')}
-        to={ROUTES.aboutMe}
-        linkText={t('myServices.ABOUT_ME')}
       />
       <CardsContainer columns={2}>
         {servicesList.map(({ title, text, id }) => (

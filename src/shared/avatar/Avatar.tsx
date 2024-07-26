@@ -1,34 +1,11 @@
-import type { FC, HTMLAttributes } from 'react'
-import { classNames } from 'src/utils'
-import styles from './Avatar.module.css'
+import { FC, HTMLAttributes } from 'react'
 
-type Props = HTMLAttributes<HTMLElement> & {
+type Props = HTMLAttributes<HTMLImageElement> & {
   src: string
-  tag?: 'div' | 'button'
+  alt: string
   withBorder?: boolean
-  onClick?: () => void
 }
-export const Avatar: FC<Props> = ({
-  src,
-  withBorder,
-  onClick,
-  className,
-  tag,
-  ...props
-}) => {
-  const Tag = tag || 'div'
 
-  return (
-    <Tag
-      onClick={onClick}
-      className={classNames(
-        styles.avatar,
-        withBorder && styles.withBorder,
-        className,
-      )}
-      {...props}
-    >
-      <img src={src} alt='User photo' />
-    </Tag>
-  )
+export const Avatar: FC<Props> = ({ src, alt, ...props }) => {
+  return <img src={src} alt={alt} {...props} />
 }

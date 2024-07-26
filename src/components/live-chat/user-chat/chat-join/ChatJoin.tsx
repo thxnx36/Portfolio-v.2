@@ -35,11 +35,9 @@ export const ChatJoin = () => {
           errorText={errors.userName?.message}
           placeholder={t('input.placeholder.WHATS_NAME')}
         />
-        <Button
-          isLoading={isLoading}
-          text={t('button.JOIN')}
-          disabled={isDisabledButton}
-        />
+        <Button isLoading={isLoading} disabled={isDisabledButton}>
+          {t('button.JOIN')}
+        </Button>
         <small style={{ margin: 20 }}>beta</small>
       </div>
     </form>

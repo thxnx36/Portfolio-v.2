@@ -96,6 +96,7 @@
   border-radius: 5px;
   padding: 10px;
   border: 0.5px solid var(--border-color);
+  max-width: 500px;
 }
 
 @keyframes pulse {

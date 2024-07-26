@@ -19,12 +19,7 @@
   transform: scale(0.95);
 }
 
-.icon {
-  display: flex;
-  align-items: center;
-}
-
-.icon svg {
+.button svg {
   color: var(--secondary-color);
 }
 
@@ -38,6 +33,13 @@
   pointer-events: none;
   cursor: default;
   opacity: 0.5;
+}
+
+.loaderWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loader {
