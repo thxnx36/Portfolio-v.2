@@ -3,10 +3,8 @@ import { useLocalStorage } from './use-local-storage'
 import { useMySocialList } from './use-my-social-list'
 import { useNavigationList } from './use-navigation-list'
 import { useServicesList } from './use-services-list'
-import { useScrollListener } from './use-scroll-listener'
 import { useSendEmail } from './use-send-email'
 import { useOverLay } from './use-overlay'
-import { useSpinner } from './use-spinner'
 import { usePortfolioList } from './use-portfolio-list'
 import { useEducationList } from './use-education-list'
 import { useWorkList } from './use-work-list'
@@ -26,10 +24,8 @@ export {
   useMySocialList,
   useNavigationList,
   useServicesList,
-  useScrollListener,
   useSendEmail,
   useOverLay,
-  useSpinner,
   usePortfolioList,
   useQualitiesList,
   useEducationList,
