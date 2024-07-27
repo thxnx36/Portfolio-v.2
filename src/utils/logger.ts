@@ -1,4 +1,8 @@
 /* eslint-disable no-console */
-export const logger = (message: string) => {
-  console.log(`%c${message}`, 'color: black; font-size: 14px;')
+export const logger = (key: string, message: string) => {
+  console.log(
+    `%c${key}%c ${message}`,
+    'color: red; font-size: 12px;',
+    'color: black; font-size: 12px;',
+  )
 }

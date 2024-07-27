@@ -27,6 +27,7 @@ const MySkillsSection = () => {
             <ButtonAnchor
               href={env.CVUrl}
               target='blank'
+              rel='noreferrer'
               style={additionalStyles.buttonLink}
             >
               {t('button.DOWNLOAD')}

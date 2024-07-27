@@ -17,7 +17,7 @@ type Props = {
 }
 
 export const Layout: FC<Props> = ({ children }) => {
-  logger(`App version: ${APP.version}`)
+  logger('version:', APP.version)
   return (
     <>
       <div className={styles.app}>{children}</div>
