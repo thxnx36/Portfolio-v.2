@@ -1,11 +1,15 @@
-import { COLOR_YELLOW, COLOR_BLUE, GREY_COLOR } from './colors'
 import { ENV_VARS_PROD, ENV_VARS_DEV } from './env'
-import { motionSection, motionNav, motionProgrLine, motionAnimatedContainer, motionDockPanel } from './motion'
+import { motionSection, motionAnimatedContainer } from './motion'
 import { NAVIGATE } from './nav'
 import { ROUTES } from './routes'
 import { RESPONSIVE } from './slider'
 import { DARK, LIGHT } from './theme'
-import { KEYWORDS, ROBOTS, AUTHOR, OG_TYPE_CONTENT, OG_SITE_NAME } from './seo'
+import { LANG, ENG, UK } from './lang'
+import { OPEN, CLOSE, KEY, USER, ADMIN } from './live-chat'
+import { FORMAT_DATE, FORMAT_TIME } from './format-date'
+import { APP } from './version-app'
+import { VALIDATE_EMAIL, CHECK_URL, ADD_HASH_SYMBOL } from './regex'
+import { technologies } from './technologies'
 import {
   COMPANY_URL,
   UDEMY_URL,
@@ -20,22 +24,6 @@ import {
   UP_WORK_URL,
   IMT_URL,
 } from './URLs'
-import { LANG, ENG, UK } from './lang'
-import {
-  OPEN,
-  CLOSE,
-  KEY,
-  USER,
-  ADMIN,
-  HEIGHT_INPUT,
-  MESSAGE_LENGTH,
-  STATUS_MESSAGE,
-} from './live-chat'
-import { FORMAT_DATE, FORMAT_TIME } from './format-date'
-import { APP } from './version-app'
-import { VALIDATE_EMAIL, CHECK_URL, ADD_HASH_SYMBOL } from './regex'
-import { recommendations } from "./recommendations"
-import { technologies } from "./technologies"
 
 export {
   RESPONSIVE,
@@ -47,9 +35,6 @@ export {
   KEY,
   USER,
   ADMIN,
-  HEIGHT_INPUT,
-  MESSAGE_LENGTH,
-  STATUS_MESSAGE,
   FORMAT_DATE,
   FORMAT_TIME,
   APP,
@@ -57,9 +42,6 @@ export {
   UK,
   DARK,
   LIGHT,
-  COLOR_YELLOW,
-  COLOR_BLUE,
-  GREY_COLOR,
   COMPANY_URL,
   UDEMY_URL,
   UP_WORK_URL,
@@ -75,18 +57,9 @@ export {
   ENV_VARS_PROD,
   ENV_VARS_DEV,
   motionSection,
-  motionNav,
-  recommendations,
   technologies,
   ROUTES,
   NAVIGATE,
-  KEYWORDS,
-  ROBOTS,
-  AUTHOR,
-  OG_TYPE_CONTENT,
-  OG_SITE_NAME,
   APP_URL,
-  motionProgrLine,
   motionAnimatedContainer,
-  motionDockPanel,
 }

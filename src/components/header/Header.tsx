@@ -21,10 +21,6 @@ const words = [
     id: 2,
     content: 'React Developer',
   },
-  {
-    id: 3,
-    content: 'JavaScript Developer',
-  },
 ]
 
 export const Header = () => {

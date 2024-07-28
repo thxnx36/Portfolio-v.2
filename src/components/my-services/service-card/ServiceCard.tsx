@@ -7,8 +7,6 @@ import styles from './ServiceCard.module.css'
 type Props = {
   title: string
   text: string
-  closeText: string
-  showText: string
   isFlipped: boolean
   order: number
   onFlip: () => void

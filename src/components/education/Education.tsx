@@ -1,32 +1,16 @@
-import { useTranslation } from 'react-i18next'
 import { withAnimationSection } from 'src/hoc'
 import { useEducationList } from 'src/hooks'
-import { SectionHead, TimeLine } from 'src/shared'
+import { SectionWithTimeline } from '../section-with-timeline'
 
 export const EducationSection = () => {
-  const { t } = useTranslation()
   const { educationList } = useEducationList()
 
   return (
-    <>
-      <SectionHead
-        title={t('education.TITLE')}
-        subTitle={t('education.SUBTITLE')}
-      />
-      {educationList?.map(
-        ({ university, position, date, description, img, url, id }) => (
-          <TimeLine
-            key={id}
-            namePlace={university}
-            namePosition={position}
-            date={date}
-            description={description}
-            url={url}
-            imageSrc={img}
-          />
-        ),
-      )}
-    </>
+    <SectionWithTimeline
+      title='education.TITLE'
+      subTitle='education.SUBTITLE'
+      list={educationList}
+    />
   )
 }
 

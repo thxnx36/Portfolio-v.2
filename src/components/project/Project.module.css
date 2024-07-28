@@ -2,13 +2,6 @@
   padding: 20px 0;
 }
 
-.link {
-  color: var(--main-color);
-  font-size: var(--font-size-sm);
-  margin-top: 10px;
-  display: none;
-}
-
 .stack {
   overflow-y: hidden;
   white-space: nowrap;

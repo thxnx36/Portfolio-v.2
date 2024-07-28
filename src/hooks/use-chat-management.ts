@@ -25,13 +25,23 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
   const { onLeave } = useAuthUser()
   const { messages, setNewMessages, addNewMessage } = useChatMessages()
 
-  const [deleteUser, { isLoading: isLoadingDelete }] = useDeleteUserByUserIdMutation()
+  const [deleteUser, { isLoading: isLoadingDelete }] =
+    useDeleteUserByUserIdMutation()
 
-  const [deleteChat, { isLoading: isLoadingDeleteChat }] = useDeleteChatByUserIdMutation()
+  const [deleteChat, { isLoading: isLoadingDeleteChat }] =
+    useDeleteChatByUserIdMutation()
 
-  const [deleteChatHistory, { isLoading: isLoadingDeleteChatHistory }] = useDeleteChatHistoryByUserIdMutation()
+  const [deleteChatHistory, { isLoading: isLoadingDeleteChatHistory }] =
+    useDeleteChatHistoryByUserIdMutation()
 
-  const [getUserById, { data: userById, isLoading: isLoadingUserById, isFetching: isFetchingUserById }] = useLazyGetUserByIdQuery()
+  const [
+    getUserById,
+    {
+      data: userById,
+      isLoading: isLoadingUserById,
+      isFetching: isFetchingUserById,
+    },
+  ] = useLazyGetUserByIdQuery()
 
   const { data: usersList, refetch: refetchUsersList } = useGetAllUsersQuery(
     undefined,
@@ -45,7 +55,6 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
     isError: isErrorMessages,
     refetch: refetchUserById,
   } = useGetUserByIdQuery({ userId: userId! }, { skip: !userId?.length })
-
 
   const onSelectUser = useCallback(
     async (user: UserType) => {
