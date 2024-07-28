@@ -1,3 +1,4 @@
+import { ComponentType } from 'react'
 import { motionSection } from 'src/constants'
 import { useAnimateDuringScroll } from 'src/hooks'
 import { MSection } from 'src/shared'
@@ -7,9 +8,9 @@ type Props = {
 }
 
 export const withAnimationSection =
-  <P extends Props>(Component: React.ComponentType<P>) =>
-  (props: P) => {
-    const { refInView, controls } = useAnimateDuringScroll({})
+  (Component: ComponentType<Props>) =>
+  ({ sectionId, ...props }: Props) => {
+    const { refInView, controls } = useAnimateDuringScroll({});
 
     return (
       <MSection
@@ -17,9 +18,9 @@ export const withAnimationSection =
         animate={controls}
         initial={motionSection.initial}
         transition={motionSection.transition}
-        id={props.sectionId}
+        id={sectionId}
       >
-        <Component {...props} />
+        <Component {...(props as Props)} />
       </MSection>
-    )
-  }
+    );
+  };

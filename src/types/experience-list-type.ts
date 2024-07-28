@@ -1,6 +1,6 @@
-export type WorkListType = {
+export type ExperienceListType = {
   id: number
-  company: string
+  place: string
   position: string
   date: string
   title: string

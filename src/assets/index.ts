@@ -2,7 +2,6 @@ import headerPhoto from './images/header-pic.webp'
 import asx from './images/site-mock.webp'
 import tutiffy from './images/mock-site2.webp'
 import maven from './images/mock-site3.webp'
-import userPhoto from './images/mock-user.webp'
 import asxPageFirst from './images/asx-page1.webp'
 import asxPageSecond from './images/asx-page2.webp'
 import tutiffyPageRirst from './images/tut-page1.webp'
@@ -22,7 +21,6 @@ export {
   asx,
   tutiffy,
   maven,
-  userPhoto,
   asxPageFirst,
   asxPageSecond,
   tutiffyPageRirst,

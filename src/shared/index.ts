@@ -14,8 +14,7 @@ import { Textarea } from './textarea'
 import { Title, MTitle } from './title'
 import { Toast } from './toast'
 import { Drawer } from './drawer'
-import { ReCaptcha } from './re-captcha'
-import { Loader, ChatSkeleton } from './loader'
+import { Loader, ChatSkeleton } from './loaders'
 import { MarqueeBackground } from './marquee-background'
 import { PagesHead } from './pages-head'
 import { TimeLine } from './time-line'
@@ -52,7 +51,6 @@ export {
   MTitle,
   Toast,
   Drawer,
-  ReCaptcha,
   BrowserTabTitle,
   MContainer,
   Loader,

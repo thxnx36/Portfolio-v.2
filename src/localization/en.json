@@ -4,18 +4,9 @@
     "SEND_MESSAGE": "Send message",
     "DOWNLOAD": "Download CV",
     "GO_BACK": "Go back",
-    "LOADING": "Loading...",
-    "SLOW_SERVER": "Something, the server is so slow today 🥴",
-    "SHOW_MORE_CARD": "show more",
-    "CLOSE_CARD": "close",
     "JOIN": "Join"
   },
-  "tooltip": {
-    "MY_SKILLS": "My skills"
-  },
   "chat": {
-    "THERE_WILL_BE_CHAT": "There's will be an online chat room here soon, but it's still in development",
-    "BELIEVE": "do it! I believe in you",
     "JOIN_TO_CHAT": "Hey! Let's join to chat",
     "ONLINE_STATUS": "online",
     "HI": "Hi",
@@ -43,14 +34,9 @@
     "SPECIALTY": "Developer",
     "DESCRIPTION": "Combining modern technology and creativity, I build websites and apps that will help you achieve your goals"
   },
-  "footer": {
-    "CREATED_BY": "Created by",
-    "TELEGRAM_NAME": "Vladosik"
-  },
   "myServices": {
     "TITLE": "My services for your business",
     "SUBTITLE": "Transforming your ideas into reality with professional frontend development",
-    "ABOUT_ME": "About me page",
 
     "cards": {
       "FRONT_END_DEVELOPMENT_TITLE": "Frontend development",
@@ -134,8 +120,7 @@
             "TEXT_2": "Additionally, I worked on enhancing the user experience by adding animations, intuitive controls, and optimized workflows.",
             "TEXT_3": "Overall, working on the project was an interesting and productive experience that helped me develop skills in frontend development, multilingual support, and web application performance optimization."
           }
-        },
-        "stack": "#React #TypeScript #Redux Toolkit #RTK Query #Apollo GraphQL #i18next #Material UI"
+        }
       },
       "ASX": {
         "NAME": "ASX Sports",
@@ -152,8 +137,7 @@
             "TEXT_2": "On the project I was engaged in development of UI components, implementation of new features such as - full user registration using Keycloack, connection of Stripe payment system, connection of SumSab library for user verification, etc. I also got experience in the backend.",
             "TEXT_3": "What I found interesting was participating in rallies with the CTO and the customer where we discussed the business logic of the application. I also enjoyed expressing my ideas, which in the future were turned into reality."
           }
-        },
-        "stack": "#Next #TypeScript #Redux Toolkit #RTK Query #Express #Stripe #SamSub #Keycloack #Radix UI"
+        }
       },
       "maven": {
         "NAME": "Maven 11",
@@ -170,19 +154,9 @@
             "TEXT_2": "The interesting and challenging part for me was working with the GSAP library, where it took a lot of time to learn all the intricacies and the right approach, which gave me additional experience in developing complex animations.",
             "TEXT_3": "Also together with QA we conducted functional testing and fixed all the issues in a short period of time."
           }
-        },
-        "stack": "#HTML #JavaScript #SCSS #GSAP"
+        }
       }
     }
-  },
-  "recommendations": {
-    "TITLE": "Testimonials",
-    "SUBTITLE": "Testimonials and recommendations from clients I have worked with"
-  },
-  "mySkills": {
-    "NAME": "Vlad Kryvytchenko",
-    "SKILLS": "Skills",
-    "LANGUAGES": "Languages"
   },
   "form": {
     "TITLE": "Leave me your info",
@@ -211,9 +185,6 @@
     },
     "info": {
       "FIXING": "I'm already fixing the problem"
-    },
-    "warning": {
-      "LENGTH_TEXT": "The length of the message should not exceed 75 characters"
     }
   },
   "input": {
@@ -265,10 +236,7 @@
       "QUALITIE_LEARNING": "Continuous learning:",
       "QUALITIE_LEARNING_TEXT": "committed to keeping up with industry trends and expanding technical skills.",
       "seo": {
-        "TITLE": "About me",
-        "ABOUTE_ME_MY_SKILLS": "About me, my skills, hobbies, and work experience",
-        "SHORT_STORY": "My short life story",
-        "SPECIALIZE": "I specialize in creating web applications using React, JS, TS, HTML, CSS"
+        "TITLE": "About me"
       }
     }
   }

@@ -33,8 +33,6 @@ export const MyServices = () => {
             title={title}
             text={text}
             order={id}
-            showText={t('button.SHOW_MORE_CARD')}
-            closeText={t('button.CLOSE_CARD')}
             key={id}
           />
         ))}

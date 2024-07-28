@@ -2,7 +2,7 @@ import { usePortfolioList } from 'src/hooks'
 import { SectionHead, CardsContainer } from 'src/shared'
 import { useTranslation } from 'react-i18next'
 import { withAnimationSection } from 'src/hoc'
-import { ProjectCard } from './new-card/ProjectCard'
+import { ProjectCard } from './project-card/ProjectCard'
 
 const PortfolioSection = () => {
   const { t } = useTranslation()
