@@ -1,3 +1,4 @@
-import { ChatSkeleton } from './ChatSkeleton'
+import { ChatSkeleton } from './chat-skeleton'
+import { PageSkeleton } from './page-skeleton'
 
-export { ChatSkeleton }
+export { ChatSkeleton, PageSkeleton }

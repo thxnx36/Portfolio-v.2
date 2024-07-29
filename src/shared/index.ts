@@ -14,7 +14,7 @@ import { Textarea } from './textarea'
 import { Title, MTitle } from './title'
 import { Toast } from './toast'
 import { Drawer } from './drawer'
-import { Loader, ChatSkeleton } from './loaders'
+import { Loader, ChatSkeleton, PageSkeleton } from './loaders'
 import { MarqueeBackground } from './marquee-background'
 import { PagesHead } from './pages-head'
 import { TimeLine } from './time-line'
@@ -55,6 +55,7 @@ export {
   MContainer,
   Loader,
   ChatSkeleton,
+  PageSkeleton,
   MarqueeBackground,
   PagesHead,
   TimeLine,
