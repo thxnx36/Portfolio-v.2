@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react'
+import { type DependencyList, useEffect, useRef } from 'react'
 
 type Props = {
-  dependencies: unknown[]
+  dependencies: DependencyList
 }
 
 export const usePositionChatWindow = ({ dependencies }: Props) => {

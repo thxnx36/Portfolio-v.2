@@ -1,7 +1,14 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
 import { apiBaseQuery } from '../base'
 import { getEnvVars } from 'src/utils'
-import { AddMessagePayload, UserType, UsersListType } from 'src/types'
+import {
+  AddMessagePayload,
+  CreateUserPayload,
+  SendTelegramPayload,
+  UserIdPayload,
+  UserType,
+  UsersListType,
+} from 'src/types'
 
 const env = getEnvVars()
 
@@ -12,7 +19,7 @@ export const liveChatApi = createApi({
   }),
 
   endpoints: build => ({
-    sendTelegramMessage: build.mutation<void, { message: string }>({
+    sendTelegramMessage: build.mutation<void, SendTelegramPayload>({
       query({ message }) {
         return {
           url: `/sendMessage`,
@@ -22,7 +29,7 @@ export const liveChatApi = createApi({
       },
     }),
 
-    createUser: build.mutation<UserType, { userId: string; userName: string }>({
+    createUser: build.mutation<UserType, CreateUserPayload>({
       query({ userId, userName }) {
         return {
           url: `/${userName}/create`,
@@ -41,7 +48,7 @@ export const liveChatApi = createApi({
       },
     }),
 
-    deleteUserByUserId: build.mutation<void, { userId: string }>({
+    deleteUserByUserId: build.mutation<void, UserIdPayload>({
       query({ userId }) {
         return {
           url: `/${userId}/deleteUser`,
@@ -50,7 +57,7 @@ export const liveChatApi = createApi({
       },
     }),
 
-    deleteChatByUserId: build.mutation<void, { userId: string }>({
+    deleteChatByUserId: build.mutation<void, UserIdPayload>({
       query({ userId }) {
         return {
           url: `/${userId}/deleteChat`,
@@ -59,7 +66,7 @@ export const liveChatApi = createApi({
       },
     }),
 
-    deleteChatHistoryByUserId: build.mutation<void, { userId: string }>({
+    deleteChatHistoryByUserId: build.mutation<void, UserIdPayload>({
       query({ userId }) {
         return {
           url: `/${userId}/deleteChatHistory`,
@@ -68,7 +75,7 @@ export const liveChatApi = createApi({
       },
     }),
 
-    getUserById: build.query<UserType, { userId: string }>({
+    getUserById: build.query<UserType, UserIdPayload>({
       query({ userId }) {
         return {
           url: `/${userId}`,
@@ -77,7 +84,7 @@ export const liveChatApi = createApi({
       },
     }),
 
-    getMessages: build.query<UserType, { userId: string }>({
+    getMessages: build.query<UserType, UserIdPayload>({
       query({ userId }) {
         return {
           url: `/${userId}/messages`,

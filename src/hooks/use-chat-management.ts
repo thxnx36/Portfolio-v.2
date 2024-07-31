@@ -68,19 +68,22 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
     [getUserById, t],
   )
 
-  const onDeleteUser = async (user: UserType) => {
-    try {
-      await deleteUser({ userId: user.userId }).unwrap()
-      refetchUsersList()
-      setNewMessages([])
-      setSelectedUser(null)
-      toast.success(t('toast.success.SUCCESS_DELETE_USER'))
-    } catch {
-      toast.error(t('toast.error.FAILED_DELETE_USER'))
-    }
-  }
+  const onDeleteUser = useCallback(
+    async (user: UserType) => {
+      try {
+        await deleteUser({ userId: user.userId }).unwrap()
+        refetchUsersList()
+        setNewMessages([])
+        setSelectedUser(null)
+        toast.success(t('toast.success.SUCCESS_DELETE_USER'))
+      } catch {
+        toast.error(t('toast.error.FAILED_DELETE_USER'))
+      }
+    },
+    [deleteUser, refetchUsersList, setNewMessages, t],
+  )
 
-  const onDeleteChat = async () => {
+  const onDeleteChat = useCallback(async () => {
     try {
       await deleteChat({ userId: userId! }).unwrap()
       onLeave()
@@ -88,16 +91,16 @@ export const useChatManagement = ({ skipFetchUsersList, userId }: Props) => {
     } catch {
       toast.error(t('toast.error.FAILED_DELETE_CHAT'))
     }
-  }
+  }, [deleteChat, onLeave, setNewMessages, t, userId])
 
-  const onDeleteChatHistory = async () => {
+  const onDeleteChatHistory = useCallback(async () => {
     try {
       await deleteChatHistory({ userId: userId! }).unwrap()
       setNewMessages([])
     } catch {
       toast.error(t('toast.error.FAILED_DELETE_CHAT_HISTORY'))
     }
-  }
+  }, [deleteChatHistory, setNewMessages, t, userId])
 
   const onResetSelectedUser = () => setSelectedUser(null)
 

@@ -17,6 +17,7 @@ import { useDraggable } from './use-draggable'
 import { useQualitiesList } from './use-qualities-list'
 import { useAnimateDuringScroll } from './use-animate-during-scroll'
 import { useNavigateTo } from './use-navigate-to'
+import { useWhyDidPropsUpdate } from './use-why-did-props-update'
 
 export {
   useGetProjectById,
@@ -38,4 +39,5 @@ export {
   useDraggable,
   useAnimateDuringScroll,
   useNavigateTo,
+  useWhyDidPropsUpdate,
 }

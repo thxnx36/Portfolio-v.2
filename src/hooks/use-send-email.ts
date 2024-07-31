@@ -12,12 +12,12 @@ const INITIAL_STATE: FormType = {
 }
 
 type Props = {
-  f: () => void
+  fn: () => void
   successMessage: string
   infoMessage: string
 }
 
-export const useSendEmail = ({ successMessage, infoMessage, f }: Props) => {
+export const useSendEmail = ({ successMessage, infoMessage, fn }: Props) => {
   const [sendEmail, { isLoading }] = usePostEmailMutation()
   const [isSendFormError, setIsSendError] = useState<boolean>(false)
 
@@ -41,7 +41,7 @@ export const useSendEmail = ({ successMessage, infoMessage, f }: Props) => {
     try {
       await sendEmail(data).unwrap()
       toast.success(successMessage)
-      f()
+      fn()
     } catch {
       setIsSendError(true)
       toast.info(infoMessage)
