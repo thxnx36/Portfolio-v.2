@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import { ChatHead } from './chat-head/ChatHead'
+import { ChatHeadMemoized } from './chat-head/ChatHead'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { ChatJoin } from './chat-join/ChatJoin'
 import { useTranslation } from 'react-i18next'
-import { ChatMessagesMemo } from './chat-messages/ChatMessages'
+import { ChatMessagesMemoized } from './chat-messages/ChatMessages'
 import { NotificationIcon } from './chat-notification-icon/NotificationIcon'
 import { IoChatbubbles } from 'react-icons/io5'
 import { useAuthUser, useSocketApi } from 'src/app'
@@ -30,11 +30,11 @@ export const UserChat = () => {
   const isOpenChat = openChat === OPEN
 
   const { t } = useTranslation()
-  const { userName, userId, isJoined } = useAuthUser()
+  const { userName, userId, isJoined: isJoinedUser } = useAuthUser()
 
   const socket = useSocketApi({
     userName: userName,
-    connectSocket: isJoined,
+    connectSocket: isJoinedUser,
   })
 
   const {
@@ -106,10 +106,10 @@ export const UserChat = () => {
 
   const onToggleZoomWindow = () => setIsZoomWindow(prevZoom => !prevZoom)
 
-  const onLeaveAndDeleteChat = () => {
+  const onLeaveAndDeleteChat = useCallback(() => {
     onDeleteChat()
     setIsZoomWindow(false)
-  }
+  }, [onDeleteChat])
 
   const filteredMessages = useMemo(
     () =>
@@ -117,7 +117,27 @@ export const UserChat = () => {
     [messages, userId],
   )
 
-  const isLoading =
+  const showDeleteHistory = !!filteredMessages.length
+
+  const chatHeadProps = useMemo(
+    () => ({
+      onToggleChat,
+      onDeleteChat: onLeaveAndDeleteChat,
+      onDeleteChatHistory,
+      onToggleZoomWindow,
+      isJoinedUser,
+      showDeleteHistory,
+    }),
+    [
+      onToggleChat,
+      onLeaveAndDeleteChat,
+      onDeleteChatHistory,
+      isJoinedUser,
+      showDeleteHistory,
+    ],
+  )
+
+  const isLoadingData =
     isLoadingMessages ||
     isFetchingMessages ||
     isLoadingDeleteChat ||
@@ -140,20 +160,13 @@ export const UserChat = () => {
               isZoomWindow && styles.zoomWindow,
             )}
           >
-            <ChatHead
-              onToggleChat={onToggleChat}
-              onDeleteChat={onLeaveAndDeleteChat}
-              onDeleteChatHistory={onDeleteChatHistory}
-              onToggleZoomWindow={onToggleZoomWindow}
-              isJoinedUser={isJoined}
-              showDeleteHistory={!!filteredMessages.length}
-            />
-            {isJoined ? (
-              isLoading ? (
+            <ChatHeadMemoized {...chatHeadProps} />
+            {isJoinedUser ? (
+              isLoadingData ? (
                 <ChatSkeleton />
               ) : (
                 <>
-                  <ChatMessagesMemo
+                  <ChatMessagesMemoized
                     ref={messagesContainerRef}
                     messages={filteredMessages}
                     adminSender={ADMIN}
@@ -167,7 +180,7 @@ export const UserChat = () => {
             <ChatFooter
               userId={userId}
               socket={socket}
-              isDisabledInput={isLoading || !isJoined}
+              isDisabledInput={isLoadingData || !isJoinedUser}
               placeholder={t('input.placeholder.YOUR_MESSAGE')}
             />
           </AnimatedContainer>

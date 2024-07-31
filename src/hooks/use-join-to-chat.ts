@@ -3,9 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { v4 as uuidv4 } from 'uuid'
 import { toast } from 'react-toastify'
 
-type FormUserName = {
-  userName: string
-}
+type FormUserName = Record<'userName', string>
 
 const INITIAL_STATE: FormUserName = {
   userName: '',

@@ -1,7 +1,7 @@
-import type { NavigationListType, ProjectsListType } from '../types'
+import type { NavigationListType } from '../types'
 import { IoDocumentAttachSharp, IoSchoolSharp } from 'react-icons/io5'
 import { MdOutlineWork, MdHomeFilled, MdDesignServices } from 'react-icons/md'
-import { NAVIGATE, ROUTES } from '../constants'
+import { NAVIGATE } from '../constants'
 import { useTranslation } from 'react-i18next'
 
 export const useNavigationList = () => {
@@ -40,22 +40,5 @@ export const useNavigationList = () => {
     },
   ]
 
-  const projectsPages: ProjectsListType[] = [
-    {
-      name: 'Tutiffy',
-      link: `${ROUTES.dynamic.projectId(1)}`,
-      id: 1,
-    },
-    {
-      name: 'ASX Sports',
-      link: `${ROUTES.dynamic.projectId(2)}`,
-      id: 2,
-    },
-    {
-      name: 'Maven 11',
-      link: `${ROUTES.dynamic.projectId(3)}`,
-      id: 3,
-    },
-  ]
-  return { navigationList, projectsPages }
+  return { navigationList }
 }

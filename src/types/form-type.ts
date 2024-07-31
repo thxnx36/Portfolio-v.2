@@ -1,7 +1,9 @@
 export type FormType = {
   from: string
+  text: string
   to?: string
   subject?: string
   nameSender?: string
-  text: string
 }
+
+export type FormPayload = FormType

@@ -23,7 +23,16 @@ export type UsersListType = {
   users: UserType[]
 }
 
-export type AddMessagePayload = {
+type UserInfoPayload = {
   userId: string
-  message: MessageType
+  userName: string
+  message: string
 }
+
+export type AddMessagePayload = Omit<UserInfoPayload, 'userName'>
+
+export type CreateUserPayload = Omit<UserInfoPayload, 'message'>
+
+export type SendTelegramPayload = Pick<UserInfoPayload, 'message'>
+
+export type UserIdPayload = Pick<UserInfoPayload, 'userId'>

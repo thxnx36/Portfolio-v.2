@@ -51,4 +51,4 @@ const ChatMessages = forwardRef<HTMLUListElement, Props>(
   },
 )
 
-export const ChatMessagesMemo = memo(ChatMessages)
+export const ChatMessagesMemoized = memo(ChatMessages)

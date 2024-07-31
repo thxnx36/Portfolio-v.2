@@ -1,5 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import type { FormType } from 'src/types'
+import type { FormPayload } from 'src/types'
 import { apiBaseQuery } from '../base'
 import { getEnvVars } from 'src/utils'
 
@@ -12,7 +12,7 @@ export const sendEmailApi = createApi({
   }),
 
   endpoints: build => ({
-    postEmail: build.mutation<void, FormType>({
+    postEmail: build.mutation<void, FormPayload>({
       query: data => {
         return {
           url: '/sendEmail',

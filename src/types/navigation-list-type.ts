@@ -6,12 +6,3 @@ export type NavigationListType = {
   href: string
   id: number
 }
-
-
-export type ProjectsListType = {
-  name: string
-  link: string
-  id: number
-}
-
-

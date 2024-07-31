@@ -29,7 +29,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
     isDisabledButton,
     onSubmit,
   } = useSendEmail({
-    f: onCloseModal,
+    fn: onCloseModal,
     successMessage: t('toast.success.EMAIL_SENT'),
     infoMessage: t('toast.info.FIXING'),
   })

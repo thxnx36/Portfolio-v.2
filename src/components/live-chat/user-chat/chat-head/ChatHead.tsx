@@ -1,4 +1,4 @@
-import type { FC } from 'react'
+import { memo, type FC } from 'react'
 import { chatPhoto } from 'src/assets'
 import { Avatar, AvatarWrapper, Paragraph } from 'src/shared'
 import { classNames } from 'src/utils'
@@ -12,7 +12,7 @@ type Props = {
   onToggleChat: () => void
   onToggleZoomWindow: () => void
   onDeleteChat: () => void
-  onDeleteChatHistory: () => Promise<void>
+  onDeleteChatHistory: () => void
   isJoinedUser: boolean
   showDeleteHistory: boolean
 }
@@ -53,3 +53,5 @@ export const ChatHead: FC<Props> = ({
     </div>
   )
 }
+
+export const ChatHeadMemoized = memo(ChatHead)

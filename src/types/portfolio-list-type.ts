@@ -1,13 +1,9 @@
+type TextType = Record<'textOne' | 'textTwo' | 'textThree', string>
+
 export type AboutType = {
   paragraphFirst: TextType
   paragraphSecond: TextType
   stack: string
-}
-
-export type TextType = {
-  textOne: string
-  textTwo: string
-  textThree: string
 }
 
 export type PortfolioListType = {
