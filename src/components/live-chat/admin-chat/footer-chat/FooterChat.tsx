@@ -1,40 +1,44 @@
 import { ButtonWithIcon, Textarea } from 'src/shared'
-import { ChangeEvent, FormEvent, forwardRef } from 'react'
+import { FC } from 'react'
 import { BiSolidSend } from 'react-icons/bi'
 import styles from './FooterChat.module.css'
+import { useSendMessageInChat, useTextAreaHeight } from 'src/hooks'
+import { ADMIN } from 'src/constants'
+import { Socket } from 'socket.io-client'
 
 type Props = {
-  textAreaValue: string
-  isDisabledButton: boolean
-  onChangeMessage: (e: ChangeEvent<HTMLTextAreaElement>) => void
-  onKeyDown: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void
-  onSendMessage: (e: FormEvent) => Promise<void>
+  socket: Socket | null
+  receiver: string
 }
 
-export const FooterChat = forwardRef<HTMLTextAreaElement, Props>(
-  (
-    {
-      textAreaValue,
-      isDisabledButton,
-      onChangeMessage,
-      onSendMessage,
-      onKeyDown,
-    },
-    ref,
-  ) => {
-    return (
-      <form onSubmit={onSendMessage} className={styles.footerChat}>
-        <Textarea
-          ref={ref}
-          value={textAreaValue}
-          onChange={onChangeMessage}
-          onKeyDown={onKeyDown}
-          placeholder='Type text'
-          style={{ overflow: 'auto', resize: 'none', maxHeight: '90px' }}
-          rows={1}
-        />
-        <ButtonWithIcon icon={<BiSolidSend />} isDisabled={isDisabledButton} />
-      </form>
-    )
-  },
-)
+export const FooterChat: FC<Props> = ({ socket, receiver }) => {
+  const {
+    onSendMessage,
+    handleKeyDown,
+    handleChangeTextArea,
+    textareaContent,
+    isDisabledButton,
+  } = useSendMessageInChat({
+    socket,
+    sender: ADMIN,
+    receiver,
+  })
+  
+  const { textareaRef } = useTextAreaHeight({
+    dependencies: [textareaContent],
+  })
+
+  return (
+    <form onSubmit={onSendMessage} className={styles.footerChat}>
+      <Textarea
+        ref={textareaRef}
+        value={textareaContent}
+        onChange={handleChangeTextArea}
+        onKeyDown={handleKeyDown}
+        placeholder='Type text'
+        rows={1}
+      />
+      <ButtonWithIcon icon={<BiSolidSend />} isDisabled={isDisabledButton} />
+    </form>
+  )
+}

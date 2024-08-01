@@ -3,7 +3,6 @@ import { AnimatePresence } from 'framer-motion'
 import { ChatHeadMemoized } from './chat-head/ChatHead'
 import { ChatFooter } from './chat-footer/ChatFooter'
 import { ChatJoin } from './chat-join/ChatJoin'
-import { useTranslation } from 'react-i18next'
 import { ChatMessagesMemoized } from './chat-messages/ChatMessages'
 import { NotificationIcon } from './chat-notification-icon/NotificationIcon'
 import { IoChatbubbles } from 'react-icons/io5'
@@ -29,12 +28,11 @@ export const UserChat = () => {
 
   const isOpenChat = openChat === OPEN
 
-  const { t } = useTranslation()
   const { userName, userId, isJoined: isJoinedUser } = useAuthUser()
 
   const socket = useSocketApi({
     userName: userName,
-    connectSocket: isJoinedUser,
+    connectSocket: isJoinedUser && isOpenChat,
   })
 
   const {
@@ -50,7 +48,6 @@ export const UserChat = () => {
     onDeleteChat,
     setNewMessages,
     addNewMessage,
-    refetchUserById,
   } = useChatManagement({ skipFetchUsersList: true, userId })
 
   const { messagesContainerRef } = usePositionChatWindow({
@@ -60,10 +57,6 @@ export const UserChat = () => {
   const chatWindowRef = useDraggable<HTMLDivElement>({
     isVisibleElement: isOpenChat,
   })
-
-  useEffect(() => {
-    if (userName) refetchUserById()
-  }, [userName, refetchUserById])
 
   useEffect(() => {
     if (isErrorMessages) onLeave()
@@ -122,7 +115,7 @@ export const UserChat = () => {
   const chatHeadProps = useMemo(
     () => ({
       onToggleChat,
-      onDeleteChat: onLeaveAndDeleteChat,
+      onLeaveAndDeleteChat,
       onDeleteChatHistory,
       onToggleZoomWindow,
       isJoinedUser,
@@ -181,7 +174,6 @@ export const UserChat = () => {
               userId={userId}
               socket={socket}
               isDisabledInput={isLoadingData || !isJoinedUser}
-              placeholder={t('input.placeholder.YOUR_MESSAGE')}
             />
           </AnimatedContainer>
         )}

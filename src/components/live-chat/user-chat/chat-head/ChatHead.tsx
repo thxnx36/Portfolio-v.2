@@ -11,7 +11,7 @@ import styles from './ChatHead.module.css'
 type Props = {
   onToggleChat: () => void
   onToggleZoomWindow: () => void
-  onDeleteChat: () => void
+  onLeaveAndDeleteChat: () => void
   onDeleteChatHistory: () => void
   isJoinedUser: boolean
   showDeleteHistory: boolean
@@ -20,7 +20,7 @@ type Props = {
 export const ChatHead: FC<Props> = ({
   onToggleChat,
   onToggleZoomWindow,
-  onDeleteChat,
+  onLeaveAndDeleteChat,
   onDeleteChatHistory,
   isJoinedUser,
   showDeleteHistory,
@@ -45,7 +45,7 @@ export const ChatHead: FC<Props> = ({
       <ButtonsWrapper
         onToggleChat={onToggleChat}
         onToggleZoomWindow={onToggleZoomWindow}
-        onDeleteChat={onDeleteChat}
+        onDeleteChat={onLeaveAndDeleteChat}
         onDeleteChatHistory={onDeleteChatHistory}
         isJoinedUser={isJoinedUser}
         showDeleteHistory={showDeleteHistory}

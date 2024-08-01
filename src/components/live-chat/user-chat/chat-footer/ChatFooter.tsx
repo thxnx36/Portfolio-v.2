@@ -5,20 +5,17 @@ import { useSendMessageInChat, useTextAreaHeight } from 'src/hooks'
 import { ADMIN } from 'src/constants'
 import { Socket } from 'socket.io-client'
 import styles from './ChatFooter.module.css'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
   userId: string
   socket: Socket | null
   isDisabledInput: boolean
-  placeholder: string
 }
 
-export const ChatFooter: FC<Props> = ({
-  socket,
-  userId,
-  isDisabledInput,
-  placeholder,
-}) => {
+export const ChatFooter: FC<Props> = ({ socket, userId, isDisabledInput }) => {
+  const { t } = useTranslation()
+
   const {
     onSendMessage,
     handleKeyDown,
@@ -44,7 +41,7 @@ export const ChatFooter: FC<Props> = ({
         disabled={isDisabledInput}
         onChange={handleChangeTextArea}
         onKeyDown={handleKeyDown}
-        placeholder={placeholder}
+        placeholder={t('input.placeholder.YOUR_MESSAGE')}
         rows={1}
       />
       <ButtonWithIcon icon={<BiSolidSend />} isDisabled={isDisabledButton} />

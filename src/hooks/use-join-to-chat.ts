@@ -2,6 +2,7 @@ import { useCreateUserMutation, useAuthUser } from 'src/app'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { v4 as uuidv4 } from 'uuid'
 import { toast } from 'react-toastify'
+import { useTranslation } from 'react-i18next'
 
 type FormUserName = Record<'userName', string>
 
@@ -9,11 +10,8 @@ const INITIAL_STATE: FormUserName = {
   userName: '',
 }
 
-type Props = {
-  infoMessage: string
-}
-
-export const useJoinToChat = ({ infoMessage }: Props) => {
+export const useJoinToChat = () => {
+  const { t } = useTranslation()
   const { setUserName, setJoinedUser, setUserId } = useAuthUser()
   const [createUser, { isLoading }] = useCreateUserMutation()
 
@@ -49,7 +47,7 @@ export const useJoinToChat = ({ infoMessage }: Props) => {
         setUserId(createdUser?.userId)
       }
     } catch {
-      toast.info(infoMessage)
+      toast.info(t('toast.info.FIXING'))
       setJoinedUser(false)
       setUserName('')
     }

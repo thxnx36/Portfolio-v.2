@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react'
-import { Container, Loader, Section } from 'src/shared'
+import { Container, Loader, LoaderWrapper, Section } from 'src/shared'
 import { useSocketApi } from 'src/app'
 import { MessageType } from 'src/types'
 import { toast } from 'react-toastify'
@@ -11,11 +11,7 @@ import { AuthAdmin } from './auth-admin/AuthAdmin'
 import { useChatManagement } from 'src/hooks/use-chat-management'
 import { IoMenu } from 'react-icons/io5'
 import { TbReload } from 'react-icons/tb'
-import {
-  usePositionChatWindow,
-  useSendMessageInChat,
-  useTextAreaHeight,
-} from 'src/hooks'
+import { usePositionChatWindow } from 'src/hooks'
 import styles from './AdminChat.module.css'
 
 export const AdminChat = () => {
@@ -42,26 +38,9 @@ export const AdminChat = () => {
     onResetSelectedUser,
   } = useChatManagement({ skipFetchUsersList: false })
 
-  const {
-    onSendMessage,
-    handleKeyDown,
-    handleChangeTextArea,
-    textareaContent,
-    isDisabledButton,
-  } = useSendMessageInChat({
-    socket,
-    sender: ADMIN,
-    receiver: selectedUser?.userId!,
-  })
-
   const { messagesContainerRef } = usePositionChatWindow({
     dependencies: [messages, onSelectUser],
   })
-
-  const { textareaRef } = useTextAreaHeight({
-    dependencies: [textareaContent],
-  })
-
 
   useEffect(() => {
     if (userById?.messages) setNewMessages(userById?.messages)
@@ -126,7 +105,9 @@ export const AdminChat = () => {
             />
             <div className={styles.chat}>
               {isLoading ? (
-                <Loader />
+                <LoaderWrapper>
+                  <Loader />
+                </LoaderWrapper>
               ) : (
                 <>
                   <ChatWindowMemo
@@ -136,12 +117,8 @@ export const AdminChat = () => {
                   />
                   {selectedUser && (
                     <FooterChat
-                      ref={textareaRef}
-                      isDisabledButton={isDisabledButton}
-                      textAreaValue={textareaContent}
-                      onChangeMessage={handleChangeTextArea}
-                      onSendMessage={onSendMessage}
-                      onKeyDown={handleKeyDown}
+                      socket={socket}
+                      receiver={selectedUser?.userId!}
                     />
                   )}
                 </>

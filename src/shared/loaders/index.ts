@@ -1,4 +1,5 @@
 import { Loader } from './Loader'
+import { LoaderWrapper } from './LoaderWrapper'
 import { ChatSkeleton, PageSkeleton } from './skeletons'
 
-export { Loader, ChatSkeleton, PageSkeleton }
+export { Loader, LoaderWrapper, ChatSkeleton, PageSkeleton }
