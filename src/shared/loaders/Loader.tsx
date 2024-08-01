@@ -15,9 +15,5 @@ const sizeWidth = {
 export const Loader: FC<Props> = ({ size = 'md' }) => {
   const width = sizeWidth[size]
 
-  return (
-    <div className={styles.loaderContainer}>
-      <div style={{ width }} className={styles.loader} />
-    </div>
-  )
+  return <div style={{ width }} className={styles.loader} />
 }

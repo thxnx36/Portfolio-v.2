@@ -7,15 +7,13 @@ export const ChatJoin = () => {
   const { t } = useTranslation()
   const {
     register,
+    onSubmit,
     handleSubmit,
     handleChange,
     errors,
     isLoading,
     isDisabledButton,
-    onSubmit,
-  } = useJoinToChat({
-    infoMessage: t('toast.info.FIXING'),
-  })
+  } = useJoinToChat()
 
   return (
     <form className={styles.joinForm} onSubmit={handleSubmit(onSubmit)}>
@@ -38,7 +36,6 @@ export const ChatJoin = () => {
         <Button isLoading={isLoading} disabled={isDisabledButton}>
           {t('button.JOIN')}
         </Button>
-        <small style={{ margin: 20 }}>beta</small>
       </div>
     </form>
   )
