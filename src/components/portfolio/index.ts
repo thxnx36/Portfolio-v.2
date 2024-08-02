@@ -1,3 +1,1 @@
-import { Portfolio } from './Portfolio'
-
-export { Portfolio }
+export * from './Portfolio'

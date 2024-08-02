@@ -49,6 +49,7 @@ const additionalStyles = {
   buttonLink: {
     padding: '10px',
     fontSize: '0.75em',
+    display: 'none'
   },
   paragraph: {
     textAlign: 'left' as CSSProperties['textAlign'],

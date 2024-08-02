@@ -1,3 +1,1 @@
-import { DockPanel } from './DockPanel'
-
-export { DockPanel }
+export * from './DockPanel'

@@ -1,5 +1,3 @@
-import { Button } from './Button'
-import { ButtonAnchor } from './ButtonAnchor'
-import { ButtonLink } from './ButtonLink'
-
-export { Button, ButtonLink, ButtonAnchor }
+export * from './Button'
+export * from './ButtonAnchor'
+export * from './ButtonLink'

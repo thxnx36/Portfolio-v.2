@@ -10,6 +10,7 @@ const WorkHistorySection = () => {
       title='workHistory.TITLE'
       subTitle='workHistory.SUBTITLE'
       list={workList}
+      isActiveDot
     />
   )
 }

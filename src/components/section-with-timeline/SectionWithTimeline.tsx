@@ -7,15 +7,21 @@ type Props = {
   title: string
   subTitle: string
   list: ExperienceListType[]
+  isActiveDot?: boolean
 }
 
-export const SectionWithTimeline: FC<Props> = ({ list, title, subTitle }) => {
+export const SectionWithTimeline: FC<Props> = ({
+  list,
+  title,
+  subTitle,
+  isActiveDot,
+}) => {
   const { t } = useTranslation()
 
   return (
     <>
       <SectionHead title={t(title)} subTitle={t(subTitle)} />
-      {list?.map(({ place, position, date, description, img, url, id }) => (
+      {list?.map(({ place, position, date, description, img, url, id }, index) => (
         <TimeLine
           key={id}
           namePlace={place}
@@ -24,6 +30,7 @@ export const SectionWithTimeline: FC<Props> = ({ list, title, subTitle }) => {
           description={description}
           url={url}
           imageSrc={img}
+          isActiveDot={isActiveDot && index === 0}
         />
       ))}
     </>

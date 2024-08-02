@@ -1,3 +1,1 @@
-import { Education } from './Education'
-
-export { Education }
+export * from './Education'
