@@ -1,3 +1,1 @@
-import { ButtonWithIcon } from './ButtonWithIcon'
-
-export { ButtonWithIcon }
+export * from './ButtonWithIcon'

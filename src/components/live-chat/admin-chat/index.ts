@@ -1,3 +1,1 @@
-import { AdminChat } from './AdminChat'
-
-export { AdminChat }
+export * from './AdminChat'

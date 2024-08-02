@@ -1,5 +1,3 @@
-import { Avatar } from './Avatar'
-import { AvatarButton } from './AvatarButton'
-import { AvatarWrapper } from './AvatarWrapper'
-
-export { Avatar, AvatarButton, AvatarWrapper }
+export * from './Avatar'
+export * from './AvatarButton'
+export * from './AvatarWrapper'

@@ -32,7 +32,7 @@ export const UserChat = () => {
 
   const socket = useSocketApi({
     userName: userName,
-    connectSocket: isJoinedUser && isOpenChat,
+    connectSocket: isJoinedUser,
   })
 
   const {

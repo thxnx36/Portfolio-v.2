@@ -1,3 +1,1 @@
-import { WorkHistory } from './WorkHistory'
-
-export { WorkHistory }
+export * from './WorkHistory'

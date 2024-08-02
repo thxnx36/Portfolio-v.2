@@ -1,3 +1,1 @@
-import { SectionWithTimeline } from './SectionWithTimeline'
-
-export { SectionWithTimeline }
+export * from './SectionWithTimeline'

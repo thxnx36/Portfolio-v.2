@@ -1,3 +1,1 @@
-import { AboutMe } from './AboutMe'
-
-export { AboutMe }
+export * from './AboutMe'

@@ -1,30 +1,13 @@
-import { AboutMe } from './about-me'
-import { DockPanel } from './dock-panel'
-import { Education } from './education'
-import { Footer } from './footer'
-import { Form } from './form'
-import { Header } from './header'
-import { AdminChat, UserChat } from './live-chat'
-import { MyServices } from './my-services'
-import { MySkills } from './my-skills/MySkills'
-import { NotFound } from './not-found'
-import { Portfolio } from './portfolio'
-import { Project } from './project'
-import { WorkHistory } from './work-history'
-
-export {
-  AboutMe,
-  Education,
-  Footer,
-  Header,
-  MyServices,
-  Portfolio,
-  WorkHistory,
-  Form,
-  NotFound,
-  Project,
-  UserChat,
-  AdminChat,
-  MySkills,
-  DockPanel,
-}
+export * from './about-me'
+export * from './dock-panel'
+export * from './education'
+export * from './footer'
+export * from './form'
+export * from './header'
+export * from './live-chat'
+export * from './my-services'
+export * from './my-skills/MySkills'
+export * from './not-found'
+export * from './portfolio'
+export * from './project'
+export * from './work-history'

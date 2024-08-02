@@ -1,4 +1,2 @@
-import { AdminChat } from './admin-chat'
-import { UserChat } from './user-chat'
-
-export { UserChat, AdminChat }
+export * from './admin-chat'
+export * from './user-chat'

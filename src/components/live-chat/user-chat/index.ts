@@ -1,3 +1,1 @@
-import { UserChat } from './UserChat'
-
-export { UserChat }
+export * from './UserChat'
