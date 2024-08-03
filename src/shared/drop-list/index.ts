@@ -1,3 +1,1 @@
-import { DropList } from './DropList'
-
-export { DropList }
+export * from './DropList'

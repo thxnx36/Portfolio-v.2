@@ -1,3 +1,2 @@
-import { BrowserTabTitle } from './BrowserTabTitle'
+export * from './BrowserTabTitle'
 
-export { BrowserTabTitle }

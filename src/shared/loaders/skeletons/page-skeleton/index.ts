@@ -1,3 +1,1 @@
-import { PageSkeleton } from './PageSkeleton'
-
-export { PageSkeleton }
+export * from './PageSkeleton'

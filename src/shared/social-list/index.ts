@@ -1,3 +1,1 @@
-import { SocialList } from "./SocialList"
-
-export { SocialList }
+export * from './SocialList'

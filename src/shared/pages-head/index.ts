@@ -1,3 +1,1 @@
-import { PagesHead } from './PagesHead'
-
-export { PagesHead }
+export * from './PagesHead'

@@ -1,3 +1,1 @@
-import { TransitionContainer } from './TransitionContainer'
-
-export { TransitionContainer }
+export * from './TransitionContainer'

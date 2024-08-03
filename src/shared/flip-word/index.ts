@@ -1,3 +1,1 @@
-import { FlipWord } from './FlipWord'
-
-export { FlipWord }
+export * from './FlipWord'

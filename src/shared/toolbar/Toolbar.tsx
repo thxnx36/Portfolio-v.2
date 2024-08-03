@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { BsSun, BsMoon } from 'react-icons/bs'
 import { ThemeContext } from 'src/providers'
-import { DARK, ENG, LANG, LIGHT } from 'src/constants'
+import { LANG, LANGUAGES, THEME } from 'src/constants'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'src/utils'
 import styles from './Toolbar.module.css'
@@ -16,39 +16,42 @@ export const Toolbar = () => {
     {
       id: 1,
       icon: <BsSun size='0.9em' />,
-      value: LIGHT,
+      value: THEME.LIGHT,
     },
     {
       id: 2,
       icon: <BsMoon size='0.9em' />,
-      value: DARK,
+      value: THEME.DARK,
     },
   ]
 
-  const onChangeTheme = () => changeTheme(theme === LIGHT ? DARK : LIGHT)
+  const onChangeTheme = () =>
+    changeTheme(theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT)
   const onChangeLanguage = (language: string) => i18n.changeLanguage(language)
 
   return (
     <div role='radiogroup' className={styles.toolbarContainer}>
       <button
         className={styles.toolbarSwitch}
-        value={theme === DARK ? themeButtons[0].value : themeButtons[1].value}
+        value={theme === THEME.DARK ? themeButtons[0].value : themeButtons[1].value}
         role='radio'
         onClick={onChangeTheme}
       >
-        {theme === DARK ? themeButtons[0].icon : themeButtons[1].icon}
+        {theme === THEME.DARK ? themeButtons[0].icon : themeButtons[1].icon}
       </button>
       <button
         className={classNames(styles.toolbarSwitch, styles.switchLang)}
-        value={currentLanguage === ENG ? LANG[1].value : LANG[0].value}
+        value={
+          currentLanguage === LANGUAGES.ENG ? LANG[1].value : LANG[0].value
+        }
         role='radio'
         onClick={() =>
           onChangeLanguage(
-            currentLanguage === ENG ? LANG[1].value : LANG[0].value,
+            currentLanguage === LANGUAGES.ENG ? LANG[1].value : LANG[0].value,
           )
         }
       >
-        {currentLanguage === ENG ? LANG[1].label : LANG[0].label}
+        {currentLanguage === LANGUAGES.ENG ? LANG[1].label : LANG[0].label}
       </button>
     </div>
   )

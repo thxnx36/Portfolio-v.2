@@ -1,6 +1,9 @@
-export const OPEN = 'open'
-export const CLOSE = 'close'
-export const KEY = 'chat'
-export const USER = 'user'
-export const ADMIN = 'admin'
+export enum CHAT_WINDOW {
+  OPEN = 'open',
+  CLOSE = 'close',
+}
 
+export enum CHAT_USERS {
+  USER = 'user',
+  ADMIN = 'admin',
+}

@@ -1,3 +1,1 @@
-import { Drawer } from "./Drawer"
-
-export { Drawer }
+export * from './Drawer'

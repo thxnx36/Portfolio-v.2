@@ -11,5 +11,7 @@ export const LANG = [
   },
 ]
 
-export const ENG = 'en'
-export const UK = 'uk'
+export enum LANGUAGES {
+  ENG = 'en',
+  UK = 'uk',
+}

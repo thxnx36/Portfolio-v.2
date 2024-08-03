@@ -1,6 +1,6 @@
 import type { ReactNode, FC } from 'react'
 import { useEffect, createContext } from 'react'
-import { DARK } from 'src/constants'
+import { THEME } from 'src/constants'
 import { useLocalStorage } from 'src/hooks'
 
 type ThemeContextProps = {
@@ -17,13 +17,15 @@ export const ThemeContext = createContext<ThemeContextProps>({
   changeTheme: () => {},
 })
 
+const STORAGE_KEY = 'theme'
+
 export const ThemeProvider: FC<ThemeProvider> = ({ children }) => {
-  const [theme, setTheme] = useLocalStorage('theme', DARK)
+  const [theme, setTheme] = useLocalStorage(STORAGE_KEY, THEME.DARK)
 
   const changeTheme = (theme: string) => setTheme(theme)
 
   useEffect(() => {
-    if (theme === 'dark') {
+    if (theme === THEME.DARK) {
       document.body.classList.add('dark')
     } else {
       document.body.classList.remove('dark')

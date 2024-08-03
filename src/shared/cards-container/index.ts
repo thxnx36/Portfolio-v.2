@@ -1,3 +1,1 @@
-import { CardsContainer } from "./CardsContainer"
-
-export { CardsContainer }
+export * from './CardsContainer'

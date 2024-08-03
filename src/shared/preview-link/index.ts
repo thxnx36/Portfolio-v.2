@@ -1,3 +1,1 @@
-import { PreviewLink } from './PreviewLink'
-
-export { PreviewLink }
+export * from './PreviewLink'
