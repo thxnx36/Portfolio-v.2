@@ -1,3 +1,1 @@
-import { StackList } from './StackList'
-
-export { StackList }
+export * from './StackList'

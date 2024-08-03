@@ -1,3 +1,3 @@
-import { MarqueeBackground } from './MarqueeBackground'
+export * from './MarqueeBackground'
 
-export { MarqueeBackground }
+

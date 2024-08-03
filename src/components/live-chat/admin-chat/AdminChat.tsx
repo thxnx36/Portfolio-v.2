@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import { UsersList } from './users-list/UsersList'
 import { ChatWindowMemo } from './chat-window/ChatWindow'
 import { FooterChat } from './footer-chat/FooterChat'
-import { ADMIN } from 'src/constants'
+import { CHAT_USERS } from 'src/constants'
 import { AuthAdmin } from './auth-admin/AuthAdmin'
 import { useChatManagement } from 'src/hooks/use-chat-management'
 import { IoMenu } from 'react-icons/io5'
@@ -21,7 +21,7 @@ export const AdminChat = () => {
   const [isAuth, setIsAuth] = useState<boolean>(false)
   const [isOpenUsersList, setIsOpenUsersList] = useState<boolean>(false)
 
-  const socket = useSocketApi({ userName: ADMIN, connectSocket: isAuth })
+  const socket = useSocketApi({ userName: CHAT_USERS.ADMIN, connectSocket: isAuth })
 
   const {
     selectedUser,

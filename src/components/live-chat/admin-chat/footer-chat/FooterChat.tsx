@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { BiSolidSend } from 'react-icons/bi'
 import styles from './FooterChat.module.css'
 import { useSendMessageInChat, useTextAreaHeight } from 'src/hooks'
-import { ADMIN } from 'src/constants'
+import { CHAT_USERS } from 'src/constants'
 import { Socket } from 'socket.io-client'
 
 type Props = {
@@ -20,7 +20,7 @@ export const FooterChat: FC<Props> = ({ socket, receiver }) => {
     isDisabledButton,
   } = useSendMessageInChat({
     socket,
-    sender: ADMIN,
+    sender: CHAT_USERS.ADMIN,
     receiver,
   })
   

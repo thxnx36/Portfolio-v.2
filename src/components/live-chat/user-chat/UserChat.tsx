@@ -8,7 +8,7 @@ import { NotificationIcon } from './chat-notification-icon/NotificationIcon'
 import { IoChatbubbles } from 'react-icons/io5'
 import { useAuthUser, useSocketApi } from 'src/app'
 import { soundResponseMessage } from 'src/assets'
-import { KEY, CLOSE, OPEN, ADMIN } from 'src/constants'
+import { CHAT_WINDOW, CHAT_USERS } from 'src/constants'
 import {
   useLocalStorage,
   useChatManagement,
@@ -20,13 +20,15 @@ import { classNames, playSoundsInChat } from 'src/utils'
 import { MessageType } from 'src/types'
 import styles from './UserChat.module.css'
 
+export const STORAGE_KEY = 'chat'
+
 export const UserChat = () => {
-  const [openChat, setOpenChat] = useLocalStorage(KEY, CLOSE)
+  const [openChat, setOpenChat] = useLocalStorage(STORAGE_KEY, CHAT_WINDOW.CLOSE)
   const [isZoomWindow, setIsZoomWindow] = useState<boolean>(false)
   const [isShowNotification, setIsShowNotification] = useState<boolean>(false)
   const [notificationCount, setNotificationCount] = useState<number>(0)
 
-  const isOpenChat = openChat === OPEN
+  const isOpenChat = openChat === CHAT_WINDOW.OPEN
 
   const { userName, userId, isJoined: isJoinedUser } = useAuthUser()
 
@@ -92,7 +94,7 @@ export const UserChat = () => {
   }, [userId, socket, isOpenChat, addNewMessage])
 
   const onToggleChat = useCallback(() => {
-    setOpenChat(isOpenChat ? CLOSE : OPEN)
+    setOpenChat(isOpenChat ? CHAT_WINDOW.CLOSE : CHAT_WINDOW.OPEN)
     setIsShowNotification(false)
     setNotificationCount(0)
   }, [isOpenChat, setOpenChat])
@@ -162,7 +164,7 @@ export const UserChat = () => {
                   <ChatMessagesMemoized
                     ref={messagesContainerRef}
                     messages={filteredMessages}
-                    adminSender={ADMIN}
+                    adminSender={CHAT_USERS.ADMIN}
                     userName={userName}
                   />
                 </>

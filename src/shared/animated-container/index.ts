@@ -1,3 +1,1 @@
-import { AnimatedContainer } from './AnimatedContainer'
-
-export { AnimatedContainer }
+export * from './AnimatedContainer'

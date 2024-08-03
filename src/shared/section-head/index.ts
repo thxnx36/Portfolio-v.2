@@ -1,3 +1,1 @@
-import { SectionHead } from './SectionHead'
-
-export { SectionHead }
+export * from './SectionHead'
