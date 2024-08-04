@@ -23,7 +23,10 @@ import styles from './UserChat.module.css'
 export const STORAGE_KEY = 'chat'
 
 export const UserChat = () => {
-  const [openChat, setOpenChat] = useLocalStorage(STORAGE_KEY, CHAT_WINDOW.CLOSE)
+  const [openChat, setOpenChat] = useLocalStorage(
+    STORAGE_KEY,
+    CHAT_WINDOW.CLOSE,
+  )
   const [isZoomWindow, setIsZoomWindow] = useState<boolean>(false)
   const [isShowNotification, setIsShowNotification] = useState<boolean>(false)
   const [notificationCount, setNotificationCount] = useState<number>(0)
@@ -142,7 +145,9 @@ export const UserChat = () => {
     <>
       {!isOpenChat && (
         <div className={styles.openButton}>
-          <Button onClick={onToggleChat}>Live Chat {<IoChatbubbles />}</Button>
+          <Button onClick={onToggleChat} aria-label='Open chat window'>
+            Live Chat {<IoChatbubbles />}
+          </Button>
           {isShowNotification && <NotificationIcon count={notificationCount} />}
         </div>
       )}

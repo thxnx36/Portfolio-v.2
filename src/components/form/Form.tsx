@@ -89,6 +89,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
             isLoading={isLoading}
             type='submit'
             disabled={isDisabledButton}
+            aria-label='Send message'
           >
             {t('button.SEND_MESSAGE')}
           </Button>

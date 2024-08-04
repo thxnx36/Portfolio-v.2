@@ -45,7 +45,9 @@ export const Header = () => {
                   {t('header.DESCRIPTION')} 💪
                 </Paragraph>
               </blockquote>
-              <Button onClick={handleModal}>{t('button.HIRE')}</Button>
+              <Button onClick={handleModal} aria-label='Open modal window'>
+                {t('button.HIRE')}
+              </Button>
             </div>
 
             <div className={styles.image}>

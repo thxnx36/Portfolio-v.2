@@ -18,7 +18,7 @@ export const AboutMe = () => {
   const { navigateTo } = useNavigateTo()
 
   return (
-    <Section style={{ margin: 0 }}>
+    <Section>
       <PageWrapper>
         <PagesHead
           title={t('pages.aboutMe.TITLE')}
@@ -41,7 +41,7 @@ export const AboutMe = () => {
           </ul>
         </article>
         <article>
-          <Title size='sm' tag='h4'>
+          <Title size='sm' tag='h3'>
             {t('pages.aboutMe.LANG_SUB_TITLE')}
           </Title>
           <ul>
@@ -54,7 +54,7 @@ export const AboutMe = () => {
           </ul>
         </article>
         <article>
-          <Title size='sm' tag='h4'>
+          <Title size='sm' tag='h3'>
             {t('pages.aboutMe.QUALITIES_SUB_TITLE')}
           </Title>
           <ul>
@@ -67,7 +67,7 @@ export const AboutMe = () => {
           </ul>
         </article>
         <article>
-          <Title size='sm' tag='h4'>
+          <Title size='sm' tag='h3'>
             {t('pages.aboutMe.HOBBIES_SUB_TITLE')}
           </Title>
           <Paragraph style={additionalStyles.paragraph}>
@@ -75,7 +75,7 @@ export const AboutMe = () => {
           </Paragraph>
         </article>
         <article>
-          <Title size='sm' tag='h4'>
+          <Title size='sm' tag='h3'>
             {t('pages.aboutMe.GOT_IN_DEV_SUB_TITLE')}
           </Title>
           <Paragraph style={additionalStyles.paragraph}>

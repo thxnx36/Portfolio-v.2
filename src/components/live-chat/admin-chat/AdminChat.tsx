@@ -85,7 +85,7 @@ export const AdminChat = () => {
   const isLoading = isLoadingUserById || isFetchingUserById
 
   return (
-    <Section style={{ margin: 0 }}>
+    <Section>
       {isAuth ? (
         <Container>
           <div className={styles.headButtons}>
