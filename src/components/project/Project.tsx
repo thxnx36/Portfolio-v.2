@@ -46,7 +46,7 @@ export const Project = () => {
   ]
 
   return (
-    <Section style={{ margin: 0 }}>
+    <Section>
       <PageWrapper>
         <Head
           projectTitle={data?.project}

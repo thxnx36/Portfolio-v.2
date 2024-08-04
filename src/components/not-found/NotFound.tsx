@@ -14,7 +14,7 @@ export const NotFound = () => {
   const { t } = useTranslation()
 
   return (
-    <Section style={{ margin: 0 }}>
+    <Section>
       <MarqueeBackground marqueeText='page 404'>
         <div className={styles.notFoundContainer}>
           <span className={styles.number}>

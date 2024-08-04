@@ -10,7 +10,7 @@ type Props = {
 export const withAnimationSection =
   (Component: ComponentType<Props>) =>
   ({ sectionId, ...props }: Props) => {
-    const { refInView, controls } = useAnimateDuringScroll({});
+    const { refInView, controls } = useAnimateDuringScroll({})
 
     return (
       <MSection
@@ -18,9 +18,10 @@ export const withAnimationSection =
         animate={controls}
         initial={motionSection.initial}
         transition={motionSection.transition}
+        style={{ marginBottom: '50px' }}
         id={sectionId}
       >
         <Component {...(props as Props)} />
       </MSection>
-    );
-  };
+    )
+  }

@@ -27,28 +27,31 @@ export const Toolbar = () => {
 
   const onChangeTheme = () =>
     changeTheme(theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT)
+  
   const onChangeLanguage = (language: string) => i18n.changeLanguage(language)
 
   return (
-    <div role='radiogroup' className={styles.toolbarContainer}>
+    <div className={styles.toolbarContainer}>
       <button
         className={styles.toolbarSwitch}
-        value={theme === THEME.DARK ? themeButtons[0].value : themeButtons[1].value}
-        role='radio'
+        aria-pressed={theme === THEME.DARK}
         onClick={onChangeTheme}
+        aria-label={
+          theme === THEME.DARK ? themeButtons[0].value : themeButtons[1].value
+        }
       >
         {theme === THEME.DARK ? themeButtons[0].icon : themeButtons[1].icon}
       </button>
       <button
         className={classNames(styles.toolbarSwitch, styles.switchLang)}
-        value={
-          currentLanguage === LANGUAGES.ENG ? LANG[1].value : LANG[0].value
-        }
-        role='radio'
+        aria-pressed={currentLanguage === LANGUAGES.ENG}
         onClick={() =>
           onChangeLanguage(
             currentLanguage === LANGUAGES.ENG ? LANG[1].value : LANG[0].value,
           )
+        }
+        aria-label={
+          currentLanguage === LANGUAGES.ENG ? LANG[1].value : LANG[0].value
         }
       >
         {currentLanguage === LANGUAGES.ENG ? LANG[1].label : LANG[0].label}
