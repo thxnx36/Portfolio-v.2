@@ -39,11 +39,11 @@ export const ProjectCard: FC<Props> = ({
               {title}
             </Paragraph>
             <Paragraph className={styles.textContent}>{description}</Paragraph>
-            <div className={styles.tags}>
+            <ul className={styles.tags}>
               {data?.about?.map((item, i) => (
                 <StackList key={i} stackList={item?.stack} />
               ))}
-            </div>
+            </ul>
           </div>
         </Link>
       </article>

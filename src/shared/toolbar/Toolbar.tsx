@@ -1,34 +1,30 @@
 import { useContext } from 'react'
-import { BsSun, BsMoon } from 'react-icons/bs'
 import { ThemeContext } from 'src/providers'
 import { LANG, LANGUAGES, THEME } from 'src/constants'
-import { useTranslation } from 'react-i18next'
 import { classNames } from 'src/utils'
+import { BsSun, BsMoon } from 'react-icons/bs'
+import { useChangeLanguage } from 'src/hooks'
 import styles from './Toolbar.module.css'
 
 export const Toolbar = () => {
   const { theme, changeTheme } = useContext(ThemeContext)
-  const { i18n } = useTranslation()
+  const { currentLanguage, onChangeLanguage } = useChangeLanguage()
 
-  const currentLanguage = i18n.language
+  const onChangeTheme = () =>
+    changeTheme(theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT)
 
   const themeButtons = [
     {
       id: 1,
-      icon: <BsSun size='0.9em' />,
+      icon: <BsSun />,
       value: THEME.LIGHT,
     },
     {
       id: 2,
-      icon: <BsMoon size='0.9em' />,
+      icon: <BsMoon />,
       value: THEME.DARK,
     },
   ]
-
-  const onChangeTheme = () =>
-    changeTheme(theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT)
-  
-  const onChangeLanguage = (language: string) => i18n.changeLanguage(language)
 
   return (
     <div className={styles.toolbarContainer}>

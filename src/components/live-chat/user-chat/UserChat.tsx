@@ -48,6 +48,7 @@ export const UserChat = () => {
     isErrorMessages,
     isLoadingDeleteChat,
     isLoadingDeleteChatHistory,
+    refetchUserById,
     onDeleteChatHistory,
     onLeave,
     onDeleteChat,
@@ -62,6 +63,10 @@ export const UserChat = () => {
   const chatWindowRef = useDraggable<HTMLDivElement>({
     isVisibleElement: isOpenChat,
   })
+
+  useEffect(() => {
+    if (userName) refetchUserById()
+  }, [userName, refetchUserById])
 
   useEffect(() => {
     if (isErrorMessages) onLeave()
