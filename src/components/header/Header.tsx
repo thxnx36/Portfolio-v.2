@@ -10,18 +10,8 @@ import {
   Paragraph,
 } from 'src/shared'
 import { Form } from '../form'
+import { words } from './config'
 import styles from './Header.module.css'
-
-const words = [
-  {
-    id: 1,
-    content: 'Frontend Developer',
-  },
-  {
-    id: 2,
-    content: 'React Developer',
-  },
-]
 
 export const Header = () => {
   const { t } = useTranslation()

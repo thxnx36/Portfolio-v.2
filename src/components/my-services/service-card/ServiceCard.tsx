@@ -30,6 +30,7 @@ export const ServiceCard: FC<Props> = ({
             {title}
           </Title>
           <button
+            aria-label='View description'
             onClick={e => {
               e.stopPropagation()
               onFlip()

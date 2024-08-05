@@ -1,10 +1,7 @@
 import { StrictMode } from 'react'
-import { persist, store } from './app'
 import { createRoot } from 'react-dom/client'
-import { PersistGate } from 'redux-persist/integration/react'
-import { Provider } from 'react-redux'
-import { ThemeProvider } from './providers'
-import { Routes } from './routes'
+import { MainProvider } from './providers'
+import { Routing } from './routing'
 import { Layout } from './layout'
 import './i18n'
 
@@ -15,15 +12,11 @@ if (container) {
 
   root.render(
     <StrictMode>
-      <Provider store={store}>
-        <PersistGate persistor={persist}>
-          <ThemeProvider>
-            <Layout>
-              <Routes />
-            </Layout>
-          </ThemeProvider>
-        </PersistGate>
-      </Provider>
+      <MainProvider>
+        <Layout>
+          <Routing />
+        </Layout>
+      </MainProvider>
     </StrictMode>,
   )
 } else {

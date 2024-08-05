@@ -16,13 +16,14 @@ export const SocialList: FC<Props> = ({ visibleIds }) => {
   return (
     <address>
       <ul className={styles.socialContainer}>
-        {filteredSocialList.map(({ id, icon, link }) => (
+        {filteredSocialList.map(({ id, icon, link, name }) => (
           <li key={id} className={styles.socialItem}>
             <a
               className={styles.link}
               target='_blank'
               href={link}
               rel='noreferrer'
+              aria-label={name}
             >
               {icon}
             </a>

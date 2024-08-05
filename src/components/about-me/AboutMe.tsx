@@ -9,7 +9,8 @@ import {
   PagesHead,
 } from 'src/shared'
 import { useNavigateTo, useQualitiesList } from 'src/hooks'
-import { ROUTES, technologies } from 'src/constants'
+import { ROUTES } from 'src/constants'
+import { technologies } from './config'
 import styles from './AboutMe.module.css'
 
 export const AboutMe = () => {
