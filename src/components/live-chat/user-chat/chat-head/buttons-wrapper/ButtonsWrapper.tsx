@@ -47,11 +47,12 @@ export const ButtonsWrapper: FC<Props> = ({
             icon={<PiResizeLight />}
             className={styles.zoomButton}
             onClick={onToggleZoomWindow}
+            aria-label='Resize the chat window'
           />
           <DropList buttonIcon={<PiDotsThreeBold />} list={settingList} />
         </>
       )}
-      <ButtonWithIcon icon={<IoClose />} onClick={onToggleChat} />
+      <ButtonWithIcon icon={<IoClose />} onClick={onToggleChat} aria-label='Close the chat window' />
     </div>
   )
 }

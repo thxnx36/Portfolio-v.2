@@ -35,7 +35,7 @@ export const Header = () => {
                   {t('header.DESCRIPTION')} 💪
                 </Paragraph>
               </blockquote>
-              <Button onClick={handleModal} aria-label='Open modal window'>
+              <Button onClick={handleModal} aria-label='Open the modal window and get in touch'>
                 {t('button.HIRE')}
               </Button>
             </div>

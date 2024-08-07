@@ -44,7 +44,7 @@ export const ChatFooter: FC<Props> = ({ socket, userId, isDisabledInput }) => {
         placeholder={t('input.placeholder.YOUR_MESSAGE')}
         rows={1}
       />
-      <ButtonWithIcon icon={<BiSolidSend />} isDisabled={isDisabledButton} />
+      <ButtonWithIcon icon={<BiSolidSend />} isDisabled={isDisabledButton} aria-label='Send your message in chat' />
     </form>
   )
 }

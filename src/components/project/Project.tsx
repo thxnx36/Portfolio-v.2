@@ -37,11 +37,13 @@ export const Project = () => {
       condition: currentProjectId !== 1,
       icon: <HiMiniArrowLongLeft />,
       direction: 'back',
+      ariaLabel: 'View the previous project',
     },
     {
       condition: currentProjectId < lastProjectId,
       icon: <HiMiniArrowLongRight />,
       direction: 'forward',
+      ariaLabel: 'View the next project',
     },
   ]
 
@@ -60,7 +62,7 @@ export const Project = () => {
           ))}
         </ul>
         <div className={styles.arrowButtonsWrap}>
-          {buttonsConfig.map(({ direction, icon, condition }) => (
+          {buttonsConfig.map(({ direction, icon, condition, ariaLabel }) => (
             <div
               key={direction}
               className={classNames(
@@ -72,6 +74,7 @@ export const Project = () => {
                 <ButtonWithIcon
                   icon={icon}
                   onClick={() => onTogglePage(direction)}
+                  aria-label={ariaLabel}
                 />
               )}
             </div>

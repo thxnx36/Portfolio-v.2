@@ -150,7 +150,7 @@ export const UserChat = () => {
     <>
       {!isOpenChat && (
         <div className={styles.openButton}>
-          <Button onClick={onToggleChat} aria-label='Open chat window'>
+          <Button onClick={onToggleChat} aria-label='Open the chat window'>
             Live Chat {<IoChatbubbles />}
           </Button>
           {isShowNotification && <NotificationIcon count={notificationCount} />}
