@@ -1,14 +1,7 @@
 import { CSSProperties, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { headerPhoto } from 'src/assets'
-import {
-  Container,
-  Title,
-  Button,
-  Modal,
-  FlipWord,
-  Paragraph,
-} from 'src/shared'
+import { Container, Title, Button, Modal, FlipWord, Paragraph } from '../shared'
 import { Form } from '../form'
 import { words } from './config'
 import styles from './Header.module.css'
@@ -35,7 +28,10 @@ export const Header = () => {
                   {t('header.DESCRIPTION')} 💪
                 </Paragraph>
               </blockquote>
-              <Button onClick={handleModal} aria-label='Open the modal window and get in touch'>
+              <Button
+                onClick={handleModal}
+                aria-label='Open the modal window and get in touch'
+              >
                 {t('button.HIRE')}
               </Button>
             </div>

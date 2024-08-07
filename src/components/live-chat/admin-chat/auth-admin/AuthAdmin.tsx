@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, FormEvent } from 'react'
-import { Button, Input } from 'src/shared'
+import { Input, Button } from 'src/components/shared'
 import styles from './AuthAdmin.module.css'
 
 type Props = {

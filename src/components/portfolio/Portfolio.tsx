@@ -1,5 +1,5 @@
 import { usePortfolioList } from 'src/hooks'
-import { SectionHead, CardsContainer } from 'src/shared'
+import { SectionHead, CardsContainer } from '../shared'
 import { useTranslation } from 'react-i18next'
 import { withAnimationSection } from 'src/hoc'
 import { ProjectCard } from './project-card/ProjectCard'

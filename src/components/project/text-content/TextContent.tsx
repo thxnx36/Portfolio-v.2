@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { Paragraph } from 'src/shared'
+import { Paragraph } from 'src/components/shared'
 
 type Props = {
   text?: { textOne: string; textTwo: string; textThree: string }

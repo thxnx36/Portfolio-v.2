@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { ButtonWithIcon, Textarea } from 'src/shared'
+import { ButtonWithIcon, Textarea } from 'src/components/shared'
 import { BiSolidSend } from 'react-icons/bi'
 import { useSendMessageInChat, useTextAreaHeight } from 'src/hooks'
 import { CHAT_USERS } from 'src/constants'
@@ -44,7 +44,11 @@ export const ChatFooter: FC<Props> = ({ socket, userId, isDisabledInput }) => {
         placeholder={t('input.placeholder.YOUR_MESSAGE')}
         rows={1}
       />
-      <ButtonWithIcon icon={<BiSolidSend />} isDisabled={isDisabledButton} aria-label='Send your message in chat' />
+      <ButtonWithIcon
+        icon={<BiSolidSend />}
+        isDisabled={isDisabledButton}
+        aria-label='Send your message in chat'
+      />
     </form>
   )
 }

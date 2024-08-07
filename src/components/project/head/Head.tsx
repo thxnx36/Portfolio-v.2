@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import styles from './Head.module.css'
-import { PagesHead } from 'src/shared'
+import { PagesHead } from 'src/components/shared'
 
 type Props = {
   projectTitle?: string

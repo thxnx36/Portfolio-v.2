@@ -6,7 +6,7 @@ import {
   BrowserTabTitle,
   MarqueeBackground,
   ButtonLink,
-} from 'src/shared'
+} from '../shared'
 import { Icon } from './Icon'
 import styles from './NotFound.module.css'
 

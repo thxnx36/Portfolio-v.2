@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Analytics } from '@vercel/analytics/react'
-import { Toast } from 'src/shared'
+import { Toast } from 'src/components/shared'
 import { APP } from 'src/constants'
 import { logger } from 'src/utils'
 

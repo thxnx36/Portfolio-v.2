@@ -25,6 +25,6 @@ dist-ssr
 
 # Ignore deprecated folders
 src/hooks/unused
-src/shared/unused
+../shared/unused
 src/db/unused
 src/db/db.json

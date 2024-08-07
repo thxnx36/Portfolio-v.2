@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Section, SectionHead, CardsContainer } from 'src/shared'
+import { Section, SectionHead, CardsContainer } from '../shared'
 import { useServicesList } from 'src/hooks'
 import { ServiceCard } from './service-card/ServiceCard'
 

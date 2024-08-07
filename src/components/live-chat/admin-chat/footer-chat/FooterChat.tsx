@@ -1,4 +1,4 @@
-import { ButtonWithIcon, Textarea } from 'src/shared'
+import { ButtonWithIcon, Textarea } from 'src/components/shared'
 import { FC } from 'react'
 import { BiSolidSend } from 'react-icons/bi'
 import styles from './FooterChat.module.css'
@@ -23,7 +23,7 @@ export const FooterChat: FC<Props> = ({ socket, receiver }) => {
     sender: CHAT_USERS.ADMIN,
     receiver,
   })
-  
+
   const { textareaRef } = useTextAreaHeight({
     dependencies: [textareaContent],
   })

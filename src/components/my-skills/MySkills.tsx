@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ROUTES } from 'src/constants'
-import { Paragraph, Title, Container, ButtonAnchor } from 'src/shared'
+import { Container, Title, Paragraph, ButtonAnchor } from '../shared'
 import { Link } from 'react-router-dom'
 import { TechnologiesCard } from './technologies-card/TechnologiesCard'
 import { withAnimationSection } from 'src/hoc'
@@ -49,7 +49,7 @@ const additionalStyles = {
   buttonLink: {
     padding: '10px',
     fontSize: '0.75em',
-    display: 'none'
+    display: 'none',
   },
   paragraph: {
     textAlign: 'left' as CSSProperties['textAlign'],

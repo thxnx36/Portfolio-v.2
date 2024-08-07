@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { GoArrowUpRight } from 'react-icons/go'
-import { Paragraph, Title } from 'src/shared'
+import { Paragraph, Title } from 'src/components/shared'
 import { classNames } from 'src/utils'
 import styles from './ServiceCard.module.css'
 

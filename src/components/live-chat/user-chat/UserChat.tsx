@@ -15,7 +15,7 @@ import {
   usePositionChatWindow,
   useDraggable,
 } from 'src/hooks'
-import { AnimatedContainer, Button, ChatSkeleton } from 'src/shared'
+import { AnimatedContainer, Button, ChatSkeleton } from 'src/components/shared'
 import { classNames, playSoundsInChat } from 'src/utils'
 import { MessageType } from 'src/types'
 import styles from './UserChat.module.css'

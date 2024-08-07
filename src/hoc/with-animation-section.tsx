@@ -1,7 +1,7 @@
 import { ComponentType } from 'react'
 import { motionSection } from 'src/constants'
 import { useAnimateDuringScroll } from 'src/hooks'
-import { MSection } from 'src/shared'
+import { MSection } from 'src/components/shared'
 
 type Props = {
   sectionId: string

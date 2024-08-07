@@ -4,10 +4,10 @@ import {
   Title,
   Input,
   Textarea,
+  Button,
   Paragraph,
   SocialList,
-  Button,
-} from 'src/shared'
+} from '../shared'
 import { useTranslation } from 'react-i18next'
 import { VALIDATE_EMAIL } from 'src/constants'
 import styles from './Form.module.css'

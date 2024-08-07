@@ -1,6 +1,6 @@
 import { memo, type FC } from 'react'
 import { chatPhoto } from 'src/assets'
-import { Avatar, AvatarWrapper, Paragraph } from 'src/shared'
+import { Avatar, AvatarWrapper, Paragraph } from 'src/components/shared'
 import { classNames } from 'src/utils'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'src/constants'

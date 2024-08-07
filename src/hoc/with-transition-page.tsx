@@ -1,6 +1,6 @@
 import { ComponentType, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { TransitionContainer } from 'src/shared'
+import { TransitionContainer } from 'src/components/shared'
 
 export const withTransitionPage = (Component: ComponentType) => () => {
   const { pathname } = useLocation()
