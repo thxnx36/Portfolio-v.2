@@ -54,6 +54,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
                 : t('form.error.ENTER_NAME')
             }
             placeholder={t('input.placeholder.YOUR_NAME')}
+            aria-label='Enter your name'
           />
           <Input
             {...register('from', {
@@ -69,6 +70,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
             error={!!errors.from}
             errorText={errors.from?.message}
             placeholder={t('input.placeholder.YOUR_EMAIL')}
+            aria-label='Enter your email'
           />
           <Textarea
             {...register('text', { required: true, minLength: 10 })}
@@ -83,6 +85,7 @@ export const Form: FC<Props> = ({ onCloseModal }) => {
                 : t('form.error.ENTER_MESSAGE')
             }
             placeholder={t('input.placeholder.YOUR_MESSAGE')}
+            aria-label='Enter your message'
           />
           <Button
             style={additionalButtonStyles}

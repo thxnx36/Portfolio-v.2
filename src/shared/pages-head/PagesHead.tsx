@@ -14,7 +14,11 @@ export const PagesHead: FC<Props> = ({ title, goBack }) => {
   return (
     <div className={styles.pagesHead}>
       <div className={styles.title}>
-        <ButtonWithIcon icon={<IoIosArrowBack />} onClick={goBack} />
+        <ButtonWithIcon
+          icon={<IoIosArrowBack />}
+          onClick={goBack}
+          aria-label='Go to home page'
+        />
         <Title style={{ margin: 0 }} tag='h2'>
           {title}
         </Title>

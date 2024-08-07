@@ -22,6 +22,7 @@ export const Modal: FC<Props> = ({ children, isOpen, onClose }) => {
           icon={<IoClose />}
           className={styles.closeButton}
           onClick={onClose}
+          aria-label='Close the modal window'
         />
         {children}
       </AnimatedContainer>

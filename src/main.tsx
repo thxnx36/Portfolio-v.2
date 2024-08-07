@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { MainProvider } from './providers'
 import { Routing } from './routing'
 import { Layout } from './layout'
-import './i18n'
+import './localization'
 
 const container = document.getElementById('root')
 

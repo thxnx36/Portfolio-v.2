@@ -27,7 +27,9 @@ export const NotFound = () => {
           <Title size='sm' tag='h4'>
             {t('pages.notFound.RETURN_HOME')}
           </Title>
-          <ButtonLink to={ROUTES.main}>{t('button.GO_BACK')}</ButtonLink>
+          <ButtonLink aria-label='Go to home page' to={ROUTES.main}>
+            {t('button.GO_BACK')}
+          </ButtonLink>
         </div>
       </MarqueeBackground>
 
