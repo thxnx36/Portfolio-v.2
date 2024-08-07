@@ -1,5 +1,5 @@
 import { forwardRef, memo } from 'react'
-import { Paragraph } from 'src/shared'
+import { Paragraph } from 'src/components/shared'
 import { formatDateTime, formatMessage } from 'src/utils'
 import { MessageType } from 'src/types'
 import { useTranslation } from 'react-i18next'

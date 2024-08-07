@@ -1,6 +1,6 @@
 import { APP } from 'src/constants'
 import styles from './Footer.module.css'
-import { SocialList } from 'src/shared'
+import { SocialList } from '../shared'
 
 export const Footer = () => {
   return (

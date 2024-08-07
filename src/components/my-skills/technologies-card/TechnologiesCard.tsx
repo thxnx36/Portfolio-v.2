@@ -1,6 +1,6 @@
 import { FaReact } from 'react-icons/fa'
 import { SiTypescript, SiRedux } from 'react-icons/si'
-import { Paragraph } from 'src/shared'
+import { Paragraph } from 'src/components/shared'
 import styles from './TechnologiesCard.module.css'
 
 export const TechnologiesCard = () => {

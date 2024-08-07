@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { ROUTES } from 'src/constants'
-import { Paragraph, StackList, Title } from 'src/shared'
+import { Paragraph, StackList, Title } from 'src/components/shared'
 import { useGetProjectById } from 'src/hooks'
 import { classNames } from 'src/utils'
 import styles from './ProjectCard.module.css'

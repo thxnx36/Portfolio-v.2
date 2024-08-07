@@ -1,4 +1,4 @@
-import { SocialList, Toolbar } from 'src/shared'
+import { SocialList, Toolbar } from '../shared'
 import { NavList } from './nav-list/NavList'
 import styles from './DockPanel.module.css'
 

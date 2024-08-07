@@ -1,4 +1,4 @@
-import { Button, Input, Title } from 'src/shared'
+import { Button, Input, Title } from 'src/components/shared'
 import { useTranslation } from 'react-i18next'
 import { useJoinToChat } from 'src/hooks'
 import styles from './ChatJoin.module.css'

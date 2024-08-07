@@ -10,7 +10,7 @@ import {
   BrowserTabTitle,
   StackList,
   ButtonWithIcon,
-} from 'src/shared'
+} from '../shared'
 import { ROUTES } from 'src/constants'
 import { classNames } from 'src/utils'
 import styles from './Project.module.css'

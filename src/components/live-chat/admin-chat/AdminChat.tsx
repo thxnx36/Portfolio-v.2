@@ -1,5 +1,10 @@
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react'
-import { Container, Loader, LoaderWrapper, Section } from 'src/shared'
+import {
+  Section,
+  Container,
+  LoaderWrapper,
+  Loader,
+} from 'src/components/shared'
 import { useSocketApi } from 'src/app'
 import { MessageType } from 'src/types'
 import { toast } from 'react-toastify'
@@ -21,7 +26,10 @@ export const AdminChat = () => {
   const [isAuth, setIsAuth] = useState<boolean>(false)
   const [isOpenUsersList, setIsOpenUsersList] = useState<boolean>(false)
 
-  const socket = useSocketApi({ userName: CHAT_USERS.ADMIN, connectSocket: isAuth })
+  const socket = useSocketApi({
+    userName: CHAT_USERS.ADMIN,
+    connectSocket: isAuth,
+  })
 
   const {
     selectedUser,

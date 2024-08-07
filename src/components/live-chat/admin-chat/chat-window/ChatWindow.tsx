@@ -1,6 +1,6 @@
 import { forwardRef, memo } from 'react'
 import { MessageType, UserType } from 'src/types'
-import { Paragraph } from 'src/shared'
+import { Paragraph } from 'src/components/shared'
 import { formatDateTime } from 'src/utils'
 import styles from './ChatWindow.module.css'
 

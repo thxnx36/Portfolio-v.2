@@ -7,7 +7,7 @@ import {
   Paragraph,
   BrowserTabTitle,
   PagesHead,
-} from 'src/shared'
+} from 'src/components/shared'
 import { useNavigateTo, useQualitiesList } from 'src/hooks'
 import { ROUTES } from 'src/constants'
 import { technologies } from './config'

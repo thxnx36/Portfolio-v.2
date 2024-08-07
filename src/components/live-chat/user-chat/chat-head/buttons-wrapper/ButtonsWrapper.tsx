@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { PiResizeLight, PiDotsThreeBold } from 'react-icons/pi'
 import { IoClose } from 'react-icons/io5'
-import { ButtonWithIcon, DropList } from 'src/shared'
+import { ButtonWithIcon, DropList } from 'src/components/shared'
 import { useTranslation } from 'react-i18next'
 import styles from './ButtonsWraapper.module.css'
 
@@ -52,7 +52,11 @@ export const ButtonsWrapper: FC<Props> = ({
           <DropList buttonIcon={<PiDotsThreeBold />} list={settingList} />
         </>
       )}
-      <ButtonWithIcon icon={<IoClose />} onClick={onToggleChat} aria-label='Close the chat window' />
+      <ButtonWithIcon
+        icon={<IoClose />}
+        onClick={onToggleChat}
+        aria-label='Close the chat window'
+      />
     </div>
   )
 }

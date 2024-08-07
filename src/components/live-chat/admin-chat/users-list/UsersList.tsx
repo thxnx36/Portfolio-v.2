@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { ButtonWithIcon, Paragraph } from 'src/shared'
+import { ButtonWithIcon, Paragraph } from 'src/components/shared'
 import { UserType } from 'src/types'
 import { MdOutlineDelete } from 'react-icons/md'
 import { IoClose } from 'react-icons/io5'

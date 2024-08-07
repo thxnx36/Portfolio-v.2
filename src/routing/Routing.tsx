@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { ROUTES } from 'src/constants'
 import { MainPage } from 'src/pages'
-import { Loader, LoaderWrapper } from 'src/shared'
+import { Loader, LoaderWrapper } from 'src/components/shared'
 
 const PortfolioPage = lazy(() => import('../pages/PortfolioPage'))
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'))
